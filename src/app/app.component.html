@@ -1,0 +1,91 @@
+<header>
+  <div class="header card-header border-0 container">
+    <div class="row">
+      <!--top-page-left-->
+      <div class="col-3">
+        <ul class="d-flex justify-content-start">
+          <li class="p-2"><a href="https://www.facebook.com/aguri-jewellery"><i class="fa-brands fa-facebook"></i></a></li>
+          <li class="p-2"><a href="https://www.instagram.com/aguri-jewellery"><i class="fa-brands fa-instagram"></i></a></li>
+          <li class="p-2"><a href="https://www.pinterest.com/aguri-jewellery"><i class="fa-brands fa-pinterest"></i></a></li>
+        </ul>
+      </div>
+      <!--logo-->
+      <div class="col-6 d-flex justify-content-center">
+        <img src="" alt="aguri-logo"/>
+      </div>
+      <!--top-page-right-->
+      <div class="col-3">
+        <ul class="d-flex justify-content-end">
+          <li class="p-2">Sign in</li>
+          <li class="p-2"><i class="fa fa-shopping-cart"></i></li>
+          <li class="p-2"><i class="fa fa-search"></i></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="card-header border-0">
+  <div class="container">
+    <ul class="nav justify-content-center">
+      <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/shop-all">Shop All</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/guide">Jewellery Guide</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/about-us">About us</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section>
+  <router-outlet></router-outlet>
+</section>
+
+<footer>
+  <div class="card-footer border-bottom-0 border-left-0 border-right-0 container">
+    <div class="row">
+      <div class="col-2">
+        <ul>
+          <li><h6>Explore</h6></li>
+          <li>Home</li>
+          <li>About us</li>
+          <li>Jewellery guide</li>
+        </ul>
+      </div>
+      <div class="col-2">
+        <ul>
+          <li><h6>Jewellery</h6></li>
+          <li>Rings</li>
+          <li>Earrings</li>
+          <li>Bracelets</li>
+          <li>Necklaces</li>
+        </ul>
+      </div>
+      <div class="col-2">
+        <ul>
+          <li><h6>More</h6></li>
+          <li>Size guide</li>
+          <li>Shipping & Returns</li>
+          <li>Product care & Repair</li>
+        </ul>
+      </div>
+      <div class="col-2">
+        <ul class="follow-us">
+          <li><h6>Follow us</h6></li>
+          <li>
+            <a href="https://www.facebook.com/aguri-jewellery"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/aguri-jewellery"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.pinterest.com/aguri-jewellery"><i class="fa-brands fa-pinterest"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-4">
+        <h6>Subscribe to All Things AGURI</h6>
+        <form class="subscribe" onsubmit="alert('Thank you for subscription!\nWe will send you email about our updates.')">
+          <div><input class="col-12 border-top-0 border-left-0 border-right-0" type="email" placeholder="Email address" required></div>
+          <button class="col-12 btn-sm" type="submit">Join now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</footer>
