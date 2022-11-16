@@ -8,16 +8,23 @@ create table Categories(
     ParentID varchar(255) not null
 );
 
+create table Imgs(
+    ID int primary key identity(1,1),
+    Img1 varchar(255) not null,
+    Img2 varchar(255),
+    Img3 varchar(255),
+    Img4 varchar(255)
+);
+
 create table Products(
     ID int primary key identity(1,1),
     Name varchar(255) not null,
     Material varchar(255) not null,
-    Unit varchar(20) not null,
     Price decimal(12,3) not null,
     Size float not null,
     Detail text not null,
     Stock int not null,
-    Img varchar(255) not null,
+    ImgID int not null foreign key references Imgs(Id),
     CategoriesID int not null foreign key references Categories(Id)
 );
 
@@ -77,4 +84,131 @@ values('Eternity','Rings'),
 ('Layering','Necklaces');
 select * from Categories;
 
-insert into Products(Name,Material,Unit,Price,Size,Detail,Stock,Img,CategoriesID)
+insert into Imgs(Img1,Img2,Img3,Img4)
+values('./assets/img/rings/eternity/1.1.1.png','./assets/img/rings/eternity/1.1.2.png','./assets/img/rings/eternity/1.1.3.png','./assets/img/rings/eternity/1.1.4.png'),
+('./assets/img/rings/eternity/1.2.1.png','./assets/img/rings/eternity/1.2.2.png','./assets/img/rings/eternity/1.2.3.png','./assets/img/rings/eternity/1.2.4.png'),
+('./assets/img/rings/eternity/1.3.1.png','./assets/img/rings/eternity/1.3.2.png','./assets/img/rings/eternity/1.3.3.png','./assets/img/rings/eternity/1.3.4.png'),
+('./assets/img/rings/eternity/1.4.1.png','./assets/img/rings/eternity/1.4.2.png','./assets/img/rings/eternity/1.4.3.png','./assets/img/rings/eternity/1.4.4.png'),
+('./assets/img/rings/eternity/1.5.1.png','./assets/img/rings/eternity/1.5.2.png','./assets/img/rings/eternity/1.5.3.png','./assets/img/rings/eternity/1.5.4.png'),
+('./assets/img/rings/cocktail/1.1.1.png','./assets/img/rings/cocktail/1.1.2.png','./assets/img/rings/cocktail/1.1.3.png','./assets/img/rings/cocktail/1.1.4.png'),
+('./assets/img/rings/cocktail/1.2.1.png','./assets/img/rings/cocktail/1.2.2.png','./assets/img/rings/cocktail/1.2.3.png','./assets/img/rings/cocktail/1.2.4.png'),
+('./assets/img/rings/cocktail/1.3.1.png','./assets/img/rings/cocktail/1.3.2.png','./assets/img/rings/cocktail/1.3.3.png','./assets/img/rings/cocktail/1.3.4.png'),
+('./assets/img/rings/cocktail/1.4.1.png','./assets/img/rings/cocktail/1.4.2.png','./assets/img/rings/cocktail/1.4.3.png','./assets/img/rings/cocktail/1.4.4.png'),
+('./assets/img/rings/cocktail/1.5.1.png','./assets/img/rings/cocktail/1.5.2.png','./assets/img/rings/cocktail/1.5.3.png','./assets/img/rings/cocktail/1.5.4.png'),
+('./assets/img/rings/wedding/1.1.1.png','./assets/img/rings/wedding/1.1.2.png','./assets/img/rings/wedding/1.1.3.png','./assets/img/rings/wedding/1.1.4.png'),
+('./assets/img/rings/wedding/1.2.1.png','./assets/img/rings/wedding/1.2.2.png','./assets/img/rings/wedding/1.2.3.png','./assets/img/rings/wedding/1.2.4.png'),
+('./assets/img/rings/wedding/1.3.1.png','./assets/img/rings/wedding/1.3.2.png','./assets/img/rings/wedding/1.3.3.png','./assets/img/rings/wedding/1.3.4.png'),
+('./assets/img/rings/wedding/1.4.1.png','./assets/img/rings/wedding/1.4.2.png','./assets/img/rings/wedding/1.4.3.png','./assets/img/rings/wedding/1.4.4.png'),
+('./assets/img/rings/wedding/1.5.1.png','./assets/img/rings/wedding/1.5.2.png','./assets/img/rings/wedding/1.5.3.png','./assets/img/rings/wedding/1.5.4.png'),
+
+('./assets/img/earrings/stud/1.1.1.png','./assets/img/earrings/stud/1.1.2.png','./assets/img/earrings/stud/1.1.3.png','./assets/img/earrings/stud/1.1.4.png'),
+('./assets/img/earrings/stud/1.2.1.png','./assets/img/earrings/stud/1.2.2.png','./assets/img/earrings/stud/1.2.3.png','./assets/img/earrings/stud/1.2.4.png'),
+('./assets/img/earrings/stud/1.3.1.png','./assets/img/earrings/stud/1.3.2.png','./assets/img/earrings/stud/1.3.3.png','./assets/img/earrings/stud/1.3.4.png'),
+('./assets/img/earrings/stud/1.4.1.png','./assets/img/earrings/stud/1.4.2.png','./assets/img/earrings/stud/1.4.3.png','./assets/img/earrings/stud/1.4.4.png'),
+('./assets/img/earrings/stud/1.5.1.png','./assets/img/earrings/stud/1.5.2.png','./assets/img/earrings/stud/1.5.3.png','./assets/img/earrings/stud/1.5.4.png'),
+('./assets/img/earrings/dropdangle/1.1.1.png','./assets/img/earrings/dropdangle/1.1.2.png','./assets/img/earrings/dropdangle/1.1.3.png','./assets/img/earrings/dropdangle/1.1.4.png'),
+('./assets/img/earrings/dropdangle/1.2.1.png','./assets/img/earrings/dropdangle/1.2.2.png','./assets/img/earrings/dropdangle/1.2.3.png','./assets/img/earrings/dropdangle/1.2.4.png'),
+('./assets/img/earrings/dropdangle/1.3.1.png','./assets/img/earrings/dropdangle/1.3.2.png','./assets/img/earrings/dropdangle/1.3.3.png','./assets/img/earrings/dropdangle/1.3.4.png'),
+('./assets/img/earrings/dropdangle/1.4.1.png','./assets/img/earrings/dropdangle/1.4.2.png','./assets/img/earrings/dropdangle/1.4.3.png','./assets/img/earrings/dropdangle/1.4.4.png'),
+('./assets/img/earrings/dropdangle/1.5.1.png','./assets/img/earrings/dropdangle/1.5.2.png','./assets/img/earrings/dropdangle/1.5.3.png','./assets/img/earrings/dropdangle/1.5.4.png'),
+('./assets/img/earrings/hoop/1.1.1.png','./assets/img/earrings/hoop/1.1.2.png','./assets/img/earrings/hoop/1.1.3.png','./assets/img/earrings/hoop/1.1.4.png'),
+('./assets/img/earrings/hoop/1.2.1.png','./assets/img/earrings/hoop/1.2.2.png','./assets/img/earrings/hoop/1.2.3.png','./assets/img/earrings/hoop/1.2.4.png'),
+('./assets/img/earrings/hoop/1.3.1.png','./assets/img/earrings/hoop/1.3.2.png','./assets/img/earrings/hoop/1.3.3.png','./assets/img/earrings/hoop/1.3.4.png'),
+('./assets/img/earrings/hoop/1.4.1.png','./assets/img/earrings/hoop/1.4.2.png','./assets/img/earrings/hoop/1.4.3.png','./assets/img/earrings/hoop/1.4.4.png'),
+('./assets/img/earrings/hoop/1.5.1.png','./assets/img/earrings/hoop/1.5.2.png','./assets/img/earrings/hoop/1.5.3.png','./assets/img/earrings/hoop/1.5.4.png'),
+
+('./assets/img/braceles/chain/1.1.1.png','./assets/img/braceles/chain/1.1.2.png','./assets/img/braceles/chain/1.1.3.png','./assets/img/braceles/chain/1.1.4.png'),
+('./assets/img/braceles/chain/1.2.1.png','./assets/img/braceles/chain/1.2.2.png','./assets/img/braceles/chain/1.2.3.png','./assets/img/braceles/chain/1.2.4.png'),
+('./assets/img/braceles/chain/1.3.1.png','./assets/img/braceles/chain/1.3.2.png','./assets/img/braceles/chain/1.3.3.png','./assets/img/braceles/chain/1.3.4.png'),
+('./assets/img/braceles/chain/1.4.1.png','./assets/img/braceles/chain/1.4.2.png','./assets/img/braceles/chain/1.4.3.png','./assets/img/braceles/chain/1.4.4.png'),
+('./assets/img/braceles/chain/1.5.1.png','./assets/img/braceles/chain/1.5.2.png','./assets/img/braceles/chain/1.5.3.png','./assets/img/braceles/chain/1.5.4.png'),
+('./assets/img/braceles/bangle/1.1.1.png','./assets/img/braceles/bangle/1.1.2.png','./assets/img/braceles/bangle/1.1.3.png','./assets/img/braceles/bangle/1.1.4.png'),
+('./assets/img/braceles/bangle/1.2.1.png','./assets/img/braceles/bangle/1.2.2.png','./assets/img/braceles/bangle/1.2.3.png','./assets/img/braceles/bangle/1.2.4.png'),
+('./assets/img/braceles/bangle/1.3.1.png','./assets/img/braceles/bangle/1.3.2.png','./assets/img/braceles/bangle/1.3.3.png','./assets/img/braceles/bangle/1.3.4.png'),
+('./assets/img/braceles/bangle/1.4.1.png','./assets/img/braceles/bangle/1.4.2.png','./assets/img/braceles/bangle/1.4.3.png','./assets/img/braceles/bangle/1.4.4.png'),
+('./assets/img/braceles/bangle/1.5.1.png','./assets/img/braceles/bangle/1.5.2.png','./assets/img/braceles/bangle/1.5.3.png','./assets/img/braceles/bangle/1.5.4.png'),
+('./assets/img/braceles/tennis/1.1.1.png','./assets/img/braceles/tennis/1.1.2.png','./assets/img/braceles/tennis/1.1.3.png','./assets/img/braceles/tennis/1.1.4.png'),
+('./assets/img/braceles/tennis/1.2.1.png','./assets/img/braceles/tennis/1.2.2.png','./assets/img/braceles/tennis/1.2.3.png','./assets/img/braceles/tennis/1.2.4.png'),
+('./assets/img/braceles/tennis/1.3.1.png','./assets/img/braceles/tennis/1.3.2.png','./assets/img/braceles/tennis/1.3.3.png','./assets/img/braceles/tennis/1.3.4.png'),
+('./assets/img/braceles/tennis/1.4.1.png','./assets/img/braceles/tennis/1.4.2.png','./assets/img/braceles/tennis/1.4.3.png','./assets/img/braceles/tennis/1.4.4.png'),
+('./assets/img/braceles/tennis/1.5.1.png','./assets/img/braceles/tennis/1.5.2.png','./assets/img/braceles/tennis/1.5.3.png','./assets/img/braceles/tennis/1.5.4.png'),
+
+('./assets/img/necklaces/chain/1.1.1.png','./assets/img/necklaces/chain/1.1.2.png','./assets/img/necklaces/chain/1.1.3.png','./assets/img/necklaces/chain/1.1.4.png'),
+('./assets/img/necklaces/chain/1.2.1.png','./assets/img/necklaces/chain/1.2.2.png','./assets/img/necklaces/chain/1.2.3.png','./assets/img/necklaces/chain/1.2.4.png'),
+('./assets/img/necklaces/chain/1.3.1.png','./assets/img/necklaces/chain/1.3.2.png','./assets/img/necklaces/chain/1.3.3.png','./assets/img/necklaces/chain/1.3.4.png'),
+('./assets/img/necklaces/chain/1.4.1.png','./assets/img/necklaces/chain/1.4.2.png','./assets/img/necklaces/chain/1.4.3.png','./assets/img/necklaces/chain/1.4.4.png'),
+('./assets/img/necklaces/chain/1.5.1.png','./assets/img/necklaces/chain/1.5.2.png','./assets/img/necklaces/chain/1.5.3.png','./assets/img/necklaces/chain/1.5.4.png'),
+('./assets/img/necklaces/everyday/1.1.1.png','./assets/img/necklaces/everyday/1.1.2.png','./assets/img/necklaces/everyday/1.1.3.png','./assets/img/necklaces/everyday/1.1.4.png'),
+('./assets/img/necklaces/everyday/1.2.1.png','./assets/img/necklaces/everyday/1.2.2.png','./assets/img/necklaces/everyday/1.2.3.png','./assets/img/necklaces/everyday/1.2.4.png'),
+('./assets/img/necklaces/everyday/1.3.1.png','./assets/img/necklaces/everyday/1.3.2.png','./assets/img/necklaces/everyday/1.3.3.png','./assets/img/necklaces/everyday/1.3.4.png'),
+('./assets/img/necklaces/everyday/1.4.1.png','./assets/img/necklaces/everyday/1.4.2.png','./assets/img/necklaces/everyday/1.4.3.png','./assets/img/necklaces/everyday/1.4.4.png'),
+('./assets/img/necklaces/everyday/1.5.1.png','./assets/img/necklaces/everyday/1.5.2.png','./assets/img/necklaces/everyday/1.5.3.png','./assets/img/necklaces/everyday/1.5.4.png'),
+('./assets/img/necklaces/layering/1.1.1.png','./assets/img/necklaces/layering/1.1.2.png','./assets/img/necklaces/layering/1.1.3.png','./assets/img/necklaces/layering/1.1.4.png'),
+('./assets/img/necklaces/layering/1.2.1.png','./assets/img/necklaces/layering/1.2.2.png','./assets/img/necklaces/layering/1.2.3.png','./assets/img/necklaces/layering/1.2.4.png'),
+('./assets/img/necklaces/layering/1.3.1.png','./assets/img/necklaces/layering/1.3.2.png','./assets/img/necklaces/layering/1.3.3.png','./assets/img/necklaces/layering/1.3.4.png'),
+('./assets/img/necklaces/layering/1.4.1.png','./assets/img/necklaces/layering/1.4.2.png','./assets/img/necklaces/layering/1.4.3.png','./assets/img/necklaces/layering/1.4.4.png'),
+('./assets/img/necklaces/layering/1.5.1.png','./assets/img/necklaces/layering/1.5.2.png','./assets/img/necklaces/layering/1.5.3.png','./assets/img/necklaces/layering/1.5.4.png');
+select * from Imgs;
+
+insert into Products(Name,Material,Price,Size,Detail,Stock,ImgID,CategoriesID)
+values('Pear Serif Ring','Gold',3840,4,'Handcrafted in polished 18 karat gold, our Pear Serif Ring showcases a sparkling pear diamond (0.40ct) that dangles from two nestled diamonds',10,1,1),
+('Pear Serif Ring','Gold',3840,5,'Handcrafted in polished 18 karat gold, our Pear Serif Ring showcases a sparkling pear diamond (0.40ct) that dangles from two nestled diamonds',10,1,1),
+('Pear Serif Ring','Gold',3840,6,'Handcrafted in polished 18 karat gold, our Pear Serif Ring showcases a sparkling pear diamond (0.40ct) that dangles from two nestled diamonds',10,1,1),
+('Pear Serif Ring','Gold',3840,7,'Handcrafted in polished 18 karat gold, our Pear Serif Ring showcases a sparkling pear diamond (0.40ct) that dangles from two nestled diamonds',10,1,1),
+('Pear Serif Ring','Gold',3840,8,'Handcrafted in polished 18 karat gold, our Pear Serif Ring showcases a sparkling pear diamond (0.40ct) that dangles from two nestled diamonds',10,1,1),
+
+('Crescendo Flare Ring','Gold',3600,4,'Crafted of polished 18 karat gold, our Crescendo Flare Ring wraps around the finger and showcases a sparkling 0.03carat diamond with a sideways diamond eternity pave band',10,2,1),
+('Crescendo Flare Ring','Gold',3600,5,'Crafted of polished 18 karat gold, our Crescendo Flare Ring wraps around the finger and showcases a sparkling 0.03carat diamond with a sideways diamond eternity pave band',10,2,1),
+('Crescendo Flare Ring','Gold',3600,6,'Crafted of polished 18 karat gold, our Crescendo Flare Ring wraps around the finger and showcases a sparkling 0.03carat diamond with a sideways diamond eternity pave band',10,2,1),
+('Crescendo Flare Ring','Gold',3600,7,'Crafted of polished 18 karat gold, our Crescendo Flare Ring wraps around the finger and showcases a sparkling 0.03carat diamond with a sideways diamond eternity pave band',10,2,1),
+('Crescendo Flare Ring','Gold',3600,8,'Crafted of polished 18 karat gold, our Crescendo Flare Ring wraps around the finger and showcases a sparkling 0.03carat diamond with a sideways diamond eternity pave band',10,2,1),
+
+('Marquise Flare Ring','Gold',6420,4,'Our Marquise Flare Ring handcrafted in 18K gold of two connecting bands that wraps around the finger showcasing a sparkling 0.35carat marquise cut diamond',10,3,1),
+('Marquise Flare Ring','Gold',6420,5,'Our Marquise Flare Ring handcrafted in 18K gold of two connecting bands that wraps around the finger showcasing a sparkling 0.35carat marquise cut diamond',10,3,1),
+('Marquise Flare Ring','Gold',6420,6,'Our Marquise Flare Ring handcrafted in 18K gold of two connecting bands that wraps around the finger showcasing a sparkling 0.35carat marquise cut diamond',10,3,1),
+('Marquise Flare Ring','Gold',6420,7,'Our Marquise Flare Ring handcrafted in 18K gold of two connecting bands that wraps around the finger showcasing a sparkling 0.35carat marquise cut diamond',10,3,1),
+('Marquise Flare Ring','Gold',6420,8,'Our Marquise Flare Ring handcrafted in 18K gold of two connecting bands that wraps around the finger showcasing a sparkling 0.35carat marquise cut diamond',10,3,1),
+
+('Duet Pear Pave Ring','Diamond',9600,4,'The Duet Pear Pave Ring that showcases two kissing 6x4mm pear cut white diamonds set in polished 18k yellow gold with micropave diamonds',10,4,1),
+('Duet Pear Pave Ring','Diamond',9600,5,'The Duet Pear Pave Ring that showcases two kissing 6x4mm pear cut white diamonds set in polished 18k yellow gold with micropave diamonds',10,4,1),
+('Duet Pear Pave Ring','Diamond',9600,6,'The Duet Pear Pave Ring that showcases two kissing 6x4mm pear cut white diamonds set in polished 18k yellow gold with micropave diamonds',10,4,1),
+('Duet Pear Pave Ring','Diamond',9600,7,'The Duet Pear Pave Ring that showcases two kissing 6x4mm pear cut white diamonds set in polished 18k yellow gold with micropave diamonds',10,4,1),
+('Duet Pear Pave Ring','Diamond',9600,8,'The Duet Pear Pave Ring that showcases two kissing 6x4mm pear cut white diamonds set in polished 18k yellow gold with micropave diamonds',10,4,1),
+
+('Diamond Zipper Ring','Diamond',3200,4,'The Diamond Zipper Ring is handcrafted from 18-karat gold with 0.68ct of floating brilliant cut diamonds that create a sparkling zipper silhouette',10,5,1),
+('Diamond Zipper Ring','Diamond',3200,5,'The Diamond Zipper Ring is handcrafted from 18-karat gold with 0.68ct of floating brilliant cut diamonds that create a sparkling zipper silhouette',10,5,1),
+('Diamond Zipper Ring','Diamond',3200,6,'The Diamond Zipper Ring is handcrafted from 18-karat gold with 0.68ct of floating brilliant cut diamonds that create a sparkling zipper silhouette',10,5,1),
+('Diamond Zipper Ring','Diamond',3200,7,'The Diamond Zipper Ring is handcrafted from 18-karat gold with 0.68ct of floating brilliant cut diamonds that create a sparkling zipper silhouette',10,5,1),
+('Diamond Zipper Ring','Diamond',3200,8,'The Diamond Zipper Ring is handcrafted from 18-karat gold with 0.68ct of floating brilliant cut diamonds that create a sparkling zipper silhouette',10,5,1),
+
+('Neo Band','Silver',3320,4,'Neo Band combines a modern yet timeless style that features a refined satin finish and a contrasting polished line that circles the center, a symbol of everlasting love',10,6,1),
+('Neo Band','Silver',3320,5,'Neo Band combines a modern yet timeless style that features a refined satin finish and a contrasting polished line that circles the center, a symbol of everlasting love',10,6,1),
+('Neo Band','Silver',3320,6,'Neo Band combines a modern yet timeless style that features a refined satin finish and a contrasting polished line that circles the center, a symbol of everlasting love',10,6,1),
+('Neo Band','Silver',3320,7,'Neo Band combines a modern yet timeless style that features a refined satin finish and a contrasting polished line that circles the center, a symbol of everlasting love',10,6,1),
+('Neo Band','Silver',3320,8,'Neo Band combines a modern yet timeless style that features a refined satin finish and a contrasting polished line that circles the center, a symbol of everlasting love',10,6,1),
+
+('Grande Baguette Band','Diamond',12800,4,'The Eternal Baguette Band is delicately made from 18-karat gold with a full eternity of F/G color VS clarity baguette diamond surround',10,7,1),
+('Grande Baguette Band','Diamond',12800,5,'The Eternal Baguette Band is delicately made from 18-karat gold with a full eternity of F/G color VS clarity baguette diamond surround',10,7,1),
+('Grande Baguette Band','Diamond',12800,6,'The Eternal Baguette Band is delicately made from 18-karat gold with a full eternity of F/G color VS clarity baguette diamond surround',10,7,1),
+('Grande Baguette Band','Diamond',12800,7,'The Eternal Baguette Band is delicately made from 18-karat gold with a full eternity of F/G color VS clarity baguette diamond surround',10,7,1),
+('Grande Baguette Band','Diamond',12800,8,'The Eternal Baguette Band is delicately made from 18-karat gold with a full eternity of F/G color VS clarity baguette diamond surround',10,7,1),
+
+('Asscher Cosma Eternity Band','Diamond',30220,4,'Crafted of polished 18K gold, our Asscher Cosma Eternity Band features  4mmx4mm asscher cut diamonds set in our signature Cosma bezel setting',10,8,1),
+('Asscher Cosma Eternity Band','Diamond',30220,5,'Crafted of polished 18K gold, our Asscher Cosma Eternity Band features  4mmx4mm asscher cut diamonds set in our signature Cosma bezel setting',10,8,1),
+('Asscher Cosma Eternity Band','Diamond',30220,6,'Crafted of polished 18K gold, our Asscher Cosma Eternity Band features  4mmx4mm asscher cut diamonds set in our signature Cosma bezel setting',10,8,1),
+('Asscher Cosma Eternity Band','Diamond',30220,7,'Crafted of polished 18K gold, our Asscher Cosma Eternity Band features  4mmx4mm asscher cut diamonds set in our signature Cosma bezel setting',10,8,1),
+('Asscher Cosma Eternity Band','Diamond',30220,8,'Crafted of polished 18K gold, our Asscher Cosma Eternity Band features  4mmx4mm asscher cut diamonds set in our signature Cosma bezel setting',10,8,1),
+
+('Eternal Echo Band','Gold',3200,4,'The Eternal Echo Band is delicately made from 18-karat gold. Understated and elegant, wear yours layered and stacked with similar pieces from the collection',10,9,1),
+('Eternal Echo Band','Gold',3200,5,'The Eternal Echo Band is delicately made from 18-karat gold. Understated and elegant, wear yours layered and stacked with similar pieces from the collection',10,9,1),
+('Eternal Echo Band','Gold',3200,6,'The Eternal Echo Band is delicately made from 18-karat gold. Understated and elegant, wear yours layered and stacked with similar pieces from the collection',10,9,1),
+('Eternal Echo Band','Gold',3200,7,'The Eternal Echo Band is delicately made from 18-karat gold. Understated and elegant, wear yours layered and stacked with similar pieces from the collection',10,9,1),
+('Eternal Echo Band','Gold',3200,8,'The Eternal Echo Band is delicately made from 18-karat gold. Understated and elegant, wear yours layered and stacked with similar pieces from the collection',10,9,1),
+
+('Tour Band','Gold',2800,4,'Crafted of polished 18K gold, the Tour Band showcases a satin matte gold band with a contrasting finish of a high polished beveled edge',10,10,1),
+('Tour Band','Gold',2800,5,'Crafted of polished 18K gold, the Tour Band showcases a satin matte gold band with a contrasting finish of a high polished beveled edge',10,10,1),
+('Tour Band','Gold',2800,6,'Crafted of polished 18K gold, the Tour Band showcases a satin matte gold band with a contrasting finish of a high polished beveled edge',10,10,1),
+('Tour Band','Gold',2800,7,'Crafted of polished 18K gold, the Tour Band showcases a satin matte gold band with a contrasting finish of a high polished beveled edge',10,10,1),
+('Tour Band','Gold',2800,8,'Crafted of polished 18K gold, the Tour Band showcases a satin matte gold band with a contrasting finish of a high polished beveled edge',10,10,1),
+
+select * from Products;
