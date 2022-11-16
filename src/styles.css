@@ -1,8 +1,12 @@
 /*ALL*/
 * {
   font-size: 16px;
-  font-family: 'Inter', 'Merchant', sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: #FAF8F6;
+}
+
+h2, h3, h4 {
+  font-family: 'Merchant', sans-serif;
 }
 
 ul {
@@ -11,10 +15,6 @@ ul {
 
 li {
   list-style-type: none;
-}
-
-h6 {
-  font-weight: 700;
 }
 
 /*HEADER*/
