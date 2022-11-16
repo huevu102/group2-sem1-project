@@ -9,12 +9,25 @@ h2, h3, h4 {
   font-family: 'Merchant', sans-serif;
 }
 
+.card {
+
+}
+
 ul {
   padding-inline-start: 0;
 }
 
 li {
   list-style-type: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+#logo {
+  height: 40px;
 }
 
 /*HEADER*/
