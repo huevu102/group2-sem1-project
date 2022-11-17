@@ -14,7 +14,7 @@ import {OrderDetailComponent} from "./pages/order-detail/order-detail.component"
 import {ProductDetailComponent} from "./pages/product-detail/product-detail.component";
 import {ShopAllComponent} from "./pages/shop-all/shop-all.component";
 import {ThankYouComponent} from "./pages/thank-you/thank-you.component";
-import {CategoryComponent} from "./pages/category/category.component";
+import {RingsComponent} from "./pages/rings/rings.component";
 import {SubCategoryComponent} from "./pages/sub-category/sub-category.component";
 
 const appRoutes: Routes = [
@@ -28,7 +28,7 @@ const appRoutes: Routes = [
   {path: 'product-detail', component: ProductDetailComponent},
   {path: 'shop-all', component: ShopAllComponent},
   {path: 'thank-you', component: ThankYouComponent},
-  {path: 'category', component: CategoryComponent},
+  {path: 'rings', component: RingsComponent},
   {path: 'sub-category', component: SubCategoryComponent},
 ]
 
@@ -45,7 +45,7 @@ const appRoutes: Routes = [
     ProductDetailComponent,
     ShopAllComponent,
     ThankYouComponent,
-    CategoryComponent,
+    RingsComponent,
     SubCategoryComponent
   ],
   imports: [
