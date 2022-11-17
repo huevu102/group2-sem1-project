@@ -108,6 +108,7 @@ nav li:nth-child(1){
 
 .subscribe input {
   padding-top: 10px;
+  background-color: #FAF8F6;
 }
 
 .subscribe button {
