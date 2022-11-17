@@ -1,22 +1,23 @@
+.ctg{
+  margin-top:40px;
+}
+/*Cate-left*/
 .cate-name ul li{
-  text-align: center;
   margin-bottom:20px;
 }
 .cate-name ul li:nth-child(4){
   margin-bottom:0px;
 }
-.cate-bra{
-  margin-bottom:25px;
-}
+
+/*Cate-center*/
+
+
+/*Cate-right*/
 .cate-right h3{
   padding: 62px 0px;
 }
-.cate-ring{
-  padding-bottom:25px;
-}
-.cate-neck{
-  padding-top:25px;
-}
+
+
 /*ring*/
 .cate-all{
   margin-top:120px;
@@ -25,3 +26,5 @@
 .Ring-all h4{
   margin-bottom:60px;
 }
+
+/*Earring*/
