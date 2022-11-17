@@ -9,7 +9,24 @@ body{
   font-family: 'Inter', sans-serif;
   background-color: #FAF8F6;
 }
-/*Typo*/
+ul {
+  padding-inline-start: 0;
+}
+li {
+  list-style-type: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  color:#999;
+}
+
+/*TYPO*/
 h1{
   font-size:90px;
   font-weight: 600;
@@ -23,31 +40,37 @@ h2, h3, h4, h5 {
   font-size: 18px;
 }
 .smt{
-  font-size: 12px;
-}
-
-
-
-
-
-ul {
-  padding-inline-start: 0;
-}
-
-li {
-  list-style-type: none;
-}
-
-img {
-  width: 100%;
-  display: block;
-}
-
-#logo {
-  height: 40px;
+  font-size: 14px;
 }
 
 /*HEADER*/
+#logo {
+  height: 40px;
+}
+.card-header{
+  padding:0px;
+}
+.header-inner{
+  padding-top:20px;
+  padding-bottom:20px;
+}
+
+/*NAV*/
+.nav-link{
+  padding:0px;
+}
+nav a{
+  font-size:16px;
+}
+nav li{
+  padding:20px 30px 20px 30px;
+}
+nav li:nth-child(5){
+  padding-right: 0px;
+}
+nav li:nth-child(1){
+  padding-left:0px;
+}
 /*dropdown-menu-start*/
 .dropdown-content {
   display: none;
@@ -74,6 +97,9 @@ img {
   display: block;
 }
 /*dropdown-menu-end*/
+
+
+
 
 /*FOOTER*/
 .follow-us i {
