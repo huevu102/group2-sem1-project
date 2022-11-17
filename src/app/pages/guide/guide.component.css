@@ -1,0 +1,14 @@
+.insurance {
+  background-color: #e7e7e7;
+  padding: 50px 0 100px 0;
+  margin-bottom: 80px;
+}
+
+.insurance p {
+  margin-bottom: 50px;
+}
+
+.jewellery-care li {
+  list-style-type: disc;
+  margin-inline-start: 20px;
+}
