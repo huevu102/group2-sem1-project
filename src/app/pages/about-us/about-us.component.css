@@ -2,12 +2,6 @@
   padding-bottom: 100px;
 }
 
-/*introduction*/
-.introduction {
-  padding-top: 100px;
-}
-/**/
-
 /*the-brand*/
 .the-brand {
   position: relative;
@@ -27,3 +21,4 @@
 .our-mission-text-1 {
   padding-left: 100px;
 }
+/**/
