@@ -98,10 +98,16 @@ nav li:nth-child(1){
 }
 /*dropdown-menu-end*/
 
-
-
+/*NAVIGATION*/
+.card-nav {
+  padding-bottom: 100px;
+}
 
 /*FOOTER*/
+.card-footer {
+  padding-top: 50px;
+}
+
 .follow-us i {
   padding-right: 10px;
 }
