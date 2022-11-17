@@ -26,6 +26,12 @@ a:hover{
   color:#999;
   text-decoration: none;
 }
+.line{
+  background-color:#999;
+  width:100%;
+  height:1px;
+}
+
 /*SPACING*/
 .mbt{
   margin-bottom: 25px;
@@ -33,6 +39,11 @@ a:hover{
 .mtp{
   margin-top:25px;
 }
+p{
+  margin:0px !important;
+  padding:0px !important;
+}
+
 /*COLOR*/
 .sub-color{
   color:#e7e7e7;
@@ -48,7 +59,8 @@ h2, h3, h4, h5 {
   font-weight:400;
 }
 .mdt{
-  font-weight: 700;
+  font-size:16px;
+  font-weight: 500;
 }
 .smt{
   font-size: 14px;
@@ -56,7 +68,6 @@ h2, h3, h4, h5 {
 
 
 /*INPUT*/
-
 .inpu{
   border-top:0px;
   border-left:0px;
@@ -76,16 +87,25 @@ label{
 .btn{
   width:100%;
   font-size: 14px;
-  border:none;
+  border:2px #000 solid;
   border-radius: 0px;
 }
-.btn:hover{
+.btn-pri:hover{
   background:none;
-  border:solid;
+  border:2px #000 solid;
 }
 .btn-pri{
   background-color: #000;
   color: #fff;
+}
+.btn-sec{
+  background:none;
+  border:2px #000 solid;
+}
+.btn-sec:hover{
+  background:#fff;
+  border:2px #000 solid;
+
 }
 .btnlg{
   padding-top:10px;
@@ -152,7 +172,6 @@ nav li:nth-child(1){
 }
 /*dropdown-menu-end*/
 
-/*NAVIGATION*/
 
 
 /*FOOTER*/
@@ -184,3 +203,8 @@ nav li:nth-child(1){
   margin-top:16px;
 }
 
+/*PRODUCT-DETAIL-PAGE*/
+.email-user{
+  margin-top:20px;
+  margin-bottom:20px;
+}

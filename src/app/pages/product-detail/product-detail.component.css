@@ -1,0 +1,16 @@
+/*DETAIL*/
+.bag{
+  margin-bottom:20px;
+  margin-top:20px;
+}
+
+/*Ask a client advisor*/
+.modal-dialog{
+  max-width:600px;
+}
+.modal-content{
+  padding: 40px 80px 40px 80px;
+}
+.review-name{
+  margin-bottom:40px;
+}
