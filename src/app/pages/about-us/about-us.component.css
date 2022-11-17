@@ -13,7 +13,11 @@
   position: absolute;
   padding-top: 150px;
 }
-/**/
+/*vision*/
+.vision-left{
+  padding:0px;
+}
+
 
 /*our mission*/
 .our-mission-text {

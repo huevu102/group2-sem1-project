@@ -6,6 +6,22 @@
 .cate-name ul li:nth-child(4){
   margin-bottom:0px;
 }
+/*Care-left-card*/
+.categories-card{
+  position: relative;
+}
+.cate-card-name{
+  position: absolute;
+  top:50%;
+  display:none;
+}
+.categories-card:hover > .cate-card-name{
+  display: block;
+  transition: 0.4s all;
+}
+.cate-card-name a:hover{
+  color:#333;
+}
 
 /*Cate-center*/
 

@@ -1,5 +1,5 @@
 /*ALL*/
-* {
+*{
   padding: 0px;
   margin: 0px;
 }
@@ -24,6 +24,7 @@ a{
 }
 a:hover{
   color:#999;
+  text-decoration: none;
 }
 /*SPACING*/
 .mbt{
@@ -47,12 +48,54 @@ h2, h3, h4, h5 {
   font-weight:400;
 }
 .mdt{
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: 700;
 }
 .smt{
   font-size: 14px;
 }
+
+
+/*INPUT*/
+
+.inpu{
+  border-top:0px;
+  border-left:0px;
+  border-right:0px;
+  background:none;
+  font-size:14px;
+  padding:0px;
+  border-bottom: 1px solid #999;
+  outline:none;
+  width:100%;
+}
+label{
+  margin-bottom:0px;
+}
+
+/*BUTTON*/
+.btn{
+  width:100%;
+  font-size: 14px;
+  border:none;
+  border-radius: 0px;
+}
+.btn:hover{
+  background:none;
+  border:solid;
+}
+.btn-pri{
+  background-color: #000;
+  color: #fff;
+}
+.btnlg{
+  padding-top:10px;
+  padding-bottom:10px;
+}
+.btnsm{
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
 
 /*HEADER*/
 #logo {
@@ -116,18 +159,28 @@ nav li:nth-child(1){
 .card-footer {
   padding-top: 50px;
 }
-
+.card-footer{
+  padding-left:0px;
+  padding-right:0px;
+}
+.card-footer li{
+  font-size:14px;
+}
+.card-footer .col-2{
+  padding-left:0px;
+}
+.card-footer .col-4{
+  padding-right:0px;
+}
 .follow-us i {
   padding-right: 10px;
 }
 
 .subscribe input {
-  padding-top: 10px;
   background-color: #FAF8F6;
 }
-
-.subscribe button {
-  margin-top: 20px;
-  background-color: #000;
-  color: #fff;
+.subscribe-form button{
+  width:100%;
+  margin-top:16px;
 }
+
