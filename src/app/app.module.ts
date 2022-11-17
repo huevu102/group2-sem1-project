@@ -14,6 +14,8 @@ import {OrderDetailComponent} from "./pages/order-detail/order-detail.component"
 import {ProductDetailComponent} from "./pages/product-detail/product-detail.component";
 import {ShopAllComponent} from "./pages/shop-all/shop-all.component";
 import {ThankYouComponent} from "./pages/thank-you/thank-you.component";
+import {CategoryComponent} from "./pages/category/category.component";
+import {SubCategoryComponent} from "./pages/sub-category/sub-category.component";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -26,6 +28,8 @@ const appRoutes: Routes = [
   {path: 'product-detail', component: ProductDetailComponent},
   {path: 'shop-all', component: ShopAllComponent},
   {path: 'thank-you', component: ThankYouComponent},
+  {path: 'category', component: CategoryComponent},
+  {path: 'sub-category', component: SubCategoryComponent},
 ]
 
 @NgModule({
@@ -40,7 +44,9 @@ const appRoutes: Routes = [
     OrderDetailComponent,
     ProductDetailComponent,
     ShopAllComponent,
-    ThankYouComponent
+    ThankYouComponent,
+    CategoryComponent,
+    SubCategoryComponent
   ],
   imports: [
     BrowserModule,
