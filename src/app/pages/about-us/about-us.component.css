@@ -31,9 +31,9 @@
 /**/
 
 /*our-vision*/
-/*.our-vision {*/
-/*  margin-bottom: 100px;*/
-/*}*/
+.our-vision {
+  margin-bottom: 100px;
+}
 
 .our-vision-img {
   width: fit-content;

@@ -113,11 +113,19 @@ label{
   padding-top:5px;
   padding-bottom:5px;
 }
-.btn-sm{
-  width: 150px;
+.btn-more {
+  width: 20%;
   font-size: 14px;
   border:2px #000 solid;
   border-radius: 0px;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  margin: 10px 0 30px 0;
+}
+.btn-more:hover {
+  background-color: #fff;
+  color: #000;
 }
 
 /*BREADCRUMB*/
@@ -125,7 +133,6 @@ label{
   background-color: #FAF8F6;
   padding-top: 0;
 }
-
 .breadcrumb-item {
   padding: 0;
 }
@@ -167,7 +174,6 @@ nav li:nth-child(1){
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
 .dropdown-content a {
   float: none;
   padding: 12px 16px;
@@ -175,11 +181,9 @@ nav li:nth-child(1){
   display: block;
   text-align: left;
 }
-
 .dropdown-content a:hover {
   background-color: #fff;
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -223,32 +227,4 @@ nav li:nth-child(1){
 .email-user{
   margin-top:20px;
   margin-bottom:20px;
-}
-
-/*CATEGORY*/
-.category-side-bar .check-box {
-  margin-right: 10px;
-}
-
-.category-side-bar .btn {
-  width: 100%;
-  padding: 5px;
-}
-
-.category-side-bar .btn:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-.category-main a img:hover {
-  opacity: 0.5;
-}
-
-.category-main .card {
-  border: none;
-  background-color: #FAF8F6;
-}
-
-.category-main h6 {
-  font-size: medium;
 }
