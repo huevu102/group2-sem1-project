@@ -39,9 +39,8 @@ a:hover{
 .mtp{
   margin-top:25px;
 }
-p{
-  margin:0px !important;
-  padding:0px !important;
+.pbt-100 {
+  padding-bottom: 100px;
 }
 
 /*COLOR*/
@@ -65,7 +64,6 @@ h2, h3, h4, h5 {
 .smt{
   font-size: 14px;
 }
-
 
 /*INPUT*/
 .inpu{
@@ -201,6 +199,11 @@ nav li:nth-child(1){
 .subscribe-form button{
   width:100%;
   margin-top:16px;
+}
+.copy-right {
+  color: #666666;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
 
 /*PRODUCT-DETAIL-PAGE*/

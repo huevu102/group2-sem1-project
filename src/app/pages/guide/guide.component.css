@@ -8,6 +8,16 @@
   margin-bottom: 50px;
 }
 
+.insurance .btn {
+  width: 30%;
+  padding: 12.5px;
+}
+
+.insurance .btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
 .jewellery-care li {
   list-style-type: disc;
   margin-inline-start: 20px;
