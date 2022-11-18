@@ -14,3 +14,47 @@
 .review-name{
   margin-bottom:40px;
 }
+/*Similar-product*/
+
+
+
+
+/*Compare*/
+.simi-prod{
+  margin-top:100px;
+  margin-bottom:100px;
+}
+.card-simi{
+  position:relative;
+}
+.compare{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background:#e7e7e7;
+  text-align:center;
+  position:absolute;
+  bottom:0px;
+  width:100%;
+  display:none;
+}
+.card-simi:hover > .compare{
+  display:block;
+  transition: 0.4s all;
+}
+.card-simi .modal .line{
+  margin-top:10px;
+  margin-bottom:10px;
+}
+.itm{
+  margin-top:40px;
+  margin-bottom:10px;
+}
+.simi-left{
+  padding-left:0px;
+}
+.simi-right{
+  padding-right:0px;
+}
+
+
+
