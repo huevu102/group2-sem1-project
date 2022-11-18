@@ -1,3 +1,4 @@
+/*insurance*/
 .insurance {
   background-color: #e7e7e7;
   padding: 50px 0 100px 0;
@@ -17,8 +18,11 @@
   background-color: #000;
   color: #fff;
 }
+/**/
 
+/*jewellery-care*/
 .jewellery-care li {
   list-style-type: disc;
   margin-inline-start: 20px;
 }
+/**/

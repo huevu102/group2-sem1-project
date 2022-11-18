@@ -114,6 +114,15 @@ label{
   padding-bottom:5px;
 }
 
+/*BREADCRUMB*/
+.breadcrumb {
+  background-color: #FAF8F6;
+  padding-top: 0;
+}
+
+.breadcrumb-item {
+  padding: 0;
+}
 
 /*HEADER*/
 #logo {
@@ -210,4 +219,19 @@ nav li:nth-child(1){
 .email-user{
   margin-top:20px;
   margin-bottom:20px;
+}
+
+/*CATEGORY-SIDE-BAR*/
+.category-side-bar .check-box {
+  margin-right: 10px;
+}
+
+.category-side-bar .btn {
+  width: 50%;
+  padding: 5px;
+}
+
+.category-side-bar .btn:hover {
+  background-color: #000;
+  color: #fff;
 }
