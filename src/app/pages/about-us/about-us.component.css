@@ -4,6 +4,21 @@
 .about-us{
   margin-top: 100px;
 }
+
+/*introduction*/
+.intro-img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-img-text {
+  position: absolute;
+  color: #FAF8F6;
+  margin: auto;
+}
+
 /*the-brand*/
 .the-brand {
   position: relative;
@@ -16,9 +31,9 @@
 /**/
 
 /*our-vision*/
-.our-vision {
-  margin-bottom: 100px;
-}
+/*.our-vision {*/
+/*  margin-bottom: 100px;*/
+/*}*/
 
 .our-vision-img {
   width: fit-content;
