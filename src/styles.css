@@ -113,6 +113,12 @@ label{
   padding-top:5px;
   padding-bottom:5px;
 }
+.btn-sm{
+  width: 150px;
+  font-size: 14px;
+  border:2px #000 solid;
+  border-radius: 0px;
+}
 
 /*BREADCRUMB*/
 .breadcrumb {
@@ -179,8 +185,6 @@ nav li:nth-child(1){
 }
 /*dropdown-menu-end*/
 
-
-
 /*FOOTER*/
 .card-footer {
   padding-top: 50px;
@@ -221,17 +225,30 @@ nav li:nth-child(1){
   margin-bottom:20px;
 }
 
-/*CATEGORY-SIDE-BAR*/
+/*CATEGORY*/
 .category-side-bar .check-box {
   margin-right: 10px;
 }
 
 .category-side-bar .btn {
-  width: 50%;
+  width: 100%;
   padding: 5px;
 }
 
 .category-side-bar .btn:hover {
   background-color: #000;
   color: #fff;
+}
+
+.category-main a img:hover {
+  opacity: 0.5;
+}
+
+.category-main .card {
+  border: none;
+  background-color: #FAF8F6;
+}
+
+.category-main h6 {
+  font-size: medium;
 }
