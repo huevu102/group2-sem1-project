@@ -43,10 +43,13 @@
         <div class="line"></div>
         <p class="mdt">Quantity</p>
         <div class="line"></div>
-        <p class="mdt">Find your size</p>
+        <div class="d-flex">
+          <p class="mdt me-auto">Find your size</p>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
         <div class="bag">
           <button class="add-bag btn btnlg btn-pri" type="submit" data-bs-toggle="offcanvas" data-bs-target="#addbag">Add to bag</button>
-          <!--OFFCANVSS-->
+          <!--OFFCANVSS ADD BAG-->
           <div class="offcanvas offcanvas-end" id="addbag">
             <div class="offcanvas-header">
               <h5 class="offcanvas-title mt-3" id="addbag">Shopping Bag</h5>
@@ -92,7 +95,7 @@
         </div>
         <div class="ask-advisor">
           <button class="btn btn-sec btnlg" type="button" data-bs-toggle="offcanvas" data-bs-target="#askadvisor">Ask A Client Advisor</button>
-          <!--OFFCANVSS-->
+          <!--OFFCANVSS ASK ADVISOR-->
           <div class="offcanvas offcanvas-end" id="askadvisor">
             <div class="offcanvas-header">
               <h5 class="offcanvas-title mt-3" id="askadvisor">Aguri At Your Service</h5>
@@ -120,6 +123,19 @@
                 </a>
                 <i class="fa-solid fa-chevron-right"></i>
               </div>
+            </div>
+          </div>
+        </div>
+        <!--DESCRIPTIONS & DETAIL-->
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <a class="accordion-header" id="flush-headingOne">
+              <p class="mdt accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">
+                Descriptions & Details
+              </p>
+            </a>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
             </div>
           </div>
         </div>
