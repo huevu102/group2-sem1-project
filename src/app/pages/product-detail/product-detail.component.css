@@ -3,6 +3,26 @@
   margin-bottom:20px;
   margin-top:20px;
 }
+.ask-advisor{
+  margin-bottom:20px;
+}
+/*Breadcrumb*/
+.breadcrumb{
+  padding: 16px 0px;
+}
+.breadcrumb .breadcrumb-item a{
+  font-size:14px;
+}
+/*FIND SIZE*/
+.mx12{
+  padding-left:25px;
+  padding-right:25px;
+}
+.size-title th{
+  font-size:14px;
+  font-weight:600;
+}
+
 
 /*Ask a client advisor*/
 .modal-dialog{
@@ -15,26 +35,31 @@
   margin-bottom:40px;
 }
 /*OFFCANVAS*/
-
-
+.offcanvas{
+  --bs-offcanvas-width: 470px;
+}
 /*Description & Detail*/
 .accordion{
   --bs-accordion-bg: none;
   --bs-accordion-btn-padding-x: 0px;
   --bs-accordion-btn-padding-y: 0px;
 }
-
-
-
+.accordion-body{
+  padding:0px;
+}
+.accordion-button:not(.collapsed){
+  color:#000;
+}
+.accordion{
+  --bs-accordion-active-bg: none;
+  --bs-accordion-border-color: none;
+}
 /*Similar-product*/
-
-
-
 
 /*Compare*/
 .simi-prod{
-  margin-top:100px;
-  margin-bottom:100px;
+  margin-top:120px;
+  margin-bottom:120px;
 }
 .card-prd{
   position:relative;
@@ -76,9 +101,10 @@
 .rate-start{
   margin-bottom:20px;
 }
-.review-ava{
-  margin-right:10
+.review-box{
+  margin-top:40px;
 }
+
 
 
 

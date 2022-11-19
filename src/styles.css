@@ -40,6 +40,9 @@ a:hover, i:hover{
 .mtp{
   margin-top:25px;
 }
+.pt-60 {
+  padding-top: 60px;
+}
 .pbt-100 {
   padding-bottom: 100px;
 }
