@@ -26,10 +26,14 @@ const appRoutes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: 'order-detail', component: OrderDetailComponent},
   {path: 'product-detail', component: ProductDetailComponent},
-  {path: 'shop-all', component: ShopAllComponent},
+  {path: 'shop-all', children:[
+      {path: '', component: ShopAllComponent},
+      {path: 'rings', children:[
+          {path: '', component: RingsComponent},
+          {path: 'sub-category', component: SubCategoryComponent},
+      ]}
+  ]},
   {path: 'thank-you', component: ThankYouComponent},
-  {path: 'rings', component: RingsComponent},
-  {path: 'sub-category', component: SubCategoryComponent},
 ]
 
 @NgModule({
