@@ -17,6 +17,13 @@
 /*OFFCANVAS*/
 
 
+/*Description & Detail*/
+.accordion{
+  --bs-accordion-bg: none;
+  --bs-accordion-btn-padding-x: 0px;
+  --bs-accordion-btn-padding-y: 0px;
+}
+
 
 
 /*Similar-product*/
