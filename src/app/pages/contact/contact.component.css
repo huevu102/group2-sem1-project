@@ -2,12 +2,7 @@
   margin-top:100px;
   margin-bottom:120px;
 }
-.firstname{
-  padding-left:0px;
-}
-.lastname{
-  padding-right:0px;
-}
+
 .mess-user{
   margin-bottom:60px;
   margin-top:20px;
@@ -15,17 +10,9 @@
 .contact-text p{
   margin-top:10px;
 }
-.aguri-info .col-5{
-  padding:0px;
-}
 .aguri-info{
   margin-bottom:40px;
 }
-.showroom{
-  margin-bottom:20px;
-}
-.aguri-info .smt{
-  margin:0px;
-  margin-bottom:5px;
-}
+
+
 

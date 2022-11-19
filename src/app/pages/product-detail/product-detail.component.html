@@ -26,7 +26,17 @@
         </a>
       </div>
       <div class="col-4">
-        <p class="mdt">AGURI'S ETERNITY MAGIC</p>
+        <!--Breadcrumb-->
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Shop all</a></li>
+            <li class="breadcrumb-item">Rings</li>
+          </ol>
+        </nav>
+        <a href="#">
+          <p class="mdt">AGURI'S ETERNITY MAGIC</p>
+        </a>
         <h5>Diamond and Gold Spark Ring</h5>
         <h6>$6,700</h6>
         <p class="mdt">Complimentary Shipping & Returns</p>
@@ -35,18 +45,81 @@
         <div class="line"></div>
         <p class="mdt">Find your size</p>
         <div class="bag">
-          <button class="add-bag btn btnlg btn-pri" type="submit">Add to bag</button>
+          <button class="add-bag btn btnlg btn-pri" type="submit" data-bs-toggle="offcanvas" data-bs-target="#addbag">Add to bag</button>
+          <!--OFFCANVSS-->
+          <div class="offcanvas offcanvas-end" id="addbag">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title mt-3" id="addbag">Shopping Bag</h5>
+            </div>
+            <div class="offcanvas-body">
+              <div class="row product-add1 mb-3">
+                <div class="col-4 ps-0">
+                  <a href="#">
+                    <img src="assets/img/product-detail/add-product1.png">
+                  </a>
+                </div>
+                <div class="col-6">
+                  <p>Amel Earring</p>
+                </div>
+                <div class="col-2 pe-0">
+                  <i class="fa-solid fa-xmark"></i>
+                  <p>$5,000</p>
+                </div>
+              </div>
+              <div class="line mb-3"></div>
+              <div class="row product-add2 mb-3">
+                <div class="col-4 ps-0">
+                  <a href="#">
+                    <img src="assets/img/product-detail/add-product2.png">
+                  </a>
+                </div>
+                <div class="col-6">
+                  <p>Diamons And Gold Spark Ring</p>
+                </div>
+                <div class="col-2 pe-0">
+                  <i class="fa-solid fa-xmark"></i>
+                  <p>$6,700</p>
+                </div>
+              </div>
+              <div class="line mb-3"></div>
+              <div class="d-flex mb-3">
+                <p class="me-auto">Product Total</p>
+                <p>$11,700</p>
+              </div>
+              <button class="btn btn-pri btnlg mt-3" type="button" routerLink="/order-detail">Continue</button>
+            </div>
+          </div>
         </div>
         <div class="ask-advisor">
-          <button class="btn btn-sec btnlg" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
-
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+          <button class="btn btn-sec btnlg" type="button" data-bs-toggle="offcanvas" data-bs-target="#askadvisor">Ask A Client Advisor</button>
+          <!--OFFCANVSS-->
+          <div class="offcanvas offcanvas-end" id="askadvisor">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+              <h5 class="offcanvas-title mt-3" id="askadvisor">Aguri At Your Service</h5>
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-              ...
+              <p>From finding the perfect Tiffany gift to jewelry styling advice, our Client Advisors are always here to help.</p>
+              <div class="d-flex">
+                <a href="#">
+                  <p classs="mdt">Chat Online</p>
+                </a>
+                <i class="fa-solid fa-chevron-right"></i>
+              </div>
+              <div class="line"></div>
+              <div class="d-flex">
+                <a href="#">
+                  <p classs="mdt">Call</p>
+                </a>
+                <i class="fa-solid fa-chevron-right"></i>
+              </div>
+              <div class="line"></div>
+              <div class="d-flex">
+                <a class="#">
+                  <p classs="mdt">Book A Appointment</p>
+                </a>
+                <i class="fa-solid fa-chevron-right"></i>
+              </div>
             </div>
           </div>
         </div>
