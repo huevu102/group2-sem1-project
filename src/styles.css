@@ -151,6 +151,7 @@ label{
   padding-top:20px;
   padding-bottom:20px;
 }
+/*dropdown-search-button*/
 .search-button .dropdown-content {
   margin: 10px 0;
   padding: 20px;
@@ -159,6 +160,7 @@ label{
 .search-button .dropdown-content input {
   padding: 5px 10px;
 }
+/**/
 
 /*NAV*/
 .nav-link{
