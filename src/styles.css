@@ -247,7 +247,7 @@ nav li:nth-child(1){
 /*OFFCANVAS*/
 .offcanvas{
   --bs-offcanvas-width: 470px;
-  --bs-offcanvas-bg:#FAF8F6;
+
 }
 /*ACCORDION*/
 .accordion{
