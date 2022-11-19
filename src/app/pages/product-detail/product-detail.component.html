@@ -38,26 +38,15 @@
           <button class="add-bag btn btnlg btn-pri" type="submit">Add to bag</button>
         </div>
         <div class="ask-advisor">
-          <button class="advisor btn btnlg btn-sec" data-bs-toggle="modal" type="button" data-bs-target="#review">Ask a client advisor</button>
-          <!-- Modal -->
-          <div class="modal fade" id="review">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                  <h5 class="modal-title" id="exampleModalLabel">Write A Review</h5>
-                  <p class="mdt">Select your rating</p>
-                  *****
-                  <label>Message (*)</label>
-                  <textarea class="inpu" rows="4" required></textarea>
-                  <div class="email-user">
-                    <label>Email address</label>
-                    <input class="inpu" type="email" required><br>
-                  </div>
-                  <div class="review-name">
-                    <label>Your name</label>
-                    <input class="inpu" type="text">
-                  </div>
-                  <button type="button" class="btn btn-pri" data-bs-dismiss="modal">Send</button>
-              </div>
+          <button class="btn btn-sec btnlg" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
+
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              ...
             </div>
           </div>
         </div>
@@ -72,11 +61,11 @@
         <p class="smt">AGURI designs reinvent our iconic AGURI collection with bold profiles and powerful details.</p>
       </div>
       <div class="col-3">
-        <div class="card-simi">
+        <div class="card-prd">
           <a href="#">
             <img src="./assets/img/product-detail/simi1.png">
           </a>
-          <div class="compare smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
             Compare
           </div>
           <!-- Modal -->
@@ -136,11 +125,11 @@
         </div>
       </div>
       <div class="col-3">
-        <div class="card-simi">
+        <div class="card-prd">
           <a href="#">
             <img src="./assets/img/product-detail/simi2.png">
           </a>
-          <div class="compare smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
             Compare
           </div>
           <!-- Modal -->
@@ -200,11 +189,11 @@
         </div>
       </div>
       <div class="col-3">
-        <div class="card-simi">
+        <div class="card-prd">
           <a href="#">
             <img src="./assets/img/product-detail/simi3.png">
           </a>
-          <div class="compare smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
             Compare
           </div>
           <!-- Modal -->
@@ -265,9 +254,355 @@
       </div>
     </div>
   </div>
-  <!--MAY YOU ALSO LIKE-->
-  <div class="also-like">
+</div>
+<!--MAY YOU ALSO LIKE-->
+<div class="also-like">
+  <h5 class="text-center">You May Also Like</h5>
+  <div class="container">
+    <div id="carouselalsolike" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-3">
+              <div class="card-prd">
+                <div class="img">
+                  <a href="#">
+                    <img src="./assets/img/product-detail/simi1.png">
+                  </a>
+                </div>
+                <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
+                  Compare
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="compare">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <h5 class="modal-title" id="exampleModalLabel">Compare Products</h5>
+                      <div class="row">
+                        <div class="col-6 simi-left">
+                          <div class="itm">
+                            <a href="#">
+                              <img src="./assets/img/product-detail/compare1.png">
+                            </a>
+                            <p class="mdt">Diamond Spark Ring</p>
+                            <p class="mdt">$6,700</p>
+                          </div>
+                          <div class="jewel">
+                            <p class="mdt">Jewellery</p>
+                            <p class="smt">NaturalJewelry</p>
+                            <p class="smt">Round brilliant diamonds</p>
+                            <p class="smt">4mm width</p>
+                            <p class="smt">Carat total weight .48</p>
+                          </div>
+                          <div class="line"></div>
+                          <div class="mater">
+                            <p class="mdt">Material</p>
+                            <p class="smt">16k White gold</p>
+                          </div>
+                          <button type="button" class="btn btn-pri btnsm" data-bs-dismiss="modal">Quick add</button>
+                        </div>
+                        <div class="col-6 simi-right">
+                          <div class="itm">
+                            <a href="#">
+                              <img src="./assets/img/product-detail/compare2.png">
+                            </a>
+                            <p class="mdt">Enternity Diamond Ring</p>
+                            <p class="mdt">$7,000</p>
+                          </div>
+                          <div class="jewel">
+                            <p class="mdt">Jewellery</p>
+                            <p class="smt">Natural & Lab-grown Jewelry</p>
+                            <p class="smt">Pear brilliant diamonds</p>
+                            <p class="smt">2.5mm width x2</p>
+                            <p class="smt">Carat total weight .50</p>
+                          </div>
+                          <div class="line"></div>
+                          <div class="mater">
+                            <p class="mdt">Material</p>
+                            <p class="smt">18k Rose gold</p>
+                          </div>
+                          <button type="button" class="btn btn-pri btnsm" data-bs-dismiss="modal">Quick add</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card-prd">
+                <div class="img">
+                  <a href="#">
+                    <img src="./assets/img/product-detail/simi1.png">
+                  </a>
+                </div>
+                <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
+                  Add to bag
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="compare">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <h5 class="modal-title" id="exampleModalLabel">Compare Products</h5>
+                      <div class="row">
+                        <div class="col-6 simi-left">
+                          <div class="itm">
+                            <a href="#">
+                              <img src="./assets/img/product-detail/compare1.png">
+                            </a>
+                            <p class="mdt">Diamond Spark Ring</p>
+                            <p class="mdt">$6,700</p>
+                          </div>
+                          <div class="jewel">
+                            <p class="mdt">Jewellery</p>
+                            <p class="smt">NaturalJewelry</p>
+                            <p class="smt">Round brilliant diamonds</p>
+                            <p class="smt">4mm width</p>
+                            <p class="smt">Carat total weight .48</p>
+                          </div>
+                          <div class="line"></div>
+                          <div class="mater">
+                            <p class="mdt">Material</p>
+                            <p class="smt">16k White gold</p>
+                          </div>
+                          <button type="button" class="btn btn-pri btnsm" data-bs-dismiss="modal">Quick add</button>
+                        </div>
+                        <div class="col-6 simi-right">
+                          <div class="itm">
+                            <a href="#">
+                              <img src="./assets/img/product-detail/compare2.png">
+                            </a>
+                            <p class="mdt">Enternity Diamond Ring</p>
+                            <p class="mdt">$7,000</p>
+                          </div>
+                          <div class="jewel">
+                            <p class="mdt">Jewellery</p>
+                            <p class="smt">Natural & Lab-grown Jewelry</p>
+                            <p class="smt">Pear brilliant diamonds</p>
+                            <p class="smt">2.5mm width x2</p>
+                            <p class="smt">Carat total weight .50</p>
+                          </div>
+                          <div class="line"></div>
+                          <div class="mater">
+                            <p class="mdt">Material</p>
+                            <p class="smt">18k Rose gold</p>
+                          </div>
+                          <button type="button" class="btn btn-pri btnsm" data-bs-dismiss="modal">Quick add</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card-prd">
+                <div class="img">
+                  <a href="#">
+                    <img src="./assets/img/product-detail/simi1.png">
+                  </a>
+                </div>
+                <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
+                  Add to bag
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="compare">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <h5 class="modal-title" id="exampleModalLabel">Compare Products</h5>
+                      <div class="row">
+                        <div class="col-6 simi-left">
+                          <div class="itm">
+                            <a href="#">
+                              <img src="./assets/img/product-detail/compare1.png">
+                            </a>
+                            <p class="mdt">Diamond Spark Ring</p>
+                            <p class="mdt">$6,700</p>
+                          </div>
+                          <div class="jewel">
+                            <p class="mdt">Jewellery</p>
+                            <p class="smt">NaturalJewelry</p>
+                            <p class="smt">Round brilliant diamonds</p>
+                            <p class="smt">4mm width</p>
+                            <p class="smt">Carat total weight .48</p>
+                          </div>
+                          <div class="line"></div>
+                          <div class="mater">
+                            <p class="mdt">Material</p>
+                            <p class="smt">16k White gold</p>
+                          </div>
+                          <button type="button" class="btn btn-pri btnsm" data-bs-dismiss="modal">Quick add</button>
+                        </div>
+                        <div class="col-6 simi-right">
+                          <div class="itm">
+                            <a href="#">
+                              <img src="./assets/img/product-detail/compare2.png">
+                            </a>
+                            <p class="mdt">Enternity Diamond Ring</p>
+                            <p class="mdt">$7,000</p>
+                          </div>
+                          <div class="jewel">
+                            <p class="mdt">Jewellery</p>
+                            <p class="smt">Natural & Lab-grown Jewelry</p>
+                            <p class="smt">Pear brilliant diamonds</p>
+                            <p class="smt">2.5mm width x2</p>
+                            <p class="smt">Carat total weight .50</p>
+                          </div>
+                          <div class="line"></div>
+                          <div class="mater">
+                            <p class="mdt">Material</p>
+                            <p class="smt">18k Rose gold</p>
+                          </div>
+                          <button type="button" class="btn btn-pri btnsm" data-bs-dismiss="modal">Quick add</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="card-prd">
+                <div class="img">
+                  <a href="#">
+                    <img src="./assets/img/product-detail/simi1.png">
+                  </a>
+                </div>
+                <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
+                  Add to bag
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="compare">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <h5 class="modal-title" id="exampleModalLabel">Compare Products</h5>
+                      <div class="row">
+                        <div class="col-6 simi-left">
+                          <div class="itm">
+                            <a href="#">
+                              <img src="./assets/img/product-detail/compare1.png">
+                            </a>
+                            <p class="mdt">Diamond Spark Ring</p>
+                            <p class="mdt">$6,700</p>
+                          </div>
+                          <div class="jewel">
+                            <p class="mdt">Jewellery</p>
+                            <p class="smt">NaturalJewelry</p>
+                            <p class="smt">Round brilliant diamonds</p>
+                            <p class="smt">4mm width</p>
+                            <p class="smt">Carat total weight .48</p>
+                          </div>
+                          <div class="line"></div>
+                          <div class="mater">
+                            <p class="mdt">Material</p>
+                            <p class="smt">16k White gold</p>
+                          </div>
+                          <button type="button" class="btn btn-pri btnsm" data-bs-dismiss="modal">Quick add</button>
+                        </div>
+                        <div class="col-6 simi-right">
+                          <div class="itm">
+                            <a href="#">
+                              <img src="./assets/img/product-detail/compare2.png">
+                            </a>
+                            <p class="mdt">Enternity Diamond Ring</p>
+                            <p class="mdt">$7,000</p>
+                          </div>
+                          <div class="jewel">
+                            <p class="mdt">Jewellery</p>
+                            <p class="smt">Natural & Lab-grown Jewelry</p>
+                            <p class="smt">Pear brilliant diamonds</p>
+                            <p class="smt">2.5mm width x2</p>
+                            <p class="smt">Carat total weight .50</p>
+                          </div>
+                          <div class="line"></div>
+                          <div class="mater">
+                            <p class="mdt">Material</p>
+                            <p class="smt">18k Rose gold</p>
+                          </div>
+                          <button type="button" class="btn btn-pri btnsm" data-bs-dismiss="modal">Quick add</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
 
+        </div>
+      </div>
+    </div>
   </div>
-
+</div>
+<!--REVIEW-->
+<div class="review">
+  <div class="d-flex review-start">
+      <h3>4,9</h3>
+      <div class="d-flex my-auto">
+        <i class="fa-solid fa-star fa-xl"></i>
+        <i class="fa-solid fa-star fa-xl"></i>
+        <i class="fa-solid fa-star fa-xl"></i>
+        <i class="fa-solid fa-star fa-xl"></i>
+        <i class="fa-solid fa-star fa-xl"></i>
+      </div>
+      <p class="mdt my-auto">16 Reviews</p>
+    </div>
+  <div class="row">
+    <div class="col-2">
+      <h5>Reviews</h5>
+    </div>
+    <div class="col-8"></div>
+    <div class="col-2">
+      <button class="advisor btn btnlg btn-pri" data-bs-toggle="modal" type="button" data-bs-target="#review">Write a review</button>
+      <!-- Modal -->
+      <div class="modal fade" id="review">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <h5 class="modal-title">Write A Review</h5>
+            <p class="mdt">Select your rating</p>
+            <div class="d-flex">
+              <i class="fa-solid fa-star fa"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <label>Message (*)</label>
+            <textarea class="inpu" rows="4" required></textarea>
+            <div class="email-user">
+              <label>Email address</label>
+              <input class="inpu" type="email" required><br>
+            </div>
+            <div class="review-name">
+              <label>Your name</label>
+              <input class="inpu" type="text">
+            </div>
+            <button type="button" class="btn btn-pri" data-bs-dismiss="modal">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="line"></div>
+  <h6>16 Reviews</h6>
+  <div class="review-box">
+    <div class="d-flex review-inner">
+      <div class="review-ava">
+        <img src="./assets/img/product-detail/user1.png">
+      </div>
+      <div class="review-content">
+        <p class="mb10 user-name mdt">Nthuyduong15</p>
+        <div class="d-flex rate-start">
+          <i class="fa-solid fa-star fa"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p class="user-cmt">Baking time will vary if you change the pan size. Every oven is different so I can’t say for certain what you’ll need to adjust it to.</p>
+      </div>
+    </div>
+  </div>
 </div>

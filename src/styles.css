@@ -42,7 +42,9 @@ a:hover{
 .pbt-100 {
   padding-bottom: 100px;
 }
-
+.mb10{
+  margin-bottom:10px;
+}
 /*COLOR*/
 .sub-color{
   color:#e7e7e7;

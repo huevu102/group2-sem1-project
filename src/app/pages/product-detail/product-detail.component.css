@@ -24,10 +24,10 @@
   margin-top:100px;
   margin-bottom:100px;
 }
-.card-simi{
+.card-prd{
   position:relative;
 }
-.compare{
+.card-prd-bt{
   padding-top: 10px;
   padding-bottom: 10px;
   background:#e7e7e7;
@@ -37,11 +37,11 @@
   width:100%;
   display:none;
 }
-.card-simi:hover > .compare{
+.card-prd:hover > .card-prd-bt{
   display:block;
   transition: 0.4s all;
 }
-.card-simi .modal .line{
+.card-prd .modal .line{
   margin-top:10px;
   margin-bottom:10px;
 }
@@ -54,6 +54,17 @@
 }
 .simi-right{
   padding-right:0px;
+}
+/*Review*/
+.review-start{
+  justify-content: center;
+  margin-top:100px;
+}
+.rate-start{
+  margin-bottom:20px;
+}
+.review-ava{
+  margin-right:10
 }
 
 
