@@ -19,7 +19,14 @@
         <ul class="d-flex justify-content-end">
           <li class="p-2">Sign in</li>
           <li class="p-2"><i class="fa fa-shopping-cart fa-lg"></i></li>
-          <li class="p-2"><i class="fa fa-search fa-lg"></i></li>
+          <!--search-button-start-->
+          <li class="p-2 search-button dropdown">
+            <i class="fa fa-search fa-lg"></i>
+            <div class="dropdown-content">
+              <input type="text" placeholder="Search AGURI">
+            </div>
+          </li>
+          <!--search-button-end-->
         </ul>
       </div>
     </div>
@@ -28,17 +35,43 @@
 
 <!--NAVBAR-->
 <nav>
-  <div class="container border-0">
+  <div class="container border-0 pbt-100">
     <ul class="nav justify-content-center">
       <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
       <!--dropdown-menu-start-->
       <li class="nav-item dropdown">
         <a class="nav-link dropbtn" routerLink="/shop-all">Shop All</a>
-        <div class="dropdown-content">
-          <a routerLink="/rings">Rings</a>
-          <a routerLink="/earrings">Earrings</a>
-          <a routerLink="/bracelets">Bracelets</a>
-          <a routerLink="/necklaces">Necklaces</a>
+        <div class="dropdown-content mtp">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"><a routerLink="/rings">Rings</a></th>
+                <th scope="col"><a routerLink="/earrings">Earrings</a></th>
+                <th scope="col"><a routerLink="/bracelets">Bracelets</a></th>
+                <th scope="col"><a routerLink="/necklaces">Necklaces</a></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a routerLink="#">Eternity</a></td>
+                <td><a routerLink="#">Stud</a></td>
+                <td><a routerLink="#">Chain</a></td>
+                <td><a routerLink="#">Chain</a></td>
+              </tr>
+              <tr>
+                <td><a routerLink="#">Cocktail</a></td>
+                <td><a routerLink="#">Drop & Dangle</a></td>
+                <td><a routerLink="#">Bangle</a></td>
+                <td><a routerLink="#">Everyday</a></td>
+              </tr>
+              <tr>
+                <td><a routerLink="#">Wedding</a></td>
+                <td><a routerLink="#">Hoop</a></td>
+                <td><a routerLink="#">Tennis</a></td>
+                <td><a routerLink="#">Layering</a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </li>
       <!--dropdown-menu-start-->
