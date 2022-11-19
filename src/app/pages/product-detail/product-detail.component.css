@@ -6,6 +6,7 @@
 .ask-advisor{
   margin-bottom:20px;
 }
+/*SELECT FORM*/
 /*Breadcrumb*/
 .breadcrumb{
   padding: 16px 0px;
@@ -22,8 +23,9 @@
   font-size:14px;
   font-weight:600;
 }
-
-
+.ring-size td{
+  padding:10px 0px;
+}
 /*Ask a client advisor*/
 .modal-dialog{
   max-width:600px;
@@ -34,26 +36,8 @@
 .review-name{
   margin-bottom:40px;
 }
-/*OFFCANVAS*/
-.offcanvas{
-  --bs-offcanvas-width: 470px;
-}
 /*Description & Detail*/
-.accordion{
-  --bs-accordion-bg: none;
-  --bs-accordion-btn-padding-x: 0px;
-  --bs-accordion-btn-padding-y: 0px;
-}
-.accordion-body{
-  padding:0px;
-}
-.accordion-button:not(.collapsed){
-  color:#000;
-}
-.accordion{
-  --bs-accordion-active-bg: none;
-  --bs-accordion-border-color: none;
-}
+
 /*Similar-product*/
 
 /*Compare*/
@@ -92,7 +76,6 @@
 .simi-right{
   padding-right:0px;
 }
-
 /*Review*/
 .review-start{
   justify-content: center;

@@ -30,7 +30,7 @@ a:hover, i:hover{
 .line{
   background-color:#999;
   width:100%;
-  height:1px;
+  height:0.5px;
 }
 
 /*SPACING*/
@@ -239,9 +239,29 @@ nav li:nth-child(1){
   padding-top: 50px;
   padding-bottom: 100px;
 }
-
 /*PRODUCT-DETAIL-PAGE*/
 .email-user{
   margin-top:20px;
   margin-bottom:20px;
+}
+/*OFFCANVAS*/
+.offcanvas{
+  --bs-offcanvas-width: 470px;
+  --bs-offcanvas-bg:#FAF8F6;
+}
+/*ACCORDION*/
+.accordion{
+  --bs-accordion-bg: none;
+  --bs-accordion-btn-padding-x: 0px;
+  --bs-accordion-btn-padding-y: 0px;
+}
+.accordion-body{
+  padding:0px;
+}
+.accordion-button:not(.collapsed){
+  color:#000;
+}
+.accordion{
+  --bs-accordion-active-bg: none;
+  --bs-accordion-border-color: none;
 }
