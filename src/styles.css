@@ -1,7 +1,7 @@
 /*ALL*/
 @font-face{
-  src:url("//assets/libs/webfonts/Merchant-Regular.ttf");
-  font-family:Merchant;
+  src:url("//assets/libs/webfonts/font-awesome/Merchant-Regular.ttf");
+  font-family:"Merchant";
 }
 *{
   padding: 0px;
