@@ -1,7 +1,17 @@
 /*CATEGORY*/
-.category-top a img:hover {
+.sub-cate-box:hover > .sub-cate-img{
   transition: 0.5s;
-  transform: scale(110%);
+  transform: scale(108%);
+  filter:brightness(90%);
+}
+.sub-cate-box{
+  position:relative;
+  overflow:hidden;
+}
+.sub-name{
+  position:absolute;
+  bottom:10px;
+  left:10px;
 }
 
 .check-box {
