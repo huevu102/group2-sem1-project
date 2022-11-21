@@ -3,7 +3,7 @@
   src:url("//assets/libs/font-awesome/webfonts/merchant/OpenType-PS/Merchant-Regular.otf"),
   src:url("//assets/libs/font-awesome/webfonts/merchant/OpenType-TT/Merchant-Regular.ttf")
 ;
-  font-family:"Merchant";
+  font-family:'Merchant';
 }
 *{
   padding: 0px;
