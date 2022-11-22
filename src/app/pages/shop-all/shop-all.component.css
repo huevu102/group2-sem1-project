@@ -22,10 +22,15 @@
 .cate-card-name a:hover{
   color:#333;
 }
+.cate-name-all{
+  background-color: #e7e7e7;
+  padding-top:60px;
+  padding-bottom:60px;
+}
 /*Cate-center*/
 /*Cate-right*/
 .cate-right h3{
-  padding: 62px 0px;
+  padding-top:80px;
 }
 /*ring*/
 .cate-all{
@@ -34,6 +39,11 @@
 }
 .cate-all h4{
   margin-bottom:60px;
+}
+.click-to-all{
+  background-color: #e7e7e7;
+  padding-top:103px;
+  padding-bottom:103px;
 }
 /*Earring*/
 
