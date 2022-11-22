@@ -41,13 +41,16 @@ a:hover, i:hover{
 .mtp{
   margin-top:25px;
 }
-.pt-60 {
-  padding-top: 60px;
+.mt-40{
+  margin-bottom:40px;
 }
-.pbt-100 {
-  padding-bottom: 100px;
+.mt-60 {
+  margin-top: 60px;
 }
-.mb10{
+.mbt-120 {
+  margin-bottom: 120px;
+}
+.mb-10{
   margin-bottom:10px;
 }
 /*COLOR*/
