@@ -1,3 +1,14 @@
 .address-user{
   margin-top:20px;
 }
+.billing-summary{
+  padding: 20px 40px;
+  background-color:#fff
+}
+.last-step{
+  margin-bottom:60px;
+}
+.number-on-card{
+  margin-top:20px;
+  margin-bottom:20px;
+}

@@ -62,7 +62,7 @@ h1{
 }
 h2, h3, h4, h5 {
   font-family: 'Merchant', sans-serif;
-  font-weight:400;
+  font-weight: 400;
 }
 .mdt{
   font-size:16px;
@@ -85,6 +85,7 @@ h2, h3, h4, h5 {
   width:100%;
 }
 label{
+  font-size:14px;
   margin-bottom:0px;
 }
 
@@ -207,7 +208,10 @@ nav li:nth-child(1){
   padding: 0;
 }
 /*dropdown-menu-end*/
-
+/*check-box*/
+.check-box {
+  margin-right: 10px;
+}
 /*FOOTER*/
 .card-footer {
   padding-top: 50px;

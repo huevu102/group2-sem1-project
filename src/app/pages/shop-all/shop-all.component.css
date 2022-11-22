@@ -36,3 +36,15 @@
   margin-bottom:60px;
 }
 /*Earring*/
+
+
+/*To show all*/
+.to-show-all{
+  position:absolute;
+}
+.all-name{
+  position:absolute;
+  top:50%;
+  width:100%;
+
+}
