@@ -1,22 +1,25 @@
-import {Component} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
-import {IList} from "../../interfaces/product.interface";
+import {Component, OnInit} from "@angular/core";
+import {ProductService} from "../../interfaces/product.service";
+import {Product} from "../../interfaces/product.interface";
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-category',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']
 })
 
-export class CategoryComponent {
-  data: IList[] = [];
+export class CategoryComponent implements OnInit{
+  data: Product[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private productService: ProductService) { }
 
-  ngOnInit() {
-    const url = 'http://localhost:5000/get-product';
-    this.http.get<{list:IList[]}>(url).subscribe(data => {
-      this.data = data.list
-    });
+  ngOnInit(): void {
+    this.getAll();
+  }
+
+  getAll() {
+    this.productService.getAll().subscribe((res:any) => {
+      this.data = res;
+    })
   }
 }
