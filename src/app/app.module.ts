@@ -50,7 +50,7 @@ const appRoutes: Routes = [
     ShopAllComponent,
     ThankYouComponent,
     CategoryComponent,
-    SubCategoryComponent
+    SubCategoryComponent,
   ],
   imports: [
     BrowserModule,
