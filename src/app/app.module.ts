@@ -30,7 +30,8 @@ const appRoutes: Routes = [
       {path: '', component: ShopAllComponent},
       {path: 'category', children:[
           {path: '', component: CategoryComponent},
-          {path: 'sub-category', component: SubCategoryComponent},
+          // {path: 'sub-category', component: SubCategoryComponent},
+          {path: 'sub-category/:id', component: SubCategoryComponent},
       ]}
   ]},
   {path: 'thank-you', component: ThankYouComponent},
