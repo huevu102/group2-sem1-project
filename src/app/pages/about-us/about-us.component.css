@@ -2,19 +2,7 @@
 .about-us{
   margin-top: 100px;
 }
-/*introduction*/
-.intro-img {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.intro-img-text {
-  position: absolute;
-  color: #FAF8F6;
-  margin: auto;
-}
 /*Dear*/
 .dear-info p{
   color:#999;

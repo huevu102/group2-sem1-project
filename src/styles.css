@@ -324,6 +324,18 @@ nav li:nth-child(1){
   margin-top:10px;
   margin-bottom:10px;
 }
+/*BANNER*/
+.banner-img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner-img-text {
+  position: absolute;
+  color: #FAF8F6;
+  margin: auto;
+}
 /*BREADCRUMB*/
 .breadcrumb {
   background-color: #FAF8F6;
@@ -332,5 +344,4 @@ nav li:nth-child(1){
 .breadcrumb-item {
   padding: 0;
 }
-/*form check*/
 
