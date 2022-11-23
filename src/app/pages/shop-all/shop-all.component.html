@@ -3,20 +3,22 @@
   <div class="row">
     <div class="col-4 cate-left">
       <div class="cate-name text-center">
-        <ul>
-          <li><a href="#">
-            <h5>Rings</h5>
-          </a></li>
-          <li><a href="#">
-            <h5>Earrings</h5>
-          </a></li>
-          <li><a href="#">
-            <h5>Bracelets</h5>
-          </a></li>
-          <li><a href="#">
-            <h5>Necklaces</h5>
-          </a></li>
-        </ul>
+        <div class="cate-name-all">
+          <ul>
+            <li><a>
+              <h5>Rings</h5>
+            </a></li>
+            <li><a href="#">
+              <h5>Earrings</h5>
+            </a></li>
+            <li><a href="#">
+              <h5>Bracelets</h5>
+            </a></li>
+            <li><a href="#">
+              <h5>Necklaces</h5>
+            </a></li>
+          </ul>
+        </div>
       </div>
       <div class="cate-neck mtp">
         <div class="categories-card">
@@ -49,7 +51,7 @@
           <img src="./assets/img/shop-all/cate4.png">
         </a>
       </div>
-      <h3 class="text-center">Auri's JewelleRy</h3>
+      <h3 class="text-center">Aguri's JewelleRy</h3>
     </div>
   </div>
   <!--Rings-->
@@ -57,15 +59,25 @@
     <h4 class="text-center">Rings</h4>
     <div class="row">
       <div class="col-2">
-        <div class="prod-ring1 mbt">
-          <a href="#">
-            <img src="./assets/img/shop-all/ring-all1.png">
-          </a>
-        </div>
-        <div class="prod-ring2">
-          <a href="#">
-            <img src="./assets/img/shop-all/ring-all2.png">
-          </a>
+        <div class="card-prd mbt">
+            <div class="img">
+              <a href="#">
+                <img src="./assets/img/shop-all/ring-all1.png">
+              </a>
+            </div>
+            <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+          </div>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/ring-all2.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
         </div>
       </div>
       <div class="col-4">
@@ -74,44 +86,66 @@
           </a>
       </div>
       <div class="col-2">
-        <div class="prod-ring4 mbt">
-          <a href="#">
-            <img src="./assets/img/shop-all/ring-all4.png">
-          </a>
-        </div>
-        <div class="prod-ring5">
-          <a href="#">
-            <img src="./assets/img/shop-all/ring-all5.png">
-          </a>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="prod-ring4 mbt">
-          <a href="#">
-            <img src="./assets/img/shop-all/ring-all6.png">
-          </a>
-        </div>
-        <div class="prod-ring4 mbt">
-          <a href="#">
-            <img src="./assets/img/shop-all/ring-all7.png">
-          </a>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="prod-ring4 to-show-all mbt">
-          <div class="all-img">
+        <div class="card-prd mbt">
+          <div class="img">
             <a href="#">
-              <img src="./assets/img/shop-all/all-bg.png">
+              <img src="./assets/img/shop-all/ring-all4.png">
             </a>
           </div>
-          <div class="all-name">
-            Shop all
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
           </div>
         </div>
-        <div class="prod-ring4 mbt">
-          <a href="#">
-            <img src="./assets/img/shop-all/ring-all8.png">
-          </a>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/ring-all5.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/ring-all6.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
+        </div>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/ring-all7.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="box-all mbt">
+          <div class="click-to-all">
+            <a routerLink="#">
+              <p class="mdt mb-0 text-center">Shop all</p>
+            </a>
+          </div>
+        </div>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/ring-all8.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
         </div>
       </div>
     </div>
@@ -126,48 +160,89 @@
         </a>
       </div>
       <div class="col-2">
-        <div class="mbt">
-          <a href="#">
-            <img src="./assets/img/shop-all/earr-all2.png">
-          </a>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/earr-all2.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
         </div>
-        <div>
-          <a href="#">
-            <img src="./assets/img/shop-all/earr-all3.png">
-          </a>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="mbt">
-          <a href="#">
-            <img src="./assets/img/shop-all/earr-all4.png">
-          </a>
-        </div>
-        <div>
-          <a href="#">
-            <img src="./assets/img/shop-all/earr-all5.png">
-          </a>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/earr-all3.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
         </div>
       </div>
       <div class="col-2">
-        <div class="mbt">
-          <a href="#">
-            <img src="./assets/img/shop-all/earr-all6.png">
-          </a>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/earr-all4.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
         </div>
-        <div>
-          <a href="#">
-            <img src="./assets/img/shop-all/earr-all7.png">
-          </a>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/earr-all5.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
         </div>
       </div>
       <div class="col-2">
-        <div>
-          Shop all
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/earr-all6.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
         </div>
-        <a href="#">
-          <img src="./assets/img/shop-all/earr-all8.png">
-        </a>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/earr-all7.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="box-all mbt">
+          <div class="click-to-all">
+            <a routerLink="#">
+              <p class="mdt mb-0 text-center">Shop all</p>
+            </a>
+          </div>
+        </div>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/earr-all8.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -176,27 +251,47 @@
     <h4 class="text-center">Bracelets</h4>
     <div class="row">
       <div class="col-2">
-        <div class="mbt">
-          <a href="#">
-            <img src="./assets/img/shop-all/brac-all1.png">
-          </a>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/brac-all1.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
         </div>
-        <div>
-          <a href="#">
-            <img src="./assets/img/shop-all/brac-all2.png">
-          </a>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/brac-all2.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
         </div>
       </div>
       <div class="col-2">
-        <div class="mbt">
-          <a href="#">
-            <img src="./assets/img/shop-all/brac-all3.png">
-          </a>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/brac-all3.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
         </div>
-        <div>
-          <a href="#">
-            <img src="./assets/img/shop-all/brac-all4.png">
-          </a>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/brac-all4.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
         </div>
       </div>
       <div class="col-4">
@@ -205,22 +300,45 @@
         </a>
       </div>
       <div class="col-2">
-        <div class="mbt">
-          <a href="#">
-            <img src="./assets/img/shop-all/brac-all6.png">
-          </a>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/brac-all6.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
         </div>
-        <div>
-          <a href="#">
-            <img src="./assets/img/shop-all/brac-all7.png">
-          </a>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/brac-all7.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
         </div>
       </div>
       <div class="col-2">
-        <div>Shop all</div>
-        <a href="#">
-          <img src="./assets/img/shop-all/brac-all8.png">
-        </a>
+        <div class="box-all mbt">
+          <div class="click-to-all">
+            <a routerLink="#">
+              <p class="mdt mb-0 text-center">Shop all</p>
+            </a>
+          </div>
+        </div>
+        <div class="card-prd mbt">
+          <div class="img">
+            <a href="#">
+              <img src="./assets/img/shop-all/brac-all8.png">
+            </a>
+          </div>
+          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+            Quick view
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -229,15 +347,25 @@
       <h4 class="text-center">Necklaces</h4>
       <div class="row">
         <div class="col-2">
-          <div class="mbt">
-            <a href="#">
-              <img src="./assets/img/shop-all/neck-all1.png">
-            </a>
+          <div class="card-prd mbt">
+            <div class="img">
+              <a href="#">
+                <img src="./assets/img/shop-all/neck-all1.png">
+              </a>
+            </div>
+            <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
           </div>
-          <div>
-            <a href="#">
-              <img src="./assets/img/shop-all/neck-all2.png">
-            </a>
+          <div class="card-prd mbt">
+            <div class="img">
+              <a href="#">
+                <img src="./assets/img/shop-all/neck-all2.png">
+              </a>
+            </div>
+            <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
           </div>
         </div>
         <div class="col-4">
@@ -246,35 +374,122 @@
           </a>
         </div>
         <div class="col-2">
-          <div class="mbt">
-            <a href="#">
-              <img src="./assets/img/shop-all/neck-all4.png">
-            </a>
+          <div class="card-prd mbt">
+            <div class="img">
+              <a href="#">
+                <img src="./assets/img/shop-all/neck-all4.png">
+              </a>
+            </div>
+            <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
           </div>
-          <div>
-            <a href="#">
-              <img src="./assets/img/shop-all/neck-all5.png">
-            </a>
-          </div>
-        </div>
-        <div class="col-2">
-          <div class="mbt">
-            <a href="#">
-              <img src="./assets/img/shop-all/neck-all6.png">
-            </a>
-          </div>
-          <div>
-            <a href="#">
-              <img src="./assets/img/shop-all/neck-all7.png">
-            </a>
+          <div class="card-prd mbt">
+            <div class="img">
+              <a href="#">
+                <img src="./assets/img/shop-all/neck-all5.png">
+              </a>
+            </div>
+            <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
           </div>
         </div>
         <div class="col-2">
-          <div>Shop all</div>
-          <a href="#">
-            <img src="./assets/img/shop-all/neck-all8.png">
+          <div class="card-prd mbt">
+            <div class="img">
+              <a href="#">
+                <img src="./assets/img/shop-all/neck-all6.png">
+              </a>
+            </div>
+            <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+          </div>
+          <div class="card-prd mbt">
+            <div class="img">
+              <a href="#">
+                <img src="./assets/img/shop-all/neck-all7.png">
+              </a>
+            </div>
+            <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="box-all mbt">
+            <div class="click-to-all">
+              <a routerLink="#">
+                <p class="mdt mb-0 text-center">Shop all</p>
+              </a>
+            </div>
+          </div>
+          <div class="card-prd mbt">
+            <div class="img">
+              <a href="#">
+                <img src="./assets/img/shop-all/neck-all8.png">
+              </a>
+            </div>
+            <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<!--Modal Quick view-->
+<div class="modal fade" id="quickview">
+  <div class="modal-dialog modal-dialog-centered quickview">
+    <div class="modal-content">
+      <div class="row">
+        <div class="col-7 ps-0">
+          <!--Carousel quick view product-->
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="5000">
+                <img src="./assets/img/product-detail/quickview1.png">
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img src="./assets/img/product-detail/quickview2.png">
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img src="./assets/img/product-detail/quickview3.png">
+              </div>
+              <div class="carousel-item">
+                <img src="./assets/img/product-detail/quickview4.png">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-5 pe-0">
+          <h5>Diamond Wire Ring</h5>
+          <h5 class="my-3">$7,000</h5>
+          <p>Quantity</p>
+          <div class="quick-size my-3">
+            <select class="form-select smt">
+              <option selected>Select size</option>
+              <option value="1">3</option>
+              <option value="2">3 1/2</option>
+              <option value="3">4</option>
+              <option value="3">4 1/2</option>
+              <option value="3">5</option>
+              <option value="3">5 1/2</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-pri mb-3" data-bs-dismiss="modal">Add to bag</button>
+          <a href="">
+            <p>View more detail</p>
           </a>
         </div>
       </div>
     </div>
+  </div>
 </div>

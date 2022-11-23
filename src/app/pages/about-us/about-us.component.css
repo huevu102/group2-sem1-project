@@ -1,10 +1,7 @@
-.row {
-  padding-bottom: 100px;
-}
+
 .about-us{
   margin-top: 100px;
 }
-
 /*introduction*/
 .intro-img {
   position: relative;
@@ -18,43 +15,41 @@
   color: #FAF8F6;
   margin: auto;
 }
-
+/*Dear*/
+.dear-info p{
+  color:#999;
+}
 /*the-brand*/
-.the-brand {
-  position: relative;
+.who{
+  position:relative;
 }
-
-.the-brand-text {
-  position: absolute;
-  padding-top: 50px;
+.who-right{
+  position:absolute;
+  right:0px;
+  top:120px;
 }
-/**/
+.who-content{
+  padding-top:90px;
+}
 
 /*our-vision*/
-.our-vision {
-  margin-bottom: 100px;
+.vision-content{
+  position:relative;
+  background-color:#e7e7e7;
+}
+.vision-inner{
+  position:absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+.vision-inner{
+  padding-left:40px;
+  padding-right:120px;
 }
 
-.our-vision-img {
-  width: fit-content;
-  margin: auto;
-  position: absolute;
-  z-index: -1;
-}
-
-.our-vision-text {
-  padding: 50px 200px 0 40px;
-  margin: auto 0;
-}
-
-/**/
 
 /*our mission*/
-.our-mission-text {
-  padding-top: 50px;
+.our-mission-text{
+  padding-top:190px;
 }
-
-.our-mission-text-1 {
-  padding-left: 100px;
-}
-/**/
