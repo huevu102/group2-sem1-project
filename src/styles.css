@@ -274,6 +274,12 @@ nav li:nth-child(1){
 .quickview{
   max-width:850px;
 }
+.modal-dialog .first-steps-inner{
+  padding: 40px 65px 40px 65px;
+}
+.first-steps{
+  max-width:650px;
+}
 /*ACCORDION*/
 .accordion{
   --bs-accordion-bg: none;
@@ -343,4 +349,7 @@ nav li:nth-child(1){
 .breadcrumb-item {
   padding: 0;
 }
-
+/*Sign in*/
+.signin-inner{
+  margin:auto;
+}
