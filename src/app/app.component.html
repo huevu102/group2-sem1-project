@@ -46,8 +46,8 @@
             <div class="col-3">
               <ul>
                 <li class="category"><a routerLink="/shop-all/category">Rings</a></li>
-                <li><a routerLink="#">Eternity</a></li>
-                <li><a routerLink="#">Cocktail</a></li>
+                <li><a [routerLink]="['/shop-all/category/sub-category', 1]">Eternity</a></li>
+                <li><a [routerLink]="['/shop-all/category/sub-category', 2]">Cocktail</a></li>
                 <li><a routerLink="#">Wedding</a></li>
               </ul>
             </div>
