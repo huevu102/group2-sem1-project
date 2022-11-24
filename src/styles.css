@@ -53,6 +53,9 @@ a:hover, i:hover{
 .mb-10{
   margin-bottom:10px;
 }
+.mb-9{
+  margin-bottom:9px;
+}
 /*COLOR*/
 .sub-color{
   color:#e7e7e7;
@@ -68,7 +71,7 @@ h2, h3, h4, h5 {
   font-weight: 400;
 }
 .mdt{
-  font-size:14px;
+  font-size:16px;
   font-weight: 500;
 }
 .smt{
@@ -76,7 +79,7 @@ h2, h3, h4, h5 {
 }
 .decor-text{
   font-size:13px;
-  color:#666;
+  font-weight: 500;
 }
 
 /*INPUT*/
