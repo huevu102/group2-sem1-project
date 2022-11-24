@@ -17,6 +17,7 @@ import {ThankYouComponent} from "./pages/thank-you/thank-you.component";
 import {CategoryComponent} from "./pages/category/category.component";
 import {SubCategoryComponent} from "./pages/sub-category/sub-category.component";
 
+
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'about-us', component: AboutUsComponent},
