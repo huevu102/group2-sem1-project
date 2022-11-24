@@ -22,6 +22,7 @@ import {SubCategoryComponent} from "./pages/sub-category/sub-category.component"
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'home-an', component: HomeANComponent},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'guide', component: GuideComponent},
   {path: 'cart', component: CartComponent},
