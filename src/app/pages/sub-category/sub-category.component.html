@@ -1,8 +1,8 @@
-{{id}}
-
-<div class="container">
-<!-- breadcrumb-->
-
+Hello {{subId}}
+<div *ngFor="let item of data">
+  <p>Image: <img src="{{item.thumb}}" /></p>
+  <h6>Name: {{item.name}}</h6>
+  <p>Price: {{item.price}}</p>
+  <p>Description: {{item.description}}</p>
 </div>
-
-
+Goodbye
