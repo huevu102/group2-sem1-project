@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
+import {HomeANComponent} from "./pages/home-AN-TEST/home-AN.component";
 import {HomeComponent} from "./pages/home/home.component";
 import {AboutUsComponent} from "./pages/about-us/about-us.component";
 import {GuideComponent} from "./pages/guide/guide.component";
@@ -16,6 +17,7 @@ import {ShopAllComponent} from "./pages/shop-all/shop-all.component";
 import {ThankYouComponent} from "./pages/thank-you/thank-you.component";
 import {CategoryComponent} from "./pages/category/category.component";
 import {SubCategoryComponent} from "./pages/sub-category/sub-category.component";
+
 
 
 const appRoutes: Routes = [
@@ -41,7 +43,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    HomeANComponent,
     AboutUsComponent,
     GuideComponent,
     CartComponent,
