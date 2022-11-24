@@ -27,6 +27,13 @@
   padding-top:60px;
   padding-bottom:60px;
 }
+.cate-name:hover > .cate-name-all{
+  background-color: #fff;
+}
+.cate-name-all a:hover{
+  text-decoration: underline;
+}
+
 /*Cate-center*/
 /*Cate-right*/
 .cate-right h3{
@@ -41,7 +48,7 @@
   margin-bottom:60px;
 }
 .click-to-all{
-  background-color: #000;
+  background-color: #e7e7e7;
   padding-top:103px;
   padding-bottom:103px;
 }
