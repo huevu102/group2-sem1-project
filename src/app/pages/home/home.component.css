@@ -1,26 +1,6 @@
 /*New Arrivals*/
 
-/*All Jewelery*/
-.item-box-all{
-  position:relative;
-  overflow: hidden;
-}
-.item-box-content{
-  position:absolute;
-  top:50%;
-  transform: translateY(-50%);
-  width:100%;
-  display:none;
-}
-.item-box-all:hover > .item-box-content{
-  display:block;
-  transition: 0.4s all;
-}
-.item-box-all:hover > .item-box-img{
-  transform:scale(108%);
-  filter:brightness(70%);
-  transition:0.4s all;
-}
+/*All jewellery*/
 .item-box-content a{
   color:#fff;
 }
@@ -28,14 +8,7 @@
   color:#fff;
   text-decoration: underline;
 }
-.bottom-content{
-  position:relative;
-}
-.bottom-content-inner{
-  position:absolute;
-  bottom:0px;
-  left:0px;
-}
+
 /*Best seller*/
 .best-seller{
   background-color: #fff;
