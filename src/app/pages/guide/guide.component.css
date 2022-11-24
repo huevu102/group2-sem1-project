@@ -22,16 +22,17 @@
   margin-inline-start: 20px;
 }
 /*Jewellery Carat*/
-.collapse-content{
+.diamond-granding{
   padding-top:40px;
   padding-bottom:40px;
 }
 .carat-tb{
-  padding-right: 40px;
-  padding-left: 40px;
-  background-color:#e7e7e7;
+  padding: 40px 30px;
+  background-color:#fff;
 }
-
+.color-left{
+  padding-top:100px;
+}
 /*collapse*/
 .card{
   background-color:#faf8f6;
