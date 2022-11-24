@@ -74,6 +74,10 @@ h2, h3, h4, h5 {
 .smt{
   font-size: 14px;
 }
+.decor-text{
+  font-size:13px;
+  color:#666;
+}
 
 /*INPUT*/
 .inpu{
