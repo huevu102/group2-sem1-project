@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
-import {HomeANComponent} from "./pages/home-AN-TEST/home-AN.component"; //delete before deploy
 import {HomeComponent} from "./pages/home/home.component";
 import {AboutUsComponent} from "./pages/about-us/about-us.component";
 import {GuideComponent} from "./pages/guide/guide.component";
@@ -22,7 +21,6 @@ import {SubCategoryComponent} from "./pages/sub-category/sub-category.component"
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'home-an', component: HomeANComponent}, //delete before deploy
   {path: 'about-us', component: AboutUsComponent},
   {path: 'guide', component: GuideComponent},
   {path: 'cart', component: CartComponent},
@@ -44,7 +42,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomeANComponent,
     AboutUsComponent,
     GuideComponent,
     CartComponent,
