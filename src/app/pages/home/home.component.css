@@ -8,14 +8,12 @@
   color:#fff;
   text-decoration: underline;
 }
-
 /*Best seller*/
 .best-seller{
   background-color: #fff;
   padding-top:60px;
   padding-bottom:60px;
 }
-
 /*New Collection*/
 .new-collection-bottom{
   display:flex;
@@ -28,12 +26,19 @@
 .feature-img2 img{
   padding-top:210px;
 }
+.new-collection-img:hover > .collection-img{
+  transform:scale(105%);
+  filter:brightness(90%);
+  transition:0.4s all;
+}
 /*experiences*/
 .experiences{
   background-color: #fff;
   padding-top:80px;
   padding-bottom:80px;
 }
+
+/*Banner*/
 #no-1{
   width: 295px;
   height: 391px;
@@ -63,15 +68,8 @@
 }
 #tittle{
   position: absolute;
-  width: 492px;
-  height: 69px;
+
   left: 1190px;
-  top: 680px;
-  font-family: 'Merchant';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 46px;
-  line-height: 69px;
   color: #000000;
   transform: rotate(90deg);
 }
@@ -82,11 +80,6 @@
 #descrip{
   width: 785px;
   height: 192px;
-  font-family: 'Merchant';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 64px;
-  line-height: 96px;
   color: #000000;
   margin-top: 60px;
   margin-left: 163px;
@@ -100,8 +93,6 @@
 
   /* Small text */
 
-  font-family: 'Inter';
-  font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
