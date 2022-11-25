@@ -15,7 +15,20 @@
   transform: translateY(-50%);
 }
 /*natural-jewelery*/
+.natural-j{
+  position:relative;
+}
+.natural-j-content{
+  position: absolute;
+  right:0px;
 
+}
+.natural-inner{
+  margin-top:50px;
+  padding: 20px 50px;
+  background-color: rgb(255,255,255,0.75);
+
+}
 
 /*jewellery-care*/
 .jewellery-care li {
