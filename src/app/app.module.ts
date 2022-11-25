@@ -13,9 +13,10 @@ import {ContactComponent} from "./pages/contact/contact.component";
 import {OrderDetailComponent} from "./pages/order-detail/order-detail.component";
 import {ProductDetailComponent} from "./pages/product-detail/product-detail.component";
 import {ShopAllComponent} from "./pages/shop-all/shop-all.component";
-import {ThankYouComponent} from "./pages/thank-you/thank-you.component";
 import {CategoryComponent} from "./pages/category/category.component";
 import {SubCategoryComponent} from "./pages/sub-category/sub-category.component";
+import {ThankYouComponent} from "./pages/thank-you/thank-you.component";
+import {CategoryDraftComponent} from "./pages/category-DRAFT/category-draft.component"; //delete before deploy
 
 
 
@@ -28,20 +29,17 @@ const appRoutes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: 'order-detail', component: OrderDetailComponent},
   {path: 'product-detail', component: ProductDetailComponent},
-  {path: 'shop-all', children:[
-      {path: '', component: ShopAllComponent},
-      {path: 'category', children:[
-          {path: '', component: CategoryComponent},
-          // {path: 'sub-category', component: SubCategoryComponent},
-          {path: 'sub-category/:subId', component: SubCategoryComponent},
-      ]}
-  ]},
+  {path: 'shop-all', component: ShopAllComponent},
+  {path: 'category/:cateId',  component: CategoryComponent},
+  {path: 'sub-category/:subId',  component: SubCategoryComponent},
   {path: 'thank-you', component: ThankYouComponent},
+  {path: 'category-draft', component: CategoryDraftComponent} //delete before deploy
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     AboutUsComponent,
     GuideComponent,
     CartComponent,
@@ -50,9 +48,10 @@ const appRoutes: Routes = [
     OrderDetailComponent,
     ProductDetailComponent,
     ShopAllComponent,
-    ThankYouComponent,
     CategoryComponent,
     SubCategoryComponent,
+    ThankYouComponent,
+    CategoryDraftComponent, //delete before deploy
   ],
   imports: [
     BrowserModule,

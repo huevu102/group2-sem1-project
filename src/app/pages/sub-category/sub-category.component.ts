@@ -26,25 +26,10 @@ export class SubCategoryComponent implements OnInit{
       // In a real app: dispatch action to load the details here.
       const subCateUrl = 'https://huevuapi.herokuapp.com/get-sub-category/?subId='+ this.subId;
       console.log(subCateUrl)
-      this.http.get<{list:Data[]}>(subCateUrl).subscribe(data => {
-        this.data = data.list;
+      this.http.get<Data[]>(subCateUrl).subscribe(data => {
+        this.data = data;
         console.log(data)
       });
     })
   }
 }
-
-// id: number = 0;
-// private sub: any;
-//
-// constructor(private route: ActivatedRoute) {}
-//
-// ngOnInit() {
-//   this.sub = this.route.params.subscribe(params => {
-//     this.id = +params['id']; // (+) converts string 'id' to a number
-//
-//     // In a real app: dispatch action to load the details here.
-//   });
-//
-//
-// }
