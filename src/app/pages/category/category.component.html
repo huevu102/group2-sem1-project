@@ -1,12 +1,148 @@
-<div class="container" *ngFor="let item of data">
-<!--  breadcrumb-->
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-      <li class="breadcrumb-item"><a routerLink="/shop-all">Shop All</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Rings</li>
-    </ol>
-  </nav>
+<div class="container">
+<!--breadcrumb-->
 
 
+<!--category-top-->
+
+
+  <div class="row">
+    <!--category-side-->
+    <div class="category-side col-2">
+      <form>
+        <div class="mb-3">
+          <p class="font-weight-bolder">Collection</p>
+          <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
+          <label for="collection-1">Spring Collection</label><br>
+          <input type="checkbox" class="check-box" id="collection-2" name="collection-2" value="Aguri Minimalism">
+          <label for="collection-2">Minimalism</label><br>
+          <input type="checkbox" class="check-box" id="collection-3" name="collection-3" value="Aguri's Eternity Magic">
+          <label for="collection-3">Eternity Magic</label><br>
+          <input type="checkbox" class="check-box" id="collection-4" name="collection-4" value="End-Off-Year Collection">
+          <label for="collection-4">End-Off-Year</label>
+        </div>
+        <div class="mt-5 mb-3">
+          <p class="font-weight-bolder mt-5">Jewellery</p>
+          <input type="checkbox" class="check-box" id="jewellery-1" name="jewellery-1" value="Natural Jewellery">
+          <label for="jewellery-1">Natural</label><br>
+          <input type="checkbox" class="check-box" id="jewellery-2" name="jewellery-2" value="Lab-grown Jewellery">
+          <label for="jewellery-2">Lab-grown</label>
+        </div>
+        <div class="mt-5 mb-3">
+          <p class="font-weight-bolder mt-5">Materials</p>
+          <input type="checkbox" class="check-box" id="materials-1" name="materials-1" value="Gold">
+          <label for="materials-1">Gold</label><br>
+          <input type="checkbox" class="check-box" id="materials-2" name="materials-2" value="Rose Gold">
+          <label for="materials-2">Rose Gold</label><br>
+          <input type="checkbox" class="check-box" id="materials-3" name="materials-3" value="White Gold">
+          <label for="materials-3">White Gold</label><br>
+          <input type="checkbox" class="check-box" id="materials-4" name="materials-4" value="Sterling Silver">
+          <label for="materials-4">Sterling Silver</label>
+        </div>
+        <div class="mt-5 mb-3">
+          <p class="font-weight-bolder mt-5">Price</p>
+          <input type="checkbox" class="check-box" id="price-1" name="price-1" value="$500 & Under">
+          <label for="price-1">$0 - $500</label><br>
+          <input type="checkbox" class="check-box" id="price-2" name="price-2" value="$500 - $1,000">
+          <label for="price-2">$500 - $1,000</label><br>
+          <input type="checkbox" class="check-box" id="price-3" name="price-3" value="$1,000 - $2,000">
+          <label for="price-3">$1,000 - $2,000</label><br>
+          <input type="checkbox" class="check-box" id="price-4" name="price-4" value="$2,000 - $5,000">
+          <label for="price-4">$2,000 - $5,000</label><br>
+          <input type="checkbox" class="check-box" id="price-5" name="price-5" value="$5,000 & More">
+          <label for="price-5">$5,000 +</label><br><br>
+          <input type="text" placeholder="Min" class="col-5">
+          <span> ～ </span>
+          <input type="text" placeholder="Max" class="col-5">
+        </div>
+        <button type="submit" class="btn mt-5" onclick="alert('Loading...')">Apply</button>
+      </form>
+    </div>
+
+    <!--category-main-->
+    <div class="category-main col-10">
+      <div class="row mb-2">
+        <div class="col-3 card mb-9" *ngFor="let item of data | slice: 0: 4">
+          <div class="card-prd">
+            <div class="img">
+              <a routerLink="#">
+                <img src="{{item.thumb}}" />
+              </a>
+            </div>
+            <div class="card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+            <!--        modal-quick-view-start-->
+
+            <!--        modal-quick-view-end-->
+          </div>
+          <div class="text-center mt-2">
+            <p class="decor-text">{{item.name}}</p>
+            <p class="smt">${{item.price}}</p>
+          </div>
+        </div>
+      </div>
+
+      <!--featured-product-->
+      <div class="row">
+        <div class="col-6 mb-9">
+          <div class="featured">
+            <div class="featured-img">
+              <a routerLink="#">
+                <img src="./assets/img/featured/{{cateId}}.png">
+              </a>
+            </div>
+            <div class="overlay">
+              <h5>FEATURED PRODUCTS</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3 card mb-9" *ngFor="let item of data | slice: 4: 6">
+          <div class="card-prd">
+            <div class="img">
+              <a routerLink="#">
+                <img src="{{item.thumb}}" />
+              </a>
+            </div>
+            <div class="card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+            <!--        modal-quick-view-start-->
+
+            <!--        modal-quick-view-end-->
+          </div>
+          <div class="text-center mt-2">
+            <p class="decor-text">{{item.name}}</p>
+            <p class="smt">${{item.price}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-2">
+        <div class="col-3 card mb-9" *ngFor="let item of data | slice: 6">
+          <div class="card-prd">
+            <div class="img">
+              <a routerLink="#">
+                <img src="{{item.thumb}}" />
+              </a>
+            </div>
+            <div class="card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+            <!--        modal-quick-view-start-->
+
+            <!--        modal-quick-view-end-->
+          </div>
+          <div class="text-center mt-2">
+            <p class="decor-text">{{item.name}}</p>
+            <p class="smt">${{item.price}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+<!--category-bottom-->
 </div>
