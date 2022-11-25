@@ -34,6 +34,92 @@
   padding-top:80px;
   padding-bottom:80px;
 }
+#no-1{
+  width: 295px;
+  height: 391px;
+  margin-top: 231px;
+}
+#no-2{
+  width: 295px;
+  height: 391px;
+  margin-top: 231px;
+  margin-left: 30px;
+}
+#no-3{
+  width: 620px;
+  height: 820px;
+  margin-top: 57px;
+  margin-left: 193px;
+  margin-bottom: 120px;
+}
+#no-4{
+  width: 295px;
+  height: 391px;
+  margin-left: 135.33px;
+  margin-top: 231px;
+}
+#click{
+  margin: 385.33px 135.33px 528.33px 136.33px;
+}
+#tittle{
+  position: absolute;
+  width: 492px;
+  height: 69px;
+  left: 1190px;
+  top: 680px;
+  font-family: 'Merchant';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 46px;
+  line-height: 69px;
+  color: #000000;
+  transform: rotate(90deg);
+}
+#mySlider{
+  transition: 1s;
+  display: flex;
+}
+#descrip{
+  width: 785px;
+  height: 192px;
+  font-family: 'Merchant';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 96px;
+  color: #000000;
+  margin-top: 60px;
+  margin-left: 163px;
+}
+#small-text{
+  position: absolute;
+  width: 461px;
+  height: 54px;
+  left: 163px;
+  top: 536px;
+
+  /* Small text */
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  /* or 150% */
+
+  display: flex;
+  align-items: flex-end;
+
+  /* Primary color */
+
+  color: #000000;
+
+
+}
+
+
+
+
 
 /*Showroom*/
 

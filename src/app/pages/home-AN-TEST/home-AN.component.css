@@ -1,30 +1,46 @@
 #no-1{
-  position: absolute;
   width: 295px;
   height: 391px;
   left: 0px;
   top: 710px;
 }
 #no-2{
-  position: absolute;
   width: 295px;
   height: 391px;
   left: 325px;
   top: 710px;
 }
 #no-3{
-  position: absolute;
   width: 620px;
   height: 820px;
   left: 813px;
   top: 536px;
 }
 #no-4{
-  position: absolute;
   width: 295px;
   height: 391px;
   left: 1788px;
   top: 710px;
+}
+#click{
+  left: 1569.33px;
+  top: 864.33px;
+}
+#tittle{
+  width: 492px;
+  height: 69px;
+  left: 1190px;
+  top: 740px;
+  font-family: 'Merchant';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 46px;
+  line-height: 69px;
+  color: #000000;
+  transform: rotate(90deg);
+}
+#mySlider{
+  transition: 1s;
 }
 
 
