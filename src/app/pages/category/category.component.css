@@ -65,4 +65,7 @@
 .back-to-top:hover {
   color: #000;
 }
-
+.category-bottom{
+  margin-bottom:80px;
+  margin-top:80px;
+}

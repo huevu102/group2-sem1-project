@@ -3,6 +3,7 @@
   background-color: #e7e7e7;
   padding-top:60px;
   padding-bottom:60px;
+  margin-top:120px;
 }
 /*JEWELLERY TYPE*/
 .content{
@@ -13,25 +14,39 @@
   top:50%;
   transform: translateY(-50%);
 }
-.natural-d{
-  padding-right:25px;
+/*natural-jewelery*/
+.natural-j{
+  position:relative;
 }
+.natural-j-content{
+  position: absolute;
+  right:0px;
+
+}
+.natural-inner{
+  margin-top:50px;
+  padding: 20px 50px;
+  background-color: rgb(255,255,255,0.75);
+
+}
+
 /*jewellery-care*/
 .jewellery-care li {
   list-style-type: disc;
   margin-inline-start: 20px;
 }
 /*Jewellery Carat*/
-.collapse-content{
+.diamond-granding{
   padding-top:40px;
   padding-bottom:40px;
 }
 .carat-tb{
-  padding-right: 40px;
-  padding-left: 40px;
-  background-color:#e7e7e7;
+  padding: 40px 30px;
+  background-color:#fff;
 }
-
+.color-left{
+  padding-top:100px;
+}
 /*collapse*/
 .card{
   background-color:#faf8f6;

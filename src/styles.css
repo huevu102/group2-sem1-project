@@ -53,6 +53,9 @@ a:hover, i:hover{
 .mb-10{
   margin-bottom:10px;
 }
+.mb-9{
+  margin-bottom:9px;
+}
 /*COLOR*/
 .sub-color{
   color:#e7e7e7;
@@ -74,6 +77,10 @@ h2, h3, h4, h5 {
 .smt{
   font-size: 14px;
 }
+.decor-text{
+  font-size:13px;
+  font-weight: 500;
+}
 
 /*INPUT*/
 .inpu{
@@ -94,7 +101,6 @@ label{
 
 /*BUTTON*/
 .btn{
-  width:100%;
   font-size: 14px;
   border:2px #000 solid;
   border-radius: 0px;
@@ -275,6 +281,12 @@ nav li:nth-child(1){
 .quickview{
   max-width:850px;
 }
+.modal-dialog .first-steps-inner{
+  padding: 40px 65px 40px 65px;
+}
+.first-steps{
+  max-width:650px;
+}
 /*ACCORDION*/
 .accordion{
   --bs-accordion-bg: none;
@@ -344,4 +356,43 @@ nav li:nth-child(1){
 .breadcrumb-item {
   padding: 0;
 }
-
+/*Sign in*/
+.signin-inner{
+  margin:auto;
+}
+/*All Jewelery from home page*/
+.item-box-all{
+  position:relative;
+  overflow: hidden;
+}
+.item-box-content{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  width:100%;
+  display:none;
+}
+.item-box-all:hover > .item-box-content{
+  display:block;
+  transition: 0.4s all;
+}
+.item-box-all:hover > .item-box-img{
+  transform:scale(108%);
+  filter:brightness(70%);
+  transition:0.4s all;
+}
+.item-box-content a{
+  color:#fff;
+}
+.item-box-content a:hover{
+  color:#fff;
+  text-decoration: underline;
+}
+.bottom-content{
+  position:relative;
+}
+.bottom-content-inner{
+  position:absolute;
+  bottom:0px;
+  left:0px;
+}

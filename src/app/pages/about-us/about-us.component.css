@@ -23,7 +23,7 @@
 /*our-vision*/
 .vision-content{
   position:relative;
-  background-color:#e7e7e7;
+
 }
 .vision-inner{
   position:absolute;
@@ -39,5 +39,5 @@
 
 /*our mission*/
 .our-mission-text{
-  padding-top:190px;
+  padding-top:210px;
 }

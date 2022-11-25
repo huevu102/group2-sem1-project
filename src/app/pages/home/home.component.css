@@ -1,28 +1,42 @@
-#no-1{
-  position: absolute;
-  width: 295px;
-  height: 391px;
-  left: 0px;
-  top: 710px;
+/*New Arrivals*/
+
+/*All jewellery*/
+.item-box-content a{
+  color:#fff;
 }
-#no-2{
-  position: absolute;
-  width: 295px;
-  height: 391px;
-  left: 325px;
-  top: 710px;
+.item-box-content a:hover{
+  color:#fff;
+  text-decoration: underline;
 }
-#no-3{
-  position: absolute;
-  width: 620px;
-  height: 820px;
-  left: 813px;
-  top: 536px;
+
+/*Best seller*/
+.best-seller{
+  background-color: #fff;
+  padding-top:60px;
+  padding-bottom:60px;
 }
-#no-4{
-  position: absolute;
-  width: 295px;
-  height: 391px;
-  left: 1788px;
-  top: 710px;
+
+/*New Collection*/
+.new-collection-bottom{
+  display:flex;
+  padding-top:40px;
 }
+.new-collection-content{
+  margin:auto;
+  padding: 0px 40px;
+}
+.feature-img2 img{
+  padding-top:210px;
+}
+/*experiences*/
+.experiences{
+  background-color: #fff;
+  padding-top:80px;
+  padding-bottom:80px;
+}
+
+/*Showroom*/
+
+
+
+
