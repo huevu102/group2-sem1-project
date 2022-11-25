@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
-import { HttpClient } from "@angular/common/http";
-import { Data } from "../../interfaces/data.interface";
+import {HttpClient} from "@angular/common/http";
+import {Data} from "../../interfaces/data.interface";
 
 @Component({
   selector: 'app-sub-category',
@@ -16,8 +16,8 @@ export class SubCategoryComponent implements OnInit{
 
   constructor(
     private route: ActivatedRoute,
-    private http: HttpClient)
-  {}
+    private http: HttpClient
+  ) {}
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -25,11 +25,9 @@ export class SubCategoryComponent implements OnInit{
 
       // In a real app: dispatch action to load the details here.
       const subCateUrl = 'https://huevuapi.herokuapp.com/get-sub-category/?subId='+ this.subId;
-      console.log(subCateUrl)
       this.http.get<Data[]>(subCateUrl).subscribe(data => {
         this.data = data;
-        console.log(data)
-      });
+      })
     })
   }
 }
