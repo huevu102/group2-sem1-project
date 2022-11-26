@@ -12,6 +12,7 @@ import {Data} from "../../interfaces/data.interface";
 export class CategoryComponent implements OnInit {
   private cate: any;
   cid: number = 0;
+  sid: number = 0;
   data: Data[] = [];
 
   constructor(

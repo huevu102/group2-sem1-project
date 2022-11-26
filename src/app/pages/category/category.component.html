@@ -1,5 +1,5 @@
 <div class="container">
-<!--breadcrumb-->
+  <!--breadcrumb-->
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb" *ngFor="let item of data | slice: 0: 1">
       <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
@@ -8,13 +8,43 @@
     </ol>
   </nav>
 
-
-<!--category-top-->
-
+  <!--category-top-->
+  <div class="category-top row pb-5">
+    <div class="col-3">
+      <img src="./assets/img/category-deco/{{cid}}.png" />
+    </div>
+    <div class="col-3">
+      <div class="sub-cate-box">
+        <div class="sub-cate-img">
+          <a routerLink="#">
+            <img src="./assets/img/category-deco/{{cid}}.1.png" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="sub-cate-box">
+        <div class="sub-cate-img">
+          <a routerLink="/sub-category/2">
+            <img src="./assets/img/category-deco/{{cid}}.2.png" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="sub-cate-box">
+        <div class="sub-cate-img">
+          <a routerLink="#">
+            <img src="./assets/img/category-deco/{{cid}}.3.png" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="row">
     <!--category-side-->
-    <div class="category-side col-2">
+    <div class="category-side-bar col-2">
       <form>
         <div class="mb-3">
           <p class="font-weight-bolder">Collection</p>
@@ -67,30 +97,84 @@
 
     <!--category-main-->
     <div class="category-main col-10">
-      <div class="row mb-2">
-        <div class="col-3 card mb-9" *ngFor="let item of data | slice: 0: 4">
-          <div class="card-prd">
-            <div class="img">
-              <a routerLink="/product-detail/{{item.pid}}">
-                <img src="{{item.thumb}}" />
-              </a>
-            </div>
-            <div class="card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-              Quick view
-            </div>
-            <!--        modal-quick-view-start-->
 
-            <!--        modal-quick-view-end-->
-          </div>
-          <div class="text-center mt-2">
-            <p class="decor-text">{{item.name}}</p>
-            <p class="smt">${{item.price}}</p>
+      <div class="row cate-product">
+        <div class="col-3 card mb-9" *ngFor="let item of data | slice: 0: 4">
+          <div class="item-card-info">
+            <div class="card-prd">
+              <div class="img">
+                <a routerLink="/product-detail/{{item.pid}}">
+                  <img src="{{item.thumb}}">
+                </a>
+              </div>
+              <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+                Quick view
+              </div>
+              <!--Modal Quick view-->
+              <div class="modal fade" id="quickview">
+                <div class="modal-dialog modal-dialog-centered quickview">
+                  <div class="modal-content">
+                    <div class="row">
+                      <div class="col-7 ps-0">
+                        <!--Carousel quick view product-->
+                        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                          <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                          </div>
+                          <div class="carousel-inner">
+                            <div class="carousel-item active">
+                              <img src="./assets/img/product-detail/quickview1.png">
+                            </div>
+                            <div class="carousel-item">
+                              <img src="./assets/img/product-detail/quickview2.png">
+                            </div>
+                            <div class="carousel-item">
+                              <img src="./assets/img/product-detail/quickview3.png">
+                            </div>
+                            <div class="carousel-item">
+                              <img src="./assets/img/product-detail/quickview4.png">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-5 pe-0">
+                        <h5>Diamond Wire Ring</h5>
+                        <h5 class="my-3">$7,000</h5>
+                        <p>Quantity</p>
+                        <div class="quick-size my-3">
+                          <select class="form-select smt">
+                            <option selected>Select size</option>
+                            <option value="1">3</option>
+                            <option value="2">3 1/2</option>
+                            <option value="3">4</option>
+                            <option value="3">4 1/2</option>
+                            <option value="3">5</option>
+                            <option value="3">5 1/2</option>
+                          </select>
+                        </div>
+                        <button type="button" class="btn btn-pri mb-3 w-100" data-bs-dismiss="modal">Add to bag</button>
+                        <a href="">
+                          <p>View more detail</p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item-inf text-center mt-2">
+              <p class="decor-text mb-1">{{item.name}}</p>
+              <p class="smt item-price">${{item.price}}</p>
+            </div>
           </div>
         </div>
       </div>
 
       <!--featured-product-->
-      <div class="row">
+      <div class="mb-3 row">
         <div class="col-6 mb-9">
           <div class="featured">
             <div class="featured-img">
@@ -103,53 +187,55 @@
             </div>
           </div>
         </div>
-
-        <div class="col-3 card mb-9" *ngFor="let item of data | slice: 4: 6">
-          <div class="card-prd">
-            <div class="img">
-              <a routerLink="#">
-                <img src="{{item.thumb}}" />
-              </a>
+        <div class="col-3 mb-9" *ngFor="let item of data | slice: 4: 6">
+          <div class="item-card-info">
+            <div class="card-prd">
+              <div class="img">
+                <a routerLink="/product-detail/{{item.pid}}">
+                  <img src="{{item.thumb}}">
+                </a>
+              </div>
+              <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+                Quick view
+              </div>
             </div>
-            <div class="card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-              Quick view
+            <div class="item-inf text-center mt-2">
+              <p class="decor-text mb-1">{{item.name}}</p>
+              <p class="smt mb-0">${{item.price}}</p>
             </div>
-            <!--        modal-quick-view-start-->
-
-            <!--        modal-quick-view-end-->
-          </div>
-          <div class="text-center mt-2">
-            <p class="decor-text">{{item.name}}</p>
-            <p class="smt">${{item.price}}</p>
           </div>
         </div>
       </div>
 
-      <div class="row mb-2">
-        <div class="col-3 card mb-9" *ngFor="let item of data | slice: 6">
-          <div class="card-prd">
-            <div class="img">
-              <a routerLink="#">
-                <img src="{{item.thumb}}" />
-              </a>
+      <div class="row cate-product ">
+        <div class="col-3 mb-9" *ngFor="let item of data | slice: 6">
+          <div class="item-card-info">
+            <div class="card-prd">
+              <div class="img">
+                <a routerLink="/product-detail/{{item.pid}}">
+                  <img src="{{item.thumb}}">
+                </a>
+              </div>
+              <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+                Quick view
+              </div>
             </div>
-            <div class="card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-              Quick view
+            <div class="item-inf text-center mt-2">
+              <p class="decor-text mb-1">{{item.name}}</p>
+              <p class="smt item-price">${{item.price}}</p>
             </div>
-            <!--        modal-quick-view-start-->
-
-            <!--        modal-quick-view-end-->
-          </div>
-          <div class="text-center mt-2">
-            <p class="decor-text">{{item.name}}</p>
-            <p class="smt">${{item.price}}</p>
           </div>
         </div>
       </div>
 
+      <!--category-bottom-->
+      <div class="category-bottom pb-5 text-center">
+        <p class="smt mb-2">Showing 60 of 180</p>
+        <button class="btn-more">View more</button>
+        <div class="d-flex mt-3">
+          <a class="mx-auto back-to-top smt">Back to top <i class="ps-3 fa-solid fa-chevron-up"></i></a>
+        </div>
+      </div>
     </div>
   </div>
-
-
-<!--category-bottom-->
 </div>
