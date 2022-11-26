@@ -1,5 +1,12 @@
 <div class="container">
 <!--breadcrumb-->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb" *ngFor="let item of data | slice: 0: 1">
+      <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+      <li class="breadcrumb-item"><a routerLink="/shop-all">Shop All</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{item.cate_name}}</li>
+    </ol>
+  </nav>
 
 
 <!--category-top-->
@@ -64,7 +71,7 @@
         <div class="col-3 card mb-9" *ngFor="let item of data | slice: 0: 4">
           <div class="card-prd">
             <div class="img">
-              <a routerLink="#">
+              <a routerLink="/product-detail/{{item.pid}}">
                 <img src="{{item.thumb}}" />
               </a>
             </div>
@@ -88,7 +95,7 @@
           <div class="featured">
             <div class="featured-img">
               <a routerLink="#">
-                <img src="./assets/img/featured/{{cateId}}.png">
+                <img src="./assets/img/featured/{{cid}}.png">
               </a>
             </div>
             <div class="overlay">

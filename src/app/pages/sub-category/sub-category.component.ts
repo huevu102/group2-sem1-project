@@ -11,7 +11,7 @@ import {Data} from "../../interfaces/data.interface";
 
 export class SubCategoryComponent implements OnInit{
   private sub: any;
-  subId: number = 0;
+  sid: number = 0;
   data: Data[] = [];
 
   constructor(
@@ -21,11 +21,11 @@ export class SubCategoryComponent implements OnInit{
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.subId = +params['subId']; // (+) converts string 'id' to a number
+      this.sid = +params['sid']; // (+) converts string 'id' to a number
 
       // In a real app: dispatch action to load the details here.
-      const subCateUrl = 'https://huevuapi.herokuapp.com/get-sub-category/?subId='+ this.subId;
-      this.http.get<Data[]>(subCateUrl).subscribe(data => {
+      const subUrl = 'https://huevuapi.herokuapp.com/get-sub-category/?sid='+ this.sid;
+      this.http.get<Data[]>(subUrl).subscribe(data => {
         this.data = data;
       })
     })
