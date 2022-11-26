@@ -1,0 +1,16 @@
+.category-side .btn {
+  width: 100%;
+  padding: 5px;
+}
+.category-side .btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.category-main a img:hover {
+  opacity: 0.5;
+}
+.category-main .card {
+  border: none;
+  background-color: #faf8f6;
+}
