@@ -1,8 +1,25 @@
-.category-side .btn {
+/*CATEGORY*/
+.sub-cate-box:hover > .sub-cate-img{
+  transition: 0.5s;
+  transform: scale(108%);
+  filter:brightness(90%);
+}
+.sub-cate-box{
+  position:relative;
+  overflow:hidden;
+}
+.sub-name{
+  position:absolute;
+  bottom:10px;
+  left:10px;
+}
+
+
+.category-side-bar .btn {
   width: 100%;
   padding: 5px;
 }
-.category-side .btn:hover {
+.category-side-bar .btn:hover {
   background-color: #000;
   color: #fff;
 }
@@ -12,5 +29,43 @@
 }
 .category-main .card {
   border: none;
-  background-color: #faf8f6;
+  background-color: #FAF8F6;
+}
+.category-main h6 {
+  font-size: small;
+}
+.cate-product{
+  margin-bottom:9px;
+}
+/*Featured Product*/
+.featured {
+  position: relative;
+  overflow:hidden;
+}
+.overlay {
+  position: absolute;
+  top: calc(50% - 80px);
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  display:none;
+}
+.featured:hover > .overlay{
+  display:block;
+}
+.featured:hover >.featured-img{
+  transform:scale(108%);
+  transition:0.6s all;
+}
+
+
+.back-to-top {
+  color: #999;
+}
+.back-to-top:hover {
+  color: #000;
+}
+.category-bottom{
+  margin-bottom:80px;
+  margin-top:80px;
 }
