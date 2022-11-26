@@ -4,7 +4,15 @@
   padding-top:100px;
 }
 /*Showcase*/
-
+.showcase-title-inner{
+  position: relative;
+  animation: mymove 2s;
+  animation-timing-function: linear;
+}
+@keyframes mymove {
+  from {left: -160px;}
+  to {left: 0px;}
+}
 .showcase-content{
   position: relative;
 }
@@ -27,7 +35,7 @@
 .round-button{
   border: 2px solid #fff;
   border-radius: 100%;
-  padding: 20px;
+  padding: 12px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -36,6 +44,12 @@
 .round-button i{
   padding:0px 3px;
   color:#fff;
+}
+.round-button{
+  position: relative;
+  animation: mymove 2s infinite;
+  animation-timing-function: linear;
+
 }
 /*All jewellery*/
 .item-box-content a{
@@ -68,12 +82,14 @@
   filter:brightness(90%);
   transition:0.4s all;
 }
+
 /*experiences*/
 .experiences{
   background-color: #fff;
   padding-top:80px;
   padding-bottom:80px;
 }
+
 
 
 
