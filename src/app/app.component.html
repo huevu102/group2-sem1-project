@@ -1,95 +1,96 @@
-<!--HEADER-->
 <link rel="stylesheet" href="app.component.css">
 <script src="app.component.ts"></script>
-<header>
-  <div class="header card-header border-0 container">
-    <div class="row header-inner">
-      <!--top-page-left-->
-      <div class="col-3">
-        <ul class="d-flex justify-content-start">
-          <li class="p-2"><a href="https://www.facebook.com/aguri-jewellery"><i class="fa-brands fa-lg fa-facebook"></i></a></li>
-          <li class="p-2"><a href="https://www.instagram.com/aguri-jewellery"><i class="fa-brands fa-lg fa-instagram"></i></a></li>
-          <li class="p-2"><a href="https://www.pinterest.com/aguri-jewellery"><i class="fa-brands fa-lg fa-pinterest"></i></a></li>
-        </ul>
-      </div>
-      <!--logo-->
-      <div class="col-6 d-flex justify-content-center">
-        <img id="logo" src="./assets/img/logo.svg" alt="aguri-logo"/>
-      </div>
-      <!--top-page-right-->
-      <div class="col-3">
-        <ul class="d-flex justify-content-end">
-          <li class="p-2">
-            <!--Modal Sign In Button-->
-            <a class="sign-in" data-bs-toggle="modal" type="button" data-bs-target="#signin">Sign in</a>
-          </li>
-          <li class="p-2"><i class="fa fa-shopping-cart fa-lg"></i></li>
-          <!--search-button-start-->
-          <li class="p-2 search-button dropdown">
-            <i class="fa fa-search fa-lg"></i>
-            <div class="dropdown-content">
-              <input type="text" placeholder="Search AGURI">
-            </div>
-          </li>
-          <!--search-button-end-->
-        </ul>
+<div class="head-nav">
+  <!--HEADER-->
+  <header class="section top-page">
+    <div class="header card-header border-0 container">
+      <div class="row header-inner">
+        <!--top-page-left-->
+        <div class="col-3">
+          <ul class="d-flex justify-content-start">
+            <li class="p-2"><a href="https://www.facebook.com/aguri-jewellery"><i class="fa-brands fa-lg fa-facebook"></i></a></li>
+            <li class="p-2"><a href="https://www.instagram.com/aguri-jewellery"><i class="fa-brands fa-lg fa-instagram"></i></a></li>
+            <li class="p-2"><a href="https://www.pinterest.com/aguri-jewellery"><i class="fa-brands fa-lg fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+        <!--logo-->
+        <div class="col-6 d-flex justify-content-center">
+          <img id="logo" src="./assets/img/logo.svg" alt="aguri-logo"/>
+        </div>
+        <!--top-page-right-->
+        <div class="col-3">
+          <ul class="d-flex justify-content-end">
+            <li class="p-2">
+              <!--Modal Sign In Button-->
+              <a class="sign-in" data-bs-toggle="modal" type="button" data-bs-target="#signin">Sign in</a>
+            </li>
+            <li class="p-2"><i class="fa fa-shopping-cart fa-lg"></i></li>
+            <!--search-button-start-->
+            <li class="p-2 search-button dropdown">
+              <i class="fa fa-search fa-lg"></i>
+              <div class="dropdown-content">
+                <input type="text" placeholder="Search AGURI">
+              </div>
+            </li>
+            <!--search-button-end-->
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</header>
-
-<!--NAVBAR-->
-<nav>
-  <div class="container border-0">
-    <ul class="nav justify-content-center">
-      <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
-      <!--dropdown-menu-start-->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropbtn" routerLink="/shop-all">Shop All <i class="fa-solid fa-chevron-down"></i></a>
-        <div class="dropdown-content mt-2">
-          <div class="row">
-            <div class="col-3">
-              <ul>
-                <li class="category"><a [routerLink]="['/category', 1]">Rings</a></li>
-                <li><a [routerLink]="['/sub-category', 1]">Eternity</a></li>
-                <li><a [routerLink]="['/sub-category', 2]">Cocktail</a></li>
-                <li><a [routerLink]="['/sub-category', 3]">Wedding</a></li>
-              </ul>
-            </div>
-            <div class="col-3">
-              <ul>
-                <li class="category"><a [routerLink]="['/category', 2]">Earrings</a></li>
-                <li><a [routerLink]="['/sub-category', 4]">Stud</a></li>
-                <li><a [routerLink]="['/sub-category', 5]">Drop & Dangle</a></li>
-                <li><a [routerLink]="['/sub-category', 6]">Hoop</a></li>
-              </ul>
-            </div>
-            <div class="col-3">
-              <ul>
-                <li class="category"><a [routerLink]="['/category', 3]">Bracelets</a></li>
-                <li><a [routerLink]="['/sub-category', 7]">Chain</a></li>
-                <li><a [routerLink]="['/sub-category', 8]">Bangle</a></li>
-                <li><a [routerLink]="['/sub-category', 9]">Tennis</a></li>
-              </ul>
-            </div>
-            <div class="col-3">
-              <ul>
-                <li class="category"><a [routerLink]="['/category', 4]">Necklaces</a></li>
-                <li><a [routerLink]="['/sub-category', 10]">Chain</a></li>
-                <li><a [routerLink]="['/sub-category', 11]">Everyday</a></li>
-                <li><a [routerLink]="['/sub-category', 12]">Layering</a></li>
-              </ul>
+  </header>
+  <!--NAVBAR-->
+  <nav class="section header">
+    <div class="container border-0">
+      <ul class="nav justify-content-center">
+        <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
+        <!--dropdown-menu-start-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropbtn" routerLink="/shop-all">Shop All <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="dropdown-content mt-2">
+            <div class="row">
+              <div class="col-3">
+                <ul>
+                  <li class="category"><a [routerLink]="['/category', 1]">Rings</a></li>
+                  <li><a [routerLink]="['/sub-category', 1]">Eternity</a></li>
+                  <li><a [routerLink]="['/sub-category', 2]">Cocktail</a></li>
+                  <li><a [routerLink]="['/sub-category', 3]">Wedding</a></li>
+                </ul>
+              </div>
+              <div class="col-3">
+                <ul>
+                  <li class="category"><a [routerLink]="['/category', 2]">Earrings</a></li>
+                  <li><a [routerLink]="['/sub-category', 4]">Stud</a></li>
+                  <li><a [routerLink]="['/sub-category', 5]">Drop & Dangle</a></li>
+                  <li><a [routerLink]="['/sub-category', 6]">Hoop</a></li>
+                </ul>
+              </div>
+              <div class="col-3">
+                <ul>
+                  <li class="category"><a [routerLink]="['/category', 3]">Bracelets</a></li>
+                  <li><a [routerLink]="['/sub-category', 7]">Chain</a></li>
+                  <li><a [routerLink]="['/sub-category', 8]">Bangle</a></li>
+                  <li><a [routerLink]="['/sub-category', 9]">Tennis</a></li>
+                </ul>
+              </div>
+              <div class="col-3">
+                <ul>
+                  <li class="category"><a [routerLink]="['/category', 4]">Necklaces</a></li>
+                  <li><a [routerLink]="['/sub-category', 10]">Chain</a></li>
+                  <li><a [routerLink]="['/sub-category', 11]">Everyday</a></li>
+                  <li><a [routerLink]="['/sub-category', 12]">Layering</a></li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      </li>
-      <!--dropdown-menu-start-->
-      <li class="nav-item"><a class="nav-link" routerLink="/guide">Jewellery Guide</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/about-us">About us</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+        </li>
+        <!--dropdown-menu-start-->
+        <li class="nav-item"><a class="nav-link" routerLink="/guide">Jewellery Guide</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/about-us">About us</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
 
 <section>
   <router-outlet></router-outlet>
