@@ -1,9 +1,32 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
+import {ActivatedRoute} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
+import {Data} from "../../interfaces/data.interface";
 
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  styleUrls: ['/product-detail.component.css']
 })
 
-export class ProductDetailComponent {}
+export class ProductDetailComponent implements OnInit {
+  private product: any;
+  pid: number = 0;
+  data: Data[] = [];
+
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient
+  ) {}
+
+  ngOnInit() {
+    this.product = this.route.params.subscribe(params => {
+      this.pid = +params['pid'];
+
+      const productURL = 'https://huevuapi.herokuapp.com/get-product/?pid=' + this.pid;
+      this.http.get<Data[]>(productURL).subscribe(data => {
+        this.data = data;
+      })
+    })
+  }
+}

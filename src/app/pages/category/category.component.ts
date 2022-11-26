@@ -11,7 +11,7 @@ import {Data} from "../../interfaces/data.interface";
 
 export class CategoryComponent implements OnInit {
   private cate: any;
-  cateId: number = 0;
+  cid: number = 0;
   data: Data[] = [];
 
   constructor(
@@ -21,9 +21,9 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit() {
     this.cate = this.route.params.subscribe(params => {
-      this.cateId = +params['cateId'];
+      this.cid = +params['cid'];
 
-      const cateUrl = 'https://huevuapi.herokuapp.com/get-category/?cateId='+ this.cateId;
+      const cateUrl = 'https://huevuapi.herokuapp.com/get-category/?cid='+ this.cid;
       this.http.get<Data[]>(cateUrl).subscribe(data => {
         this.data = data;
       })
