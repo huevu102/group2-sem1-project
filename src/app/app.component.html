@@ -1,90 +1,96 @@
-<!--HEADER-->
-<header>
-  <div class="header card-header border-0 container">
-    <div class="row header-inner">
-      <!--top-page-left-->
-      <div class="col-3">
-        <ul class="d-flex justify-content-start">
-          <li class="p-2"><a href="https://www.facebook.com/aguri-jewellery"><i class="fa-brands fa-lg fa-facebook"></i></a></li>
-          <li class="p-2"><a href="https://www.instagram.com/aguri-jewellery"><i class="fa-brands fa-lg fa-instagram"></i></a></li>
-          <li class="p-2"><a href="https://www.pinterest.com/aguri-jewellery"><i class="fa-brands fa-lg fa-pinterest"></i></a></li>
-        </ul>
-      </div>
-      <!--logo-->
-      <div class="col-6 d-flex justify-content-center">
-        <img id="logo" src="./assets/img/logo.svg" alt="aguri-logo"/>
-      </div>
-      <!--top-page-right-->
-      <div class="col-3">
-        <ul class="d-flex justify-content-end">
-          <li class="p-2">Sign in</li>
-          <li class="p-2"><i class="fa fa-shopping-cart fa-lg"></i></li>
-          <!--search-button-start-->
-          <li class="p-2 search-button dropdown">
-            <i class="fa fa-search fa-lg"></i>
-            <div class="dropdown-content">
-              <input type="text" placeholder="Search AGURI">
-            </div>
-          </li>
-          <!--search-button-end-->
-        </ul>
+<link rel="stylesheet" href="app.component.css">
+<script src="app.component.ts"></script>
+<div class="head-nav">
+  <!--HEADER-->
+  <header class="section top-page">
+    <div class="header card-header border-0 container">
+      <div class="row header-inner">
+        <!--top-page-left-->
+        <div class="col-3">
+          <ul class="d-flex justify-content-start">
+            <li class="p-2"><a href="https://www.facebook.com/aguri-jewellery"><i class="fa-brands fa-lg fa-facebook"></i></a></li>
+            <li class="p-2"><a href="https://www.instagram.com/aguri-jewellery"><i class="fa-brands fa-lg fa-instagram"></i></a></li>
+            <li class="p-2"><a href="https://www.pinterest.com/aguri-jewellery"><i class="fa-brands fa-lg fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+        <!--logo-->
+        <div class="col-6 d-flex justify-content-center">
+          <img id="logo" src="./assets/img/logo.svg" alt="aguri-logo"/>
+        </div>
+        <!--top-page-right-->
+        <div class="col-3">
+          <ul class="d-flex justify-content-end">
+            <li class="p-2">
+              <!--Modal Sign In Button-->
+              <a class="sign-in" data-bs-toggle="modal" type="button" data-bs-target="#signin">Sign in</a>
+            </li>
+            <li class="p-2"><i class="fa fa-shopping-cart fa-lg"></i></li>
+            <!--search-button-start-->
+            <li class="p-2 search-button dropdown">
+              <i class="fa fa-search fa-lg"></i>
+              <div class="dropdown-content">
+                <input type="text" placeholder="Search AGURI">
+              </div>
+            </li>
+            <!--search-button-end-->
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</header>
-
-<!--NAVBAR-->
-<nav>
-  <div class="container border-0">
-    <ul class="nav justify-content-center">
-      <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
-      <!--dropdown-menu-start-->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropbtn" routerLink="/shop-all">Shop All <i class="fa fa-chevron-circle-down"></i></a>
-        <div class="dropdown-content mt-2">
-          <div class="row">
-            <div class="col-3">
-              <ul>
-                <li class="category"><a routerLink="/shop-all/category">Rings</a></li>
-                <li><a [routerLink]="['/shop-all/category/sub-category', 1]">Eternity</a></li>
-                <li><a [routerLink]="['/shop-all/category/sub-category', 2]">Cocktail</a></li>
-                <li><a routerLink="#">Wedding</a></li>
-              </ul>
-            </div>
-            <div class="col-3">
-              <ul>
-                <li class="category"><a routerLink="/earrings">Earrings</a></li>
-                <li><a routerLink="#">Stud</a></li>
-                <li><a routerLink="#">Drop & Dangle</a></li>
-                <li><a routerLink="#">Hoop</a></li>
-              </ul>
-            </div>
-            <div class="col-3">
-              <ul>
-                <li class="category"><a routerLink="/bracelets">Bracelets</a></li>
-                <li><a routerLink="#">Chain</a></li>
-                <li><a routerLink="#">Bangle</a></li>
-                <li><a routerLink="#">Tennis</a></li>
-              </ul>
-            </div>
-            <div class="col-3">
-              <ul>
-                <li class="category"><a routerLink="/necklaces">Necklaces</a></li>
-                <li><a routerLink="#">Chain</a></li>
-                <li><a routerLink="#">Everyday</a></li>
-                <li><a routerLink="#">Layering</a></li>
-              </ul>
+  </header>
+  <!--NAVBAR-->
+  <nav class="section header">
+    <div class="container border-0">
+      <ul class="nav justify-content-center">
+        <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
+        <!--dropdown-menu-start-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropbtn" routerLink="/shop-all">Shop All <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="dropdown-content mt-2">
+            <div class="row">
+              <div class="col-3">
+                <ul>
+                  <li class="category"><a [routerLink]="['/category', 1]">Rings</a></li>
+                  <li><a [routerLink]="['/sub-category', 1]">Eternity</a></li>
+                  <li><a [routerLink]="['/sub-category', 2]">Cocktail</a></li>
+                  <li><a [routerLink]="['/sub-category', 3]">Wedding</a></li>
+                </ul>
+              </div>
+              <div class="col-3">
+                <ul>
+                  <li class="category"><a [routerLink]="['/category', 2]">Earrings</a></li>
+                  <li><a [routerLink]="['/sub-category', 4]">Stud</a></li>
+                  <li><a [routerLink]="['/sub-category', 5]">Drop & Dangle</a></li>
+                  <li><a [routerLink]="['/sub-category', 6]">Hoop</a></li>
+                </ul>
+              </div>
+              <div class="col-3">
+                <ul>
+                  <li class="category"><a [routerLink]="['/category', 3]">Bracelets</a></li>
+                  <li><a [routerLink]="['/sub-category', 7]">Chain</a></li>
+                  <li><a [routerLink]="['/sub-category', 8]">Bangle</a></li>
+                  <li><a [routerLink]="['/sub-category', 9]">Tennis</a></li>
+                </ul>
+              </div>
+              <div class="col-3">
+                <ul>
+                  <li class="category"><a [routerLink]="['/category', 4]">Necklaces</a></li>
+                  <li><a [routerLink]="['/sub-category', 10]">Chain</a></li>
+                  <li><a [routerLink]="['/sub-category', 11]">Everyday</a></li>
+                  <li><a [routerLink]="['/sub-category', 12]">Layering</a></li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      </li>
-      <!--dropdown-menu-start-->
-      <li class="nav-item"><a class="nav-link" routerLink="/guide">Jewellery Guide</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/about-us">About us</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+        </li>
+        <!--dropdown-menu-start-->
+        <li class="nav-item"><a class="nav-link" routerLink="/guide">Jewellery Guide</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/about-us">About us</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
 
 <section>
   <router-outlet></router-outlet>
@@ -147,6 +153,86 @@
     </div>
   </div>
 </footer>
+
+
+<!-- Modal Sign in-->
+<div class="modal fade" id="signin">
+  <div class="modal-dialog modal-dialog-centered first-steps">
+    <div class="modal-content first-steps-inner">
+      <h5 class="modal-title mb-4 text-center">Welcome to AGURI!</h5>
+      <form>
+          <label for="emailuser">Email address</label>
+          <input id="emailuser" class="inpu mb-3" type="email" required><br>
+          <label>Create password</label>
+          <input class="inpu" type="text" required>
+      </form>
+      <button type="submit" class="btn btn-pri my-4" data-bs-dismiss="modal">Sign in</button>
+      <div class="d-flex sign-in-content">
+        <div class="signin-inner">
+          <a class="forgot-pass smt me-5" data-bs-toggle="modal" type="submit" data-bs-target="#forgotpass">Forgot password?</a>
+          <span class="smt">New member?<a class="sign-up smt" data-bs-toggle="modal" type="button" data-bs-target="#signup">Sign up</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Forgot Password-->
+<div class="modal fade" id="forgotpass">
+  <div class="modal-dialog modal-dialog-centered first-steps">
+    <div class="modal-content first-steps-inner">
+      <h5 class="modal-title mb-4 text-center">Forgot your password?</h5>
+      <!--name="myFormBottom" onsubmit="return validateFormBottom()"-->
+      <form>
+        <label>Email address</label>
+        <input class="inpu" type="email" required><br>
+      </form>
+      <button type="submit" class="btn btn-pri my-4" data-bs-dismiss="modal">Reset Password</button>
+      <div class="text-center">
+          <a class="smt" data-bs-toggle="modal" type="submit" data-bs-target="#signin">Back to Sign in</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Sign up-->
+<div class="modal fade" id="signup">
+  <div class="modal-dialog modal-dialog-centered first-steps">
+    <div class="modal-content first-steps-inner">
+      <h5 class="modal-title mb-4 text-center">Hello, Friend!</h5>
+      <form>
+        <div class="row">
+          <div class="col-6 ps-0">
+            <label>First name</label>
+            <input class="inpu" type="text" required><br>
+          </div>
+          <div class="col-6 pe-0">
+            <label>Last name</label>
+            <input class="inpu" type="text" required><br>
+          </div>
+        </div>
+        <div class="my-3">
+          <label>Email address</label>
+          <input class="inpu" type="email" required><br>
+        </div>
+        <div class="">
+          <label>Create password</label>
+          <input class="inpu" type="text" required>
+        </div>
+        <div class="my-3">
+          <label>Re-type password</label>
+          <input class="inpu" type="text" required>
+        </div>
+        <button type="submit" class="btn btn-pri my-4 w-100" data-bs-dismiss="modal">Sign up</button>
+        <div class="d-flex sign-in-content w-100">
+          <div class="signin-inner">
+            <span class="smt">Already have an account? <a class="sign-in smt" data-bs-toggle="modal" type="button" data-bs-target="#signin">Sign in</a></span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 
 

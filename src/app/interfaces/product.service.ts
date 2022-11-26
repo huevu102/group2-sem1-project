@@ -6,7 +6,7 @@ import {Product} from "./product.interface";
 const httpOptions = {
   headers:new HttpHeaders({'Content-Type':'Application/json'})
 }
-const apiUrl = 'https://huevuapi.herokuapp.com/get-product';
+const apiUrl = 'https://huevuapi.herokuapp.com/get-rings';
 
 @Injectable({
   providedIn: 'root'

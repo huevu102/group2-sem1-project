@@ -40,6 +40,15 @@ function nextSlide(){
   tit.innerHTML = text;
 }
 
+function slide(){
+  var x1 = document.getElementById('mySlider');
+  x1.style.opacity = '0';
+  setTimeout(()=>{
+    nextSlide();
+    x1.style.opacity = '1';
+  },400);
+}
+
 
 
 

@@ -1,6 +1,7 @@
 import {Component, OnInit} from "@angular/core";
-import {ProductService} from "../../interfaces/product.service";
-import {Product} from "../../interfaces/product.interface";
+import {ActivatedRoute} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
+import {Data} from "../../interfaces/data.interface";
 
 @Component({
   selector: 'app-category',
@@ -8,18 +9,24 @@ import {Product} from "../../interfaces/product.interface";
   styleUrls: ['./category.component.css']
 })
 
-export class CategoryComponent implements OnInit{
-  data: Product[] = [];
+export class CategoryComponent implements OnInit {
+  private cate: any;
+  cateId: number = 0;
+  data: Data[] = [];
 
-  constructor(private productService: ProductService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient
+  ) {}
 
-  ngOnInit(): void {
-    this.getAll();
-  }
+  ngOnInit() {
+    this.cate = this.route.params.subscribe(params => {
+      this.cateId = +params['cateId'];
 
-  getAll() {
-    this.productService.getAll().subscribe((res:any) => {
-      this.data = res;
+      const cateUrl = 'https://huevuapi.herokuapp.com/get-category/?cateId='+ this.cateId;
+      this.http.get<Data[]>(cateUrl).subscribe(data => {
+        this.data = data;
+      })
     })
   }
 }

@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'group2-sem1-project';
+
+  constructor(){
+  }
 }
