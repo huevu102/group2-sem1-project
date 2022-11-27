@@ -4,7 +4,7 @@
     <ol class="breadcrumb" *ngFor="let item of data | slice: 0: 1">
       <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
       <li class="breadcrumb-item"><a routerLink="/shop-all">Shop All</a></li>
-      <li class="breadcrumb-item active" aria-current="page">{{item.cate_name}}</li>
+      <li class="breadcrumb-item active" aria-current="page"><a>{{item.cate_name}}</a></li>
     </ol>
   </nav>
 

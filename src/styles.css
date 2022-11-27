@@ -370,7 +370,9 @@ nav li:nth-child(1){
   margin: auto;
 }
 /*BREADCRUMB*/
-
+.breadcrumb a{
+  font-size:14px;
+}
 .breadcrumb {
   background-color: #FAF8F6;
   padding-top: 0;
