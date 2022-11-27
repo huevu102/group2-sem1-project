@@ -1,6 +1,4 @@
-<link rel="stylesheet" href="app.component.css">
-<script src="app.component.ts"></script>
-<div class="head-nav">
+<div class="headnav">
   <!--HEADER-->
   <header class="section top-page">
     <div class="header card-header border-0 container">
@@ -27,7 +25,7 @@
             <li class="px-3 py-1"><i class="fa fa-shopping-cart fa-lg"></i></li>
             <!--search-button-start-->
             <div class="search-box">
-                <input class="text" placeholder="search...">
+                <input type="text" placeholder="search...">
                 <a routerLink="#" class="iconsearch">
                   <i class="fa fa-search fa-lg"></i>
                 </a>
@@ -40,7 +38,7 @@
   </header>
   <!--NAVBAR-->
   <nav class="section header">
-    <div class="container border-0">
+    <div class="container navbar-here border-0">
       <ul class="nav justify-content-center">
         <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
         <!--dropdown-menu-start-->
@@ -83,8 +81,10 @@
             </div>
           </div>
         </li>
-        <!--dropdown-menu-start-->
-        <li class="nav-item"><a class="nav-link" routerLink="/guide">Jewellery Guide</a></li>
+        <!--dropdown-menu-end-->
+        <li class="nav-item nav-test">
+          <a class="nav-link" routerLink="/guide">Jewellery Guide</a>
+        </li>
         <li class="nav-item"><a class="nav-link" routerLink="/about-us">About us</a></li>
         <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
       </ul>

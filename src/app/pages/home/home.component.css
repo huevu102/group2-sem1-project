@@ -10,7 +10,7 @@
   animation-timing-function: linear;
 }
 @keyframes mymove {
-  from {left: -160px;}
+  from {left: -180px;}
   to {left: 0px;}
 }
 .showcase-content{
