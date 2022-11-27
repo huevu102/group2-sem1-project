@@ -2,7 +2,7 @@
 .sub-cate-box:hover > .sub-cate-img{
   transition: 0.5s;
   transform: scale(108%);
-  filter:brightness(90%);
+  filter:brightness(89%);
 }
 .sub-cate-box{
   position:relative;
@@ -44,14 +44,14 @@
 }
 .overlay {
   position: absolute;
-  top: calc(50% - 80px);
+  top:50%;
   width: 100%;
-  padding: 50px 0;
-  text-align: center;
-  display:none;
+  justify-content:center;
+  display:flex;
+  opacity:0;
 }
 .featured:hover > .overlay{
-  display:block;
+  opacity:1;
 }
 .featured:hover >.featured-img{
   transform:scale(108%);
