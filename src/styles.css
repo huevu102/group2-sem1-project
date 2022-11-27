@@ -422,6 +422,8 @@ nav li:nth-child(1){
 body{
   --nav-height:164px;
   padding-top: var(--nav-height);
+  /*for test scroll back to top*/
+  scroll-behavior: smooth;
 }
 .headnav{
   background: #FAF8F6;

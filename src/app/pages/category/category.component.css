@@ -58,10 +58,10 @@
   transition:0.6s all;
 }
 
-
-.back-to-top {
+.back-to-top{
   color: #999;
 }
+
 .back-to-top:hover {
   color: #000;
 }

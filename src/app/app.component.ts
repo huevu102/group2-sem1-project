@@ -11,6 +11,7 @@ export class AppComponent {
   constructor(){
     this.function()
   }
+
   function(){
     const nav = document.querySelector(".headnav");
     let lastScrollY = window.scrollY;
