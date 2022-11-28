@@ -14,8 +14,6 @@
   margin-bottom:40px;
 }
 
-
-
-
-
-
+agm-map {
+  height: 400px;
+}

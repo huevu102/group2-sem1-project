@@ -1,6 +1,4 @@
-import {Component, OnInit} from "@angular/core";
-import {ProductService} from "../../interfaces/product.service";
-import {Product} from "../../interfaces/product.interface";
+import {Component} from "@angular/core";
 
 @Component({
   selector: 'app-category-DRAFT',
@@ -8,18 +6,4 @@ import {Product} from "../../interfaces/product.interface";
   styleUrls: ['./category-draft.component.css']
 })
 
-export class CategoryDraftComponent implements OnInit{
-  data: Product[] = [];
-
-  constructor(private productService: ProductService) { }
-
-  ngOnInit(): void {
-    this.getAll();
-  }
-
-  getAll() {
-    this.productService.getAll().subscribe((res:any) => {
-      this.data = res;
-    })
-  }
-}
+export class CategoryDraftComponent {}
