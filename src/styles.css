@@ -435,12 +435,13 @@ body{
   top: 0px;
   left: 0px;
   width:100%;
-  z-index: 10000;
+  z-index: 100;
   height: var(--nav-height);
 }
-.nav--hidden{
+.nav--hidden {
   transform: translateY(-164px);
 }
+
 
 
 
