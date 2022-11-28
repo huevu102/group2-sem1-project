@@ -1,8 +1,12 @@
-Hello {{subId}}
-<div *ngFor="let item of data">
-  <p>Image: <img src="{{item.thumb}}" /></p>
-  <h6>Name: {{item.name}}</h6>
-  <p>Price: {{item.price}}</p>
-  <p>Description: {{item.description}}</p>
+Hello {{sid}}
+<div class="container">
+  <div class="row">
+    <div class="col-3" *ngFor="let item of data | slice:0:2">
+      <p>Image: <img src="{{item.thumb}}" /></p>
+      <h6>Name: {{item.name}}</h6>
+      <p>Price: {{item.price}}</p>
+      <p>Description: {{item.description}}</p>
+    </div>
+  </div>
 </div>
 Goodbye

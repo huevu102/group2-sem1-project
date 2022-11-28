@@ -9,6 +9,7 @@ body{
   font-family: 'Inter', sans-serif;
   background-color: #FAF8F6;
 }
+
 ul {
   padding-inline-start: 0;
 }
@@ -155,17 +156,37 @@ label{
   padding-top:20px;
   padding-bottom:20px;
 }
-/*dropdown-search-button*/
-.search-button .dropdown-content {
-  margin: 10px 0;
-  padding: 20px;
-  transform: translateX(-200px);
-  width: max-content;
+/*search-box*/
+.search-box{
+  border-radius: 20px;
+  padding:4px 6px;
 }
-.search-button .dropdown-content input {
-  padding: 5px 10px;
+.search-box:hover{
+  border: 1px solid #000;
 }
+.search-box:hover > input{
+  width:120px;
+  padding: 0px 2px;
+  color:#000;
+}
+input{
+  width:0px;
+  border: none;
+  padding:0;
+  background: none;
+  font-size: 14px;
+  transition: 0.5s ease;
+}
+.iconsearch{
+  transition: 0.4s;
+}
+
 /*NAV*/
+
+.navbar-here{
+  padding-top:20px;
+  padding-bottom:20px;
+}
 .nav-link{
   padding:0px;
 }
@@ -173,7 +194,7 @@ nav a{
   font-size:16px;
 }
 nav li{
-  padding:25px 30px 25px 30px;
+  padding:10px 30px;
 }
 nav li:nth-child(5){
   padding-right: 0px;
@@ -186,10 +207,10 @@ nav li:nth-child(1){
   display: none;
   position: absolute;
   background-color: #FAF8F6;
-  width: 1110px;
+  width: 1150px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  transform: translate(-32%);
+  transform: translate(-32.5%);
 }
 .dropdown-content a {
   float: none;
@@ -349,9 +370,13 @@ nav li:nth-child(1){
   margin: auto;
 }
 /*BREADCRUMB*/
+.breadcrumb a{
+  font-size:14px;
+}
 .breadcrumb {
   background-color: #FAF8F6;
   padding-top: 0;
+
 }
 .breadcrumb-item {
   padding: 0;
@@ -378,7 +403,7 @@ nav li:nth-child(1){
 }
 .item-box-all:hover > .item-box-img{
   transform:scale(108%);
-  filter:brightness(70%);
+  filter:brightness(90%);
   transition:0.4s all;
 }
 .item-box-content a{
@@ -396,3 +421,28 @@ nav li:nth-child(1){
   bottom:0px;
   left:0px;
 }
+
+/*test-nav-scoll*/
+body{
+  --nav-height:164px;
+  padding-top: var(--nav-height);
+  /*for test scroll back to top*/
+  scroll-behavior: smooth;
+}
+.headnav{
+  background: #FAF8F6;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width:100%;
+  z-index: 10000;
+  height: var(--nav-height);
+}
+.nav--hidden{
+  transform: translateY(-164px);
+}
+
+
+
+
+

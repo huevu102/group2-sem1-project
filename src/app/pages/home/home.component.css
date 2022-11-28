@@ -1,5 +1,56 @@
-/*New Arrivals*/
 
+/*New Arrivals*/
+.new-arrivals{
+  padding-top:100px;
+}
+/*Showcase*/
+.showcase-title-inner{
+  position: relative;
+  animation: mymove 2s;
+  animation-timing-function: linear;
+}
+@keyframes mymove {
+  from {left: -180px;}
+  to {left: 0px;}
+}
+.showcase-content{
+  position: relative;
+}
+.showcase-main-img{
+  position: absolute;
+  right:0px;
+}
+.showcase-title{
+  padding-top:70px;
+  margin-bottom:40px;
+}
+.showcase-img{
+  position:relative;
+}
+.decor-showcase-slide{
+  position: absolute;
+  left:165px;
+  top:61%;
+}
+.round-button{
+  border: 2px solid #fff;
+  border-radius: 100%;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.round-button i{
+  padding:0px 3px;
+  color:#fff;
+}
+.round-button{
+  position: relative;
+  animation: mymove 2s infinite;
+  animation-timing-function: linear;
+
+}
 /*All jewellery*/
 .item-box-content a{
   color:#fff;
@@ -8,14 +59,12 @@
   color:#fff;
   text-decoration: underline;
 }
-
 /*Best seller*/
 .best-seller{
   background-color: #fff;
   padding-top:60px;
   padding-bottom:60px;
 }
-
 /*New Collection*/
 .new-collection-bottom{
   display:flex;
@@ -28,100 +77,21 @@
 .feature-img2 img{
   padding-top:210px;
 }
+.new-collection-img:hover > .collection-img{
+  transform:scale(105%);
+  filter:brightness(90%);
+  transition:0.4s all;
+}
+
 /*experiences*/
 .experiences{
   background-color: #fff;
   padding-top:80px;
   padding-bottom:80px;
 }
-#no-1{
-  width: 295px;
-  height: 391px;
-  margin-top: 231px;
-}
-#no-2{
-  width: 295px;
-  height: 391px;
-  margin-top: 231px;
-  margin-left: 30px;
-}
-#no-3{
-  width: 620px;
-  height: 820px;
-  margin-top: 57px;
-  margin-left: 193px;
-  margin-bottom: 120px;
-}
-#no-4{
-  width: 295px;
-  height: 391px;
-  margin-left: 135.33px;
-  margin-top: 231px;
-}
-#click{
-  margin: 385.33px 135.33px 528.33px 136.33px;
-}
-#tittle{
-  position: absolute;
-  width: 492px;
-  height: 69px;
-  left: 1190px;
-  top: 680px;
-  font-family: 'Merchant';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 46px;
-  line-height: 69px;
-  color: #000000;
-  transform: rotate(90deg);
-}
-#mySlider{
-  transition: 1s;
-  display: flex;
-}
-#descrip{
-  width: 785px;
-  height: 192px;
-  font-family: 'Merchant';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 64px;
-  line-height: 96px;
-  color: #000000;
-  margin-top: 60px;
-  margin-left: 163px;
-}
-#small-text{
-  position: absolute;
-  width: 461px;
-  height: 54px;
-  left: 163px;
-  top: 536px;
-
-  /* Small text */
-
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 18px;
-  /* or 150% */
-
-  display: flex;
-  align-items: flex-end;
-
-  /* Primary color */
-
-  color: #000000;
-
-
-}
 
 
 
-
-
-/*Showroom*/
 
 
 
