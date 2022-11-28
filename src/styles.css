@@ -147,7 +147,7 @@ label{
 }
 /*HEADER*/
 #logo {
-  height: 40px;
+  height: 30px;
 }
 .card-header{
   padding:0px;
@@ -159,7 +159,7 @@ label{
 /*search-box*/
 .search-box{
   border-radius: 20px;
-  padding:4px 6px;
+  padding:3px 5px;
 }
 .search-box:hover{
   border: 1px solid #000;
@@ -184,8 +184,8 @@ input{
 /*NAV*/
 
 .navbar-here{
-  padding-top:20px;
-  padding-bottom:20px;
+  padding-top:10px;
+  padding-bottom:10px;
 }
 .nav-link{
   padding:0px;
@@ -424,7 +424,7 @@ nav li:nth-child(1){
 
 /*test-nav-scoll*/
 body{
-  --nav-height:164px;
+  --nav-height:136px;
   padding-top: var(--nav-height);
   /*for test scroll back to top*/
   scroll-behavior: smooth;
@@ -439,7 +439,7 @@ body{
   height: var(--nav-height);
 }
 .nav--hidden {
-  transform: translateY(-164px);
+  transform: translateY(-36px);
 }
 
 

@@ -22,7 +22,17 @@
               <!--Modal Sign In Button-->
               <a class="sign-in" data-bs-toggle="modal" type="button" data-bs-target="#sign-in">Sign in</a>
             </li>
-            <li class="px-3 py-1"><i class="fa fa-shopping-cart fa-lg"></i></li>
+            <div>
+              <li class="px-3 py-1"><i class="fa fa-shopping-cart fa-lg" data-bs-toggle="offcanvas" data-bs-target="#addbag"></i></li>
+              <!--OFFCANVSS ADD BAG-->
+              <div class="offcanvas offcanvas-end" id="addbag">
+                <div class="offcanvas-body">
+                  <h6 class="offcanvas-title mt-3">YOUR CART IS CURRENTLY EMPTY.</h6>
+                  <p>Continue shopping  <a routerlink="#">Here</a></p>
+                  <button class="btn btn-pri btnlg mt-3" type="button" routerLink="/order-detail">View Cart</button>
+                </div>
+              </div>
+            </div>
             <!--search-button-start-->
             <div class="search-box">
                 <input type="text" placeholder="search...">
