@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AgmCoreModule } from '@agm/core';
 
 import {AppComponent} from './app.component';
 import {HttpClientModule} from "@angular/common/http";
@@ -60,6 +61,9 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes, {scrollPositionRestoration: 'enabled'}),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDNI_ZWPqvdS6r6gPVO50I4TlYkfkZdXh8'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
