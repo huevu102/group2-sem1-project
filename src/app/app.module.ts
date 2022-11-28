@@ -21,7 +21,6 @@ import {CategoryDraftComponent} from "./pages/category-DRAFT/category-draft.comp
 import {ProductDetailDraftComponent} from "./pages/product-detail-DRAFT/product-detail-draft.component"; //delete before deploy
 
 
-
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'about-us', component: AboutUsComponent},

@@ -20,7 +20,7 @@
           <ul class="d-flex justify-content-end">
             <li class="py-1">
               <!--Modal Sign In Button-->
-              <a class="sign-in" data-bs-toggle="modal" type="button" data-bs-target="#signin">Sign in</a>
+              <a class="sign-in" data-bs-toggle="modal" type="button" data-bs-target="#sign-in">Sign in</a>
             </li>
             <li class="px-3 py-1"><i class="fa fa-shopping-cart fa-lg"></i></li>
             <!--search-button-start-->
@@ -156,47 +156,51 @@
 
 
 <!-- Modal Sign in-->
-<div class="modal fade" id="signin">
+<div class="modal fade" id="sign-in">
   <div class="modal-dialog modal-dialog-centered first-steps">
     <div class="modal-content first-steps-inner">
       <h5 class="modal-title mb-4 text-center">Welcome to AGURI!</h5>
       <form>
-          <label for="emailuser">Email address</label>
-          <input id="emailuser" class="inpu mb-3" type="email" required><br>
-          <label>Password</label>
-          <input class="inpu" type="text" required>
-      </form>
-      <button type="submit" class="btn btn-pri my-4" data-bs-dismiss="modal">Sign in</button>
-      <div class="d-flex sign-in-content">
-        <div class="signin-inner">
-          <a class="forgot-pass smt me-5" data-bs-toggle="modal" type="submit" data-bs-target="#forgotpass">Forgot password?</a>
-          <span class="smt">New member? <a class="sign-up smt" data-bs-toggle="modal" type="button" data-bs-target="#signup">Sign up</a></span>
+        <div class="mb-3">
+          <label for="email">Email address</label>
+          <input class="inpu" type="text" name="email" required>
         </div>
-      </div>
+        <div>
+          <label for="psw">Password</label>
+          <input class="inpu" type="password" name="psw" required>
+        </div>
+        <button type="submit" class="btn btn-pri my-4 w-100">Sign in</button>
+        <div class="d-flex sign-in-content">
+          <div class="signin-inner">
+            <a class="forgot-pass smt me-5" data-bs-toggle="modal" type="submit" data-bs-target="#forgot-pass">Forgot password?</a>
+            <span class="smt">New member?<a class="sign-up smt" data-bs-toggle="modal" type="button" data-bs-target="#sign-up">Sign up</a></span>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>
 
 <!-- Modal Forgot Password-->
-<div class="modal fade" id="forgotpass">
+<div class="modal fade" id="forgot-pass">
   <div class="modal-dialog modal-dialog-centered first-steps">
     <div class="modal-content first-steps-inner">
       <h5 class="modal-title mb-4 text-center">Forgot your password?</h5>
       <!--name="myFormBottom" onsubmit="return validateFormBottom()"-->
       <form>
-        <label>Email address</label>
-        <input class="inpu" type="email" required><br>
+        <label for="email">Email address</label>
+        <input class="inpu" type="text" name="email" required>
+        <button type="submit" class="btn btn-pri my-4 w-100">Reset Password</button>
+        <div class="text-center">
+            <a class="smt" data-bs-toggle="modal" type="submit" data-bs-target="#sign-in">Back to Sign in</a>
+        </div>
       </form>
-      <button type="submit" class="btn btn-pri my-4" data-bs-dismiss="modal">Reset Password</button>
-      <div class="text-center">
-          <a class="smt" data-bs-toggle="modal" type="submit" data-bs-target="#signin">Back to Sign in</a>
-      </div>
     </div>
   </div>
 </div>
 
 <!-- Modal Sign up-->
-<div class="modal fade" id="signup">
+<div class="modal fade" id="sign-up">
   <div class="modal-dialog modal-dialog-centered first-steps">
     <div class="modal-content first-steps-inner">
       <h5 class="modal-title mb-4 text-center">Hello, Friend!</h5>
@@ -212,21 +216,21 @@
           </div>
         </div>
         <div class="my-3">
-          <label>Email address</label>
-          <input class="inpu" type="email" required><br>
+          <label for="email">Email address</label>
+          <input class="inpu" type="text" name="email" id="email" required>
         </div>
         <div class="">
-          <label>Create password</label>
-          <input class="inpu" type="text" required>
+          <label for="psw">Create Password</label>
+          <input class="inpu" type="password" name="psw" id="psw" required>
         </div>
         <div class="my-3">
-          <label>Re-type password</label>
-          <input class="inpu" type="text" required>
+          <label for="psw-repeat">Re-type Password</label>
+          <input class="inpu" type="password" name="psw-repeat" id="psw-repeat" required>
         </div>
-        <button type="submit" class="btn btn-pri my-4 w-100" data-bs-dismiss="modal">Sign up</button>
+        <button type="submit" class="registerbtn signin btn btn-pri my-4 w-100">Sign up</button>
         <div class="d-flex sign-in-content w-100">
           <div class="signin-inner">
-            <span class="smt">Already have an account? <a class="sign-in smt" data-bs-toggle="modal" type="button" data-bs-target="#signin">Sign in</a></span>
+            <span class="smt">Already have an account? <a class="sign-in smt" data-bs-toggle="modal" type="button" data-bs-target="#sign-in">Sign in</a></span>
           </div>
         </div>
       </form>
