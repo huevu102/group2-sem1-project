@@ -4,39 +4,15 @@
     <div class="col-3">
       <img src="./assets/img/cate-deco/{{cid}}.png" />
     </div>
-    <div class="col-3">
+    <div class="col-3" *ngFor="let item of subCate">
       <div class="sub-cate-box">
         <div class="sub-cate-img">
-          <a routerLink="#">
-            <img src="./assets/img/cate-deco/{{cid}}.1.png" />
+          <a routerLink="/sub-category/{{item.sid}}">
+            <img src="./assets/img/cate-deco/{{cid}}.{{item.sid}}.png" />
           </a>
         </div>
         <div class="sub-name">
-          <h6>Eternity</h6>
-        </div>
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="sub-cate-box">
-        <div class="sub-cate-img">
-          <a routerLink="/sub-category/2">
-            <img src="./assets/img/cate-deco/{{cid}}.2.png" />
-          </a>
-        </div>
-        <div class="sub-name">
-          <h6>Cocktail</h6>
-        </div>
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="sub-cate-box">
-        <div class="sub-cate-img">
-          <a routerLink="#">
-            <img src="./assets/img/cate-deco/{{cid}}.3.png" />
-          </a>
-        </div>
-        <div class="sub-name">
-          <h6>Wedding</h6>
+          <h6>{{item.sub_name}}</h6>
         </div>
       </div>
     </div>

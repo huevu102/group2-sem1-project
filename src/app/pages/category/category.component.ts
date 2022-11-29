@@ -13,6 +13,7 @@ export class CategoryComponent implements OnInit {
   private cate: any;
   cid: number = 0;
   category: Data[] = [];
+  subCate: Data[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +27,11 @@ export class CategoryComponent implements OnInit {
       const cateUrl = 'https://huevuapi.herokuapp.com/get-category/?cid='+ this.cid;
       this.http.get<Data[]>(cateUrl).subscribe(data => {
         this.category = data;
+      })
+
+      const subUrl = 'https://huevuapi.herokuapp.com/get-sub-by-cid/?cid='+ this.cid;
+      this.http.get<Data[]>(subUrl).subscribe(data => {
+        this.subCate = data;
       })
     })
   }
