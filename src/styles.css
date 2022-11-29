@@ -59,7 +59,7 @@ a:hover, i:hover{
 }
 /*COLOR*/
 .sub-color{
-  color:#e7e7e7;
+  color:#f4f2f0;
 }
 
 /*TYPO*/
@@ -153,8 +153,8 @@ label{
   padding:0px;
 }
 .header-inner{
-  padding-top:20px;
-  padding-bottom:20px;
+  padding-top:25px;
+  padding-bottom:25px;
 }
 /*search-box*/
 .search-box{
@@ -424,7 +424,7 @@ nav li:nth-child(1){
 
 /*test-nav-scoll*/
 body{
-  --nav-height:136px;
+  --nav-height:146px;
   padding-top: var(--nav-height);
   /*for test scroll back to top*/
   scroll-behavior: smooth;
