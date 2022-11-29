@@ -14,7 +14,7 @@ export class ProductDetailComponent implements OnInit {
   pid: number = 0;
   product: Data[] = [];
   similar: Data[] = [];
-
+  review: Data[] = [];
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient
@@ -25,13 +25,18 @@ export class ProductDetailComponent implements OnInit {
       this.pid = +params['pid'];
 
       const productURL = 'https://huevuapi.herokuapp.com/get-product/?pid=' + this.pid;
-      this.http.get<Data[]>(productURL).subscribe(data1 => {
-        this.product = data1;
+      this.http.get<Data[]>(productURL).subscribe(data => {
+        this.product = data;
       })
 
       const similarURL = 'https://huevuapi.herokuapp.com/get-similar-product/?pid=' + this.pid;
-      this.http.get<Data[]>(similarURL).subscribe(data2 => {
-        this.similar = data2;
+      this.http.get<Data[]>(similarURL).subscribe(data => {
+        this.similar = data;
+      })
+
+      const reviewURL = 'https://huevuapi.herokuapp.com/get-review/?pid=' + this.pid;
+      this.http.get<Data[]>(reviewURL).subscribe(data => {
+        this.review = data;
       })
     })
   }

@@ -12,4 +12,8 @@ export interface Data {
   cid: number;
   cate_name: string;
   url: string;
+  cusid: number;
+  cus_name: string;
+  review_date: string;
+  comment: string;
 }
