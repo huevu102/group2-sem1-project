@@ -1,3 +1,18 @@
+/*category-top*/
+.category-top {
+  position: relative;
+}
+
+.category-top-text {
+  position: absolute;
+  margin-top: 100px;
+}
+
+.category-top img {
+  opacity: 0.8;
+}
+
+
 /*CATEGORY*/
 .sub-cate-box:hover > .sub-cate-img{
   transition: 0.5s;

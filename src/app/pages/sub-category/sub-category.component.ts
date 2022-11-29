@@ -12,7 +12,7 @@ import {Data} from "../../interfaces/data.interface";
 export class SubCategoryComponent implements OnInit{
   private sub: any;
   sid: number = 0;
-  data: Data[] = [];
+  subCate: Data[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +26,7 @@ export class SubCategoryComponent implements OnInit{
       // In a real app: dispatch action to load the details here.
       const subUrl = 'https://huevuapi.herokuapp.com/get-sub-category/?sid='+ this.sid;
       this.http.get<Data[]>(subUrl).subscribe(data => {
-        this.data = data;
+        this.subCate = data;
       })
     })
   }

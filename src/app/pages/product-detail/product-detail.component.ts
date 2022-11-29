@@ -10,9 +10,9 @@ import {Data} from "../../interfaces/data.interface";
 })
 
 export class ProductDetailComponent implements OnInit {
-  private product: any;
+  private id: any;
   pid: number = 0;
-  data: Data[] = [];
+  product: Data[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -20,12 +20,12 @@ export class ProductDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.product = this.route.params.subscribe(params => {
+    this.id = this.route.params.subscribe(params => {
       this.pid = +params['pid'];
 
       const productURL = 'https://huevuapi.herokuapp.com/get-product/?pid=' + this.pid;
       this.http.get<Data[]>(productURL).subscribe(data => {
-        this.data = data;
+        this.product = data;
       })
     })
   }

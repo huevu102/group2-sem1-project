@@ -4,14 +4,14 @@
   <div class="prod-detail">
     <div class="row">
       <div class="col-2">
-        <div class="mbt" *ngFor="let item of data">
+        <div class="mbt" *ngFor="let item of product">
           <img src="{{item.url}}">
         </div>
       </div>
-      <div class="col-6" *ngFor="let item of data | slice: 0: 1">
+      <div class="col-6" *ngFor="let item of product | slice: 0: 1">
         <img src="{{item.url}}">
       </div>
-      <div class="col-4" *ngFor="let item of data | slice: 0: 1">
+      <div class="col-4" *ngFor="let item of product | slice: 0: 1">
         <!--Breadcrumb-->
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
@@ -239,7 +239,7 @@
         <h5>Similar Products</h5>
         <p class="smt">AGURI designs reinvent our iconic AGURI collection with bold profiles and powerful details.</p>
       </div>
-      <div class="col-3" *ngFor="let item of data | slice: 0: 3">
+      <div class="col-3" *ngFor="let item of product | slice: 0: 3">
         <div class="card-prd">
           <div class="img">
             <a routerLink="/product-detail/{{item.pid}}">

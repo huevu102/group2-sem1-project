@@ -12,8 +12,7 @@ import {Data} from "../../interfaces/data.interface";
 export class CategoryComponent implements OnInit {
   private cate: any;
   cid: number = 0;
-  sid: number = 0;
-  data: Data[] = [];
+  category: Data[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +25,7 @@ export class CategoryComponent implements OnInit {
 
       const cateUrl = 'https://huevuapi.herokuapp.com/get-category/?cid='+ this.cid;
       this.http.get<Data[]>(cateUrl).subscribe(data => {
-        this.data = data;
+        this.category = data;
       })
     })
   }

@@ -5,6 +5,8 @@ export interface Data {
   description: string;
   thumb: string;
   collection: string;
+  material: string;
+  jewellery_type: string;
   sid: number;
   sub_name: string;
   cid: number;
