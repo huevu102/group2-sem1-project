@@ -3,6 +3,9 @@
 .new-arrivals{
   padding-top:100px;
 }
+.new-arr{
+  background: #fff;
+}
 /*Showcase*/
 .showcase-title-inner{
   position: relative;
