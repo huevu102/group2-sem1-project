@@ -36,6 +36,7 @@ a:hover, i:hover{
 }
 
 /*SPACING*/
+
 .mbt{
   margin-bottom: 25px;
 }
@@ -180,6 +181,7 @@ input{
 .iconsearch{
   transition: 0.4s;
 }
+.
 
 /*NAV*/
 
@@ -240,7 +242,10 @@ nav li:nth-child(1){
 /*dropdown-menu-end*/
 /*check-box*/
 .check-box {
-  margin-right: 20px;
+  margin-right: 5px;
+}
+.check-cate{
+  width:30px;
 }
 /*FOOTER*/
 .card-footer {
@@ -439,7 +444,7 @@ body{
   height: var(--nav-height);
 }
 .nav--hidden {
-  transform: translateY(-36px);
+  transform: translateY(-136px);
 }
 
 
