@@ -1,4 +1,6 @@
 import {Component} from "@angular/core";
+import {HttpClient} from "@angular/common/http";
+import {Data} from "../../interfaces/data.interface";
 
 @Component({
   selector: 'app-home',
@@ -7,11 +9,14 @@ import {Component} from "@angular/core";
 })
 
 export class HomeComponent {
-  constructor(){
+  newArrival: Data[] = [];
 
+  constructor(private http: HttpClient){}
+
+  ngOnInit() {
+    const newURL = 'https://huevuapi.herokuapp.com/get-new-arrival'
+    this.http.get<Data[]>(newURL).subscribe(data => {
+      this.newArrival = data;
+    })
   }
 }
-
-
-
-

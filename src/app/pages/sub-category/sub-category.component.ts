@@ -24,7 +24,7 @@ export class SubCategoryComponent implements OnInit{
       this.sid = +params['sid']; // (+) converts string 'id' to a number
 
       // In a real app: dispatch action to load the details here.
-      const subUrl = 'https://huevuapi.herokuapp.com/get-sub-category/?sid='+ this.sid;
+      const subUrl = 'https://huevuapi.herokuapp.com/get-sub-category-by-sid/?sid='+ this.sid;
       this.http.get<Data[]>(subUrl).subscribe(data => {
         this.subCate = data;
       })

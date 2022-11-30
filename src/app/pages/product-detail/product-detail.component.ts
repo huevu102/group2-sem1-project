@@ -24,17 +24,17 @@ export class ProductDetailComponent implements OnInit {
     this.id = this.route.params.subscribe(params => {
       this.pid = +params['pid'];
 
-      const productURL = 'https://huevuapi.herokuapp.com/get-product/?pid=' + this.pid;
+      const productURL = 'https://huevuapi.herokuapp.com/get-product-by-pid/?pid=' + this.pid;
       this.http.get<Data[]>(productURL).subscribe(data => {
         this.product = data;
       })
 
-      const similarURL = 'https://huevuapi.herokuapp.com/get-similar-product/?pid=' + this.pid;
+      const similarURL = 'https://huevuapi.herokuapp.com/get-similar-product-by-pid/?pid=' + this.pid;
       this.http.get<Data[]>(similarURL).subscribe(data => {
         this.similar = data;
       })
 
-      const reviewURL = 'https://huevuapi.herokuapp.com/get-review/?pid=' + this.pid;
+      const reviewURL = 'https://huevuapi.herokuapp.com/get-review-by-pid/?pid=' + this.pid;
       this.http.get<Data[]>(reviewURL).subscribe(data => {
         this.review = data;
       })
