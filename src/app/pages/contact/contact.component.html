@@ -1,8 +1,14 @@
-<div class="container">
-  <!--BANNER-->
-  <div class="banner">
+<!--BANNER-->
+<div class="banner-img">
+  <div class="">
     <img src="./assets/img/contact/banner.png">
   </div>
+  <div class="banner-img-text">
+    <h3 class="text-center">Get In Touch With Us</h3>
+  </div>
+</div>
+<!--contact form here-->
+<div class="container contact-form">
   <div class="contact-inner">
     <div class="row">
       <div class="col"></div>
@@ -36,58 +42,51 @@
         </form>
       </div>
       <div class="col-4 contact-text">
-        <span class="mdt">Let’s connect</span>
+        <h6>Drop us a line</h6>
         <p class="smt">For questions regarding our products and services you can also contact us by filling out the form below.</p>
-        <div class="mail-inf mt-5 text-center">
-          <h5>Email info</h5>
-          <p class="smt">info@AGURI&PIJ2022.com for appointment</p>
-        </div>
+        <p class="decor-text mail-info">info@AGURI&PIJ2022.com for appointment</p>
       </div>
       <div class="col"></div>
     </div>
   </div>
+</div>
 
-  <div class="aguri-info">
-    <div class="showroom">
-      <h5 class="text-center mb-3">Our Showrooms</h5>
-      <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-          <!--carousel-maps-->
-          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="3000">
-                <p class="text-center">
-                  <i class="fas fa-map-marker-alt"></i> 6901 Hollywood Blvd, Los Angeles, CA 90028, United States
-                </p>
-                <agm-map [latitude]=34.102345 [longitude]=-118.340389 [zoom]=10></agm-map>
-              </div>
-              <div class="carousel-item" data-bs-interval="3000">
-                <p class="text-center">
-                  <i class="fas fa-map-marker-alt"></i> 10 Northumberland St, London WC2N 5DB, United Kingdom
-                </p>
-                <agm-map [latitude]=51.507406 [longitude]=-0.125283 [zoom]=10></agm-map>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-        <div class="col-1"></div>
+<!--Map here-->
+<div class="aguri-info">
+  <div >
+    <h5 class="text-center mb-3">Our Showrooms</h5>
+  </div>
+  <!--carousel-maps-->
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="3000">
+        <p class="text-center">
+          <i class="fas fa-map-marker-alt"></i> 6901 Hollywood Blvd, Los Angeles, CA 90028, United States
+        </p>
+        <agm-map [latitude]=34.102345 [longitude]=-118.340389 [zoom]=10></agm-map>
+      </div>
+      <div class="carousel-item" data-bs-interval="3000">
+        <p class="text-center">
+          <i class="fas fa-map-marker-alt"></i> 10 Northumberland St, London WC2N 5DB, United Kingdom
+        </p>
+        <agm-map [latitude]=51.507406 [longitude]=-0.125283 [zoom]=10></agm-map>
       </div>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </div>
+
 
 
 

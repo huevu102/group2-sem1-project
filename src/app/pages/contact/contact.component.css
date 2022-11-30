@@ -1,8 +1,21 @@
+/*banner*/
+.banner-img{
+  position:relative;
+}
+.banner-tittle{
+  position:absolute;
+  top:0;
+}
+/*contact*/
 .contact-inner{
+  padding-top:50px;
+  padding-bottom:50px;
   margin-top:80px;
   margin-bottom:100px;
 }
-
+.contact-form{
+  background:#E2CDB0;
+}
 .mess-user{
   margin-bottom:60px;
   margin-top:20px;
@@ -17,8 +30,8 @@
 agm-map {
   height: 450px;
 }
-.mail-inf{
-  margin-top:220px;
-  color:#999;
+.mail-info{
+  padding-top:200px;
 }
+
 
