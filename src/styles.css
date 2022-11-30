@@ -248,12 +248,8 @@ nav li:nth-child(1){
   width:30px;
 }
 /*FOOTER*/
-.card-footer {
-  padding-top: 50px;
-}
 .card-footer{
-  padding-left:0px;
-  padding-right:0px;
+  padding: 30px 0px;
 }
 .card-footer li{
   font-size:14px;
@@ -267,7 +263,6 @@ nav li:nth-child(1){
 .follow-us i {
   padding-right: 10px;
 }
-
 .subscribe input {
   background-color: #FAF8F6;
 }
@@ -277,7 +272,7 @@ nav li:nth-child(1){
 }
 .copy-right {
   color: #666666;
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 /*PRODUCT-DETAIL-PAGE*/

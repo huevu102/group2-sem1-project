@@ -1,69 +1,18 @@
+<div class="head">
+  <div class="container d-flex">
+    <div class="aguri-logo"></div>
+    <div class="aguri-logo">
+      <h5>Check Out</h5>
+    </div>
+    <div class="aguri-logo">
+      <p><a routerLink="#">Continue shopping</a></p>
+    </div>
+  </div>
+</div>
 <div class="container">
-  <div class="table-summary">
-    <div class="t-head row align-middle py-3 mb-3">
-      <div class="col-5">
-        <p class="mb-0">Product</p>
-      </div>
-      <div class="col-2">
-        <p class="mb-0">Size</p>
-      </div>
-      <div class="col-2">
-        <p class="mb-0">Quantity</p>
-      </div>
-      <div class="col-2">
-        <p class="mb-0">Price</p>
-      </div>
-      <div class="col">
-        <p class="mb-0">Remove</p>
-      </div>
-    </div>
-    <div class="t-row1 row">
-      <div class="col-2">
-        <img src="assets/img/product-detail/bag-prd1.png">
-      </div>
-      <div class="col-3">
-        <p>AMEL EARRING</p>
-      </div>
-      <div class="col-2">
-        <p>6</p>
-      </div>
-      <div class="col-2"></div>
-      <div class="col-2">
-        <p>$6,700</p>
-      </div>
-      <div class="col">
-        <i class="fa-solid fa-xmark"></i>
-      </div>
-    </div>
-    <div class="line my-3"></div>
-    <div class="t-row2 row">
-      <div class="col-2">
-        <img src="assets/img/product-detail/bag-prd2.png">
-      </div>
-      <div class="col-3">
-        <p>AMEL EARRING</p>
-      </div>
-      <div class="col-2">
-        <p>6</p>
-      </div>
-      <div class="col-2"></div>
-      <div class="col-2">
-        <p>$6,700</p>
-      </div>
-      <div class="col">
-        <i class="fa-solid fa-xmark"></i>
-      </div>
-    </div>
-    <div class="line my-3"></div>
-  </div>
-  <div class="row">
-    <div class="col-7"></div>
-    <div class="col-5 d-flex mb-4">
-      <h6 class="me-auto">Subtotal</h6>
-      <h6>$11,700</h6>
-    </div>
-  </div>
+
   <div class="row my-5">
+    <!--billing address-->
     <div class="col-6 bill-address">
       <div class="t-head row align-middle py-3 mb-5">
         <p class="mb-0">Billing Address</p>
@@ -90,11 +39,6 @@
         <label>Address line1 (*)</label>
         <input class="inpu" type="text" required><br>
       </div>
-    </div>
-    <div class="col-6 delivery-add">
-      <div class="t-head row align-middle py-3 mb-5">
-        <p class="mb-0">Delivery Address</p>
-      </div>
       <div class="form-check my-3 ps-0">
         <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
         <label class="smt" for="collection-1">Default (Same as billing address)</label><br>
@@ -104,40 +48,70 @@
         <label class="smt" for="collection-1">Add an alternative delivery address</label><br>
       </div>
     </div>
-  </div>
-  <!--Shipping method-->
-  <div class="shipping-method">
-    <div class="t-head row align-middle py-3 mb-5">
-      <p class="mb-0">Shipping Method</p>
-    </div>
-    <div class="row">
-      <div class="col-3 ps-0">
-        <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
-        <label class="smt" for="collection-1">Default (Same as billing address)</label><br>
+    <!--billing summary here-->
+    <div class="pe-0 col-6">
+      <div class="billing-summary">
+        <h5 class="text-center mb-3">BILLING SUMMARY</h5>
+        <div class="row">
+          <div class="col-10 ps-0">
+            <p>Diamonds and Gold Spark Ring</p>
+          </div>
+          <div class="col-2 pe-0">
+            <p>$6,700</p>
+          </div>
+        </div>
+        <p>x1</p>
+        <div class="row">
+          <div class="col-10 ps-0">
+            <p>Diamonds and Gold Spark Ring</p>
+          </div>
+          <div class="col-2 pe-0">
+            <p>$5,000</p>
+          </div>
+        </div>
+        <p>x1</p>
+        <div class="line my-3"></div>
+        <div class="row total-itm">
+          <div class="col-10 ps-0">
+            <p>Items Total</p>
+          </div>
+          <div class="col-2 pe-0">
+            <p>$11,700</p>
+          </div>
+        </div>
+        <div class="row ship-fee">
+          <div class="col-10 ps-0">
+            <p>Shipping Fee</p>
+          </div>
+          <div class="col-2 pe-0">
+            <p>$0</p>
+          </div>
+        </div>
+        <div class="row ship-fee">
+          <div class="col-10 ps-0">
+            <p>Discount (coupon)</p>
+          </div>
+          <div class="col-2 pe-0">
+            <p>-$7,00</p>
+          </div>
+        </div>
+        <div class="line mb-3"></div>
+        <div class="total-itm row">
+          <div class="col-10 ps-0">
+            <p class="mdt">Order Total</p>
+          </div>
+          <div class="col-2 p2-0">
+            <p class="mdt">$11,700</p>
+          </div>
+        </div>
       </div>
-      <div class="col"></div>
-      <div class="col-3">
-        <p class="smt">Express Courier (Air)</p>
-      </div>
-      <div class="col-5">
-        <p class="smt">Up to 3 business day(s)</p>
-      </div>
     </div>
+
   </div>
-  <div class="line my-3"></div>
-  <div class="duties&text">
-    <p class="mdt">DUTIES & TAXES</p>
-    <div class="form-check my-3 ps-0">
-      <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
-      <label class="smt" for="collection-1">Prepay S200 for duties, taxes and fee now to guarantee no additional charges on delivery</label><br>
-    </div>
-    <div class="form-check my-3 ps-0">
-      <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
-      <label class="smt" for="collection-1">I’ll pay all applicable duties, taxes and fees on delivery</label><br>
-    </div>
-  </div>
+
   <div class="row last-step">
-        <div class="col-6 payment-method ps-0">
+    <!--payment metho-->
+    <div class="col-6 payment-method ps-0">
           <div class="t-head row align-middle py-3 mb-5">
             <p class="mb-0">Payment Method</p>
           </div>
@@ -161,60 +135,56 @@
             </div>
           </div>
         </div>
-        <div class="col-6 billing-summary">
-          <h5 class="text-center mb-3">BILLING SUMMARY</h5>
-          <div class="row">
-            <div class="col-10 ps-0">
-              <p>Diamonds and Gold Spark Ring</p>
-            </div>
-            <div class="col-2 pe-0">
-              <p>$6,700</p>
-            </div>
-          </div>
-          <p>x1</p>
-          <div class="row">
-            <div class="col-10 ps-0">
-              <p>Diamonds and Gold Spark Ring</p>
-            </div>
-            <div class="col-2 pe-0">
-              <p>$5,000</p>
-            </div>
-          </div>
-          <p>x1</p>
-          <div class="line"></div>
-          <div class="row total-itm">
-            <div class="col-10 ps-0">
-              <p>Items Total</p>
-            </div>
-            <div class="col-2 pe-0">
-              <p>$11,700</p>
-            </div>
-          </div>
-          <div class="row ship-fee">
-            <div class="col-10 ps-0">
-              <p>Shipping Fee</p>
-            </div>
-            <div class="col-2 pe-0">
-              <p>$0</p>
-            </div>
-          </div>
-          <div class="row ship-fee">
-            <div class="col-10 ps-0">
-              <p>Discount (coupon)</p>
-            </div>
-            <div class="col-2 pe-0">
-              <p>-$7,00</p>
-            </div>
-          </div>
-          <div class="line"></div>
-          <div class="total-itm row">
-            <div class="col-10 ps-0">
-              <p class="mdt">Order Total</p>
-            </div>
-            <div class="col-2 p2-0">
-              <p class="mdt">$11,700</p>
-            </div>
-          </div>
+  </div>
+
+  <div class="container">
+    <!--shipping method-->
+    <div class="shipping-method col-6 ps-0">
+      <div class="t-head row align-middle py-3 mb-5">
+        <p class="mb-0">Shipping Method</p>
+      </div>
+      <div class="d-flex">
+        <div class="ps-0 me-auto">
+          <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
+          <label class="smt" for="collection-1">Free ship</label><br>
+        </div>
+        <div class="me-auto">
+          <p class="smt">Fixed</p>
+        </div>
+        <div class="">
+          <p class="smt">Flat rate</p>
         </div>
       </div>
+      <div class="line"></div>
+      <div class="d-flex">
+        <div class="ps-0 me-auto">
+          <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
+          <label class="smt" for="collection-1">$5,00</label><br>
+        </div>
+        <div class="me-auto">
+          <p class="smt">Table Rate</p>
+        </div>
+        <div class="">
+          <p class="smt">Best way</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Place-order-->
+  <div class="row place-order">
+    <div class="col"></div>
+    <div class="col-10">
+      <p class="text-center">By clicking Pay and Place Order, you agree to purchase your item(s) from Global-e as merchant of record for this transaction, on Global-e’s Terms and Conditions and Pivacy Policy Global-e is an international fulfilment service provider to AGURI.</p>
+    </div>
+    <div class="col"></div>
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <button class="btn btn-pri btnlg w-100">Place order</button>
+      </div>
+      <div class="col-4"></div>
+    </div>
+  </div>
 </div>
+
+
