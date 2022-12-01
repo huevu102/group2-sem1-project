@@ -15,9 +15,7 @@
   margin-bottom:20px;
 }
 /*bill summary*/
-.check-out-top{
-  position: relative;
-}
+
 div.sticky{
   position: -webkit-sticky;
   position: sticky;
@@ -33,4 +31,9 @@ div.sticky{
   margin-top:80px;
   margin-bottom:80px;
 }
+.check-box{
+
+
+}
+
 

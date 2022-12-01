@@ -22,7 +22,9 @@
   background-color: #000;
   color: #fff;
 }
-
+.category-main{
+  padding-top:40px;
+}
 .category-main a img:hover {
   opacity: 0.5;
 }
@@ -65,6 +67,17 @@
   color: #000;
 }
 .category-bottom{
-  margin-bottom:80px;
-  margin-top:80px;
+  margin-bottom:60px;
+  margin-top:60px;
+}
+/*sticky category sid bar*/
+div.sticky{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding-bottom:60px;
+  padding-top:40px;
+}
+.price-box{
+  border: solid;
 }
