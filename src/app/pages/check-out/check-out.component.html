@@ -1,4 +1,4 @@
-<div class="head">
+<!--<div class="head">
   <div class="container d-flex">
     <div class="aguri-logo"></div>
     <div class="aguri-logo">
@@ -8,164 +8,162 @@
       <p><a routerLink="#">Continue shopping</a></p>
     </div>
   </div>
-</div>
-<div class="container">
+</div>-->
 
-  <div class="row my-5">
-    <!--billing address-->
-    <div class="col-6 bill-address">
-      <div class="t-head row align-middle py-3 mb-5">
-        <p class="mb-0">Billing Address</p>
-      </div>
-      <div class="row">
-        <div class="col-6 ps-0 firstname user-input">
-          <label>First name</label>
+
+<div class="container checkout-all">
+  <div class="row">
+    <div class="col-6 ps-0 checkout-left">
+      <!--billing address-->
+      <div class="bill-address mb-4">
+        <div class="t-head row align-middle py-3 mb-4">
+          <p class="mb-0">Billing Address</p>
+        </div>
+        <div class="row">
+          <div class="col-6 ps-0 firstname user-input">
+            <label>First name</label>
+            <input class="inpu" type="text" required><br>
+          </div>
+          <div class="col-6 pe-0 lastname user-input">
+            <label>Last name</label>
+            <input class="inpu" type="text" required><br>
+          </div>
+        </div>
+        <div class="px-0 email-user user-input">
+          <label>Email address (*)</label>
+          <input class="inpu" type="email" required><br>
+        </div>
+        <div class="px-0 phone-user user-input">
+          <label>Phone (*)</label>
+          <input class="inpu" type="phone" required><br>
+        </div>
+        <div class="px-0 address-user user-input">
+          <label>Address line1 (*)</label>
           <input class="inpu" type="text" required><br>
         </div>
-        <div class="col-6 pe-0 lastname user-input">
-          <label>Last name</label>
-          <input class="inpu" type="text" required><br>
+        <div class="form-check my-4 ps-0">
+          <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
+          <label class="smt" for="collection-1">Default (Same as billing address)</label><br>
+        </div>
+        <div class="form-check my-4 ps-0">
+          <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
+          <label class="smt" for="collection-1">Add an alternative delivery address</label><br>
         </div>
       </div>
-      <div class="px-0 email-user user-input">
-        <label>Email address (*)</label>
-        <input class="inpu" type="email" required><br>
-      </div>
-      <div class="px-0 phone-user user-input">
-        <label>Phone (*)</label>
-        <input class="inpu" type="phone" required><br>
-      </div>
-      <div class="px-0 address-user user-input">
-        <label>Address line1 (*)</label>
-        <input class="inpu" type="text" required><br>
-      </div>
-      <div class="form-check my-3 ps-0">
-        <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
-        <label class="smt" for="collection-1">Default (Same as billing address)</label><br>
-      </div>
-      <div class="form-check my-3 ps-0">
-        <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
-        <label class="smt" for="collection-1">Add an alternative delivery address</label><br>
-      </div>
-    </div>
-    <!--billing summary here-->
-    <div class="pe-0 col-6">
-      <div class="billing-summary">
-        <h5 class="text-center mb-3">BILLING SUMMARY</h5>
+      <!--shipping method-->
+      <div class="shipping-method mb-4">
+        <div class="t-head row align-middle py-3 mb-4">
+          <p class="mb-0">Shipping Method</p>
+        </div>
         <div class="row">
-          <div class="col-10 ps-0">
-            <p>Diamonds and Gold Spark Ring</p>
+          <div class="ps-0 col-4">
+            <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
+            <label class="smt" for="collection-1">Free ship</label><br>
           </div>
-          <div class="col-2 pe-0">
-            <p>$6,700</p>
+          <div class="col-4">
+            <p class="smt mb-0">Fixed</p>
           </div>
-        </div>
-        <p>x1</p>
-        <div class="row">
-          <div class="col-10 ps-0">
-            <p>Diamonds and Gold Spark Ring</p>
-          </div>
-          <div class="col-2 pe-0">
-            <p>$5,000</p>
+          <div class="col-4">
+            <p class="smt mb-0">Flat rate</p>
           </div>
         </div>
-        <p>x1</p>
         <div class="line my-3"></div>
-        <div class="row total-itm">
-          <div class="col-10 ps-0">
-            <p>Items Total</p>
+        <div class="row">
+          <div class="ps-0 col-4">
+            <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
+            <label class="smt" for="collection-1">$5,00</label><br>
           </div>
-          <div class="col-2 pe-0">
-            <p>$11,700</p>
+          <div class="col-4">
+            <p class="smt mb-0">Table Rate</p>
           </div>
-        </div>
-        <div class="row ship-fee">
-          <div class="col-10 ps-0">
-            <p>Shipping Fee</p>
-          </div>
-          <div class="col-2 pe-0">
-            <p>$0</p>
+          <div class="col-4">
+            <p class="smt mb-0">Best way</p>
           </div>
         </div>
-        <div class="row ship-fee">
-          <div class="col-10 ps-0">
-            <p>Discount (coupon)</p>
-          </div>
-          <div class="col-2 pe-0">
-            <p>-$7,00</p>
-          </div>
+      </div>
+      <!--payment method-->
+      <div class="payment-method mb-4">
+        <div class="t-head row align-middle py-3 mb-4">
+          <p class="mb-0">Payment Method</p>
         </div>
-        <div class="line mb-3"></div>
-        <div class="total-itm row">
-          <div class="col-10 ps-0">
-            <p class="mdt">Order Total</p>
+        <p class="mdt">Please choose the payment method</p>
+        <div class="px-0 user-input">
+          <label>Card number</label>
+          <input class="inpu" type="text" required><br>
+        </div>
+        <div class="px-0 number-on-card user-input">
+          <label>Number on card</label>
+          <input class="inpu" type="text" required><br>
+        </div>
+        <div class="row">
+          <div class="col-6 ps-0">
+            <label>Expire date</label>
+            <input class="inpu" type="text" required><br>
           </div>
-          <div class="col-2 p2-0">
-            <p class="mdt">$11,700</p>
+          <div class="col-6 pe-0">
+            <label>CVV</label>
+            <input class="inpu" type="text" required><br>
           </div>
         </div>
       </div>
     </div>
-
-  </div>
-
-  <div class="row last-step">
-    <!--payment metho-->
-    <div class="col-6 payment-method ps-0">
-          <div class="t-head row align-middle py-3 mb-5">
-            <p class="mb-0">Payment Method</p>
-          </div>
-          <p class="mdt">Please choose the payment method</p>
-          <div class="px-0 user-input">
-            <label>Card number</label>
-            <input class="inpu" type="text" required><br>
-          </div>
-          <div class="px-0 number-on-card user-input">
-            <label>Number on card</label>
-            <input class="inpu" type="text" required><br>
-          </div>
+    <div class="col-6 pe-0 checkout-right">
+      <!--billing summary here-->
+      <div class="sticky">
+        <div class="billing-summary">
+          <h5 class="text-center mb-3">BILLING SUMMARY</h5>
           <div class="row">
-            <div class="col-6 ps-0">
-              <label>Expire date</label>
-              <input class="inpu" type="text" required><br>
+            <div class="col-10 ps-0">
+              <p>Diamonds and Gold Spark Ring</p>
             </div>
-            <div class="col-6 pe-0">
-              <label>CVV</label>
-              <input class="inpu" type="text" required><br>
+            <div class="col-2 pe-0">
+              <p>$6,700</p>
             </div>
           </div>
-        </div>
-  </div>
-
-  <div class="container">
-    <!--shipping method-->
-    <div class="shipping-method col-6 ps-0">
-      <div class="t-head row align-middle py-3 mb-5">
-        <p class="mb-0">Shipping Method</p>
-      </div>
-      <div class="d-flex">
-        <div class="ps-0 me-auto">
-          <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
-          <label class="smt" for="collection-1">Free ship</label><br>
-        </div>
-        <div class="me-auto">
-          <p class="smt">Fixed</p>
-        </div>
-        <div class="">
-          <p class="smt">Flat rate</p>
-        </div>
-      </div>
-      <div class="line"></div>
-      <div class="d-flex">
-        <div class="ps-0 me-auto">
-          <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
-          <label class="smt" for="collection-1">$5,00</label><br>
-        </div>
-        <div class="me-auto">
-          <p class="smt">Table Rate</p>
-        </div>
-        <div class="">
-          <p class="smt">Best way</p>
+          <p>x1</p>
+          <div class="row">
+            <div class="col-10 ps-0">
+              <p>Diamonds and Gold Spark Ring</p>
+            </div>
+            <div class="col-2 pe-0">
+              <p>$5,000</p>
+            </div>
+          </div>
+          <p>x1</p>
+          <div class="line my-3"></div>
+          <div class="row total-itm">
+            <div class="col-10 ps-0">
+              <p>Items Total</p>
+            </div>
+            <div class="col-2 pe-0">
+              <p>$11,700</p>
+            </div>
+          </div>
+          <div class="row ship-fee">
+            <div class="col-10 ps-0">
+              <p>Shipping Fee</p>
+            </div>
+            <div class="col-2 pe-0">
+              <p>$0</p>
+            </div>
+          </div>
+          <div class="row ship-fee">
+            <div class="col-10 ps-0">
+              <p>Discount (coupon)</p>
+            </div>
+            <div class="col-2 pe-0">
+              <p>-$7,00</p>
+            </div>
+          </div>
+          <div class="line mb-3"></div>
+          <div class="total-itm row">
+            <div class="col-10 ps-0">
+              <p class="mdt">Order Total</p>
+            </div>
+            <div class="col-2 p2-0">
+              <p class="mdt">$11,700</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -174,7 +172,7 @@
   <div class="row place-order">
     <div class="col"></div>
     <div class="col-10">
-      <p class="text-center">By clicking Pay and Place Order, you agree to purchase your item(s) from Global-e as merchant of record for this transaction, on Global-e’s Terms and Conditions and Pivacy Policy Global-e is an international fulfilment service provider to AGURI.</p>
+      <p class="text-center smt mb-4">By clicking Pay and Place Order, you agree to purchase your item(s) from Global-e as merchant of record for this transaction, on Global-e’s Terms and Conditions and Pivacy Policy Global-e is an international fulfilment service provider to AGURI.</p>
     </div>
     <div class="col"></div>
     <div class="row">
@@ -186,5 +184,6 @@
     </div>
   </div>
 </div>
+
 
 

@@ -1,17 +1,36 @@
+.checkout-left{
+  padding-top:40px;
+}
+/*billing address*/
 .address-user{
   margin-top:20px;
 }
-.billing-summary{
-  padding: 20px 40px;
-  background-color:#fff
-}
+
 .last-step{
   margin-bottom:60px;
 }
+/*payment-method*/
 .number-on-card{
   margin-top:20px;
   margin-bottom:20px;
 }
-.place-order{
-  margin-top:40px;
+/*bill summary*/
+.check-out-top{
+  position: relative;
 }
+div.sticky{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding-top:40px;
+}
+.billing-summary{
+  padding: 25px 50px;
+  background-color:#fff
+}
+/*place order*/
+.place-order{
+  margin-top:80px;
+  margin-bottom:80px;
+}
+

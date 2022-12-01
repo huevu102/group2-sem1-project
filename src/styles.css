@@ -440,6 +440,7 @@ body{
 }
 .nav--hidden {
   transform: translateY(-136px);
+  transition: 0.2s all;
 }
 
 
