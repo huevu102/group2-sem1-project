@@ -53,8 +53,9 @@ const appRoutes: Routes = [
     CategoryComponent,
     SubCategoryComponent,
     ThankYouComponent,
-    CategoryDraftComponent, //delete before deploy
+    CategoryDraftComponent, //delete before deploy//
     ProductDetailDraftComponent, //delete before deploy
+
   ],
   imports: [
     BrowserModule,
