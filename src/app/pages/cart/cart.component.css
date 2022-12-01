@@ -1,4 +1,17 @@
-
+/*breadcrumb*/
+.step-process{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.breadcrumb-item{
+  height:30px;
+}
+.step-process ol li a{
+  font-size:2rem;
+  font-family:'Merchant', sans-serif;
+}
 /*ALSO LIKE*/
 .also-like{
   margin:120px 0px;
