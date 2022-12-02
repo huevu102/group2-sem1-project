@@ -6,4 +6,6 @@ import {Component} from "@angular/core";
   styleUrls: ['./category-draft.component.css']
 })
 
-export class CategoryDraftComponent {}
+export class CategoryDraftComponent {
+
+}
