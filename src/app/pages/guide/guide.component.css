@@ -1,9 +1,13 @@
+
 /*insurance*/
 .insurance{
-  background-color: #e7e7e7;
-  padding-top:60px;
-  padding-bottom:60px;
+  background-image: url("/assets/img/guide/insurance.png");
+  background-size: cover;
+  padding-top:70px;
+  padding-bottom:70px;
   margin-top:120px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 /*JEWELLERY TYPE*/
 .content{
@@ -52,3 +56,4 @@
   background-color:#faf8f6;
   border:none;
 }
+

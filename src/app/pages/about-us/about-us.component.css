@@ -1,4 +1,12 @@
-
+.banner-img{
+  background-image: url("/assets/img/about-us/1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top:90px;
+  padding-bottom:90px;
+  background-position-y: center;
+}
 .about-us{
   margin-top: 100px;
 }
