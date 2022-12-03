@@ -1,4 +1,4 @@
-<div class="headnav">
+<div [class]="'headnav '+(show?'nav--hidden':'')">
   <!--HEADER-->
   <header class="section top-page">
     <div class="header card-header border-0 container">
@@ -65,13 +65,13 @@
                     <p class="mdt me-auto">Product Total</p>
                     <p class="mdt">$11,700</p>
                   </div>
-                  <button class="btn btn-pri btnlg mt-3" type="button" routerLink="/order-detail">Continue</button>
+                  <button class="btn btn-pri btnlg mt-3 w-100" type="button" routerLink="/cart">Continue</button>
                 </div>
               </div>
             </div>
             <!--search-button-start-->
             <div class="search-box">
-                <input type="text" placeholder="search...">
+                <input class="search-inp" type="text" placeholder="search...">
                 <a routerLink="#" class="iconsearch">
                   <i class="fa fa-search fa-lg"></i>
                 </a>
@@ -149,26 +149,26 @@
       <div class="col-2">
         <ul>
           <li><p class="mdt">Explore</p></li>
-          <li>Home</li>
-          <li>About us</li>
-          <li>Jewellery guide</li>
+          <li class="mb-1">Home</li>
+          <li class="mb-1">About us</li>
+          <li class="mb-1">Jewellery guide</li>
         </ul>
       </div>
       <div class="col-2">
         <ul>
           <li><p class="mdt">Jewellery</p></li>
-          <li>Rings</li>
-          <li>Earrings</li>
-          <li>Bracelets</li>
-          <li>Necklaces</li>
+          <li class="mb-2">Rings</li>
+          <li class="mb-2">Earrings</li>
+          <li class="mb-2">Bracelets</li>
+          <li class="mb-2">Necklaces</li>
         </ul>
       </div>
       <div class="col-2">
         <ul>
           <li><p class="mdt">More</p></li>
-          <li>Size guide</li>
-          <li>Shipping & Returns</li>
-          <li>Product care & Repair</li>
+          <li class="mb-2">Size guide</li>
+          <li class="mb-2">Shipping & Returns</li>
+          <li class="mb-2">Product care & Repair</li>
         </ul>
       </div>
       <div class="col-2">
@@ -283,6 +283,7 @@
     </div>
   </div>
 </div>
+
 
 
 

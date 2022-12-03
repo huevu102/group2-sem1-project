@@ -36,6 +36,7 @@ a:hover, i:hover{
 }
 
 /*SPACING*/
+
 .mbt{
   margin-bottom: 25px;
 }
@@ -169,8 +170,10 @@ label{
   padding: 0px 2px;
   color:#000;
 }
+.search-inp{
+  width: 0;
+}
 input{
-  width:0px;
   border: none;
   padding:0;
   background: none;
@@ -242,13 +245,10 @@ nav li:nth-child(1){
 .check-box {
   margin-right: 10px;
 }
+
 /*FOOTER*/
-.card-footer {
-  padding-top: 50px;
-}
 .card-footer{
-  padding-left:0px;
-  padding-right:0px;
+  padding: 30px 0px;
 }
 .card-footer li{
   font-size:14px;
@@ -262,7 +262,6 @@ nav li:nth-child(1){
 .follow-us i {
   padding-right: 10px;
 }
-
 .subscribe input {
   background-color: #FAF8F6;
 }
@@ -272,7 +271,7 @@ nav li:nth-child(1){
 }
 .copy-right {
   color: #666666;
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 /*PRODUCT-DETAIL-PAGE*/
@@ -439,7 +438,8 @@ body{
   height: var(--nav-height);
 }
 .nav--hidden {
-  transform: translateY(-36px);
+  transform: translateY(-136px);
+  transition: 0.4s all;
 }
 
 

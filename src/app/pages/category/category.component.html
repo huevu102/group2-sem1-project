@@ -1,6 +1,6 @@
 <div class="container">
   <!--category-top-->
-  <div class="category-top row pb-5">
+  <div class="category-top row">
     <div class="col-3">
       <img src="./assets/img/cate-deco/{{cid}}.png" />
     </div>
@@ -12,65 +12,66 @@
           </a>
         </div>
         <div class="sub-name">
-          <h6>{{item.sub_name}}</h6>
+          <p class="mdt mb-0">{{item.sub_name}}</p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row cate-all">
     <!--category-side-->
     <div class="category-side-bar col-2">
-      <form>
-        <div class="mb-3">
-          <p class="font-weight-bolder">Collection</p>
-          <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
-          <label for="collection-1">Spring Collection</label><br>
-          <input type="checkbox" class="check-box" id="collection-2" name="collection-2" value="Aguri Minimalism">
-          <label for="collection-2">Minimalism</label><br>
-          <input type="checkbox" class="check-box" id="collection-3" name="collection-3" value="Aguri's Eternity Magic">
-          <label for="collection-3">Eternity Magic</label><br>
-          <input type="checkbox" class="check-box" id="collection-4" name="collection-4" value="End-Off-Year Collection">
-          <label for="collection-4">End-Off-Year</label>
-        </div>
-        <div class="mt-5 mb-3">
-          <p class="font-weight-bolder mt-5">Jewellery</p>
-          <input type="checkbox" class="check-box" id="jewellery-1" name="jewellery-1" value="Natural Jewellery">
-          <label for="jewellery-1">Natural</label><br>
-          <input type="checkbox" class="check-box" id="jewellery-2" name="jewellery-2" value="Lab-grown Jewellery">
-          <label for="jewellery-2">Lab-grown</label>
-        </div>
-        <div class="mt-5 mb-3">
-          <p class="font-weight-bolder mt-5">Materials</p>
-          <input type="checkbox" class="check-box" id="materials-1" name="materials-1" value="Gold">
-          <label for="materials-1">Gold</label><br>
-          <input type="checkbox" class="check-box" id="materials-2" name="materials-2" value="Rose Gold">
-          <label for="materials-2">Rose Gold</label><br>
-          <input type="checkbox" class="check-box" id="materials-3" name="materials-3" value="White Gold">
-          <label for="materials-3">White Gold</label><br>
-          <input type="checkbox" class="check-box" id="materials-4" name="materials-4" value="Sterling Silver">
-          <label for="materials-4">Sterling Silver</label>
-        </div>
-        <div class="mt-5 mb-3">
-          <p class="font-weight-bolder mt-5">Price</p>
-          <input type="checkbox" class="check-box" id="price-1" name="price-1" value="$500 & Under">
-          <label for="price-1">$0 - $500</label><br>
-          <input type="checkbox" class="check-box" id="price-2" name="price-2" value="$500 - $1,000">
-          <label for="price-2">$500 - $1,000</label><br>
-          <input type="checkbox" class="check-box" id="price-3" name="price-3" value="$1,000 - $2,000">
-          <label for="price-3">$1,000 - $2,000</label><br>
-          <input type="checkbox" class="check-box" id="price-4" name="price-4" value="$2,000 - $5,000">
-          <label for="price-4">$2,000 - $5,000</label><br>
-          <input type="checkbox" class="check-box" id="price-5" name="price-5" value="$5,000 & More">
-          <label for="price-5">$5,000 +</label><br><br>
-          <input type="text" placeholder="Min" class="col-5">
-          <span> ～ </span>
-          <input type="text" placeholder="Max" class="col-5">
-        </div>
-        <button type="submit" class="btn mt-5" onclick="alert('Loading...')">Apply</button>
-      </form>
+      <div class="sticky ">
+        <form>
+          <div class="mb-1">
+            <p class="font-weight-bolder mb-3">Collection</p>
+            <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
+            <label for="collection-1">Spring Collection</label><br>
+            <input type="checkbox" class="check-box" id="collection-2" name="collection-2" value="Aguri Minimalism">
+            <label for="collection-2">Minimalism</label><br>
+            <input type="checkbox" class="check-box" id="collection-3" name="collection-3" value="Aguri's Eternity Magic">
+            <label for="collection-3">Eternity Magic</label><br>
+            <input type="checkbox" class="check-box" id="collection-4" name="collection-4" value="End-Off-Year Collection">
+            <label for="collection-4">End-Off-Year</label>
+          </div>
+          <div class="mt-3 mb-1">
+            <p class="font-weight-bolder">Jewellery</p>
+            <input type="checkbox" class="check-box check-cate" id="jewellery-1" name="jewellery-1" value="Natural Jewellery">
+            <label for="jewellery-1">Natural</label><br>
+            <input type="checkbox" class="check-box check-cate" id="jewellery-2" name="jewellery-2" value="Lab-grown Jewellery">
+            <label for="jewellery-2">Lab-grown</label>
+          </div>
+          <div class="mt-3 mb-1">
+            <p class="font-weight-bolder">Materials</p>
+            <input type="checkbox" class="check-box check-cate" id="materials-1" name="materials-1" value="Gold">
+            <label for="materials-1">Gold</label><br>
+            <input type="checkbox" class="check-box check-cate" id="materials-2" name="materials-2" value="Rose Gold">
+            <label for="materials-2">Rose Gold</label><br>
+            <input type="checkbox" class="check-box check-cate" id="materials-3" name="materials-3" value="White Gold">
+            <label for="materials-3">White Gold</label><br>
+            <input type="checkbox" class="check-box check-cate" id="materials-4" name="materials-4" value="Sterling Silver">
+            <label for="materials-4">Sterling Silver</label>
+          </div>
+          <div class="mt-3 mb-1">
+            <p class="font-weight-bolder">Price</p>
+            <input type="checkbox" class="check-box check-cate" id="price-1" name="price-1" value="$500 & Under">
+            <label for="price-1">$0 - $500</label><br>
+            <input type="checkbox" class="check-box check-cate" id="price-2" name="price-2" value="$500 - $1,000">
+            <label for="price-2">$500 - $1,000</label><br>
+            <input type="checkbox" class="check-box check-cate" id="price-3" name="price-3" value="$1,000 - $2,000">
+            <label for="price-3">$1,000 - $2,000</label><br>
+            <input type="checkbox" class="check-box check-cate" id="price-4" name="price-4" value="$2,000 - $5,000">
+            <label for="price-4">$2,000 - $5,000</label><br>
+            <input type="checkbox" class="check-box check-cate" id="price-5" name="price-5" value="$5,000 & More">
+            <label for="price-5">$5,000 +</label><br><br>
+            <input type="text" placeholder="Min" class="col-5 price-box">
+            <span> ～ </span>
+            <input type="text" placeholder="Max" class="col-5 price-box">
+          </div>
+          <button type="submit" class="btn btn-sec btnsm mt-3" onclick="alert('Loading...')">Apply</button>
+        </form>
+      </div>
     </div>
-
     <!--category-main-->
     <div class="category-main px-0 col-10">
       <!--breadcrumb-->
@@ -214,10 +215,10 @@
       </div>
 
       <!--category-bottom-->
-      <div class="category-bottom pb-5 text-center">
+      <div class="category-bottom text-center">
         <p class="smt mb-2">Showing 60 of 180</p>
         <button class="btn-more">View more</button>
-        <div class="d-flex mt-3">
+        <div class="d-flex mt-2">
           <a class="mx-auto back-to-top smt" onclick="topFunction()" id="myBtn" title="Go to top">Back to top <i class="ps-3 fa-solid fa-chevron-up"></i></a>
         </div>
       </div>
