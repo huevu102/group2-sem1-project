@@ -14,7 +14,7 @@ export class HomeComponent {
   constructor(private http: HttpClient){}
 
   ngOnInit() {
-    const newURL = 'https://huevuapi.herokuapp.com/get-new-arrival'
+    const newURL = 'http://localhost:5000/get-new-arrival'
     this.http.get<Data[]>(newURL).subscribe(data => {
       this.newArrival = data;
     })

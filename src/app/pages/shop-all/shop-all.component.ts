@@ -19,28 +19,28 @@ export class ShopAllComponent {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    const cateURL = 'https://huevuapi.herokuapp.com/get-category'
+    const cateURL = 'http://localhost:5000/get-category'
     this.http.get<Data[]>(cateURL).subscribe(data =>{
       this.cate = data;
     })
 
-    const ringsURL = 'https://huevuapi.herokuapp.com/get-rings'
+    const ringsURL = 'http://localhost:5000/get-rings'
     this.http.get<Data[]>(ringsURL).subscribe(data =>{
       this.rings = data;
     })
 
-    const earringsURL = 'https://huevuapi.herokuapp.com/get-earrings'
+    const earringsURL = 'http://localhost:5000/get-earrings'
     this.http.get<Data[]>(earringsURL).subscribe(data =>{
       this.earrings = data;
     })
 
-    const braceletsURL = 'https://huevuapi.herokuapp.com/get-bracelets'
+    const braceletsURL = 'http://localhost:5000/get-bracelets'
     this.http.get<Data[]>(braceletsURL).subscribe(data =>{
       this.bracelets = data;
     })
 
 
-    const necklacesURL = 'https://huevuapi.herokuapp.com/get-necklaces'
+    const necklacesURL = 'http://localhost:5000/get-necklaces'
     this.http.get<Data[]>(necklacesURL).subscribe(data =>{
       this.necklaces = data;
     })
