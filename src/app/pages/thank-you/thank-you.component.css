@@ -1,6 +1,12 @@
 .your-bill, .billing-summary{
   background: #fff;
 }
+.your-bill{
+  padding: 30px 30px;
+}
+.billing-summary{
+  padding:30px 30px;
+}
 .thanks{
   margin-bottom: 60px;
 }
@@ -9,11 +15,11 @@
 .checkmark__circle {
   stroke-dasharray: 166;
   stroke-dashoffset: 166;
-  stroke-width: 2;
+  stroke-width: 1.5;
   stroke-miterlimit: 10;
   stroke: #000;
   fill: #FAF8F6;
-  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  animation: stroke 0.7s cubic-bezier(0.65, 0, 0.45, 1) forwards;
 }
 
 .checkmark {
@@ -21,10 +27,10 @@
   height: 140px;
   border-radius: 50%;
   display: block;
-  stroke-width: 2;
+  stroke-width: 1.5;
   stroke: #000;
   stroke-miterlimit: 10;
-  margin: 5% auto;
+  margin: 4% auto;
   animation: fill .5s ease-in-out .5s forwards, scale .3s ease-in-out .9s both;
 }
 
