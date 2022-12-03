@@ -384,6 +384,9 @@ nav li:nth-child(1){
 .signin-inner{
   margin:auto;
 }
+.price-box{
+  border: 1px solid #000;
+}
 /*All Jewelery from home page*/
 .item-box-all{
   position:relative;
