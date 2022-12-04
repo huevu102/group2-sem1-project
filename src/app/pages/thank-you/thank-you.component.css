@@ -1,8 +1,11 @@
+.order-detail{
+  margin-bottom:80px;
+}
 .your-bill, .billing-summary{
   background: #fff;
 }
 .your-bill{
-  padding: 30px 30px;
+  padding: 38px 38px;
 }
 .billing-summary{
   padding:30px 30px;
@@ -31,14 +34,14 @@
   stroke: #000;
   stroke-miterlimit: 10;
   margin: 4% auto;
-  animation: fill .5s ease-in-out .5s forwards, scale .3s ease-in-out .9s both;
+  animation: fill .6s ease-in-out .6s forwards, scale .4s ease-in-out .9s both;
 }
 
 .checkmark__check {
   transform-origin: 50% 50%;
   stroke-dasharray: 48;
   stroke-dashoffset: 48;
-  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  animation: stroke 0.4s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
 }
 
 @keyframes stroke {
@@ -56,6 +59,6 @@
 }
 @keyframes fill {
   100% {
-    box-shadow: inset 0px 0px 0px 30px #7ac142;
+    box-shadow: inset 0px 0px 0px 30px #000;
   }
 }
