@@ -136,7 +136,7 @@
         </div>
         <div class="bag">
           <button class="add-bag btn btnlg btn-pri w-100" type="submit" data-bs-toggle="offcanvas" data-bs-target="#addbag">Add to bag</button>
-          <!--OFFCANVSS ADD BAG-->
+          <!--OFFCANVAS ADD BAG-->
           <div class="offcanvas offcanvas-end" id="addbag">
             <div class="offcanvas-header">
               <h5 class="offcanvas-title mt-3">Shopping Bag</h5>
@@ -247,13 +247,13 @@
               <img src="{{item.thumb}}">
             </a>
           </div>
-          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
+          <div (click)="compare(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
             Compare
           </div>
         </div>
 
         <!-- Modal Compare-->
-        <div class="modal fade" id="compare">
+        <div  class="modal fade" id="compare">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <h5 class="modal-title" id="exampleModalLabel">Compare Products</h5>
@@ -281,26 +281,26 @@
                   </div>
                   <button type="button" class="btn btn-pri btnsm w-100" data-bs-dismiss="modal">Add to bag</button>
                 </div>
-                <div class="col-6 simi-right">
+                <div class="col-6 simi-right" *ngIf="comparedProduct">
                   <div class="itm">
-                    <a routerLink="/product-detail/{{item.pid}}">
-                      <img src="{{item.thumb}}">
+                    <a routerLink="/product-detail/{{comparedProduct.pid}}">
+                      <img src="{{comparedProduct.thumb}}">
                     </a>
                     <div class="item-inf text-center">
                       <p class="mdt my-2">{{item.name}}</p>
-                      <p class="">{{item.price | currency: 'USD'}}</p>
+                      <p class="">{{comparedProduct.price | currency: 'USD'}}</p>
                     </div>
                   </div>
                   <div class="jewel">
                     <p class="mdt mb-1">Jewellery</p>
-                    <p class="smt my-2">{{item.jewellery_type}}</p>
+                    <p class="smt my-2">{{comparedProduct.jewellery_type}}</p>
                     <p class="smt my-2">2.5mm width x2</p>
                     <p class="smt mb-0">Carat total weight .50</p>
                   </div>
                   <div class="line my-2"></div>
                   <div class="mater">
                     <p class="mdt mb-1">Material</p>
-                    <p class="smt">{{item.material}}</p>
+                    <p class="smt">{{comparedProduct.material}}</p>
                   </div>
                   <button type="button" class="btn btn-pri btnsm w-100" data-bs-dismiss="modal">Add to bag</button>
                 </div>

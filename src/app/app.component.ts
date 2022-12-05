@@ -20,16 +20,18 @@ export class AppComponent {
     //const nav = document.querySelector(".headnav");
     //let lastScrollY = window.scrollY;//
     window.onscroll = () => {
-      if (window.pageYOffset > 100){
+      if (window.pageYOffset > 90){
         this.show = true;
       //  nav?.classList.add("nav--hidden");
       }
-      else{
+      else {
         this.show = false;
        // nav?.classList.remove("nav--hidden");
       }
      // lastScrollY = window.scrollY;
-    };
+    }
   }
+
+
 
 }
