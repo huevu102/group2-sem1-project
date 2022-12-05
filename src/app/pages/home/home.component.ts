@@ -10,6 +10,7 @@ import {Data} from "../../interfaces/data.interface";
 
 export class HomeComponent {
   newArrival: Data[] = [];
+  bestSeller: Data[] = [];
 
   constructor(private http: HttpClient){}
 
@@ -17,6 +18,11 @@ export class HomeComponent {
     const newURL = 'http://localhost:5000/get-new-arrival'
     this.http.get<Data[]>(newURL).subscribe(data => {
       this.newArrival = data;
+    })
+
+    const bestURL = 'http://localhost:5000/get-best-seller'
+    this.http.get<Data[]>(bestURL).subscribe(data => {
+      this.bestSeller = data;
     })
   }
 }
