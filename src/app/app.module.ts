@@ -20,7 +20,6 @@ import {ThankYouComponent} from "./pages/thank-you/thank-you.component";
 import {CategoryDraftComponent} from "./pages/category-DRAFT/category-draft.component"; //delete before deploy
 import {ProductDetailDraftComponent} from "./pages/product-detail-DRAFT/product-detail-draft.component";
 import {SearchComponent} from "./pages/search/search.component";
-import {FormsModule} from "@angular/forms";
 //delete before deploy
 
 
@@ -71,7 +70,6 @@ const appRoutes: Routes = [
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDNI_ZWPqvdS6r6gPVO50I4TlYkfkZdXh8'
     }),
-    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
