@@ -67,14 +67,14 @@
                 <tr>
                   <th>AGURI (US) size</th>
                   <th class="mx12">Circumference (mm)</th>
-                  <th class="select-trans">
-                    <select class="form-select smt">
-                      <option selected>UK</option>
-                      <option value="1">Japan</option>
-                      <option value="2">Italy</option>
-                      <option value="3">Germany</option>
-                    </select>
-                  </th>
+<!--                  <th class="select-trans">-->
+<!--                    <select class="form-select smt">-->
+<!--                      <option selected>UK</option>-->
+<!--                      <option value="1">Japan</option>-->
+<!--                      <option value="2">Italy</option>-->
+<!--                      <option value="3">Germany</option>-->
+<!--                    </select>-->
+<!--                  </th>-->
                 </tr>
                 </thead>
                 <tbody>
@@ -135,7 +135,7 @@
           </div>
         </div>
         <div class="bag">
-          <button class="add-bag btn btnlg btn-pri w-100" type="submit" data-bs-toggle="offcanvas" data-bs-target="#addbag" onclick="alert('The product was successfully added to bag!!')">Add to bag</button>
+          <button class="add-bag btn btnlg btn-pri w-100" type="submit" data-bs-toggle="offcanvas" data-bs-target="#addbag">Add to bag</button>
           <!--OFFCANVAS ADD BAG-->
           <div class="offcanvas offcanvas-end" id="addbag">
             <div class="offcanvas-header">
@@ -177,7 +177,7 @@
                 <p class="mdt me-auto">Product Total</p>
                 <p class="mdt">$11,700</p>
               </div>
-              <button class="btn btn-pri btnlg mt-3 w-100" type="button" routerLink="/cart">Continue</button>
+              <button class="btn btn-pri btnlg mt-3 w-100" type="button" routerLink="/cart" data-bs-dismiss="offcanvas">Continue</button>
             </div>
           </div>
         </div>
@@ -466,13 +466,13 @@
     <div class="col"></div>
     <div class="col-4 collec-left">
       <div class="collec-content">
-        <h5 class="mb-2">AGURI's Eternity Magic</h5>
-        <p class="smt mb-5">Inspired by a unisex bracelet from 1971 found in the House’s archive, the AGURI's Eternity Magic
+        <h5 class="mb-2">AGURI's Collection</h5>
+        <p class="smt mb-5">Inspired by a unisex bracelet from 1971 found in the House’s archive, the AGURI's Collection
           features bold designs that play with tension, proportion and balance.</p>
       </div>
-      <div class="text-center">
-        <a routerLink="#">Shop The Collection<i class="ms-3 fa-regular fa-arrow-right"></i></a>
-      </div>
+<!--      <div class="text-center">-->
+<!--        <a routerLink="#">Shop The Collection<i class="ms-3 fa-regular fa-arrow-right"></i></a>-->
+<!--      </div>-->
       <div class="collec-img">
         <img src="./assets/img/product-detail/collec1.png"/>
       </div>

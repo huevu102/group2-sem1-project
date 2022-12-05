@@ -40,45 +40,51 @@
           <label>Address line1 (*)</label>
           <input class="inpu" type="text" required><br>
         </div>
-        <div class="form-check my-4 ps-0">
-          <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
-          <label class="smt" for="collection-1">Default (Same as billing address)</label><br>
-        </div>
-        <div class="form-check my-4 ps-0">
-          <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
-          <label class="smt" for="collection-1">Add an alternative delivery address</label><br>
-        </div>
+        <form>
+          <div class="form-check my-4 ps-0">
+            <input type="radio" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
+            <label class="smt" for="collection-1">Default (Same as billing address)</label><br>
+          </div>
+          <div class="form-check my-4 ps-0">
+            <input type="radio" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
+            <label class="smt" for="collection-1">Add an alternative delivery address</label><br>
+          </div>
+        </form>
+
       </div>
       <!--shipping method-->
       <div class="shipping-method mb-4">
         <div class="t-head row align-middle py-3 mb-4">
           <p class="mb-0">Shipping Method</p>
         </div>
-        <div class="row">
-          <div class="ps-0 col-4">
-            <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
-            <label class="smt" for="collection-1">Free ship</label><br>
+        <form>
+          <div class="row">
+            <div class="ps-0 col-4">
+              <input type="radio" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
+              <label class="smt" for="collection-1">Free ship</label><br>
+            </div>
+            <div class="col-4">
+              <p class="smt mb-0">Fixed</p>
+            </div>
+            <div class="col-4">
+              <p class="smt mb-0">Flat rate</p>
+            </div>
           </div>
-          <div class="col-4">
-            <p class="smt mb-0">Fixed</p>
+          <div class="line my-3"></div>
+          <div class="row">
+            <div class="ps-0 col-4">
+              <input type="radio" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
+              <label class="smt" for="collection-1">$5,00</label><br>
+            </div>
+            <div class="col-4">
+              <p class="smt mb-0">Table Rate</p>
+            </div>
+            <div class="col-4">
+              <p class="smt mb-0">Best way</p>
+            </div>
           </div>
-          <div class="col-4">
-            <p class="smt mb-0">Flat rate</p>
-          </div>
-        </div>
-        <div class="line my-3"></div>
-        <div class="row">
-          <div class="ps-0 col-4">
-            <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
-            <label class="smt" for="collection-1">$5,00</label><br>
-          </div>
-          <div class="col-4">
-            <p class="smt mb-0">Table Rate</p>
-          </div>
-          <div class="col-4">
-            <p class="smt mb-0">Best way</p>
-          </div>
-        </div>
+        </form>
+
       </div>
       <!--payment method-->
       <div class="payment-method mb-4">
@@ -160,14 +166,14 @@
               <p>$0</p>
             </div>
           </div>
-          <div class="row ship-fee">
-            <div class="col-10 ps-0">
-              <p>Discount (coupon)</p>
-            </div>
-            <div class="col-2 pe-0">
-              <p>-$7,00</p>
-            </div>
-          </div>
+<!--          <div class="row ship-fee">-->
+<!--            <div class="col-10 ps-0">-->
+<!--              <p>Discount (coupon)</p>-->
+<!--            </div>-->
+<!--            <div class="col-2 pe-0">-->
+<!--              <p>-$7,00</p>-->
+<!--            </div>-->
+<!--          </div>-->
           <div class="line mb-3"></div>
           <div class="total-itm row">
             <div class="col-10 ps-0">
