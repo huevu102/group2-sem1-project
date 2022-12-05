@@ -20,7 +20,7 @@ export class AppComponent {
     //const nav = document.querySelector(".headnav");
     //let lastScrollY = window.scrollY;//
     window.onscroll = () => {
-      if (window.pageYOffset > 1100){
+      if (window.pageYOffset > 100){
         this.show = true;
       //  nav?.classList.add("nav--hidden");
       }
@@ -31,7 +31,5 @@ export class AppComponent {
      // lastScrollY = window.scrollY;
     };
   }
-
-
 
 }
