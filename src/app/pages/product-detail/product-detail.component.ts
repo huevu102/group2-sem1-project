@@ -15,6 +15,7 @@ export class ProductDetailComponent implements OnInit {
   product: Data[] = [];
   similar: Data[] = [];
   review: Data[] = [];
+  collection: Data[] = [];
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient
@@ -37,6 +38,11 @@ export class ProductDetailComponent implements OnInit {
       const reviewURL = 'http://localhost:5000/get-review-by-pid/?pid=' + this.pid;
       this.http.get<Data[]>(reviewURL).subscribe(data => {
         this.review = data;
+      })
+
+      const collectURL = 'http://localhost:5000/get-collection-by-pid/?pid=' + this.pid;
+      this.http.get<Data[]>(collectURL).subscribe(data => {
+        this.collection = data;
       })
     })
   }

@@ -26,7 +26,7 @@
           <div class="mb-1">
             <p class="font-weight-bolder mb-3">Collection</p>
             <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
-            <label for="collection-1">Spring Collection</label><br>
+            <label for="collection-1">Spring Vibe</label><br>
             <input type="checkbox" class="check-box" id="collection-2" name="collection-2" value="Aguri Minimalism">
             <label for="collection-2">Minimalism</label><br>
             <input type="checkbox" class="check-box" id="collection-3" name="collection-3" value="Aguri's Eternity Magic">
@@ -163,7 +163,7 @@
       <div class="mb-3 row">
         <div class="col-6 mb-9">
           <div class="featured">
-            <div class="featured-img" *ngFor="let item of category | slice: 0: 1">
+            <div class="featured-img" *ngFor="let item of cateFeatured | slice: 0: 1">
               <a routerLink="/product-detail/{{item.pid}}">
                 <img src="./assets/img/featured/{{cid}}.png">
               </a>
@@ -216,8 +216,6 @@
 
       <!--category-bottom-->
       <div class="category-bottom text-center">
-        <p class="smt mb-2">Showing 60 of 180</p>
-        <button class="btn-more">View more</button>
         <div class="d-flex mt-2">
           <a class="mx-auto back-to-top smt" onclick="topFunction()" id="myBtn" title="Go to top">Back to top <i class="ps-3 fa-solid fa-chevron-up"></i></a>
         </div>

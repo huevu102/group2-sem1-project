@@ -13,6 +13,7 @@ export class SubCategoryComponent implements OnInit{
   private sub: any;
   sid: number = 0;
   subCate: Data[] = [];
+  subFeatured: Data[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +28,11 @@ export class SubCategoryComponent implements OnInit{
       const subUrl = 'http://localhost:5000/get-sub-category-by-sid/?sid='+ this.sid;
       this.http.get<Data[]>(subUrl).subscribe(data => {
         this.subCate = data;
+      })
+
+      const subFeaturedUrl = 'http://localhost:5000/get-featured-by-sid/?sid='+ this.sid;
+      this.http.get<Data[]>(subFeaturedUrl).subscribe(data => {
+        this.subFeatured = data;
       })
     })
   }
