@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {Data} from "../../interfaces/data.interface";
+import {host} from "../../../enums";
 
 @Component({
   selector: 'app-sub-category',
@@ -25,12 +26,12 @@ export class SubCategoryComponent implements OnInit{
       this.sid = +params['sid']; // (+) converts string 'id' to a number
 
       // In a real app: dispatch action to load the details here.
-      const subUrl = 'http://localhost:5000/get-sub-category-by-sid/?sid='+ this.sid;
+      const subUrl = host + 'get-sub-category-by-sid/?sid='+ this.sid;
       this.http.get<Data[]>(subUrl).subscribe(data => {
         this.subCate = data;
       })
 
-      const subFeaturedUrl = 'http://localhost:5000/get-featured-by-sid/?sid='+ this.sid;
+      const subFeaturedUrl = host + 'get-featured-by-sid/?sid='+ this.sid;
       this.http.get<Data[]>(subFeaturedUrl).subscribe(data => {
         this.subFeatured = data;
       })

@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {Data} from "../../interfaces/data.interface";
+import {host} from "../../../enums";
 
 @Component({
   selector: 'app-product-detail',
@@ -25,22 +26,22 @@ export class ProductDetailComponent implements OnInit {
     this.id = this.route.params.subscribe(params => {
       this.pid = +params['pid'];
 
-      const productURL = 'http://localhost:5000/get-product-by-pid/?pid=' + this.pid;
+      const productURL = host + 'get-product-by-pid/?pid=' + this.pid;
       this.http.get<Data[]>(productURL).subscribe(data => {
         this.product = data;
       })
 
-      const similarURL = 'http://localhost:5000/get-similar-product-by-pid/?pid=' + this.pid;
+      const similarURL = host + 'get-similar-product-by-pid/?pid=' + this.pid;
       this.http.get<Data[]>(similarURL).subscribe(data => {
         this.similar = data;
       })
 
-      const reviewURL = 'http://localhost:5000/get-review-by-pid/?pid=' + this.pid;
+      const reviewURL = host + 'get-review-by-pid/?pid=' + this.pid;
       this.http.get<Data[]>(reviewURL).subscribe(data => {
         this.review = data;
       })
 
-      const collectURL = 'http://localhost:5000/get-collection-by-pid/?pid=' + this.pid;
+      const collectURL = host + 'get-collection-by-pid/?pid=' + this.pid;
       this.http.get<Data[]>(collectURL).subscribe(data => {
         this.collection = data;
       })
