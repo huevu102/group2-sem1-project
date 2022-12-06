@@ -444,6 +444,11 @@ body{
   transform: translateY(-136px);
   transition: 0.4s all;
 }
+.offcanvas-body .fa-xmark{
+  margin-bottom:95px;
+  padding-left:45px;
+}
+
 /*QTY BOX*/
 .qty-box {
   border: 1px solid #ccc;

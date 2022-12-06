@@ -20,7 +20,7 @@ import {ThankYouComponent} from "./pages/thank-you/thank-you.component";
 import {CategoryDraftComponent} from "./pages/category-DRAFT/category-draft.component"; //delete before deploy
 import {ProductDetailDraftComponent} from "./pages/product-detail-DRAFT/product-detail-draft.component"; //delete before deploy
 import {SearchComponent} from "./pages/search/search.component";
-import {FormsModule} from "@angular/forms";;
+import {TrackingOrderComponent} from "./pages/tracking-order/tracking-order.component";
 
 
 
@@ -40,6 +40,7 @@ const appRoutes: Routes = [
   {path: 'category-draft', component: CategoryDraftComponent}, //delete before deploy
   {path: 'product-detail-draft', component: ProductDetailDraftComponent}, //delete before deploy
   {path: 'search', component: SearchComponent},
+  {path: 'tracking-order', component: TrackingOrderComponent},
 
 ]
 
@@ -61,6 +62,7 @@ const appRoutes: Routes = [
     CategoryDraftComponent, //delete before deploy//
     ProductDetailDraftComponent, //delete before deploy
     SearchComponent,
+    TrackingOrderComponent,
 
   ],
   imports: [
@@ -70,7 +72,6 @@ const appRoutes: Routes = [
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDNI_ZWPqvdS6r6gPVO50I4TlYkfkZdXh8'
     }),
-    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
