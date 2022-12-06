@@ -14,13 +14,6 @@
 .breadcrumb .breadcrumb-item a{
   font-size:14px;
 }
-/*QTY BOX*/
-.qty-box {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #fff;
-  height: 30px;
-}
 /*FIND SIZE*/
 .mx12{
   padding-left:25px;

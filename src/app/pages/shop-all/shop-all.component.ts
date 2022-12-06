@@ -15,6 +15,7 @@ export class ShopAllComponent {
   earrings: Data[] = [];
   bracelets: Data[] = [];
   necklaces: Data[] = [];
+  quickviewed?: Data;
 
 
   constructor(private http: HttpClient) {}
@@ -45,5 +46,19 @@ export class ShopAllComponent {
     this.http.get<Data[]>(necklacesURL).subscribe(data =>{
       this.necklaces = data;
     })
+
+    window.addEventListener('scroll', () => {
+      this.windowScrolled = window.pageYOffset !== 0;
+    });
+  }
+
+
+  windowScrolled = false;
+  scrollToTop(): void {
+    window.scrollTo(0, 0);
+  }
+
+  quickview(item: Data) {
+    this.quickviewed = item;
   }
 }

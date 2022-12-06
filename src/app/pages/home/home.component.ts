@@ -12,6 +12,7 @@ import {host} from "../../../enums";
 export class HomeComponent {
   newArrival: Data[] = [];
   bestSeller: Data[] = [];
+  quickviewed?: Data;
 
   constructor(private http: HttpClient){}
 
@@ -25,5 +26,18 @@ export class HomeComponent {
     this.http.get<Data[]>(bestURL).subscribe(data => {
       this.bestSeller = data;
     })
+
+    window.addEventListener('scroll', () => {
+      this.windowScrolled = window.pageYOffset !== 0;
+    });
+  }
+
+  windowScrolled = false;
+  scrollToTop(): void {
+    window.scrollTo(0, 0);
+  }
+
+  quickview(item: Data) {
+    this.quickviewed = item;
   }
 }

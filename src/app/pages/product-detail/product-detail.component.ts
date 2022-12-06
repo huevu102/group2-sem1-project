@@ -17,7 +17,8 @@ export class ProductDetailComponent implements OnInit {
   similar: Data[] = [];
   review: Data[] = [];
   collection: Data[] = [];
-  comparedProduct?:Data;
+  comparedProduct?: Data;
+  quickviewed?: Data;
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient
@@ -51,5 +52,9 @@ export class ProductDetailComponent implements OnInit {
 
   compare(item: Data) {
     this.comparedProduct = item;
+  }
+
+  quickview(item: Data) {
+    this.quickviewed = item;
   }
 }

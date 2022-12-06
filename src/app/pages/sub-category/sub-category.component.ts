@@ -15,6 +15,7 @@ export class SubCategoryComponent implements OnInit{
   sid: number = 0;
   subCate: Data[] = [];
   subFeatured: Data[] = [];
+  quickviewed?: Data;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,5 +37,9 @@ export class SubCategoryComponent implements OnInit{
         this.subFeatured = data;
       })
     })
+  }
+
+  quickview(item: Data) {
+    this.quickviewed = item;
   }
 }
