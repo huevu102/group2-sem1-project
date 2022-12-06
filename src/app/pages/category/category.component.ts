@@ -16,6 +16,7 @@ export class CategoryComponent implements OnInit {
   category: Data[] = [];
   subCate: Data[] = [];
   cateFeatured: Data[] = [];
+  quickviewed?: Data;
 
   constructor(
     private route: ActivatedRoute,
@@ -41,5 +42,9 @@ export class CategoryComponent implements OnInit {
         this.cateFeatured = data;
       })
     })
+  }
+
+  quickview(item: Data) {
+    this.quickviewed = item;
   }
 }

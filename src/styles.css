@@ -444,9 +444,25 @@ body{
   transform: translateY(-136px);
   transition: 0.4s all;
 }
+/*QTY BOX*/
+.qty-box {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  height: 30px;
+}
+/*back to top*/
+.to-top {
+  bottom: 0;
+  cursor: pointer;
+  margin: 50px;
+  position: fixed;
+  right: 0;
+  opacity: 0;
+  z-index: 1;
+}
 
-
-
-
-
-
+.show-scrollTop {
+  opacity: 1 !important;
+  transition: all 0.2s ease-in-out;
+}

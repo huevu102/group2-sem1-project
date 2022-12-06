@@ -31,5 +31,4 @@ export class AppComponent {
      // lastScrollY = window.scrollY;
     };
   }
-
 }
