@@ -20,6 +20,7 @@ import {ThankYouComponent} from "./pages/thank-you/thank-you.component";
 import {CategoryDraftComponent} from "./pages/category-DRAFT/category-draft.component"; //delete before deploy
 import {ProductDetailDraftComponent} from "./pages/product-detail-DRAFT/product-detail-draft.component";
 import {SearchComponent} from "./pages/search/search.component";
+import {TrackingOrderComponent} from "./pages/tracking-order/tracking-order.component";
 //delete before deploy
 
 
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
   {path: 'category-draft', component: CategoryDraftComponent}, //delete before deploy
   {path: 'product-detail-draft', component: ProductDetailDraftComponent}, //delete before deploy
   {path: 'search', component: SearchComponent},
+  {path: 'tracking-order', component: TrackingOrderComponent},
 
 ]
 
@@ -61,6 +63,7 @@ const appRoutes: Routes = [
     CategoryDraftComponent, //delete before deploy//
     ProductDetailDraftComponent, //delete before deploy
     SearchComponent,
+    TrackingOrderComponent,
 
   ],
   imports: [
