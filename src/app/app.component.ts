@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import {Data} from "./interfaces/data.interface";
+import {HttpClient} from "@angular/common/http";
+import {host} from "../enums";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -12,7 +16,7 @@ export class AppComponent {
   title = 'group2-sem1-project';
   show:boolean =  false;
   /*THIS FOR SCROLL NAVBAR*/
-  constructor(){
+  constructor (private http: HttpClient, private router: Router) {
     this.function();
   }
 
@@ -30,5 +34,19 @@ export class AppComponent {
       }
      // lastScrollY = window.scrollY;
     };
+  }
+
+  // search
+  searchResult: Data[] = [];
+  searchText?: any;
+
+  search() {
+    const searchUrl = host + 'search-product/?keyword=' + this.searchText;
+    this.http.get<Data[]>(searchUrl).subscribe(data => {
+      this.searchResult = data;
+      console.log(this.searchResult);
+      this.router.navigate(['/search']);
+      this.searchText = '';
+    })
   }
 }
