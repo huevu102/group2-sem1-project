@@ -38,13 +38,12 @@ export class AppComponent {
 
   // search
   searchResult: Data[] = [];
-  searchText?: any;
+  searchText?: '';
 
   search() {
     const searchUrl = host + 'search-product/?keyword=' + this.searchText;
     this.http.get<Data[]>(searchUrl).subscribe(data => {
       this.searchResult = data;
-      console.log(this.searchResult);
       this.router.navigate(['/search']);
       this.searchText = '';
     })

@@ -19,6 +19,8 @@ export class ProductDetailComponent implements OnInit {
   collection: Data[] = [];
   comparedProduct?: Data;
   quickviewed?: Data;
+  zoomed?: Data;
+
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient
@@ -56,5 +58,9 @@ export class ProductDetailComponent implements OnInit {
 
   quickview(item: Data) {
     this.quickviewed = item;
+  }
+
+  zoom(item: Data) {
+    this.zoomed = item;
   }
 }

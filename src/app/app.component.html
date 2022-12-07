@@ -73,10 +73,8 @@
             </div>
             <!--search-button-start-->
             <div class="search-box">
-                <input type="text" class="search-inp" [(ngModel)]="searchText" (keyup.enter)="search()" placeholder="search...">
-                <a routerLink="/search" class="iconsearch">
-                  <i class="fa fa-search fa-lg"></i>
-                </a>
+              <input type="text" class="search-inp" [(ngModel)]="searchText" (keyup.enter)="search()" placeholder="search...">
+              <i class="fa fa-search fa-lg" (click)="search()"></i>
             </div>
             <!--search-button-end-->
           </ul>

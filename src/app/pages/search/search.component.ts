@@ -1,6 +1,8 @@
 import {Component} from "@angular/core";
 import {AppComponent} from "../../app.component";
 import {Data} from "../../interfaces/data.interface";
+import {host} from "../../../enums";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'search',
@@ -10,7 +12,9 @@ import {Data} from "../../interfaces/data.interface";
 
 export class SearchComponent{
   searchResult: Data[] = [];
-  constructor (private appData: AppComponent) {}
+  searchText?: '';
+
+  constructor (private appData: AppComponent, private http: HttpClient) {}
 
   ngOnInit () {
     this.searchResult = this.appData.searchResult;
