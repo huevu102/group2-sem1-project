@@ -73,7 +73,7 @@ const appRoutes: Routes = [
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDNI_ZWPqvdS6r6gPVO50I4TlYkfkZdXh8'
     }),
-    FormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
