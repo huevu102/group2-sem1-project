@@ -22,6 +22,7 @@ export class ProductDetailDraftComponent implements OnInit {
   zoomed?: Data;
   added?: Data;
   cartItem: Data[] = [];
+  deleted?: Data;
 
   constructor(
     private route: ActivatedRoute, private http: HttpClient) {}
@@ -64,9 +65,24 @@ export class ProductDetailDraftComponent implements OnInit {
     this.zoomed = item;
   }
 
-  // add to car
+  // add to cart
+  qty: number = 1;
+  total: any;
   addToCart(item: Data): void {
     this.added = item;
     this.cartItem.push(item);
+    this.total = item.price * this.qty;
+  }
+  upQty() {
+    this.qty++;
+  }
+  downQty() {
+    if(this.qty > 1) {
+      this.qty--;
+    }
+  }
+  deleteItem(item: Data) {
+    this.deleted = item;
+    this.cartItem = this.cartItem.filter(item => item !== this.deleted);
   }
 }

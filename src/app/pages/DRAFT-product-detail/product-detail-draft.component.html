@@ -32,11 +32,12 @@
         <p class="mdt">Complimentary Shipping & Returns</p>
         <div class="line mb-3"></div>
 
-        <form>
+        <form (submit)="addToCart(item)">
           <div class=d-flex>
             <p class="mdt me-auto">Quantity</p>
             <span class="buttons_added ml-1 qty-box">
-            <input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="" required>
+            <input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number"
+                   [(ngModel)]="qty" value="" required>
           </span>
           </div>
           <div class="line mb-3"></div>
@@ -110,8 +111,7 @@
 
           <div class="bag">
             <input class="btn btnlg btn-pri w-100" data-bs-toggle="offcanvas" data-bs-target="#addtobag"
-                   role="button" type="submit" value="Add to bag"
-                   (click)="addToCart(item)">
+                   role="button" type="submit" value="Add to bag">
             <!--OFFCANVAS ADD BAG-->
             <div class="offcanvas offcanvas-end" id="addtobag">
               <div class="offcanvas-header">
@@ -121,7 +121,7 @@
 
 
               <div class="container" *ngIf="cartItem.length === 0">
-                <h5 class="text-center">Your bag is currently empty.</h5>
+                <p class="ml-3">Your bag is currently empty.</p>
               </div>
               <div class="container" *ngIf="cartItem.length > 0">
                 <div class="offcanvas-body" *ngIf="added">
@@ -133,23 +133,25 @@
                       </a>
                     </div>
                     <div class="col-5">
-                      <p>{{added.name}}</p>
+                      <h6>{{added.name}}</h6>
                     </div>
                     <div class="col-3 pe-0">
-                      x<input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="1">
-                      <p>{{added.price | currency: 'USD'}}</p>
-                      <i class="fas fa-trash-alt"></i>
+                      <button (click)="downQty()"><i class="fa fa-minus"></i></button>
+                      <span class="qty mx-2">{{qty}}</span>
+                      <button (click)="upQty()"><i class="fa fa-plus"></i></button>
+                      <p class="mt-2">{{added.price | currency: 'USD'}}</p>
+                      <i (click)="deleteItem(item)" class="fas fa-trash-alt"></i>
                     </div>
                   </div>
 
                   <div class="line mb-3"></div>
                   <div class="d-flex mb-3">
                     <p class="mdt me-auto">Total</p>
-                    <p class="mdt">{{added.price | currency: 'USD'}}</p>
+                    <p class="mdt">{{total | currency: 'USD'}}</p>
                   </div>
                   <div class="row">
                     <div class="col-6 ps-0">
-                      <button class="btn btn-sec btnlg mt-3 w-100" type="button" routerLink="/cart">View bag</button>
+                      <button class="btn btn-sec btnlg mt-3 w-100" type="button" routerLink="/cart-draft">View bag</button>
                     </div>
                     <div class="col-6 pe-0">
                       <button class="btn btn-pri btnlg mt-3 w-100" type="button" routerLink="/check-out">Checkout</button>
@@ -273,7 +275,7 @@
                   </div>
                   <div class="line mb-3"></div>
 
-                  <form onsubmit="alert('The product was successfully added to bag!!')">
+                  <form (submit)="addToCart(item)">
                     <div class="d-flex">
                       <p class="mdt me-auto">Quantity</p>
                       <span class="buttons_added ml-1 qty-box">
@@ -317,7 +319,7 @@
                   </div>
                   <div class="line mb-3"></div>
 
-                  <form onsubmit="alert('The product was successfully added to bag!!')">
+                  <form (submit)="addToCart(item)">
                     <div class="d-flex">
                       <p class="mdt me-auto">Quantity</p>
                       <span class="buttons_added ml-1 qty-box">

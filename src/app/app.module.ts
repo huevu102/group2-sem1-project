@@ -25,7 +25,6 @@ import {TrackingOrderComponent} from "./pages/tracking-order/tracking-order.comp
 import {FormsModule} from "@angular/forms";
 
 
-
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'about-us', component: AboutUsComponent},
@@ -67,7 +66,6 @@ const appRoutes: Routes = [
     CartDraftComponent, // HUE test
     SearchComponent,
     TrackingOrderComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -76,7 +74,7 @@ const appRoutes: Routes = [
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDNI_ZWPqvdS6r6gPVO50I4TlYkfkZdXh8'
     }),
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

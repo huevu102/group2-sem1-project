@@ -19,30 +19,32 @@
       </div>
     </div>
 
-
-
-    // code here
-
-
-    <div class="t-row1 row">
-      <div class="col-2">
-        <img src="assets/img/product-detail/bag-prd1.png">
-      </div>
-      <div class="col-3">
-        <p>AMEL EARRING</p>
-      </div>
-      <div class="col-2">
-        <p>6</p>
-      </div>
-      <div class="col-2"></div>
-      <div class="col-2">
-        <p>$6,700</p>
-      </div>
-      <div class="col">
-        <i class="fa-solid fa-xmark"></i>
+    <div class="container" *ngIf="cartItem.length === 0">
+      <p class="ml-3">Your bag is currently empty.</p>
+    </div>
+    <div class="container" *ngIf="cartItem.length > 0">
+      <div *ngFor="let item of cartItem">
+        <div class="t-row1 row">
+          <div class="col-2">
+            <img src="{{item.thumb}}">
+          </div>
+          <div class="col-3">
+            <p>{{item.name}}</p>
+          </div>
+          <div class="col-2">
+            <p>5</p>
+          </div>
+          <div class="col-2"></div>
+          <div class="col-2">
+            <p>{{item.price | currency: 'USD'}}</p>
+          </div>
+          <div class="col">
+            <i class="fas fa-trash-alt"></i>
+          </div>
+        </div>
+        <div class="line my-3"></div>
       </div>
     </div>
-    <div class="line my-3"></div>
 
   </div>
     <div class="row">
