@@ -64,14 +64,16 @@
       <div class="modal fade" id="personalnote">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
-            <h5 class="modal-title mb-4">Personal Note</h5>
-            <p class="smt">Write below the message you want to include below. Your message will be printed in a cardboard
-              that will be shipped with your order. Your personal note will be automatically saved when you click "SAVE".</p>
-            <div class="my-3">
-              <label>Write your personal note here</label>
-              <textarea class="inpu" rows="4" required></textarea>
-            </div>
-            <button type="button" class="mt-2 btn btn-pri" data-bs-dismiss="modal">Send</button>
+            <form onsubmit="alert('We have received your note.')">
+              <h5 class="modal-title mb-4">Personal Note</h5>
+              <p class="smt">Write below the message you want to include below. Your message will be printed in a cardboard
+                that will be shipped with your order. Your personal note will be automatically saved when you click "SAVE".</p>
+              <div class="my-3">
+                <label>Write your personal note here</label>
+                <textarea class="inpu" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="mt-2 btn btn-pri w-100" data-bs-dismiss="modal">Send</button>
+            </form>
           </div>
         </div>
       </div>
