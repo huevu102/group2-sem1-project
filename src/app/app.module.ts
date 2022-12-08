@@ -17,8 +17,9 @@ import {ShopAllComponent} from "./pages/shop-all/shop-all.component";
 import {CategoryComponent} from "./pages/category/category.component";
 import {SubCategoryComponent} from "./pages/sub-category/sub-category.component";
 import {ThankYouComponent} from "./pages/thank-you/thank-you.component";
-import {CategoryDraftComponent} from "./pages/category-DRAFT/category-draft.component"; //delete before deploy
-import {ProductDetailDraftComponent} from "./pages/product-detail-DRAFT/product-detail-draft.component"; //delete before deploy
+import {CategoryDraftComponent} from "./pages/DRAFT-category/category-draft.component"; //delete before deploy
+import {ProductDetailDraftComponent} from "./pages/DRAFT-product-detail/product-detail-draft.component"; //delete before deploy
+import {CartDraftComponent} from "./pages/DRAFT-cart/cart-draft.component"; //delete before deploy
 import {SearchComponent} from "./pages/search/search.component";
 import {TrackingOrderComponent} from "./pages/tracking-order/tracking-order.component";
 import {FormsModule} from "@angular/forms";
@@ -38,8 +39,9 @@ const appRoutes: Routes = [
   {path: 'category/:cid',  component: CategoryComponent},
   {path: 'sub-category/:sid',  component: SubCategoryComponent},
   {path: 'thank-you', component: ThankYouComponent},
-  {path: 'category-draft', component: CategoryDraftComponent}, //delete before deploy
-  {path: 'product-detail-draft', component: ProductDetailDraftComponent}, //delete before deploy
+  {path: 'category-draft', component: CategoryDraftComponent}, // HUE test
+  {path: 'product-detail-draft/:pid', component: ProductDetailDraftComponent}, // HUE test
+  {path: 'cart-draft', component: CartDraftComponent}, // HUE test
   {path: 'search', component: SearchComponent},
   {path: 'tracking-order', component: TrackingOrderComponent},
 
@@ -60,8 +62,9 @@ const appRoutes: Routes = [
     CategoryComponent,
     SubCategoryComponent,
     ThankYouComponent,
-    CategoryDraftComponent, //delete before deploy//
-    ProductDetailDraftComponent, //delete before deploy
+    CategoryDraftComponent, // HUE test
+    ProductDetailDraftComponent, // HUE test
+    CartDraftComponent, // HUE test
     SearchComponent,
     TrackingOrderComponent,
 
