@@ -16,6 +16,7 @@ export class SubCategoryComponent implements OnInit{
   subCate: Data[] = [];
   subFeatured: Data[] = [];
   quickviewed?: Data;
+  load:boolean=false;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,6 +24,8 @@ export class SubCategoryComponent implements OnInit{
   ) {}
 
   ngOnInit() {
+    this.load=true;
+
     this.sub = this.route.params.subscribe(params => {
       this.sid = +params['sid']; // (+) converts string 'id' to a number
 
@@ -30,6 +33,7 @@ export class SubCategoryComponent implements OnInit{
       const subUrl = host + 'get-sub-category-by-sid/?sid='+ this.sid;
       this.http.get<Data[]>(subUrl).subscribe(data => {
         this.subCate = data;
+        this.load=false;
       })
 
       const subFeaturedUrl = host + 'get-featured-by-sid/?sid='+ this.sid;

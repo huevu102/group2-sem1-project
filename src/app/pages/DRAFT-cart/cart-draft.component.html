@@ -18,46 +18,36 @@
         <p class="mb-0">Remove</p>
       </div>
     </div>
-    <div class="t-row1 row">
-      <div class="col-2">
-        <img src="assets/img/product-detail/bag-prd1.png">
-      </div>
-      <div class="col-3">
-        <p>AMEL EARRING</p>
-      </div>
-      <div class="col-2">
-        <p>6</p>
-      </div>
-      <div class="col-2"></div>
-      <div class="col-2">
-        <p>$6,700</p>
-      </div>
-      <div class="col">
-        <i class="fa-solid fa-xmark"></i>
+
+    <div class="container" *ngIf="cartItem.length === 0">
+      <p class="ml-3">Your bag is currently empty.</p>
+    </div>
+    <div class="container" *ngIf="cartItem.length > 0">
+      <div *ngFor="let item of cartItem">
+        <div class="t-row1 row">
+          <div class="col-2">
+            <img src="{{item.thumb}}">
+          </div>
+          <div class="col-3">
+            <p>{{item.name}}</p>
+          </div>
+          <div class="col-2">
+            <p>5</p>
+          </div>
+          <div class="col-2"></div>
+          <div class="col-2">
+            <p>{{item.price | currency: 'USD'}}</p>
+          </div>
+          <div class="col">
+            <i class="fas fa-trash-alt"></i>
+          </div>
+        </div>
+        <div class="line my-3"></div>
       </div>
     </div>
-    <div class="line my-3"></div>
-    <div class="t-row2 row">
-      <div class="col-2">
-        <img src="assets/img/product-detail/bag-prd2.png">
-      </div>
-      <div class="col-3">
-        <p>AMEL EARRING</p>
-      </div>
-      <div class="col-2">
-        <p>6</p>
-      </div>
-      <div class="col-2"></div>
-      <div class="col-2">
-        <p>$6,700</p>
-      </div>
-      <div class="col">
-        <i class="fa-solid fa-xmark"></i>
-      </div>
-    </div>
-    <div class="line my-3"></div>
+
   </div>
-  <div class="row">
+    <div class="row">
     <div class="col-3 ps-0">
       <button class="btn btn-sec btnlg" type="button" data-bs-toggle="modal" data-bs-target="#personalnote">Send a personal note</button>
       <!--Modal personal note-->
@@ -79,19 +69,18 @@
       </div>
     </div>
     <div class="col-4"></div>
+
     <div class="col-5 pe-0">
       <div class="d-flex mb-4">
         <h6 class="me-auto">Subtotal</h6>
         <h6>$11,700</h6>
       </div>
       <p class="smt">Receive it in Vietnam in 4 - 6 business day/s with Express Shipping.</p>
-
       <button class="btn btn-pri btnlg w-100" type="submit" routerLink="/check-out">Check out</button>
-
-
     </div>
   </div>
 </div>
+
 <!--MAY YOU ALSO LIKE-->
 <div class="also-like">
   <h5 class="text-center">You May Also Like</h5>

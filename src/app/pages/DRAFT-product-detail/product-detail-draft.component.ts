@@ -1,16 +1,16 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit } from "@angular/core"
 import {ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {Data} from "../../interfaces/data.interface";
 import {host} from "../../../enums";
 
 @Component({
-  selector: 'app-product-detail',
-  templateUrl: './product-detail.component.html',
-  styleUrls: ['/product-detail.component.css']
+  selector: 'app-product-detail-draft',
+  templateUrl: './product-detail-draft.component.html',
+  styleUrls: ['/product-detail-draft.component.css']
 })
 
-export class ProductDetailComponent implements OnInit {
+export class ProductDetailDraftComponent implements OnInit {
   private id: any;
   pid: number = 0;
   product: Data[] = [];
@@ -20,25 +20,20 @@ export class ProductDetailComponent implements OnInit {
   comparedProduct?: Data;
   quickviewed?: Data;
   zoomed?: Data;
-  loading:boolean =  false;
-
+  added?: Data;
+  cartItem: Data[] = [];
+  deleted?: Data;
 
   constructor(
-    private route: ActivatedRoute,
-    private http: HttpClient
-  ) {}
+    private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit() {
-
-    this.loading =true;
-
     this.id = this.route.params.subscribe(params => {
       this.pid = +params['pid'];
 
       const productURL = host + 'get-product-by-pid/?pid=' + this.pid;
       this.http.get<Data[]>(productURL).subscribe(data => {
         this.product = data;
-        this.loading = false;
       })
 
       const similarURL = host + 'get-similar-product-by-pid/?pid=' + this.pid;
@@ -56,7 +51,6 @@ export class ProductDetailComponent implements OnInit {
         this.collection = data;
       })
     })
-
   }
 
   compare(item: Data) {
@@ -69,5 +63,26 @@ export class ProductDetailComponent implements OnInit {
 
   zoom(item: Data) {
     this.zoomed = item;
+  }
+
+  // add to cart
+  qty: number = 1;
+  total: any;
+  addToCart(item: Data): void {
+    this.added = item;
+    this.cartItem.push(item);
+    this.total = item.price * this.qty;
+  }
+  upQty() {
+    this.qty++;
+  }
+  downQty() {
+    if(this.qty > 1) {
+      this.qty--;
+    }
+  }
+  deleteItem(item: Data) {
+    this.deleted = item;
+    this.cartItem = this.cartItem.filter(item => item !== this.deleted);
   }
 }

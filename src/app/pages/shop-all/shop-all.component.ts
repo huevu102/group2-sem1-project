@@ -16,14 +16,18 @@ export class ShopAllComponent {
   bracelets: Data[] = [];
   necklaces: Data[] = [];
   quickviewed?: Data;
+  load:boolean = false;
 
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
+    this.load = true;
+
     const cateURL = host + 'get-category'
     this.http.get<Data[]>(cateURL).subscribe(data =>{
       this.cate = data;
+      this.load=false;
     })
 
     const ringsURL = host + 'get-rings'
@@ -50,6 +54,7 @@ export class ShopAllComponent {
     window.addEventListener('scroll', () => {
       this.windowScrolled = window.pageYOffset !== 0;
     });
+
   }
 
 
