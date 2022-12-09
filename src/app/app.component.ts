@@ -18,7 +18,7 @@ export class AppComponent {
   constructor (private http: HttpClient, private router: Router) {
     this.function();
   }
-
+  //Hiden nav when scroll
   function(){
     window.onscroll = () => {
       if (window.pageYOffset > 100){
