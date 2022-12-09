@@ -36,8 +36,9 @@
           <div class=d-flex>
             <p class="mdt me-auto">Quantity</p>
             <span class="buttons_added ml-1 qty-box">
-            <input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number"
-                   [(ngModel)]="qty" value="" required>
+            <button class="qty-btn" (click)="downQty()">-</button>
+            <input class="mx-2 input-qty" [(ngModel)]="qty" [ngModelOptions]="{standalone: true}" [value]="qty" required>
+            <button class="qty-btn" (click)="upQty()">+</button>
           </span>
           </div>
           <div class="line mb-3"></div>
