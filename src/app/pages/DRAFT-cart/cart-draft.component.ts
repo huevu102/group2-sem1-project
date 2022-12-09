@@ -2,7 +2,7 @@ import {Component, Input} from "@angular/core";
 import {Data} from "../../interfaces/data.interface";
 import {HttpClient} from "@angular/common/http";
 import {host} from "../../../enums";
-import {ProductDetailDraftComponent} from "../DRAFT-product-detail/product-detail-draft.component";
+import {ProductDetailComponent} from "../product-detail/product-detail.component";
 
 @Component({
   selector: 'app-cart-draft',
@@ -15,7 +15,7 @@ export class CartDraftComponent {
   quickviewed?: Data;
   cartItem: Data[] = [];
 
-  constructor(private http: HttpClient, private productDetail: ProductDetailDraftComponent){}
+  constructor(private http: HttpClient, private productDetail: ProductDetailComponent){}
 
   ngOnInit() {
     const bestURL = host + 'get-best-seller'
