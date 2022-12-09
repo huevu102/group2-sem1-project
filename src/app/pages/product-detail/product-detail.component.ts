@@ -20,6 +20,8 @@ export class ProductDetailComponent implements OnInit {
   comparedProduct?: Data;
   quickviewed?: Data;
   zoomed?: Data;
+  loading:boolean =  false;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -27,12 +29,16 @@ export class ProductDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+
+    this.loading =true;
+
     this.id = this.route.params.subscribe(params => {
       this.pid = +params['pid'];
 
       const productURL = host + 'get-product-by-pid/?pid=' + this.pid;
       this.http.get<Data[]>(productURL).subscribe(data => {
         this.product = data;
+        this.loading = false;
       })
 
       const similarURL = host + 'get-similar-product-by-pid/?pid=' + this.pid;
@@ -50,6 +56,7 @@ export class ProductDetailComponent implements OnInit {
         this.collection = data;
       })
     })
+
   }
 
   compare(item: Data) {

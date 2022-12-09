@@ -1,589 +1,593 @@
-<!--Product detail-->
-<link rel="stylesheet" href="product-detail.component.css">
-<div class="container">
-  <!--DETAIL-->
-  <div class="prod-detail">
-    <div class="row">
-      <div class="col-2">
-        <div class="mbt" *ngFor="let item of product">
-          <img src="{{item.url}}" (click)="zoom(item)">
+<div class="spinner-here" *ngIf="loading; else productdetail">
+  <div class="loader"></div>
+</div>
+<quickview></quickview>
+<ng-template #productdetail>
+  <div class="container">
+    <!--DETAIL-->
+    <div class="prod-detail">
+      <div class="row">
+        <div class="col-2">
+          <div class="mbt" *ngFor="let item of product" >
+            <img *ngIf="item.url; else templ" src="{{item.url}}" (click)="zoom(item)">
+            <ng-template #templ>
+              <img src="./assets/img/default.png">
+            </ng-template>
+          </div>
         </div>
-      </div>
-      <div class="col-6" *ngIf="zoomed">
-        <img src="{{zoomed.url}}">
-      </div>
-      <div class="col-6" *ngIf="!zoomed">
-        <img src="./assets/img/default.png">
-      </div>
+        <div class="col-6" *ngIf="zoomed">
+          <img src="{{zoomed.url}}">
+        </div>
+        <div class="col-6" *ngIf="!zoomed">
+          <img src="./assets/img/default.png">
+        </div>
 
-      <div class="col-4" *ngFor="let item of product | slice: 0: 1">
-        <!--Breadcrumb-->
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
-            <li class="breadcrumb-item"><a routerLink="/shop-all">Shop all</a></li>
-            <li class="breadcrumb-item"><a routerLink="/category/{{item.cid}}">{{item.cate_name}}</a></li>
-            <li class="breadcrumb-item"><a routerLink="/category/{{item.sid}}">{{item.sub_name}}</a></li>
-          </ol>
-        </nav>
+        <div class="col-4" *ngFor="let item of product | slice: 0: 1">
+          <!--Breadcrumb-->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+              <li class="breadcrumb-item"><a routerLink="/shop-all">Shop all</a></li>
+              <li class="breadcrumb-item"><a routerLink="/category/{{item.cid}}">{{item.cate_name}}</a></li>
+              <li class="breadcrumb-item"><a routerLink="/category/{{item.sid}}">{{item.sub_name}}</a></li>
+            </ol>
+          </nav>
 
-        <p class="mdt">{{item.collection}}</p>
-        <h5>{{item.name}}</h5>
-        <h5 class="my-2">{{ item.price | currency: 'USD'}}</h5>
-        <p class="mdt">Complimentary Shipping & Returns</p>
-        <div class="line mb-3"></div>
+          <p class="mdt">{{item.collection}}</p>
+          <h5>{{item.name}}</h5>
+          <h5 class="my-2">{{ item.price | currency: 'USD'}}</h5>
+          <p class="mdt">Complimentary Shipping & Returns</p>
+          <div class="line mb-3"></div>
 
-        <form>
-          <div class=d-flex>
-            <p class="mdt me-auto">Quantity</p>
-            <span class="buttons_added ml-1 qty-box">
+          <form>
+            <div class=d-flex>
+              <p class="mdt me-auto">Quantity</p>
+              <span class="buttons_added ml-1 qty-box">
             <input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="" required>
           </span>
-          </div>
-          <div class="line mb-3"></div>
-          <div class=d-flex>
-            <p class="mdt me-auto mb-0 mt-1">Size</p>
-            <select class="form-select smt w-50" required>
-              <option value="">Select size</option>
-              <option value="1">3</option>
-              <option value="2">3 1/2</option>
-              <option value="3">4</option>
-              <option value="4">4 1/2</option>
-              <option value="5">5</option>
-              <option value="6">5 1/2</option>
-            </select>
-          </div>
-          <div class="line my-3"></div>
-          <div class="find-size">
-            <div class="d-flex" data-bs-toggle="offcanvas" data-bs-target="#findsize">
-              <p class="mdt me-auto mb-2">※ Find your size</p>
-              <i class="fa-solid fa-chevron-right"></i>
             </div>
-            <!--OFFCANVAS FIND SIZE-->
-            <div class="offcanvas offcanvas-end" id="findsize">
+            <div class="line mb-3"></div>
+            <div class=d-flex>
+              <p class="mdt me-auto mb-0 mt-1">Size</p>
+              <select class="form-select smt w-50" required>
+                <option value="">Select size</option>
+                <option value="1">3</option>
+                <option value="2">3 1/2</option>
+                <option value="3">4</option>
+                <option value="4">4 1/2</option>
+                <option value="5">5</option>
+                <option value="6">5 1/2</option>
+              </select>
+            </div>
+            <div class="line my-3"></div>
+            <div class="find-size">
+              <div class="d-flex" data-bs-toggle="offcanvas" data-bs-target="#findsize">
+                <p class="mdt me-auto mb-2">※ Find your size</p>
+                <i class="fa-solid fa-chevron-right"></i>
+              </div>
+              <!--OFFCANVAS FIND SIZE-->
+              <div class="offcanvas offcanvas-end" id="findsize">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title mt-3">Find Your Ring Size</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <div class="ring-table row">
+                    <div class="col-6">
+                      <p class="mdt text-center mb-3">AGURI (US) size</p>
+                      <p class="text-center">3</p>
+                      <p class="text-center">3 1/2</p>
+                      <p class="text-center">4</p>
+                      <p class="text-center">4 1/2</p>
+                      <p class="text-center">5</p>
+                      <p class="text-center">5 1/2</p>
+                    </div>
+                    <div class="col-6">
+                      <p class="mdt text-center mb-3">Circumference (mm)</p>
+                      <p class="text-center">F</p>
+                      <p class="text-center">G 1/2</p>
+                      <p class="text-center">H 1/2</p>
+                      <p class="text-center">I 1/2</p>
+                      <p class="text-center">J 1/2</p>
+                      <p class="text-center">K 1/2</p>
+                    </div>
+                  </div>
+
+                  <h6 class="mt-4 mb-3 text-center">How To Measure</h6>
+                  <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                      <img src="./assets/img/product-detail/measure1.png">
+                    </div>
+                    <div class="col-4"></div>
+                  </div>
+                  <div class="mt-3">
+                    <ol class="px-0">
+                      <li class="smt">1. Grab a tape measure, length of string or strip of paper.</li>
+                      <li class="smt my-2">2. Wrap it around the finger you’ll wear your ring on—if you’re creating a ring
+                        stack, consider where on your finger the ring will sit—and mark the place where it joins.</li>
+                      <li class="smt">3. Lay your string or paper strip on a flat surface and use a ruler to measure the
+                        length up to the mark. Use the chart above to match the measurement to the closest Tiffany
+                        ring size.</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bag">
+              <input class="btn btnlg btn-pri w-100" role="button" type="submit" value="Add to bag" data-bs-toggle="offcanvas" data-bs-target="#addtobag">
+              <!--OFFCANVAS ADD BAG-->
+              <div class="offcanvas offcanvas-end" id="addtobag">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title mt-3">Shopping Bag</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <div class="row product-add1 mb-3">
+                    <div class="col-4 ps-0">
+                      <a routerLink="#">
+                        <img src="assets/img/product-detail/add-product1.png">
+                      </a>
+                    </div>
+                    <div class="col-5">
+                      <p>Amel Earring</p>
+                    </div>
+                    <div class="col-3 pe-0">
+                      x<input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="1">
+                      <p>$5,000.00</p>
+                      <i class="fas fa-trash-alt"></i>
+                    </div>
+                  </div>
+                  <div class="line mb-3"></div>
+                  <div class="row product-add2 mb-3">
+                    <div class="col-4 ps-0">
+                      <a routerLink="#">
+                        <img src="assets/img/product-detail/add-product2.png">
+                      </a>
+                    </div>
+                    <div class="col-5">
+                      <p>Diamons And Gold Spark Ring</p>
+                    </div>
+                    <div class="col-3 pe-0">
+                      x<input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="1">
+                      <p>$6,700.00</p>
+                      <i class="fas fa-trash-alt"></i>
+                    </div>
+                  </div>
+                  <div class="line mb-3"></div>
+                  <div class="d-flex mb-3">
+                    <p class="mdt me-auto">Total</p>
+                    <p class="mdt">$11,700.00</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-6 ps-0">
+                      <button class="btn btn-sec btnlg mt-3 w-100" type="button" routerLink="/cart">View bag</button>
+                    </div>
+                    <div class="col-6 pe-0">
+                      <button class="btn btn-pri btnlg mt-3 w-100" type="button" routerLink="/check-out">Checkout</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <div class="ask-advisor">
+            <button class="btn btn-sec btnlg w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#askadvisor">Ask A Client Advisor</button>
+            <!--OFFCANVSS ASK ADVISOR-->
+            <div class="offcanvas offcanvas-end" id="askadvisor">
               <div class="offcanvas-header">
-                <h5 class="offcanvas-title mt-3">Find Your Ring Size</h5>
+                <h5 class="offcanvas-title mt-3">Aguri At Your Service</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
               <div class="offcanvas-body">
-                <div class="ring-table row">
-                  <div class="col-6">
-                    <p class="mdt text-center mb-3">AGURI (US) size</p>
-                    <p class="text-center">3</p>
-                    <p class="text-center">3 1/2</p>
-                    <p class="text-center">4</p>
-                    <p class="text-center">4 1/2</p>
-                    <p class="text-center">5</p>
-                    <p class="text-center">5 1/2</p>
-                  </div>
-                  <div class="col-6">
-                    <p class="mdt text-center mb-3">Circumference (mm)</p>
-                    <p class="text-center">F</p>
-                    <p class="text-center">G 1/2</p>
-                    <p class="text-center">H 1/2</p>
-                    <p class="text-center">I 1/2</p>
-                    <p class="text-center">J 1/2</p>
-                    <p class="text-center">K 1/2</p>
-                  </div>
-                </div>
-
-                <h6 class="mt-4 mb-3 text-center">How To Measure</h6>
-                <div class="row">
-                  <div class="col-4"></div>
-                  <div class="col-4">
-                    <img src="./assets/img/product-detail/measure1.png">
-                  </div>
-                  <div class="col-4"></div>
-                </div>
-                <div class="mt-3">
-                  <ol class="px-0">
-                    <li class="smt">1. Grab a tape measure, length of string or strip of paper.</li>
-                    <li class="smt my-2">2. Wrap it around the finger you’ll wear your ring on—if you’re creating a ring
-                      stack, consider where on your finger the ring will sit—and mark the place where it joins.</li>
-                    <li class="smt">3. Lay your string or paper strip on a flat surface and use a ruler to measure the
-                      length up to the mark. Use the chart above to match the measurement to the closest Tiffany
-                      ring size.</li>
-                  </ol>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="bag">
-            <input class="btn btnlg btn-pri w-100" role="button" type="submit" value="Add to bag" data-bs-toggle="offcanvas" data-bs-target="#addtobag">
-            <!--OFFCANVAS ADD BAG-->
-            <div class="offcanvas offcanvas-end" id="addtobag">
-              <div class="offcanvas-header">
-                <h5 class="offcanvas-title mt-3">Shopping Bag</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body">
-                <div class="row product-add1 mb-3">
-                  <div class="col-4 ps-0">
-                    <a routerLink="#">
-                      <img src="assets/img/product-detail/add-product1.png">
-                    </a>
-                  </div>
-                  <div class="col-5">
-                    <p>Amel Earring</p>
-                  </div>
-                  <div class="col-3 pe-0">
-                    x<input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="1">
-                    <p>$5,000.00</p>
-                    <i class="fas fa-trash-alt"></i>
-                  </div>
-                </div>
-                <div class="line mb-3"></div>
-                <div class="row product-add2 mb-3">
-                  <div class="col-4 ps-0">
-                    <a routerLink="#">
-                      <img src="assets/img/product-detail/add-product2.png">
-                    </a>
-                  </div>
-                  <div class="col-5">
-                    <p>Diamons And Gold Spark Ring</p>
-                  </div>
-                  <div class="col-3 pe-0">
-                    x<input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="1">
-                    <p>$6,700.00</p>
-                    <i class="fas fa-trash-alt"></i>
-                  </div>
-                </div>
-                <div class="line mb-3"></div>
-                <div class="d-flex mb-3">
-                  <p class="mdt me-auto">Total</p>
-                  <p class="mdt">$11,700.00</p>
-                </div>
-                <div class="row">
-                  <div class="col-6 ps-0">
-                    <button class="btn btn-sec btnlg mt-3 w-100" type="button" routerLink="/cart">View bag</button>
-                  </div>
-                  <div class="col-6 pe-0">
-                    <button class="btn btn-pri btnlg mt-3 w-100" type="button" routerLink="/check-out">Checkout</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-
-        <div class="ask-advisor">
-          <button class="btn btn-sec btnlg w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#askadvisor">Ask A Client Advisor</button>
-          <!--OFFCANVSS ASK ADVISOR-->
-          <div class="offcanvas offcanvas-end" id="askadvisor">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title mt-3">Aguri At Your Service</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <p class="pb-3">From finding the perfect Aguri gift to jewelry styling advice, our Client Advisors are always here to help.</p>
-              <div class="d-flex">
-                <div class="accordion accordion-flush w-100" id="callus">
-                  <div class="accordion-item">
-                    <a class="accordion-header">
-                      <p class="mdt accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#call-body">
-                        Call us
-                      </p>
-                    </a>
-                    <div id="call-body" class="accordion-collapse collapse" data-bs-parent="#callus">
-                      <div class="accordion-body">
-                        <p class="smt">For general inquiries please call: 800 843 3269</p>
+                <p class="pb-3">From finding the perfect Aguri gift to jewelry styling advice, our Client Advisors are always here to help.</p>
+                <div class="d-flex">
+                  <div class="accordion accordion-flush w-100" id="callus">
+                    <div class="accordion-item">
+                      <a class="accordion-header">
+                        <p class="mdt accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#call-body">
+                          Call us
+                        </p>
+                      </a>
+                      <div id="call-body" class="accordion-collapse collapse" data-bs-parent="#callus">
+                        <div class="accordion-body">
+                          <p class="smt">For general inquiries please call: 800 843 3269</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="line mb-3"></div>
-              <div class="d-flex">
-                <a class="me-auto" href="#">
-                  <p class="mdt">Chat Online</p>
-                </a>
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-              <div class="line mb-3"></div>
-              <div class="d-flex">
-                <a class="me-auto" href="#">
-                  <p class="mdt">Book A Appointment</p>
-                </a>
-                <i class="fa-solid fa-chevron-right"></i>
+                <div class="line mb-3"></div>
+                <div class="d-flex">
+                  <a class="me-auto" href="#">
+                    <p class="mdt">Chat Online</p>
+                  </a>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="line mb-3"></div>
+                <div class="d-flex">
+                  <a class="me-auto" href="#">
+                    <p class="mdt">Book A Appointment</p>
+                  </a>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <!--DESCRIPTIONS & DETAIL-->
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-          <div class="accordion-item">
-            <a class="accordion-header" id="flush-headingOne">
-              <p class="mdt accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">
-                Descriptions & Details
-              </p>
-            </a>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">
-                <p class="smt">{{item.description}}</p>
+          <!--DESCRIPTIONS & DETAIL-->
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <a class="accordion-header" id="flush-headingOne">
+                <p class="mdt accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">
+                  Descriptions & Details
+                </p>
+              </a>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p class="smt">{{item.description}}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!--SIMILAR-PRODUCT-->
-  <div class="simi-prod">
-    <div class="row">
-      <div class="col-3">
-        <h5 class="pt-5 mb-2">Similar Products</h5>
-        <p class="smt">AGURI designs reinvent our iconic AGURI collection with bold profiles and powerful details.</p>
-      </div>
-      <div class="col-3" *ngFor="let item of similar | slice: 0: 3">
-        <div class="card-prd">
-          <div class="img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="{{item.thumb}}">
-            </a>
-          </div>
-          <div (click)="compare(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
-            Compare
-          </div>
+    <!--SIMILAR-PRODUCT-->
+    <div class="simi-prod">
+      <div class="row">
+        <div class="col-3">
+          <h5 class="pt-5 mb-2">Similar Products</h5>
+          <p class="smt">AGURI designs reinvent our iconic AGURI collection with bold profiles and powerful details.</p>
         </div>
+        <div class="col-3" *ngFor="let item of similar | slice: 0: 3">
+          <div class="card-prd">
+            <div class="img">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <img src="{{item.thumb}}">
+              </a>
+            </div>
+            <div (click)="compare(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
+              Compare
+            </div>
+          </div>
 
-        <!-- Modal Compare-->
-        <div  class="modal fade" id="compare">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <h5 class="modal-title" id="exampleModalLabel">Compare Products</h5>
-              <div class="row">
-                <div class="col-6 simi-left" *ngFor="let product of product | slice: 0: 1">
-                  <div class="itm">
-                    <a routerLink="/product-detail/{{pid}}">
-                      <img src="{{product.thumb}}">
-                    </a>
-                    <div class="item-inf text-center">
-                      <p class="mdt my-2">{{product.name}}</p>
-                      <p class="">{{product.price | currency: 'USD'}}</p>
+          <!-- Modal Compare-->
+          <div  class="modal fade" id="compare">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <h5 class="modal-title" id="exampleModalLabel">Compare Products</h5>
+                <div class="row">
+                  <div class="col-6 simi-left" *ngFor="let product of product | slice: 0: 1">
+                    <div class="itm">
+                      <a routerLink="/product-detail/{{pid}}">
+                        <img src="{{product.thumb}}">
+                      </a>
+                      <div class="item-inf text-center">
+                        <p class="mdt my-2">{{product.name}}</p>
+                        <p class="">{{product.price | currency: 'USD'}}</p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="jewel">
-                    <p class="mdt mb-1">Jewellery</p>
-                    <p class="smt my-2">{{product.jewellery_type}}</p>
-                    <p class="smt my-2">4mm width</p>
-                    <p class="smt mb-0">Carat total weight .48</p>
-                  </div>
-                  <div class="line my-2"></div>
-                  <div class="mater">
-                    <p class="mdt mb-1">Material</p>
-                    <p class="smt">{{product.material}}</p>
-                  </div>
-                  <div class="line mb-3"></div>
+                    <div class="jewel">
+                      <p class="mdt mb-1">Jewellery</p>
+                      <p class="smt my-2">{{product.jewellery_type}}</p>
+                      <p class="smt my-2">4mm width</p>
+                      <p class="smt mb-0">Carat total weight .48</p>
+                    </div>
+                    <div class="line my-2"></div>
+                    <div class="mater">
+                      <p class="mdt mb-1">Material</p>
+                      <p class="smt">{{product.material}}</p>
+                    </div>
+                    <div class="line mb-3"></div>
 
-                  <form onsubmit="alert('The product was successfully added to bag!!')">
-                    <div class="d-flex">
-                      <p class="mdt me-auto">Quantity</p>
-                      <span class="buttons_added ml-1 qty-box">
+                    <form onsubmit="alert('The product was successfully added to bag!!')">
+                      <div class="d-flex">
+                        <p class="mdt me-auto">Quantity</p>
+                        <span class="buttons_added ml-1 qty-box">
                         <input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="" required>
                        </span>
-                    </div>
-                    <div class="quick-size mb-3">
-                      <select class="form-select smt" required>
-                        <option value="">Select size</option>
-                        <option value="1">3</option>
-                        <option value="2">3 1/2</option>
-                        <option value="3">4</option>
-                        <option value="4">4 1/2</option>
-                        <option value="5">5</option>
-                        <option value="6">5 1/2</option>
-                      </select>
-                    </div>
-                    <input type="submit" class="btn btn-pri btnsm w-100" value="Add to bag">
-                  </form>
-                </div>
-                <div class="col-6 simi-right" *ngIf="comparedProduct">
-                  <div class="itm">
-                    <a routerLink="/product-detail/{{comparedProduct.pid}}">
-                      <img src="{{comparedProduct.thumb}}">
-                    </a>
-                    <div class="item-inf text-center">
-                      <p class="mdt my-2">{{item.name}}</p>
-                      <p class="">{{comparedProduct.price | currency: 'USD'}}</p>
-                    </div>
+                      </div>
+                      <div class="quick-size mb-3">
+                        <select class="form-select smt" required>
+                          <option value="">Select size</option>
+                          <option value="1">3</option>
+                          <option value="2">3 1/2</option>
+                          <option value="3">4</option>
+                          <option value="4">4 1/2</option>
+                          <option value="5">5</option>
+                          <option value="6">5 1/2</option>
+                        </select>
+                      </div>
+                      <input type="submit" class="btn btn-pri btnsm w-100" value="Add to bag">
+                    </form>
                   </div>
-                  <div class="jewel">
-                    <p class="mdt mb-1">Jewellery</p>
-                    <p class="smt my-2">{{comparedProduct.jewellery_type}}</p>
-                    <p class="smt my-2">2.5mm width x2</p>
-                    <p class="smt mb-0">Carat total weight .50</p>
-                  </div>
-                  <div class="line my-2"></div>
-                  <div class="mater">
-                    <p class="mdt mb-1">Material</p>
-                    <p class="smt">{{comparedProduct.material}}</p>
-                  </div>
-                  <div class="line mb-3"></div>
+                  <div class="col-6 simi-right" *ngIf="comparedProduct">
+                    <div class="itm">
+                      <a routerLink="/product-detail/{{comparedProduct.pid}}">
+                        <img src="{{comparedProduct.thumb}}">
+                      </a>
+                      <div class="item-inf text-center">
+                        <p class="mdt my-2">{{item.name}}</p>
+                        <p class="">{{comparedProduct.price | currency: 'USD'}}</p>
+                      </div>
+                    </div>
+                    <div class="jewel">
+                      <p class="mdt mb-1">Jewellery</p>
+                      <p class="smt my-2">{{comparedProduct.jewellery_type}}</p>
+                      <p class="smt my-2">2.5mm width x2</p>
+                      <p class="smt mb-0">Carat total weight .50</p>
+                    </div>
+                    <div class="line my-2"></div>
+                    <div class="mater">
+                      <p class="mdt mb-1">Material</p>
+                      <p class="smt">{{comparedProduct.material}}</p>
+                    </div>
+                    <div class="line mb-3"></div>
 
-                  <form onsubmit="alert('The product was successfully added to bag!!')">
-                    <div class="d-flex">
-                      <p class="mdt me-auto">Quantity</p>
-                      <span class="buttons_added ml-1 qty-box">
+                    <form onsubmit="alert('The product was successfully added to bag!!')">
+                      <div class="d-flex">
+                        <p class="mdt me-auto">Quantity</p>
+                        <span class="buttons_added ml-1 qty-box">
                         <input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="" required>
                        </span>
-                    </div>
-                    <div class="quick-size mb-3">
-                      <select class="form-select smt" required>
-                        <option value="">Select size</option>
-                        <option value="1">3</option>
-                        <option value="2">3 1/2</option>
-                        <option value="3">4</option>
-                        <option value="4">4 1/2</option>
-                        <option value="5">5</option>
-                        <option value="6">5 1/2</option>
-                      </select>
-                    </div>
-                    <input type="submit" class="btn btn-pri btnsm w-100" value="Add to bag">
-                  </form>
+                      </div>
+                      <div class="quick-size mb-3">
+                        <select class="form-select smt" required>
+                          <option value="">Select size</option>
+                          <option value="1">3</option>
+                          <option value="2">3 1/2</option>
+                          <option value="3">4</option>
+                          <option value="4">4 1/2</option>
+                          <option value="5">5</option>
+                          <option value="6">5 1/2</option>
+                        </select>
+                      </div>
+                      <input type="submit" class="btn btn-pri btnsm w-100" value="Add to bag">
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<!--More from this collection-->
-<div class="also-like">
-  <h5 class="text-center" *ngFor="let item of collection | slice: 0:1">
-    More From {{item.collection}} Collection
-  </h5>
-  <div id="carouselalsolike" class="carousel slide carousel-dark carousel-also mb-5" data-bs-ride="carousel">
-    <div class="carousel-inner container">
-      <div class="carousel-item active" data-bs-interval="6000">
-        <div class="row">
-          <div class="col-3" *ngFor="let item of collection | slice: 0: 4">
-            <div class="item-card-info">
-              <div class="card-prd">
-                <div class="img">
-                  <a routerLink="/product-detail/{{item.pid}}">
-                    <img src="{{item.thumb}}">
-                  </a>
-                </div>
-                <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-                  Quick view
-                </div>
-              </div>
-              <div class="item-inf text-center mt-3">
-                <p class="mdt mb-2">{{item.name}}</p>
-                <p>{{item.price | currency: 'USD'}}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item" data-bs-interval="5000">
-        <div class="row">
-          <div class="col-3" *ngFor="let item of collection | slice: 4: 8">
-            <div class="item-card-info">
-              <div class="card-prd">
-                <div class="img">
-                  <a routerLink="/product-detail/{{item.pid}}">
-                    <img src="{{item.thumb}}">
-                  </a>
-                </div>
-                <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-                  Quick view
-                </div>
-              </div>
-              <div class="item-inf text-center mt-3">
-                <p class="mdt mb-2">{{item.name}}</p>
-                <p>{{item.price | currency: 'USD'}}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item" data-bs-interval="5000">
-        <div class="row">
-          <div class="col-3" *ngFor="let item of collection | slice: 8: 12">
-            <div class="item-card-info">
-              <div class="card-prd">
-                <div class="img">
-                  <a routerLink="/product-detail/{{item.pid}}">
-                    <img src="{{item.thumb}}">
-                  </a>
-                </div>
-                <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-                  Quick view
-                </div>
-              </div>
-              <div class="item-inf text-center mt-2">
-                <p class="mdt mb-1">{{item.name}}</p>
-                <p class="smt">{{item.price | currency: 'USD'}}</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselalsolike" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselalsolike" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
 
-<!--Modal Quick view-->
-<div class="container">
-  <div class="modal fade" id="quickview">
-    <div class="modal-dialog modal-dialog-centered quickview">
-      <div class="modal-content" *ngIf="quickviewed">
-        <div class="row">
-          <div class="col-7 ps-0">
-            <img src="{{quickviewed.thumb}}">
+  </div>
+  <!--More from this collection-->
+  <div class="also-like">
+    <h5 class="text-center" *ngFor="let item of collection | slice: 0:1">
+      More From {{item.collection}} Collection
+    </h5>
+    <div id="carouselalsolike" class="carousel slide carousel-dark carousel-also mb-5" data-bs-ride="carousel">
+      <div class="carousel-inner container">
+        <div class="carousel-item active" data-bs-interval="6000">
+          <div class="row">
+            <div class="col-3" *ngFor="let item of collection | slice: 0: 4">
+              <div class="item-card-info">
+                <div class="card-prd">
+                  <div class="img">
+                    <a routerLink="/product-detail/{{item.pid}}">
+                      <img src="{{item.thumb}}">
+                    </a>
+                  </div>
+                  <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+                    Quick view
+                  </div>
+                </div>
+                <div class="item-inf text-center mt-3">
+                  <p class="mdt mb-2">{{item.name}}</p>
+                  <p>{{item.price | currency: 'USD'}}</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-5 pe-0">
-            <h5>{{quickviewed.name}}</h5>
-            <h5 class="my-3">{{quickviewed.price | currency:'USD'}}</h5>
-            <form onsubmit="alert('The product was successfully added to bag!!')">
-              <div class="d-flex">
-                <p class="mdt me-auto">Quantity</p>
-                <span class="buttons_added ml-1 qty-box">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <div class="row">
+            <div class="col-3" *ngFor="let item of collection | slice: 4: 8">
+              <div class="item-card-info">
+                <div class="card-prd">
+                  <div class="img">
+                    <a routerLink="/product-detail/{{item.pid}}">
+                      <img src="{{item.thumb}}">
+                    </a>
+                  </div>
+                  <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+                    Quick view
+                  </div>
+                </div>
+                <div class="item-inf text-center mt-3">
+                  <p class="mdt mb-2">{{item.name}}</p>
+                  <p>{{item.price | currency: 'USD'}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <div class="row">
+            <div class="col-3" *ngFor="let item of collection | slice: 8: 12">
+              <div class="item-card-info">
+                <div class="card-prd">
+                  <div class="img">
+                    <a routerLink="/product-detail/{{item.pid}}">
+                      <img src="{{item.thumb}}">
+                    </a>
+                  </div>
+                  <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+                    Quick view
+                  </div>
+                </div>
+                <div class="item-inf text-center mt-2">
+                  <p class="mdt mb-1">{{item.name}}</p>
+                  <p class="smt">{{item.price | currency: 'USD'}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselalsolike" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselalsolike" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <!--Modal Quick view-->
+  <div class="container">
+    <div class="modal fade" id="quickview">
+      <div class="modal-dialog modal-dialog-centered quickview">
+        <div class="modal-content" *ngIf="quickviewed">
+          <div class="row">
+            <div class="col-7 ps-0">
+              <img src="{{quickviewed.thumb}}">
+            </div>
+            <div class="col-5 pe-0">
+              <h5>{{quickviewed.name}}</h5>
+              <h5 class="my-3">{{quickviewed.price | currency:'USD'}}</h5>
+              <form onsubmit="alert('The product was successfully added to bag!!')">
+                <div class="d-flex">
+                  <p class="mdt me-auto">Quantity</p>
+                  <span class="buttons_added ml-1 qty-box">
                  <input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="" required>
                </span>
+                </div>
+                <div class="line"></div>
+                <div class="quick-size my-3">
+                  <select class="form-select smt" required>
+                    <option value="">Select size</option>
+                    <option value="1">3</option>
+                    <option value="2">3 1/2</option>
+                    <option value="3">4</option>
+                    <option value="4">4 1/2</option>
+                    <option value="5">5</option>
+                    <option value="6">5 1/2</option>
+                  </select>
+                </div>
+                <input type="submit" class="btn btn-pri my-3 w-100" value="Add to bag"  data-bs-dismiss="modal">
+              </form>
+              <p class="mt-2">View more detail <a routerLink="/product-detail/{{quickviewed.pid}}" data-bs-dismiss="modal">
+                <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+              </a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--more abt collection-->
+  <div class=" more-collection mbt-120">
+    <div class="row more-collec-inner">
+      <div class="col"></div>
+      <div class="col-4 collec-left">
+        <div class="collec-content">
+          <h5 class="mb-2">AGURI's Collection</h5>
+          <p class="smt mb-5">Inspired by a unisex bracelet from 1971 found in the House’s archive, the AGURI's Collection
+            features bold designs that play with tension, proportion and balance.</p>
+        </div>
+        <!--      <div class="text-center">-->
+        <!--        <a routerLink="#">Shop The Collection<i class="ms-3 fa-regular fa-arrow-right"></i></a>-->
+        <!--      </div>-->
+        <div class="collec-img">
+          <img src="./assets/img/product-detail/collec1.png"/>
+        </div>
+      </div>
+      <div class="col"></div>
+      <div class="col-5 px-0">
+        <img src="./assets/img/product-detail/collec2.png"/>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+  <!--REVIEW-->
+  <div class="review container">
+    <div class="d-flex review-start py-5">
+      <h3>5.0</h3>
+      <div class="d-flex my-auto">
+        <i class="fa-solid fa-star fa-xl"></i>
+        <i class="fa-solid fa-star fa-xl"></i>
+        <i class="fa-solid fa-star fa-xl"></i>
+        <i class="fa-solid fa-star fa-xl"></i>
+        <i class="fa-solid fa-star fa-xl"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <h5>Reviews</h5>
+      </div>
+      <div class="col-6"></div>
+      <div class="col-3">
+        <button class="advisor btn btnlg btn-pri w-100" data-bs-toggle="modal" type="button" data-bs-target="#review">Write a review</button>
+        <!-- Modal review-->
+        <div class="modal fade" id="review">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <h5 class="modal-title mb-4">Write A Review</h5>
+              <p class="mdt">Select your rating</p>
+              <div class="d-flex mb-5">
+                <i class="fa-regular fa-star fa-lg"></i>
+                <i class="fa-regular fa-star fa-lg"></i>
+                <i class="fa-regular fa-star fa-lg"></i>
+                <i class="fa-regular fa-star fa-lg"></i>
+                <i class="fa-regular fa-star fa-lg"></i>
               </div>
-              <div class="line"></div>
-              <div class="quick-size my-3">
-                <select class="form-select smt" required>
-                  <option value="">Select size</option>
-                  <option value="1">3</option>
-                  <option value="2">3 1/2</option>
-                  <option value="3">4</option>
-                  <option value="4">4 1/2</option>
-                  <option value="5">5</option>
-                  <option value="6">5 1/2</option>
-                </select>
+              <label>Message (*)</label>
+              <textarea class="inpu" rows="4" required></textarea>
+              <div class="email-user">
+                <label>Email address</label>
+                <input class="inpu" type="email" required><br>
               </div>
-              <input type="submit" class="btn btn-pri my-3 w-100" value="Add to bag"  data-bs-dismiss="modal">
-            </form>
-            <p class="mt-2">View more detail <a routerLink="/product-detail/{{quickviewed.pid}}" data-bs-dismiss="modal">
-              <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
-            </a></p>
+              <div class="review-name">
+                <label>Your name</label>
+                <input class="inpu" type="text">
+              </div>
+              <button type="button" class="btn btn-pri" data-bs-dismiss="modal">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="line my-3"></div>
+    <div class="review-box">
+      <div *ngFor="let item of review">
+        <div class="d-flex review-inner">
+          <div class="review-ava">
+            <img src="./assets/img/product-detail/user1.png">
+          </div>
+          <div class="review-content w-100 ms-3">
+            <div class="d-flex">
+              <p class="me-auto mb10 user-name mdt">{{item.cus_name}}</p>
+              <span class="smt">{{item.review_date | date:'medium'}}</span>
+            </div>
+            <div>
+              <div class="d-flex rate-start">
+                <i class="fa-solid fa-star fa"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <div class="d-flex">
+              <p class="user-cmt smt me-auto">{{item.comment}}</p>
+              <div class="like-review">
+                <i class="align-middle fa-regular fa-heart fa-lg"></i>
+                <span class="smt pr-3"> {{item.cusid}}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!--more abt collection-->
-<div class=" more-collection mbt-120">
-  <div class="row more-collec-inner">
-    <div class="col"></div>
-    <div class="col-4 collec-left">
-      <div class="collec-content">
-        <h5 class="mb-2">AGURI's Collection</h5>
-        <p class="smt mb-5">Inspired by a unisex bracelet from 1971 found in the House’s archive, the AGURI's Collection
-          features bold designs that play with tension, proportion and balance.</p>
-      </div>
-<!--      <div class="text-center">-->
-<!--        <a routerLink="#">Shop The Collection<i class="ms-3 fa-regular fa-arrow-right"></i></a>-->
-<!--      </div>-->
-      <div class="collec-img">
-        <img src="./assets/img/product-detail/collec1.png"/>
-      </div>
-    </div>
-    <div class="col"></div>
-    <div class="col-5 px-0">
-      <img src="./assets/img/product-detail/collec2.png"/>
-    </div>
-    <div class="col"></div>
-  </div>
-</div>
-
-<!--REVIEW-->
-<div class="review container">
-  <div class="d-flex review-start py-5">
-    <h3>5.0</h3>
-    <div class="d-flex my-auto">
-      <i class="fa-solid fa-star fa-xl"></i>
-      <i class="fa-solid fa-star fa-xl"></i>
-      <i class="fa-solid fa-star fa-xl"></i>
-      <i class="fa-solid fa-star fa-xl"></i>
-      <i class="fa-solid fa-star fa-xl"></i>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-3">
-      <h5>Reviews</h5>
-    </div>
-    <div class="col-6"></div>
-    <div class="col-3">
-      <button class="advisor btn btnlg btn-pri w-100" data-bs-toggle="modal" type="button" data-bs-target="#review">Write a review</button>
-      <!-- Modal review-->
-      <div class="modal fade" id="review">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <h5 class="modal-title mb-4">Write A Review</h5>
-            <p class="mdt">Select your rating</p>
-            <div class="d-flex mb-5">
-              <i class="fa-regular fa-star fa-lg"></i>
-              <i class="fa-regular fa-star fa-lg"></i>
-              <i class="fa-regular fa-star fa-lg"></i>
-              <i class="fa-regular fa-star fa-lg"></i>
-              <i class="fa-regular fa-star fa-lg"></i>
-            </div>
-            <label>Message (*)</label>
-            <textarea class="inpu" rows="4" required></textarea>
-            <div class="email-user">
-              <label>Email address</label>
-              <input class="inpu" type="email" required><br>
-            </div>
-            <div class="review-name">
-              <label>Your name</label>
-              <input class="inpu" type="text">
-            </div>
-            <button type="button" class="btn btn-pri" data-bs-dismiss="modal">Send</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="line my-3"></div>
-  <div class="review-box">
-    <div *ngFor="let item of review">
-      <div class="d-flex review-inner">
-        <div class="review-ava">
-          <img src="./assets/img/product-detail/user1.png">
-        </div>
-        <div class="review-content w-100 ms-3">
-          <div class="d-flex">
-            <p class="me-auto mb10 user-name mdt">{{item.cus_name}}</p>
-            <span class="smt">{{item.review_date | date:'medium'}}</span>
-          </div>
-          <div>
-            <div class="d-flex rate-start">
-              <i class="fa-solid fa-star fa"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-          </div>
-          <div class="d-flex">
-            <p class="user-cmt smt me-auto">{{item.comment}}</p>
-            <div class="like-review">
-              <i class="align-middle fa-regular fa-heart fa-lg"></i>
-              <span class="smt pr-3"> {{item.cusid}}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</ng-template>
