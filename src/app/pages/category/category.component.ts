@@ -17,6 +17,7 @@ export class CategoryComponent implements OnInit {
   subCate: Data[] = [];
   cateFeatured: Data[] = [];
   quickviewed?: Data;
+  load:boolean=false;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,6 +25,8 @@ export class CategoryComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.load=true;
+
     this.cate = this.route.params.subscribe(params => {
       this.cid = +params['cid'];
 
@@ -35,6 +38,7 @@ export class CategoryComponent implements OnInit {
       const subUrl = host + 'get-sub-category-by-cid/?cid='+ this.cid;
       this.http.get<Data[]>(subUrl).subscribe(data => {
         this.subCate = data;
+        this.load=false;
       })
 
       const cateFeaturedUrl = host + 'get-featured-by-cid/?cid='+ this.cid;
