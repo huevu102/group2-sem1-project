@@ -1,7 +1,6 @@
 import {Component} from "@angular/core";
 import {AppComponent} from "../../app.component";
-import {Data} from "../../interfaces/data.interface";
-import {host} from "../../../enums";
+import {Data} from "../../interfaces/data.interface";;
 import {HttpClient} from "@angular/common/http";
 
 @Component({

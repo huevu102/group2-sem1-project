@@ -1,26 +1,19 @@
-<div class="spinner-here" *ngIf="loading; else productdetail">
-  <div class="loader"></div>
-</div>
-<quickview></quickview>
-<ng-template #productdetail>
-  <div class="container">
-    <!--DETAIL-->
-    <div class="prod-detail">
-      <div class="row">
-        <div class="col-2">
-          <div class="mbt" *ngFor="let item of product" >
-            <img *ngIf="item.url; else templ" src="{{item.url}}" (click)="zoom(item)">
-            <ng-template #templ>
-              <img src="./assets/img/default.png">
-            </ng-template>
-          </div>
+<!--Product detail-->
+<div class="container">
+  <!--DETAIL-->
+  <div class="prod-detail">
+    <div class="row">
+      <div class="col-2">
+        <div class="mbt" *ngFor="let item of product">
+          <img src="{{item.url}}" (click)="zoom(item)">
         </div>
-        <div class="col-6" *ngIf="zoomed">
-          <img src="{{zoomed.url}}">
-        </div>
-        <div class="col-6" *ngIf="!zoomed">
-          <img src="./assets/img/default.png">
-        </div>
+      </div>
+      <div class="col-6" *ngIf="zoomed">
+        <img src="{{zoomed.url}}">
+      </div>
+      <div class="col-6" *ngIf="!zoomed">
+        <img src="./assets/img/default.png">
+      </div>
 
       <div class="col-4" *ngFor="let item of product | slice: 0: 1">
         <!--Breadcrumb-->
@@ -39,11 +32,12 @@
         <p class="mdt">Complimentary Shipping & Returns</p>
         <div class="line mb-3"></div>
 
-        <form>
+        <form (submit)="addToCart(item)">
           <div class=d-flex>
             <p class="mdt me-auto">Quantity</p>
             <span class="buttons_added ml-1 qty-box">
-            <input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="" required>
+            <input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number"
+                   [(ngModel)]="qty" value="" required>
           </span>
           </div>
           <div class="line mb-3"></div>
@@ -116,59 +110,57 @@
           </div>
 
           <div class="bag">
-            <input class="btn btnlg btn-pri w-100" role="button" type="submit" value="Add to bag" data-bs-toggle="offcanvas" data-bs-target="#addtobag">
+            <input class="btn btnlg btn-pri w-100" data-bs-toggle="offcanvas" data-bs-target="#addtobag"
+                   role="button" type="submit" value="Add to bag">
             <!--OFFCANVAS ADD BAG-->
             <div class="offcanvas offcanvas-end" id="addtobag">
               <div class="offcanvas-header">
                 <h5 class="offcanvas-title mt-3">Shopping Bag</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
-              <div class="offcanvas-body">
-                <div class="row product-add1 mb-3">
-                  <div class="col-4 ps-0">
-                    <a routerLink="#">
-                      <img src="assets/img/product-detail/add-product1.png">
-                    </a>
+
+
+              <div class="container" *ngIf="cartItem.length === 0">
+                <p class="ml-3">Your bag is currently empty.</p>
+              </div>
+              <div class="container" *ngIf="cartItem.length > 0">
+                <div class="offcanvas-body" *ngIf="added">
+                  <div class="line mb-3"></div>
+                  <div class="row product-add1 mb-3">
+                    <div class="col-4 ps-0">
+                      <a routerLink="/product-detail/{{added.pid}}">
+                        <img src="{{added.thumb}}">
+                      </a>
+                    </div>
+                    <div class="col-5">
+                      <h6>{{added.name}}</h6>
+                    </div>
+                    <div class="col-3 pe-0">
+                      <button (click)="downQty()"><i class="fa fa-minus"></i></button>
+                      <span class="qty mx-2">{{qty}}</span>
+                      <button (click)="upQty()"><i class="fa fa-plus"></i></button>
+                      <p class="mt-2">{{added.price | currency: 'USD'}}</p>
+                      <i (click)="deleteItem(item)" class="fas fa-trash-alt"></i>
+                    </div>
                   </div>
-                  <div class="col-5">
-                    <p>Amel Earring</p>
+
+                  <div class="line mb-3"></div>
+                  <div class="d-flex mb-3">
+                    <p class="mdt me-auto">Total</p>
+                    <p class="mdt">{{total | currency: 'USD'}}</p>
                   </div>
-                  <div class="col-3 pe-0">
-                    x<input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="1">
-                    <p>$5,000.00</p>
-                    <i class="fas fa-trash-alt"></i>
-                  </div>
-                </div>
-                <div class="line mb-3"></div>
-                <div class="row product-add2 mb-3">
-                  <div class="col-4 ps-0">
-                    <a routerLink="#">
-                      <img src="assets/img/product-detail/add-product2.png">
-                    </a>
-                  </div>
-                  <div class="col-5">
-                    <p>Diamons And Gold Spark Ring</p>
-                  </div>
-                  <div class="col-3 pe-0">
-                    x<input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="1">
-                    <p>$6,700.00</p>
-                    <i class="fas fa-trash-alt"></i>
-                  </div>
-                </div>
-                <div class="line mb-3"></div>
-                <div class="d-flex mb-3">
-                  <p class="mdt me-auto">Total</p>
-                  <p class="mdt">$11,700.00</p>
-                </div>
-                <div class="row">
-                  <div class="col-6 ps-0">
-                    <button class="btn btn-sec btnlg mt-3 w-100" type="button" routerLink="/cart">View bag</button>
-                  </div>
-                  <div class="col-6 pe-0">
-                    <button class="btn btn-pri btnlg mt-3 w-100" type="button" routerLink="/check-out">Checkout</button>
+                  <div class="row">
+                    <div class="col-6 ps-0">
+                      <button class="btn btn-sec btnlg mt-3 w-100" type="button" routerLink="/cart-draft">View bag</button>
+                    </div>
+                    <div class="col-6 pe-0">
+                      <button class="btn btn-pri btnlg mt-3 w-100" type="button" routerLink="/check-out">Checkout</button>
+                    </div>
                   </div>
                 </div>
               </div>
+
+
             </div>
           </div>
         </form>
@@ -283,7 +275,7 @@
                   </div>
                   <div class="line mb-3"></div>
 
-                  <form onsubmit="alert('The product was successfully added to bag!!')">
+                  <form (submit)="addToCart(item)">
                     <div class="d-flex">
                       <p class="mdt me-auto">Quantity</p>
                       <span class="buttons_added ml-1 qty-box">
@@ -327,7 +319,7 @@
                   </div>
                   <div class="line mb-3"></div>
 
-                  <form onsubmit="alert('The product was successfully added to bag!!')">
+                  <form (submit)="addToCart(item)">
                     <div class="d-flex">
                       <p class="mdt me-auto">Quantity</p>
                       <span class="buttons_added ml-1 qty-box">
@@ -475,7 +467,7 @@
                   <option value="6">5 1/2</option>
                 </select>
               </div>
-              <input type="submit" class="btn btn-pri my-3 w-100" value="Add to bag"  data-bs-dismiss="modal">
+              <input type="submit" class="btn btn-pri my-3" value="Add to bag"  data-bs-dismiss="modal">
             </form>
             <p class="mt-2">View more detail <a routerLink="/product-detail/{{quickviewed.pid}}" data-bs-dismiss="modal">
               <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
@@ -497,9 +489,9 @@
         <p class="smt mb-5">Inspired by a unisex bracelet from 1971 found in the House’s archive, the AGURI's Collection
           features bold designs that play with tension, proportion and balance.</p>
       </div>
-<!--      <div class="text-center">-->
-<!--        <a routerLink="#">Shop The Collection<i class="ms-3 fa-regular fa-arrow-right"></i></a>-->
-<!--      </div>-->
+      <!--      <div class="text-center">-->
+      <!--        <a routerLink="#">Shop The Collection<i class="ms-3 fa-regular fa-arrow-right"></i></a>-->
+      <!--      </div>-->
       <div class="collec-img">
         <img src="./assets/img/product-detail/collec1.png"/>
       </div>
