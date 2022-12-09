@@ -1,302 +1,306 @@
-<!--ALL CATEGORIES-->
-<div class="container ctg">
-  <div class="row">
-    <div class="col-4 cate-left">
-      <div class="cate-name text-center">
-        <div class="cate-name-all">
-          <ul>
-            <li *ngFor="let item of cate">
-              <a routerLink="/category/{{item.cid}}"><h5>{{item.cate_name}}</h5></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="item-box-all cate-neck mtp">
-        <div class="item-box-img">
-          <a [routerLink]="['/category', 4]">
-            <img src="./assets/img/shop-all/cate1.png">
-          </a>
-        </div>
-        <div class="item-box-content text-center">
-          <a [routerLink]="['/category', 4]">
-            <h5>Necklaces</h5>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-4 cate-center">
-      <div class="item-box-all cate-ring mbt">
-        <div class="item-box-img">
-          <a [routerLink]="['/category', 1]">
-            <img src="./assets/img/shop-all/cate2.png">
-          </a>
-        </div>
-        <div class="item-box-content text-center">
-          <a [routerLink]="['/category', 1]">
-            <h5>Rings</h5>
-          </a>
-        </div>
-      </div>
-      <div class="cate-earr item-box-all mbt">
-        <div class="item-box-img">
-          <a [routerLink]="['/category', 2]">
-            <img src="./assets/img/shop-all/cate3.png">
-          </a>
-        </div>
-        <div class="item-box-content text-center">
-          <a [routerLink]="['/category', 2]">
-            <h5>Earrings</h5>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-4 cate-right">
-      <div class="cate-bra mbt item-box-all">
-        <div class="item-box-img">
-          <a [routerLink]="['/category', 3]">
-            <img src="./assets/img/shop-all/cate4.png">
-          </a>
-        </div>
-        <div class="item-box-content text-center">
-          <a [routerLink]="['/category', 3]">
-            <h5>Bracelets</h5>
-          </a>
-        </div>
-      </div>
-      <h3 class="text-center">Aguri's JewelleRy</h3>
-    </div>
-  </div>
-
-  <!--Rings-->
-  <div class="Ring-all cate-all">
-    <h4 class="text-center">Rings</h4>
+<div *ngIf="load; else shopall">
+  <div class="loader"></div>
+</div>
+<ng-template #shopall>
+  <!--ALL CATEGORIES-->
+  <div class="container ctg">
     <div class="row">
-      <div class="col-2">
-        <div class="card-prd mbt" *ngFor="let item of rings | slice: 0:2">
-          <div class="img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="{{item.thumb}}">
-            </a>
-          </div>
-          <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-            Quick view
+      <div class="col-4 cate-left">
+        <div class="cate-name text-center">
+          <div class="cate-name-all">
+            <ul>
+              <li *ngFor="let item of cate">
+                <a routerLink="/category/{{item.cid}}"><h5>{{item.cate_name}}</h5></a>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-      <div class="col-4">
-        <div class="item-box-all" *ngFor="let item of rings | slice: 7:8">
+        <div class="item-box-all cate-neck mtp">
           <div class="item-box-img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="./assets/img/shop-all/ring-all3.png">
+            <a [routerLink]="['/category', 4]">
+              <img src="./assets/img/shop-all/cate1.png">
             </a>
           </div>
           <div class="item-box-content text-center">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <h5>Flawless Ring</h5>
+            <a [routerLink]="['/category', 4]">
+              <h5>Necklaces</h5>
             </a>
           </div>
         </div>
       </div>
-      <div class="col-2">
-        <div class="card-prd mbt" *ngFor="let item of rings | slice: 2:4">
-          <div class="img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="{{item.thumb}}">
-            </a>
-          </div>
-          <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-            Quick view
-          </div>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="card-prd mbt" *ngFor="let item of rings | slice: 4:6">
-          <div class="img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="{{item.thumb}}">
-            </a>
-          </div>
-          <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-            Quick view
-          </div>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="box-all mbt">
-          <div class="click-to-all">
-            <a routerLink="/category/1">
-              <p class="mdt mb-0 text-center">Show more</p>
-            </a>
-          </div>
-        </div>
-        <div class="card-prd mbt" *ngFor="let item of rings | slice: 6:7">
-          <div class="img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="{{item.thumb}}">
-            </a>
-          </div>
-          <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-            Quick view
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--Earrings-->
-  <div class="Earring-all cate-all">
-    <h4 class="text-center">Earrings</h4>
-    <div class="row">
-      <div class="col-4">
-        <div class="item-box-all" *ngFor="let item of earrings | slice: 7:8">
+      <div class="col-4 cate-center">
+        <div class="item-box-all cate-ring mbt">
           <div class="item-box-img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="./assets/img/shop-all/earr-all1.png">
+            <a [routerLink]="['/category', 1]">
+              <img src="./assets/img/shop-all/cate2.png">
             </a>
           </div>
           <div class="item-box-content text-center">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <h5>Sunflower Earring</h5>
+            <a [routerLink]="['/category', 1]">
+              <h5>Rings</h5>
             </a>
           </div>
         </div>
-      </div>
-      <div class="col-2">
-        <div class="card-prd mbt" *ngFor="let item of earrings | slice: 0:2">
-          <div class="img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="{{item.thumb}}">
-            </a>
-          </div>
-          <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-            Quick view
-          </div>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="card-prd mbt" *ngFor="let item of earrings | slice: 2:4">
-          <div class="img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="{{item.thumb}}">
-            </a>
-          </div>
-          <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-            Quick view
-          </div>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="card-prd mbt" *ngFor="let item of earrings | slice: 4:6">
-          <div class="img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="{{item.thumb}}">
-            </a>
-          </div>
-          <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-            Quick view
-          </div>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="box-all mbt">
-          <div class="click-to-all">
-            <a routerLink="/category/2">
-              <p class="mdt mb-0 text-center">Show more</p>
-            </a>
-          </div>
-        </div>
-        <div class="card-prd mbt" *ngFor="let item of earrings | slice: 6:7">
-          <div class="img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="{{item.thumb}}">
-            </a>
-          </div>
-          <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-            Quick view
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--Bracelets-->
-  <div class="Bracelet-all cate-all">
-    <h4 class="text-center">Bracelets</h4>
-    <div class="row">
-      <div class="col-2">
-        <div class="card-prd mbt" *ngFor="let item of bracelets | slice: 0:2">
-          <div class="img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="{{item.thumb}}">
-            </a>
-          </div>
-          <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-            Quick view
-          </div>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="card-prd mbt" *ngFor="let item of bracelets | slice: 2:4">
-          <div class="img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="{{item.thumb}}">
-            </a>
-          </div>
-          <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-            Quick view
-          </div>
-        </div>
-      </div>
-      <div class="col-2">
-        <div class="card-prd mbt" *ngFor="let item of bracelets | slice: 4:6">
-          <div class="img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="{{item.thumb}}">
-            </a>
-          </div>
-          <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-            Quick view
-          </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="item-box-all" *ngFor="let item of bracelets | slice: 7:8">
+        <div class="cate-earr item-box-all mbt">
           <div class="item-box-img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="./assets/img/shop-all/brac-all5.png">
+            <a [routerLink]="['/category', 2]">
+              <img src="./assets/img/shop-all/cate3.png">
             </a>
           </div>
           <div class="item-box-content text-center">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <h5>Magic Bracelet</h5>
+            <a [routerLink]="['/category', 2]">
+              <h5>Earrings</h5>
             </a>
           </div>
         </div>
       </div>
-      <div class="col-2">
-        <div class="box-all mbt">
-          <div class="click-to-all">
-            <a routerLink="/category/3">
-              <p class="mdt mb-0 text-center">Show more</p>
+      <div class="col-4 cate-right">
+        <div class="cate-bra mbt item-box-all">
+          <div class="item-box-img">
+            <a [routerLink]="['/category', 3]">
+              <img src="./assets/img/shop-all/cate4.png">
+            </a>
+          </div>
+          <div class="item-box-content text-center">
+            <a [routerLink]="['/category', 3]">
+              <h5>Bracelets</h5>
             </a>
           </div>
         </div>
-        <div class="card-prd mbt" *ngFor="let item of bracelets | slice: 6:7">
-          <div class="img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="{{item.thumb}}">
-            </a>
+        <h3 class="text-center">Aguri's JewelleRy</h3>
+      </div>
+    </div>
+
+    <!--Rings-->
+    <div class="Ring-all cate-all">
+      <h4 class="text-center">Rings</h4>
+      <div class="row">
+        <div class="col-2">
+          <div class="card-prd mbt" *ngFor="let item of rings | slice: 0:2">
+            <div class="img">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <img src="{{item.thumb}}">
+              </a>
+            </div>
+            <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
           </div>
-          <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-            Quick view
+        </div>
+        <div class="col-4">
+          <div class="item-box-all" *ngFor="let item of rings | slice: 7:8">
+            <div class="item-box-img">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <img src="./assets/img/shop-all/ring-all3.png">
+              </a>
+            </div>
+            <div class="item-box-content text-center">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <h5>Flawless Ring</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card-prd mbt" *ngFor="let item of rings | slice: 2:4">
+            <div class="img">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <img src="{{item.thumb}}">
+              </a>
+            </div>
+            <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card-prd mbt" *ngFor="let item of rings | slice: 4:6">
+            <div class="img">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <img src="{{item.thumb}}">
+              </a>
+            </div>
+            <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="box-all mbt">
+            <div class="click-to-all">
+              <a routerLink="/category/1">
+                <p class="mdt mb-0 text-center">Show more</p>
+              </a>
+            </div>
+          </div>
+          <div class="card-prd mbt" *ngFor="let item of rings | slice: 6:7">
+            <div class="img">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <img src="{{item.thumb}}">
+              </a>
+            </div>
+            <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!--Necklaces-->
-  <div class="Necklace-all cate-all">
+    <!--Earrings-->
+    <div class="Earring-all cate-all">
+      <h4 class="text-center">Earrings</h4>
+      <div class="row">
+        <div class="col-4">
+          <div class="item-box-all" *ngFor="let item of earrings | slice: 7:8">
+            <div class="item-box-img">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <img src="./assets/img/shop-all/earr-all1.png">
+              </a>
+            </div>
+            <div class="item-box-content text-center">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <h5>Sunflower Earring</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card-prd mbt" *ngFor="let item of earrings | slice: 0:2">
+            <div class="img">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <img src="{{item.thumb}}">
+              </a>
+            </div>
+            <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card-prd mbt" *ngFor="let item of earrings | slice: 2:4">
+            <div class="img">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <img src="{{item.thumb}}">
+              </a>
+            </div>
+            <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card-prd mbt" *ngFor="let item of earrings | slice: 4:6">
+            <div class="img">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <img src="{{item.thumb}}">
+              </a>
+            </div>
+            <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="box-all mbt">
+            <div class="click-to-all">
+              <a routerLink="/category/2">
+                <p class="mdt mb-0 text-center">Show more</p>
+              </a>
+            </div>
+          </div>
+          <div class="card-prd mbt" *ngFor="let item of earrings | slice: 6:7">
+            <div class="img">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <img src="{{item.thumb}}">
+              </a>
+            </div>
+            <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Bracelets-->
+    <div class="Bracelet-all cate-all">
+      <h4 class="text-center">Bracelets</h4>
+      <div class="row">
+        <div class="col-2">
+          <div class="card-prd mbt" *ngFor="let item of bracelets | slice: 0:2">
+            <div class="img">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <img src="{{item.thumb}}">
+              </a>
+            </div>
+            <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card-prd mbt" *ngFor="let item of bracelets | slice: 2:4">
+            <div class="img">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <img src="{{item.thumb}}">
+              </a>
+            </div>
+            <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card-prd mbt" *ngFor="let item of bracelets | slice: 4:6">
+            <div class="img">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <img src="{{item.thumb}}">
+              </a>
+            </div>
+            <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="item-box-all" *ngFor="let item of bracelets | slice: 7:8">
+            <div class="item-box-img">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <img src="./assets/img/shop-all/brac-all5.png">
+              </a>
+            </div>
+            <div class="item-box-content text-center">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <h5>Magic Bracelet</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="box-all mbt">
+            <div class="click-to-all">
+              <a routerLink="/category/3">
+                <p class="mdt mb-0 text-center">Show more</p>
+              </a>
+            </div>
+          </div>
+          <div class="card-prd mbt" *ngFor="let item of bracelets | slice: 6:7">
+            <div class="img">
+              <a routerLink="/product-detail/{{item.pid}}">
+                <img src="{{item.thumb}}">
+              </a>
+            </div>
+            <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+              Quick view
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Necklaces-->
+    <div class="Necklace-all cate-all">
       <h4 class="text-center">Necklaces</h4>
       <div class="row">
         <div class="col-2">
@@ -370,52 +374,52 @@
         </div>
       </div>
     </div>
-</div>
-
-<!--Modal Quick view-->
-<div class="container">
-  <div class="modal fade" id="quickview">
-    <div class="modal-dialog modal-dialog-centered quickview">
-      <div class="modal-content" *ngIf="quickviewed">
-        <div class="row">
-          <div class="col-7 ps-0">
-            <img src="{{quickviewed.thumb}}">
-          </div>
-          <div class="col-5 pe-0">
-            <h5>{{quickviewed.name}}</h5>
-            <h5 class="my-3">{{quickviewed.price | currency:'USD'}}</h5>
-            <form onsubmit="alert('The product was successfully added to bag!!')">
-              <div class="d-flex">
-                <p class="mdt me-auto">Quantity</p>
-                <span class="buttons_added ml-1 qty-box">
+  </div>
+  <!--Modal Quick view-->
+  <div class="container">
+    <div class="modal fade" id="quickview">
+      <div class="modal-dialog modal-dialog-centered quickview">
+        <div class="modal-content" *ngIf="quickviewed">
+          <div class="row">
+            <div class="col-7 ps-0">
+              <img src="{{quickviewed.thumb}}">
+            </div>
+            <div class="col-5 pe-0">
+              <h5>{{quickviewed.name}}</h5>
+              <h5 class="my-3">{{quickviewed.price | currency:'USD'}}</h5>
+              <form onsubmit="alert('The product was successfully added to bag!!')">
+                <div class="d-flex">
+                  <p class="mdt me-auto">Quantity</p>
+                  <span class="buttons_added ml-1 qty-box">
                  <input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="" required>
                </span>
-              </div>
-              <div class="line"></div>
-              <div class="quick-size my-3">
-                <select class="form-select smt" required>
-                  <option value="">Select size</option>
-                  <option value="1">3</option>
-                  <option value="2">3 1/2</option>
-                  <option value="3">4</option>
-                  <option value="4">4 1/2</option>
-                  <option value="5">5</option>
-                  <option value="6">5 1/2</option>
-                </select>
-              </div>
-              <input type="submit" class="btn btn-pri my-3 w-100" value="Add to bag">
-            </form>
-            <p class="mt-2">View more detail <a class="ms-5" routerLink="/product-detail/{{quickviewed.pid}}" data-bs-dismiss="modal">
-              <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
-            </a></p>
+                </div>
+                <div class="line"></div>
+                <div class="quick-size my-3">
+                  <select class="form-select smt" required>
+                    <option value="">Select size</option>
+                    <option value="1">3</option>
+                    <option value="2">3 1/2</option>
+                    <option value="3">4</option>
+                    <option value="4">4 1/2</option>
+                    <option value="5">5</option>
+                    <option value="6">5 1/2</option>
+                  </select>
+                </div>
+                <input type="submit" class="btn btn-pri my-3 w-100" value="Add to bag">
+              </form>
+              <p class="mt-2">View more detail <a class="ms-5" routerLink="/product-detail/{{quickviewed.pid}}" data-bs-dismiss="modal">
+                <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+              </a></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!--Back to top-->
-<div class="to-top" (click)="scrollToTop()" [ngClass]="{ 'show-scrollTop': windowScrolled }">
-  <span>Back to top</span><i class="fa fa-arrow-circle-up fa-3x"></i>
-</div>
+  <!--Back to top-->
+  <div class="to-top" (click)="scrollToTop()" [ngClass]="{ 'show-scrollTop': windowScrolled }">
+    <span>Back to top</span><i class="fa fa-arrow-circle-up fa-3x"></i>
+  </div>
+</ng-template>
