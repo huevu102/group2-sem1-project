@@ -136,11 +136,11 @@
                       <h6>{{added.name}}</h6>
                     </div>
                     <div class="col-3 pe-0">
-                      <button (click)="downQty()"><i class="fa fa-minus"></i></button>
-                      <span class="qty mx-2">{{qty}}</span>
-                      <button (click)="upQty()"><i class="fa fa-plus"></i></button>
+                      <button class="qty-btn" (click)="downQty()">-</button>
+                      <span class="mx-2">{{qty}}</span>
+                      <button class="qty-btn" (click)="upQty()">+</button>
                       <p class="mt-2">{{added.price | currency: 'USD'}}</p>
-                      <i (click)="deleteItem(item)" class="fas fa-trash-alt"></i>
+                      <i (click)="deleteItem(item)" class="fas fa-trash-alt trash"></i>
                     </div>
                   </div>
 
