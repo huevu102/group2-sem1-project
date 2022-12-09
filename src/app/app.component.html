@@ -234,7 +234,7 @@
     <div class="modal-content first-steps-inner">
       <h5 class="modal-title mb-4 text-center">Forgot your password?</h5>
       <!--name="myFormBottom" onsubmit="return validateFormBottom()"-->
-      <form>
+      <form ngNativeValidate>
         <label for="email">Email address</label>
         <input class="inpu" type="text" name="email" required>
         <button type="submit" class="btn btn-pri my-4 w-100">Reset Password</button>
@@ -255,7 +255,7 @@
         <div class="row">
           <div class="col-6 ps-0">
             <label>First name</label>
-            <input class="inpu" type="text" required><br>
+            <input name="aaa" class="inpu" type="text" required><br>
           </div>
           <div class="col-6 pe-0">
             <label>Last name</label>

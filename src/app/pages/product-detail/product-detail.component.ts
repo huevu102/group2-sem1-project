@@ -37,6 +37,7 @@ export class ProductDetailComponent implements OnInit {
       const productURL = host + 'get-product-by-pid/?pid=' + this.pid;
       this.http.get<Data[]>(productURL).subscribe(data => {
         this.product = data;
+        this.zoomed = data[0];
         this.loading = false;
       })
 
