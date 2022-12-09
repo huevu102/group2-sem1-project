@@ -42,8 +42,15 @@ export class CategoryComponent implements OnInit {
         this.cateFeatured = data;
       })
     })
+    window.addEventListener('scroll', () => {
+      this.windowScrolled = window.pageYOffset !== 0;
+    });
   }
 
+  windowScrolled = false;
+  scrollToTop(): void {
+    window.scrollTo(0, 0);
+  }
   quickview(item: Data) {
     this.quickviewed = item;
   }
