@@ -82,3 +82,18 @@
   border: none;
 }
 
+.input-qty {
+  width: 15px;
+}
+.qty-btn {
+  width: 15px;
+  height: 15px;
+  border: none;
+  background-color: #fff;
+}
+.trash {
+  color: #999;
+}
+.trash:hover {
+  color: #000;
+}
