@@ -91,12 +91,7 @@
   border: none;
   background-color: #fff;
 }
-.trash {
-  color: #999;
-}
-.trash:hover {
-  color: #000;
-}
+
 /*chatbox*/
 .imessage p {
   padding: 0.5rem .875rem;

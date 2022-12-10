@@ -491,3 +491,11 @@ body{
   100% { transform: rotate(360deg); }
 }
 
+/*trash item*/
+.trash {
+  color: #999;
+}
+.trash:hover {
+  color: #000;
+}
+
