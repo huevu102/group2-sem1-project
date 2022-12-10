@@ -97,3 +97,45 @@
 .trash:hover {
   color: #000;
 }
+/*chatbox*/
+.imessage p {
+  padding: 0.5rem .875rem;
+  position: relative;
+  word-wrap: break-word;
+  border-radius: 30px;
+}
+.imessage p::before,
+.imessage p::after {
+  bottom: -0.1rem;
+  content: "";
+  height: 1rem;
+  position: absolute;
+}
+p.from-them {
+  align-items: flex-start;
+  background-color: #e5e5ea;
+  color: #000;
+}
+p.from-them:before {
+  border-bottom-right-radius: 0.8rem 0.7rem;
+  border-left: 1rem solid #e5e5ea;
+  left: -0.35rem;
+  transform: translate(0, -0.1rem);
+}
+
+p.from-them::after {
+  background-color: #fff;
+  border-bottom-right-radius: 0.5rem;
+  left: 20px;
+  transform: translate(-30px, -2px);
+  width: 10px;
+}
+#messinput{
+  border:0;
+  width: 100%;
+  outline: none;
+  padding: 12px;
+  resize: none;
+  box-shadow: none;
+}
+
