@@ -192,7 +192,7 @@
                     </a>
                     <div id="call-body" class="accordion-collapse collapse" data-bs-parent="#callus">
                       <div class="accordion-body">
-                        <p class="smt">For general inquiries please call: 800 843 3269</p>
+                        <p class="smt">For general inquiries please call: <a href="tel:800 843 3269">800 843 3269</a></p>
                       </div>
                     </div>
                   </div>
@@ -279,7 +279,7 @@
                     <div class="d-flex">
                       <p class="mdt me-auto">Quantity</p>
                       <span class="buttons_added ml-1 qty-box">
-                        <input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="" required>
+                        <input aria-label="quantity" class="text-center" max="100" min="1" name="" type="number" value="" required>
                        </span>
                     </div>
                     <div class="quick-size mb-3">
@@ -323,7 +323,7 @@
                     <div class="d-flex">
                       <p class="mdt me-auto">Quantity</p>
                       <span class="buttons_added ml-1 qty-box">
-                        <input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="" required>
+                        <input aria-label="quantity" class="text-center" max="100" min="1" name="" type="number" value="" required>
                        </span>
                     </div>
                     <div class="quick-size mb-3">
@@ -527,26 +527,28 @@
       <div class="modal fade" id="review">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
-            <h5 class="modal-title mb-4">Write A Review</h5>
-            <p class="mdt">Select your rating</p>
-            <div class="d-flex mb-5">
-              <i class="fa-regular fa-star fa-lg"></i>
-              <i class="fa-regular fa-star fa-lg"></i>
-              <i class="fa-regular fa-star fa-lg"></i>
-              <i class="fa-regular fa-star fa-lg"></i>
-              <i class="fa-regular fa-star fa-lg"></i>
-            </div>
-            <label>Message (*)</label>
-            <textarea class="inpu" rows="4" required></textarea>
-            <div class="email-user">
-              <label>Email address</label>
-              <input class="inpu" type="email" required><br>
-            </div>
-            <div class="review-name">
-              <label>Your name</label>
-              <input class="inpu" type="text">
-            </div>
-            <button type="button" class="btn btn-pri" data-bs-dismiss="modal">Send</button>
+            <form ngNativeValidate onsubmit="alert('Thanks for the review!')">
+              <h5 class="modal-title mb-4">Write A Review</h5>
+              <p class="mdt">Select your rating</p>
+              <div class="d-flex mb-5">
+                <i class="fa-regular fa-star fa-lg"></i>
+                <i class="fa-regular fa-star fa-lg"></i>
+                <i class="fa-regular fa-star fa-lg"></i>
+                <i class="fa-regular fa-star fa-lg"></i>
+                <i class="fa-regular fa-star fa-lg"></i>
+              </div>
+              <label>Message (*)</label>
+              <textarea class="inpu" rows="4" required></textarea>
+              <div class="email-user">
+                <label>Email address</label>
+                <input class="inpu" type="email" required><br>
+              </div>
+              <div class="review-name">
+                <label>Your name</label>
+                <input class="inpu" type="text">
+              </div>
+              <button type="submit" class="btn btn-pri w-100">Send</button>
+            </form>
           </div>
         </div>
       </div>
@@ -595,8 +597,12 @@
     </div>
     <div class="offcanvas-body">
       <div class="imessage">
-        <p class="from-them mb-3">Welcome to Aguri.</p>
-        <p class="from-them mb-3">How can we assist you today?</p>
+        <div>
+          <p class="from-them mb-3">Welcome to Aguri.</p>
+        </div>
+        <div>
+          <p class="from-them mb-3">How can we assist you today?</p>
+        </div>
       </div>
     </div>
     <div class="line"></div>

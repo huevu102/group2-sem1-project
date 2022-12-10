@@ -11,7 +11,7 @@ import {host} from "../../../enums";
 })
 
 export class ProductDetailComponent implements OnInit {
-  loading:boolean =  false;
+  loading: boolean = false;
   private id: any;
   pid: number = 0;
   product: Data[] = [];
@@ -26,10 +26,11 @@ export class ProductDetailComponent implements OnInit {
   deleted?: Data;
 
   constructor(
-    private route: ActivatedRoute, private http: HttpClient) {}
+    private route: ActivatedRoute, private http: HttpClient) {
+  }
 
   ngOnInit() {
-    this.loading =true;
+    this.loading = true;
 
     this.id = this.route.params.subscribe(params => {
       this.pid = +params['pid'];
@@ -73,21 +74,28 @@ export class ProductDetailComponent implements OnInit {
   // add to cart
   qty: number = 1;
   total: any;
+
   addToCart(item: Data): void {
     this.added = item;
     this.cartItem.push(item);
     this.total = item.price * this.qty;
   }
+
   upQty() {
     this.qty++;
   }
+
   downQty() {
-    if(this.qty > 1) {
+    if (this.qty > 1) {
       this.qty--;
     }
   }
+
   deleteItem(item: Data) {
     this.deleted = item;
     this.cartItem = this.cartItem.filter(item => item !== this.deleted);
   }
+
+
+
 }
