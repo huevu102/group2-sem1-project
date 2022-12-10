@@ -23,6 +23,7 @@ import {CartDraftComponent} from "./pages/DRAFT-cart/cart-draft.component"; //de
 import {SearchComponent} from "./pages/search/search.component";
 import {TrackingOrderComponent} from "./pages/tracking-order/tracking-order.component";
 import {FormsModule} from "@angular/forms";
+import {ReturnComponent} from "./pages/return/return.component";
 
 
 const appRoutes: Routes = [
@@ -43,6 +44,7 @@ const appRoutes: Routes = [
   {path: 'cart-draft', component: CartDraftComponent}, // HUE test
   {path: 'search', component: SearchComponent},
   {path: 'tracking-order', component: TrackingOrderComponent},
+  {path: 'return', component: ReturnComponent},
 
 ]
 
@@ -66,6 +68,7 @@ const appRoutes: Routes = [
     CartDraftComponent, // HUE test
     SearchComponent,
     TrackingOrderComponent,
+    ReturnComponent,
   ],
   imports: [
     BrowserModule,

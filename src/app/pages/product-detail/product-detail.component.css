@@ -138,4 +138,8 @@ p.from-them::after {
   resize: none;
   box-shadow: none;
 }
+p[class^="from-"] {
+  margin: 0.5rem 0;
+  width: fit-content;
+}
 

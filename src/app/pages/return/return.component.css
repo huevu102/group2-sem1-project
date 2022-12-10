@@ -1,0 +1,19 @@
+.banner{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding:100px;
+  margin-bottom:40px;
+}
+.banner-text {
+  position: absolute;
+  margin: auto;
+}
+.shipping{
+  margin-bottom:40px;
+}
+.return{
+  margin-bottom:80px
+}
