@@ -389,7 +389,7 @@
           <div class="col-5 pe-0">
             <h5>{{quickviewed.name}}</h5>
             <h5 class="my-3">{{quickviewed.price | currency:'USD'}}</h5>
-            <form onsubmit="alert('The product was successfully added to bag!!')">
+            <form ngNativeValidate onsubmit="alert('The product was successfully added to bag!!')">
               <div class="d-flex">
                 <p class="mdt me-auto">Quantity</p>
                 <span class="buttons_added ml-1 qty-box">
@@ -406,6 +406,7 @@
                   <option value="4">4 1/2</option>
                   <option value="5">5</option>
                   <option value="6">5 1/2</option>
+                  <option value="7">-</option>
                 </select>
               </div>
               <input type="submit" class="btn btn-pri my-3 w-100" value="Add to bag" data-bs-dismiss="modal">
