@@ -24,7 +24,6 @@ export class CompareComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.compared)
   }
 
 
