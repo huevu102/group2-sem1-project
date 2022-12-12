@@ -11,18 +11,14 @@ import {GuideComponent} from "./pages/guide/guide.component";
 import {CartComponent} from "./pages/cart/cart.component";
 import {CheckOutComponent} from "./pages/check-out/check-out.component";
 import {ContactComponent} from "./pages/contact/contact.component";
-import {OrderDetailComponent} from "./pages/order-detail/order-detail.component";
 import {ProductDetailComponent} from "./pages/product-detail/product-detail.component";
 import {ShopAllComponent} from "./pages/shop-all/shop-all.component";
 import {CategoryComponent} from "./pages/category/category.component";
 import {SubCategoryComponent} from "./pages/sub-category/sub-category.component";
 import {ThankYouComponent} from "./pages/thank-you/thank-you.component";
-import {CategoryDraftComponent} from "./pages/DRAFT-category/category-draft.component"; //delete before deploy
-import {ProductDetailDraftComponent} from "./pages/DRAFT-product-detail/product-detail-draft.component"; //delete before deploy
-import {CartDraftComponent} from "./pages/DRAFT-cart/cart-draft.component"; //delete before deploy
 import {SearchComponent} from "./pages/search/search.component";
 import {TrackingOrderComponent} from "./pages/tracking-order/tracking-order.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ReturnComponent} from "./pages/return/return.component";
 
 
@@ -33,15 +29,11 @@ const appRoutes: Routes = [
   {path: 'cart', component: CartComponent},
   {path: 'check-out', component: CheckOutComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'order-detail', component: OrderDetailComponent},
   {path: 'product-detail/:pid', component: ProductDetailComponent},
   {path: 'shop-all', component: ShopAllComponent},
   {path: 'category/:cid',  component: CategoryComponent},
   {path: 'sub-category/:sid',  component: SubCategoryComponent},
   {path: 'thank-you', component: ThankYouComponent},
-  {path: 'category-draft', component: CategoryDraftComponent}, // HUE test
-  {path: 'product-detail-draft/:pid', component: ProductDetailDraftComponent}, // HUE test
-  {path: 'cart-draft', component: CartDraftComponent}, // HUE test
   {path: 'search', component: SearchComponent},
   {path: 'tracking-order', component: TrackingOrderComponent},
   {path: 'return', component: ReturnComponent},
@@ -57,15 +49,11 @@ const appRoutes: Routes = [
     CartComponent,
     CheckOutComponent,
     ContactComponent,
-    OrderDetailComponent,
     ProductDetailComponent,
     ShopAllComponent,
     CategoryComponent,
     SubCategoryComponent,
     ThankYouComponent,
-    CategoryDraftComponent, // HUE test
-    ProductDetailDraftComponent, // HUE test
-    CartDraftComponent, // HUE test
     SearchComponent,
     TrackingOrderComponent,
     ReturnComponent,
@@ -78,6 +66,7 @@ const appRoutes: Routes = [
       apiKey: 'AIzaSyDNI_ZWPqvdS6r6gPVO50I4TlYkfkZdXh8'
     }),
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

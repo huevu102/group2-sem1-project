@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Data} from "./interfaces/data.interface";
 import {HttpClient} from "@angular/common/http";
 import {host} from "../enums";
