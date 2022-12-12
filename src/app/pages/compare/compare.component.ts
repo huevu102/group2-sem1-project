@@ -1,5 +1,5 @@
 import {Component, Input} from "@angular/core";
-import {Data} from "../interfaces/data.interface";
+import {Data} from "../../interfaces/data.interface";
 import {ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 
