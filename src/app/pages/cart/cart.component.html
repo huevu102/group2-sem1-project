@@ -45,7 +45,7 @@
         <p>Lavie Ring</p>
       </div>
       <div class="col-2">
-        <p>-</p>
+        <p>4</p>
       </div>
       <div class="col-2">x 1</div>
       <div class="col-2">
@@ -64,13 +64,13 @@
       <div class="modal fade" id="personalnote">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
-            <form onsubmit="alert('We have received your note.')">
+            <form ngNativeValidate onsubmit="alert('We have received your note.')">
               <h5 class="modal-title mb-4">Personal Note</h5>
               <p class="smt">Write below the message you want to include below. Your message will be printed in a cardboard
                 that will be shipped with your order. Your personal note will be automatically saved when you click "SAVE".</p>
               <div class="my-3">
                 <label>Write your personal note here</label>
-                <textarea class="inpu" rows="4" required></textarea>
+                <textarea name="standalone" class="inpu" rows="4" required></textarea>
               </div>
               <button type="submit" class="mt-2 btn btn-pri w-100" data-bs-dismiss="modal">Send</button>
             </form>
@@ -187,24 +187,27 @@
           <div class="col-5 pe-0">
             <h5>{{quickviewed.name}}</h5>
             <h5 class="my-3">{{quickviewed.price | currency:'USD'}}</h5>
-            <form onsubmit="alert('The product was successfully added to bag!!')">
+            <form ngNativeValidate onsubmit="alert('The product was successfully added to bag!!')">
               <div class="d-flex">
                 <p class="mdt me-auto">Quantity</p>
                 <span class="buttons_added ml-1 qty-box">
-                 <input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="" required>
+                 <input aria-label="quantity" class="text-center" max="100" min="1" name="" type="number" value="" required>
                </span>
               </div>
-              <div class="line"></div>
-              <div class="quick-size my-3">
-                <select class="form-select smt" required>
-                  <option value="">Select size</option>
-                  <option value="1">3</option>
-                  <option value="2">3 1/2</option>
-                  <option value="3">4</option>
-                  <option value="4">4 1/2</option>
-                  <option value="5">5</option>
-                  <option value="6">5 1/2</option>
-                </select>
+              <div  class="line"></div>
+              <div>
+                <div class="quick-size my-3">
+                  <select class="form-select smt" required>
+                    <option value="">Select size</option>
+                    <option value="1">3</option>
+                    <option value="2">3 1/2</option>
+                    <option value="3">4</option>
+                    <option value="4">4 1/2</option>
+                    <option value="5">5</option>
+                    <option value="6">5 1/2</option>
+                    <option value="7">-</option>
+                  </select>
+                </div>
               </div>
               <input type="submit" class="btn btn-pri my-3" value="Add to bag">
             </form>

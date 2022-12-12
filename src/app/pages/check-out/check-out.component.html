@@ -1,6 +1,6 @@
 
 <div class="container checkout-all">
-  <form>
+  <form ngNativeValidate>
     <div class="row">
       <div class="col-6 ps-0 checkout-left">
         <!--billing address-->
@@ -24,7 +24,7 @@
             </div>
             <div class="px-0 phone-user user-input">
               <label>Phone (*)</label>
-              <input class="inpu" type="number" name="phone" required><br>
+              <input class="inpu" type="tel" name="phone" required><br>
             </div>
             <div class="px-0 address-user user-input">
               <label>Address line1 (*)</label>
@@ -47,13 +47,17 @@
             <div class="row">
               <div class="ps-0 col-4">
                 <input type="radio" class="check-box" name="shipfee" checked>
-                <label class="smt">Free ship</label>
+                <label class="smt">Standard</label>
               </div>
-              <div class="col-4">
-                <p class="smt mb-0">Fixed</p>
+              <div class="col-8">
+                <p class="smt mb-0">Free ship</p>
               </div>
-              <div class="col-4">
-                <p class="smt mb-0">Flat rate</p>
+              <div class="ps-0 mt-4 col-4">
+                <input type="radio" class="check-box" name="shipfee">
+                <label class="smt">Express</label>
+              </div>
+              <div class="mt-4 col-8">
+                <p class="smt mb-0">Flat rate (domestic: $30/ oversea: $100)</p>
               </div>
             </div>
         </div>
@@ -142,7 +146,9 @@
     <div class="row place-order">
       <div class="col"></div>
       <div class="col-10">
-        <p class="text-center smt mb-4">By clicking Pay and Place Order, you agree to purchase your item(s) from Global-e as merchant of record for this transaction, on Global-e’s Terms and Conditions and Pivacy Policy Global-e is an international fulfilment service provider to AGURI.</p>
+        <p class="text-center smt mb-4">By clicking Pay and Place Order, you agree to purchase your item(s) from
+          Global-e as merchant of record for this transaction, on Global-e’s Terms and Conditions and Pivacy Policy
+          Global-e is an international fulfilment service provider to AGURI.</p>
       </div>
       <div class="col"></div>
       <div class="row">

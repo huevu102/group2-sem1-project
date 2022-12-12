@@ -184,10 +184,10 @@
       </div>
       <div class="col-4 subscribe-form">
         <p class="mdt">Subscribe to All Things AGURI</p>
-        <form ngNativeValidate class="subscribe" onsubmit="alert('Thank you for subscription!\nWe will send you email about our updates.')">
+        <form ngNativeValidate class="subscribe" onsubmit="alert('Thank you!! Your submission has been sent.')">
           <div>
             <label class="smt">Email address</label>
-            <input class="inpu col-12 border-top-0 border-left-0 border-right-0" type="email" required>
+            <input name="standalone" class="inpu col-12 border-top-0 border-left-0 border-right-0" type="email" required>
           </div>
           <button class="btn btnsm btn-pri" type="submit">Join now</button>
         </form>
@@ -207,7 +207,7 @@
   <div class="modal-dialog modal-dialog-centered first-steps">
     <div class="modal-content first-steps-inner">
       <h5 class="modal-title mb-4 text-center">Welcome to AGURI!</h5>
-      <form>
+      <form ngNativeValidate onsubmit="alert('Welcome back!! Hope you have a pleasant shopping experience with us.')">
         <div class="mb-3">
           <label for="email">Email address</label>
           <input class="inpu" type="text" name="email" required>
@@ -234,7 +234,7 @@
     <div class="modal-content first-steps-inner">
       <h5 class="modal-title mb-4 text-center">Forgot your password?</h5>
       <!--name="myFormBottom" onsubmit="return validateFormBottom()"-->
-      <form ngNativeValidate>
+      <form ngNativeValidate onsubmit="alert('Your password was successfully changed.')">
         <label for="email">Email address</label>
         <input class="inpu" type="text" name="email" required>
         <button type="submit" class="btn btn-pri my-4 w-100">Reset Password</button>
@@ -251,7 +251,7 @@
   <div class="modal-dialog modal-dialog-centered first-steps">
     <div class="modal-content first-steps-inner">
       <h5 class="modal-title mb-4 text-center">Hello, Friend!</h5>
-      <form>
+      <form ngNativeValidate onsubmit="alert('Thank you for signing up!! Hope you have a pleasant shopping experience with us.')">
         <div class="row">
           <div class="col-6 ps-0">
             <label>First name</label>
