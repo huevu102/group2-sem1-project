@@ -1,6 +1,7 @@
 <div class="spinner-here" *ngIf="loading; else productdetail">
   <div class="loader"></div>
 </div>
+<app-compare [compared]="compared" [product]="product"></app-compare>
 <ng-template #productdetail>
   <div class="container">
     <!--DETAIL-->
@@ -247,106 +248,6 @@
           </div>
         </div>
 
-        <!-- Modal Compare-->
-        <div  class="modal fade" id="compare">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <h5 class="modal-title" id="exampleModalLabel">Compare Products</h5>
-              <div class="row">
-                <div class="col-6 simi-left" *ngFor="let product of product | slice: 0: 1">
-                  <div class="itm">
-                    <a routerLink="/product-detail/{{pid}}">
-                      <img src="{{product.thumb}}">
-                    </a>
-                    <div class="item-inf text-center">
-                      <p class="mdt my-2">{{product.name}}</p>
-                      <p class="">{{product.price | currency: 'USD'}}</p>
-                    </div>
-                  </div>
-                  <div class="jewel">
-                    <p class="mdt mb-1">Jewellery</p>
-                    <p class="smt my-2">{{product.jewellery_type}}</p>
-                    <p class="smt my-2">4mm width</p>
-                    <p class="smt mb-0">Carat total weight .48</p>
-                  </div>
-                  <div class="line my-2"></div>
-                  <div class="mater">
-                    <p class="mdt mb-1">Material</p>
-                    <p class="smt">{{product.material}}</p>
-                  </div>
-                  <div class="line mb-3"></div>
-
-                  <form ngNativeValidate onsubmit="alert('The product was successfully added to bag!!')">
-                    <div class="d-flex">
-                      <p class="mdt me-auto">Quantity</p>
-                      <span class="buttons_added ml-1 qty-box">
-                        <input aria-label="quantity" class="text-center" max="100" min="1" name="" type="number" value="" required>
-                       </span>
-                    </div>
-                    <div class="quick-size mb-3">
-                      <select class="form-select smt" required>
-                        <option value="">Select size</option>
-                        <option value="1">3</option>
-                        <option value="2">3 1/2</option>
-                        <option value="3">4</option>
-                        <option value="4">4 1/2</option>
-                        <option value="5">5</option>
-                        <option value="6">5 1/2</option>
-                        <option value="7">-</option>
-                      </select>
-                    </div>
-                    <input type="submit" class="btn btn-pri btnsm w-100" value="Add to bag">
-                  </form>
-                </div>
-                <div class="col-6 simi-right" *ngIf="compared">
-                  <div class="itm">
-                    <a routerLink="/product-detail/{{compared.pid}}">
-                      <img src="{{compared.thumb}}">
-                    </a>
-                    <div class="item-inf text-center">
-                      <p class="mdt my-2">{{compared.name}}</p>
-                      <p class="">{{compared.price | currency: 'USD'}}</p>
-                    </div>
-                  </div>
-                  <div class="jewel">
-                    <p class="mdt mb-1">Jewellery</p>
-                    <p class="smt my-2">{{compared.jewellery_type}}</p>
-                    <p class="smt my-2">2.5mm width x2</p>
-                    <p class="smt mb-0">Carat total weight .50</p>
-                  </div>
-                  <div class="line my-2"></div>
-                  <div class="mater">
-                    <p class="mdt mb-1">Material</p>
-                    <p class="smt">{{compared.material}}</p>
-                  </div>
-                  <div class="line mb-3"></div>
-
-                  <form ngNativeValidate onsubmit="alert('The product was successfully added to bag!!')">
-                    <div class="d-flex">
-                      <p class="mdt me-auto">Quantity</p>
-                      <span class="buttons_added ml-1 qty-box">
-                        <input aria-label="quantity" class="text-center" max="100" min="1" name="" type="number" value="" required>
-                       </span>
-                    </div>
-                    <div class="quick-size mb-3">
-                      <select class="form-select smt" required>
-                        <option value="">Select size</option>
-                        <option value="1">3</option>
-                        <option value="2">3 1/2</option>
-                        <option value="3">4</option>
-                        <option value="4">4 1/2</option>
-                        <option value="5">5</option>
-                        <option value="6">5 1/2</option>
-                        <option value="7">-</option>
-                      </select>
-                    </div>
-                    <input type="submit" class="btn btn-pri btnsm w-100" value="Add to bag">
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
       </div>
     </div>
