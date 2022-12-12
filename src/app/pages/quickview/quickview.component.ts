@@ -1,23 +1,22 @@
 import {Component, OnInit, Input} from "@angular/core";
-import {Data} from "../interfaces/data.interface";
+import {Data} from "../../interfaces/data.interface";
 import {ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
-import {host} from "../../enums";
+import {host} from "../../../enums";
 
 @Component({
-  selector: 'app-compare',
-  templateUrl: './compare.component.html',
-  styleUrls: ['./compare.component.css']
+  selector: 'quick-view',
+  templateUrl: './quickview.component.html',
+  styleUrls: ['./quickview.component.css']
 })
 
-export class CompareComponent implements OnInit {
+export class QuickviewComponent implements OnInit {
   private id: any;
   pid: number = 0;
   similar: Data[] = [];
   added?: Data;
   cartItem: Data[] = [];
-  @Input() compared?: Data;
-  @Input() product?: Data[] = []
+  @Input() quickviewed?: Data;
 
   constructor(
     private route: ActivatedRoute, private http: HttpClient) {
@@ -47,4 +46,3 @@ export class CompareComponent implements OnInit {
     }
   }
 }
-

@@ -21,6 +21,7 @@ import {TrackingOrderComponent} from "./pages/tracking-order/tracking-order.comp
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ReturnComponent} from "./pages/return/return.component";
 import {CompareComponent} from "./compare/compare.component";
+import {QuickviewComponent} from "./pages/quickview/quickview.component";
 
 
 const appRoutes: Routes = [
@@ -59,6 +60,7 @@ const appRoutes: Routes = [
     TrackingOrderComponent,
     ReturnComponent,
     CompareComponent,
+    QuickviewComponent,
   ],
   imports: [
     BrowserModule,
