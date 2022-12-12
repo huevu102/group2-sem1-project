@@ -20,6 +20,8 @@ import {SearchComponent} from "./pages/search/search.component";
 import {TrackingOrderComponent} from "./pages/tracking-order/tracking-order.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ReturnComponent} from "./pages/return/return.component";
+import {CompareComponent} from "./pages/compare/compare.component";
+import {QuickviewComponent} from "./pages/quickview/quickview.component";
 
 
 const appRoutes: Routes = [
@@ -57,6 +59,8 @@ const appRoutes: Routes = [
     SearchComponent,
     TrackingOrderComponent,
     ReturnComponent,
+    CompareComponent,
+    QuickviewComponent,
   ],
   imports: [
     BrowserModule,

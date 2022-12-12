@@ -60,7 +60,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   compare(item: Data) {
-    this.compared = item;
+    this.compared = Object.assign({}, item);
   }
 
   quickview(item: Data) {
