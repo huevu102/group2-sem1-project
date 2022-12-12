@@ -227,9 +227,9 @@
         </div>
 
         <!--category-bottom-->
-        <div class="category-bottom pb-5 text-center">
-          <div class="d-flex mt-3">
-            <a class="mx-auto back-to-top smt" onclick="topFunction()" id="myBtn" title="Go to top">Back to top <i class="ps-3 fa-solid fa-chevron-up"></i></a>
+        <div class="category-bottom text-center">
+          <div class="d-flex mt-2" (click)="scrollToTop()" [ngClass]="{ 'show-scrollTop': windowScrolled }">
+            <a class="mx-auto back-to-top smt" >Back to top <i class="ps-3 fa-solid fa-chevron-up"></i></a>
           </div>
         </div>
       </div>
