@@ -1,6 +1,6 @@
 
 <div class="container checkout-all">
-  <form ngNativeValidate>
+  <form ngNativeValidate (submit)="placeOrder()">
     <div class="row">
       <div class="col-6 ps-0 checkout-left">
         <!--billing address-->
@@ -154,7 +154,7 @@
       <div class="row">
         <div class="col-4"></div>
         <div class="col-4">
-          <button type="submit" class="btn btn-pri btnlg w-100" routerLink="/thank-you">Place order</button>
+          <input type="submit" class="btn btn-pri btnlg w-100" value="Place order">
         </div>
         <div class="col-4"></div>
       </div>
