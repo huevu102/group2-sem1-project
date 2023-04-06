@@ -1,35 +1,33 @@
 <!--category-top-->
-<div class="category-top row pb-5">
-  <div class="col-12">
-    <div id="carouselTopBars" class="carousel slide" data-bs-ride="true">
+<div class="carousel-banner">
+    <div id="carouselTopBars" class="carousel slide carousel-fade" data-bs-ride="carouse">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselTopBars" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselTopBars" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselTopBars" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="3000">
+        <div class="carousel-item active" data-bs-interval="2000">
           <img src="./assets/img/subcate-deco/{{sid}}.1.png" class="d-block w-100">
         </div>
-        <div class="carousel-item" data-bs-interval="3000">
+        <div class="carousel-item" data-bs-interval="2000">
           <img src="./assets/img/subcate-deco/{{sid}}.2.png" class="d-block w-100">
         </div>
-        <div class="carousel-item" data-bs-interval="3000">
+        <div class="carousel-item" data-bs-interval="2000">
           <img src="./assets/img/subcate-deco/{{sid}}.3.png" class="d-block w-100">
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
-  </div>
+    <div class="container category-top-text row">
+      <div class="col"></div>
+      <div class="col-6" *ngFor="let item of subCate | slice: 0: 1">
+        <h4>{{item.sub_name}} {{item.cate_name}}</h4>
+        <p>Meticulously crafted with Aguri’s renowned jewellery, these are {{item.cate_name}} to wear—and love—for
+          {{item.sub_name}}. Wear one on its own or stacked with an Aguri's {{item.sub_name}}</p>
+      </div>
+      <div class="col-5"></div>
+    </div>
 </div>
-
 <div class="container">
   <div class="row">
     <!--category-side-->
@@ -88,7 +86,7 @@
     <div class="category-main px-0 col-10">
       <!--breadcrumb-->
       <nav aria-label="breadcrumb">
-        <ol class="breadcrumb" *ngFor="let item of data | slice: 0: 1">
+        <ol class="breadcrumb" *ngFor="let item of subCate | slice: 0: 1">
           <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
           <li class="breadcrumb-item"><a routerLink="/shop-all">Shop All</a></li>
           <li class="breadcrumb-item active"><a routerLink="/category/{{item.cid}}">{{item.cate_name}}</a></li>
@@ -97,7 +95,7 @@
       </nav>
 
       <div class="row cate-product">
-        <div class="col-3 card mb-9" *ngFor="let item of data | slice: 0: 4">
+        <div class="col-3 card mb-9" *ngFor="let item of subCate | slice: 0: 4">
           <div class="item-card-info">
             <div class="card-prd">
               <div class="img">
@@ -175,7 +173,7 @@
       <div class="mb-3 row">
         <div class="col-6 mb-9">
           <div class="featured">
-            <div class="featured-img" *ngFor="let item of data | slice: 0: 1">
+            <div class="featured-img" *ngFor="let item of subCate | slice: 0: 1">
               <a routerLink="#">
                 <img src="./assets/img/featured/{{item.cid}}.png">
               </a>
@@ -185,7 +183,7 @@
             </div>
           </div>
         </div>
-        <div class="col-3 mb-9" *ngFor="let item of data | slice: 4: 6">
+        <div class="col-3 mb-9" *ngFor="let item of subCate | slice: 4: 6">
           <div class="item-card-info">
             <div class="card-prd">
               <div class="img">
@@ -199,14 +197,14 @@
             </div>
             <div class="item-inf text-center mt-2">
               <p class="decor-text mb-1">{{item.name}}</p>
-              <p class="smt mb-0">{{ item.price | currency: 'USD'}}}</p>
+              <p class="smt mb-0">{{ item.price | currency: 'USD'}}</p>
             </div>
           </div>
         </div>
       </div>
 
       <div class="row cate-product ">
-        <div class="col-3 mb-9" *ngFor="let item of data | slice: 6">
+        <div class="col-3 mb-9" *ngFor="let item of subCate | slice: 6">
           <div class="item-card-info">
             <div class="card-prd">
               <div class="img">

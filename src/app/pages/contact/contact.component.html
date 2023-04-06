@@ -1,60 +1,80 @@
-<div class="container">
+
   <!--BANNER-->
-  <div class="banner">
-    <img src="./assets/img/contact/banner.png">
-  </div>
-  <div class="contact-inner">
-    <div class="row">
-      <div class="col"></div>
-      <div class="col-6 contact-form">
-        <form onsubmit="alert('Thank you for your message!! We will contact you soon.')">
-          <div class="row name-user">
-            <div class="col-6 firstname ps-0">
-              <label>First name</label>
-              <input class="inpu" type="text">
-            </div>
-            <div class="col-6 lastname pe-0">
-              <label>Last name</label>
-              <input class="inpu" type="text">
-            </div>
-          </div>
-          <div class="email-user user-input">
-            <label>Email address (*)</label>
-            <input class="inpu" type="email" required><br>
-          </div>
-          <div class="subj-user user-input">
-            <label>Subject</label>
-            <input class="inpu" type="text"><br>
-          </div>
-          <div class="mess-user">
-            <label>Message (*)</label>
-            <textarea class="inpu" rows="4" required></textarea>
-          </div>
-          <div class="text-center">
-              <button class="d-inline-block btn btn-pri btlg" type="submit">Send it</button>
-          </div>
-        </form>
-      </div>
-      <div class="col-4 contact-text">
-        <span class="mdt">Let’s connect</span>
-        <p class="smt">For questions regarding our products and services you can also contact us by filling out the form below.</p>
-        <div class="mail-inf mt-5 text-center">
-          <h5>Email info</h5>
-          <p class="smt">info@AGURI&PIJ2022.com for appointment</p>
-        </div>
-      </div>
-      <div class="col"></div>
+  <link rel="stylesheet" href="../home/home.component.css">
+  <div class="banner-img">
+    <div class="">
+      <img src="./assets/img/contact/banner.png">
+    </div>
+    <div class="banner-img-text">
+      <h3 class="text-center">Get In Touch With Us</h3>
     </div>
   </div>
-
-  <div class="aguri-info">
-    <div class="showroom">
-      <h5 class="text-center mb-3">Our Showrooms</h5>
+  <!--contact form here-->
+  <div class="container contact-form">
+    <div class="contact-inner">
       <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-          <!--carousel-maps-->
-          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="col"></div>
+        <div class="col-6 contact-form">
+          <form onsubmit="alert('Thank you for your message!! We will contact you soon.')">
+            <div class="row name-user">
+              <div class="col-6 firstname ps-0">
+                <label>First name</label>
+                <input class="inpu" type="text">
+              </div>
+              <div class="col-6 lastname pe-0">
+                <label>Last name</label>
+                <input class="inpu" type="text">
+              </div>
+            </div>
+            <div class="email-user user-input">
+              <label>Email address (*)</label>
+              <input class="inpu" type="email" required><br>
+            </div>
+            <div class="subj-user user-input">
+              <label>Subject</label>
+              <input class="inpu" type="text"><br>
+            </div>
+            <div class="mess-user">
+              <label>Message (*)</label>
+              <textarea class="inpu" rows="4" required></textarea>
+            </div>
+            <div class="text-center">
+              <button class="d-inline-block btn btn-pri btlg" type="submit">Send it</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-4 contact-text">
+          <h6>Drop us a line</h6>
+          <p class="smt">For questions regarding our products and services you can also contact us by filling out the form below.</p>
+          <p class="decor-text mail-info">info@AGURI&PIJ2022.com for appointment</p>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
+  <div class="container">
+    <div>
+      <h5>We're so glad to see you</h5>
+      <p>There are a lot of ways to stay in touch with us</p>
+    </div>
+    <div class="row">
+      <div class="col-6 ps-0">
+        <p>Let's say hello on social media</p>
+
+      </div>
+      <div class="col-6 pe-0">
+        <p>Call us via telephone</p>
+      </div>
+    </div>
+  </div>
+  <!--Map here-->
+  <div class="aguri-info">
+      <div >
+        <h5 class="text-center mb-3">Our Showrooms</h5>
+      </div>
+        <!--carousel-maps-->
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -82,12 +102,7 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-        </div>
-        <div class="col-1"></div>
-      </div>
-    </div>
   </div>
-</div>
 
 
 

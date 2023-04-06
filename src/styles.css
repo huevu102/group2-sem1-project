@@ -441,9 +441,14 @@ body{
 .nav--hidden {
   transform: translateY(-36px);
 }
-
-
-
+.nav-link{
+  font-size:14px;
+}
+.header-inner .top-page-end,
+.top-page-start{
+  padding-right:0px !important;
+  padding-left: 0px !important;
+}
 
 
 
