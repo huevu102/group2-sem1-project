@@ -90,11 +90,63 @@
 
 
 /*To show all*/
-.to-show-all{
-  position:absolute;
+/*.to-show-all{*/
+/*  position:absolute;*/
+/*}*/
+/*.all-name{*/
+/*  position:absolute;*/
+/*  top:50%;*/
+/*  width:100%;*/
+/*}*/
+.collec-top{
+  margin-bottom:100px;
+  margin-top:120px;
 }
-.all-name{
-  position:absolute;
-  top:50%;
-  width:100%;
+.collec-top .right-top-collec{
+  position: relative;
+}
+.collec-top .right-top-collec img{
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100px);
+}
+.collec-btm .right-btm-collec{
+  padding-top:100px;
+}
+.collec-btm{
+  margin-bottom:100px;
+}
+.collec-img img{
+  position: relative;
+}
+.collec-name{
+  position: absolute;
+  color:#fff;
+}
+.collec-name{
+  bottom:25px;
+  left:7%;
+}
+.collec-name-2{
+  bottom:-10%;
+  left:10%;
+}
+.collec-name-3{
+  bottom:30%;
+  left:11%;
+}
+.collec-name-4{
+  bottom:4%;
+  left:9%;
+}
+.collec-img{
+  overflow: hidden;
+}
+.collec-img img{
+  object-fit: cover;
+  transition: transform 0.5s ease-out;
+  display: block;
+}
+.collec-img:hover img{
+  transform: scale(1.1);
 }
