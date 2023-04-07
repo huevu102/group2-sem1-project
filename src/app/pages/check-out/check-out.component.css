@@ -1,14 +1,43 @@
+.checkout-left{
+  padding-top:40px;
+}
+/*billing address*/
 .address-user{
   margin-top:20px;
 }
-.billing-summary{
-  padding: 20px 40px;
-  background-color:#fff
-}
+
 .last-step{
   margin-bottom:60px;
 }
+/*payment-method*/
 .number-on-card{
   margin-top:20px;
   margin-bottom:20px;
 }
+/*bill summary*/
+
+div.sticky{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding-top:40px;
+}
+.billing-summary{
+  padding: 40px 60px;
+  background-color:#fff;
+  border: 1px solid #999;
+}
+/*place order*/
+.place-order{
+  margin-top:80px;
+  margin-bottom:80px;
+}
+ul.pay li:focus{
+  border: 1px solid blue;
+  outline: blue solid 1px;
+  border-radius: 14px;
+}
+ul.pay li{
+  margin-right: 12.5px;
+}
+

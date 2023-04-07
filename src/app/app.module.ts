@@ -11,7 +11,7 @@ import {AboutUsComponent} from "./pages/about-us/about-us.component";
 import {GuideComponent} from "./pages/guide/guide.component";
 import {CartComponent} from "./pages/cart/cart.component";
 import {CheckOutComponent} from "./pages/check-out/check-out.component";
-// import {ContactComponent} from "./pages/contact/contact.component";
+import {ContactComponent} from "./pages/contact/contact.component";
 import {OrderDetailComponent} from "./pages/order-detail/order-detail.component";
 import {ProductDetailComponent} from "./pages/product-detail/product-detail.component";
 import {ShopAllComponent} from "./pages/shop-all/shop-all.component";
@@ -28,7 +28,7 @@ const appRoutes: Routes = [
   {path: 'guide', component: GuideComponent},
   {path: 'cart', component: CartComponent},
   {path: 'check-out', component: CheckOutComponent},
-  // {path: 'contact', component: ContactComponent},
+  {path: 'contact', component: ContactComponent},
   {path: 'order-detail', component: OrderDetailComponent},
   {path: 'product-detail', component: ProductDetailComponent},
   {path: 'shop-all', component: ShopAllComponent},
@@ -47,7 +47,7 @@ const appRoutes: Routes = [
     GuideComponent,
     CartComponent,
     CheckOutComponent,
-    // ContactComponent,
+    ContactComponent,
     OrderDetailComponent,
     ProductDetailComponent,
     ShopAllComponent,

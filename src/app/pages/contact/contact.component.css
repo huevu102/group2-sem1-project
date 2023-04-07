@@ -13,7 +13,7 @@
   margin-bottom:100px;
 }
 .contact-form{
-  background:#E2CDB0;
+  background:#E1DCD6;
 }
 .mess-user{
   margin-bottom:60px;
@@ -27,9 +27,11 @@
 }
 
 agm-map {
-  height: 450px;
+  height: 480px;
 }
 .mail-info{
- padding-top:200px;
+ padding-top:175px;
+  font-weight: 500;
 }
+
 

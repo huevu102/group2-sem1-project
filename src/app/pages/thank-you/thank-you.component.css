@@ -1,0 +1,68 @@
+.order-detail{
+  margin-bottom:80px;
+}
+.your-bill, .billing-summary{
+  background: #fff;
+  border: 1px solid #999;
+}
+.your-bill{
+  padding: 38px 38px;
+}
+.billing-summary{
+  padding:30px 30px;
+}
+.bill-title{
+  margin-bottom:30px;
+}
+.thanks{
+  margin-bottom: 60px;
+}
+
+/*animation checkmark*/
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 1.5;
+  stroke-miterlimit: 10;
+  stroke: #000;
+  fill: #FAF8F6;
+  animation: stroke 0.7s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 1.5;
+  stroke: #000;
+  stroke-miterlimit: 10;
+  margin: 4% auto;
+  animation: fill .6s ease-in-out .6s forwards, scale .4s ease-in-out .9s both;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.4s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #000;
+  }
+}
