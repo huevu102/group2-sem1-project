@@ -1,3 +1,4 @@
+<quick-view [quickviewed]="quickviewed"></quick-view>
 <div class="container">
   <!--category-top-->
   <div class="category-top row pb-5">
@@ -41,7 +42,6 @@
       </div>
     </div>
   </div>
-
   <div class="row">
     <!--category-side-->
     <div class="category-side-bar col-2">
@@ -126,20 +126,21 @@
           <button type="submit" class="btn btn-pri btnsm mt-3" onclick="alert('Loading...')">Apply</button>
       </div>
     </div>
-
     <!--category-main-->
     <div class="category-main px-0 col-10">
       <div class="d-flex">
-        <!--breadcrumb-->
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-            <li class="breadcrumb-item"><a routerLink="/shop-all">Shop All</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a>Rings</a></li>
-          </ol>
-        </nav>
+        <div>
+          <!--breadcrumb-->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+              <li class="breadcrumb-item"><a routerLink="/shop-all">Shop All</a></li>
+              <li class="breadcrumb-item active" aria-current="page"><a>Rings</a></li>
+            </ol>
+          </nav>
+        </div>
         <div class="filter-prd">
-          <p>Filter And Sort</p>
+          <span>Filter And Sort</span>
         </div>
       </div>
       <!--ALL PRODUCT HERE-->
@@ -1364,7 +1365,6 @@
           </div>
         </div>
       </div>
-
       <!--category-bottom-->
       <div class="category-bottom pb-5 text-center">
         <p class="smt mb-2">Showing 60 of 180</p>
@@ -1377,58 +1377,4 @@
   </div>
 </div>
 
-<!--Modal Quick view-->
-<div class="modal fade" id="quickview">
-  <div class="modal-dialog modal-dialog-centered quickview">
-    <div class="modal-content">
-      <div class="row">
-        <div class="col-7 ps-0">
-          <!--Carousel quick view product-->
-          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="3000">
-                <img src="./assets/img/product-detail/quickview1.png">
-              </div>
-              <div class="carousel-item" data-bs-interval="3000">
-                <img src="./assets/img/product-detail/quickview2.png">
-              </div>
-              <div class="carousel-item" data-bs-interval="3000">
-                <img src="./assets/img/product-detail/quickview3.png">
-              </div>
-              <div class="carousel-item">
-                <img src="./assets/img/product-detail/quickview4.png">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-5 pe-0">
-          <h5>Lynn Ring</h5>
-          <h5 class="my-3">$8.700,00</h5>
-          <p>Quantity</p>
-          <div class="quick-size my-3">
-            <select class="form-select smt">
-              <option selected>Select size</option>
-              <option value="1">3</option>
-              <option value="2">3 1/2</option>
-              <option value="3">4</option>
-              <option value="3">4 1/2</option>
-              <option value="3">5</option>
-              <option value="3">5 1/2</option>
-            </select>
-          </div>
-          <button type="button" class="btn btn-pri mb-3 w-100" data-bs-dismiss="modal">Add to bag</button>
-          <a href="">
-            <p>View more detail</p>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 

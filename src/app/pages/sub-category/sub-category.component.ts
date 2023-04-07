@@ -13,6 +13,7 @@ export class SubCategoryComponent implements OnInit{
   private sub: any;
   sid: number = 0;
   subCate: Data[] = [];
+  quickviewed?: Data;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,5 +30,8 @@ export class SubCategoryComponent implements OnInit{
         this.subCate = data;
       })
     })
+  }
+  quickview(item: Data){
+    this.quickviewed=item;
   }
 }

@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+import {Data} from "../../interfaces/data.interface";
 
 @Component({
   selector: 'app-cart',
@@ -6,4 +7,10 @@ import {Component} from "@angular/core";
   styleUrls: ['./cart.component.css']
 })
 
-export class CartComponent {}
+export class CartComponent {
+  quickviewed?: Data;
+
+  quickview(item: Data) {
+    this.quickviewed = item;
+  }
+}

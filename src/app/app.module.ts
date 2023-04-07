@@ -18,8 +18,8 @@ import {ShopAllComponent} from "./pages/shop-all/shop-all.component";
 import {CategoryComponent} from "./pages/category/category.component";
 import {SubCategoryComponent} from "./pages/sub-category/sub-category.component";
 import {ThankYouComponent} from "./pages/thank-you/thank-you.component";
-import {ProductDetailDraftComponent} from "./pages/product-detail-DRAFT/product-detail-draft.component";
 import {SearchComponent} from "./pages/search/search.component";
+import {QuickviewComponent} from "./pages/quickview/quickview.component";
 
 
 const appRoutes: Routes = [
@@ -36,7 +36,7 @@ const appRoutes: Routes = [
   {path: 'sub-category/:sid',  component: SubCategoryComponent},
   {path: 'thank-you', component: ThankYouComponent},
   {path: 'search', component: SearchComponent},
-  {path: 'product-detail-draft', component: ProductDetailDraftComponent}, //delete before deploy
+  {path: 'quickview', component: QuickviewComponent},
 ]
 
 @NgModule({
@@ -55,6 +55,7 @@ const appRoutes: Routes = [
     SubCategoryComponent,
     ThankYouComponent,
     SearchComponent,
+    QuickviewComponent,
   ],
   imports: [
     BrowserModule,

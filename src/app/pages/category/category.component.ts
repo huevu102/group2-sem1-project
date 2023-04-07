@@ -13,6 +13,7 @@ export class CategoryComponent implements OnInit {
   private cate: any;
   cid: number = 0;
   category: Data[] = [];
+  quickviewed?: Data;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,4 +30,8 @@ export class CategoryComponent implements OnInit {
       })
     })
   }
+  quickview(item: Data){
+    this.quickviewed=item;
+  }
+
 }

@@ -7,6 +7,20 @@
   margin-bottom:20px;
 }
 
+/*ADD CART*/
+.offcanvas-checkbox{
+  padding-left:0;
+}
+.offcanvas-cart{
+  padding-right:0;
+}
+.offcanvas-btn{
+  margin-top: 220px;
+}
+.prd-name{
+  margin-right:auto;
+}
+
 /*SELECT FORM*/
 /*Breadcrumb*/
 .breadcrumb{
@@ -32,14 +46,10 @@
 .review-name{
   margin-bottom:40px;
 }
-/*Description & Detail*/
-
-/*Similar-product*/
-
 /*Compare*/
 .simi-prod{
-  margin-top:120px;
-  margin-bottom:120px;
+  margin-top:100px;
+  margin-bottom:100px;
 }
 
 .itm{
@@ -53,12 +63,16 @@
   padding-right:0px;
 }
 /*Review*/
+.review{
+  margin-bottom:80px;
+}
 .review-start{
   justify-content: center;
+  margin-bottom:30px;
 }
 .rate-start{
   margin-bottom:20px;
 }
 .review-box{
-  margin-top:40px;
+  margin-top:60px;
 }

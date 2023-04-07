@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {Data} from "../../interfaces/data.interface";
 
+
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -13,6 +14,7 @@ export class ProductDetailComponent implements OnInit {
   private id: any;
   pid: number = 0;
   product: Data[] = [];
+  quickviewed?: Data;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,5 +38,9 @@ export class ProductDetailComponent implements OnInit {
   windowScrolled = false;
   scrollToTop(): void {
     window.scrollTo(0, 0);
+  }
+
+  quickview(item: Data) {
+    this.quickviewed = item;
   }
 }
