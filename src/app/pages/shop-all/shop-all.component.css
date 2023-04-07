@@ -29,10 +29,7 @@
 
 .collec-top{
   margin-bottom:100px;
-  margin-top:120px;
-}
-.collec-top .right-top-collec{
-  position: relative;
+  margin-top:60px;
 }
 .collec-top .right-top-collec img{
   position: absolute;
@@ -78,6 +75,9 @@
 }
 .collec-img:hover img{
   transform: scale(1.1);
+}
+.collec-cart:hover > .collec-name h5{
+  text-decoration: underline;
 }
 .right-btm{
   display: flex;
