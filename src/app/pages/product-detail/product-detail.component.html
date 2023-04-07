@@ -4,31 +4,43 @@
   <div class="prod-detail">
     <div class="row">
       <div class="col-2">
-        <div class="mbt" *ngFor="let item of product">
-          <img src="{{item.url}}">
+        <div class="mbt">
+          <a href="#">
+            <img src="./assets/img/product-detail/detail1.png">
+          </a>
+        </div>
+        <div class="mbt">
+          <a href="#">
+            <img src="./assets/img/product-detail/detail2.png">
+          </a>
+        </div>
+        <div class="mbt">
+          <a href="#">
+            <img src="./assets/img/product-detail/detail3.png">
+          </a>
         </div>
       </div>
-      <div class="col-6" *ngFor="let item of product | slice: 0: 1">
-        <img src="{{item.url}}">
+      <div class="col-6">
+        <a href="#">
+          <img src="./assets/img/product-detail/detail4.png">
+        </a>
       </div>
-      <div class="col-4" *ngFor="let item of product | slice: 0: 1">
+      <div class="col-4">
         <!--Breadcrumb-->
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
-            <li class="breadcrumb-item"><a routerLink="/shop-all">Shop all</a></li>
-            <li class="breadcrumb-item"><a routerLink="/category/{{item.cid}}">{{item.cate_name}}</a></li>
-            <li class="breadcrumb-item"><a routerLink="/category/{{item.sid}}">{{item.sub_name}}</a></li>
+          <ol class="breadcrumb crumb">
+            <li class="breadcrumb-item"><a href="#" routerLink="/home">Home</a></li>
+            <li class="breadcrumb-item"><a href="#" routerLink="/shop-all">Shop all</a></li>
+            <li class="breadcrumb-item"><a href="#" routerLink="/sub-category">Rings</a></li>
           </ol>
         </nav>
-
-        <p class="mdt">{{item.collection}}</p>
-        <h5>{{item.name}}</h5>
-        <h5 class="my-2">{{ item.price | currency: 'USD'}}</h5>
+        <a href="#">
+          <p class="mdt">AGURI'S ETERNITY MAGIC</p>
+        </a>
+        <h5>Diamond and Gold Spark Ring</h5>
+        <h5 class="my-2">$6,700</h5>
         <p class="mdt">Complimentary Shipping & Returns</p>
         <div class="line mb-3"></div>
-
-        <!--quantity-->
         <div class=d-flex>
           <p class="mdt me-auto">Quantity</p>
           <span class="buttons_added ml-1">
@@ -223,7 +235,16 @@
             </a>
             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
               <div class="accordion-body">
-                <p class="smt">{{item.description}}</p>
+                <p class="smt">Tiffany T1 designs reinvent our iconic Tiffany T collection with bold profiles and powerful details.
+                  These hoop earrings are precisely crafted in 18k rose gold and feature a beveled edge traced with round brilliant diamonds.
+                  Wear on their own as a striking statement or style with a mix of stud earrings for an unexpected look.
+                </p>
+                <ul>
+                  <li class="smt">18k rose gold with round brilliant diamonds</li>
+                  <li class="smt">Size extra small</li>
+                  <li class="smt">Carat total weight .40</li>
+                  <li class="smt">Product number:69782981</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -239,15 +260,101 @@
         <h5>Similar Products</h5>
         <p class="smt">AGURI designs reinvent our iconic AGURI collection with bold profiles and powerful details.</p>
       </div>
-      <div class="col-3" *ngFor="let item of product | slice: 0: 3">
-        <div class="card-prd">
-          <div class="img">
-            <a routerLink="/product-detail/{{item.pid}}">
-              <img src="{{item.thumb}}">
-            </a>
-          </div>
-          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
-            Compare
+      <div class="col-9">
+        <div id="simi" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="1300">
+              <div class="row">
+                <div class="col-4">
+                  <div class="item-card-info">
+                    <div class="card-prd">
+                      <div class="img">
+                        <a href="#">
+                          <img src="./assets/img/home/new1.png">
+                        </a>
+                      </div>
+                      <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
+                        Quick view
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="item-card-info">
+                    <div class="card-prd">
+                      <div class="img">
+                        <a href="#">
+                          <img src="./assets/img/home/new2.png">
+                        </a>
+                      </div>
+                      <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
+                        Quick view
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="item-card-info">
+                    <div class="card-prd">
+                      <div class="img">
+                        <a href="#">
+                          <img src="./assets/img/home/new3.png">
+                        </a>
+                      </div>
+                      <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
+                        Quick view
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="1300">
+              <div class="row">
+                <div class="col-4">
+                  <div class="item-card-info">
+                    <div class="card-prd">
+                      <div class="img">
+                        <a href="#">
+                          <img src="./assets/img/home/new4.png">
+                        </a>
+                      </div>
+                      <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
+                        Quick view
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="item-card-info">
+                    <div class="card-prd">
+                      <div class="img">
+                        <a href="#">
+                          <img src="./assets/img/home/new5.png">
+                        </a>
+                      </div>
+                      <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
+                        Quick view
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="item-card-info">
+                    <div class="card-prd">
+                      <div class="img">
+                        <a href="#">
+                          <img src="./assets/img/home/new6.png">
+                        </a>
+                      </div>
+                      <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
+                        Quick view
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -621,7 +728,7 @@
 </div>
 
 <!--REVIEW-->
-<div class="review">
+<div class="review container">
   <div class="d-flex review-start">
     <h3>4,9</h3>
     <div class="d-flex my-auto">
@@ -685,14 +792,14 @@
       </select>
     </div>
   </div>
-  <div class="review-box container">
+  <div class="review-box">
     <div class="d-flex review-inner">
       <div class="review-ava">
         <img src="./assets/img/product-detail/user1.png">
       </div>
       <div class="review-content w-100 ms-3">
         <div class="d-flex">
-          <p class="me-auto mb10 user-name mdt">HueVT99</p>
+          <p class="me-auto mb10 user-name mdt">TTThuy8x</p>
           <span class="smt">2022/12/02</span>
         </div>
         <div>
@@ -721,7 +828,7 @@
       </div>
       <div class="review-content w-100 ms-3">
         <div class="d-flex">
-          <p class="me-auto mb10 user-name mdt">HueVT99</p>
+          <p class="me-auto mb10 user-name mdt">Nthduong98</p>
           <span class="smt">2022/12/02</span>
         </div>
         <div>
@@ -831,4 +938,8 @@
       </div>
     </div>
   </div>
+</div>
+<!--Back to top-->
+<div class="to-top" (click)="scrollToTop()" [ngClass]="{ 'show-scrollTop': windowScrolled }">
+  <i class="fa-solid fa-circle-arrow-up fa-2xl"></i>
 </div>

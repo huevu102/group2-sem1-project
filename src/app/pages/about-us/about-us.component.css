@@ -11,6 +11,9 @@
 .who{
   position:relative;
 }
+.who .who-left{
+  padding-left:0;
+}
 .who-right{
   position:absolute;
   right:0px;

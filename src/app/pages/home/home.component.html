@@ -165,7 +165,6 @@
       </div>
       <div class="col-9">
         <div id="newarrival" class="carousel slide carousel-fade" data-bs-ride="carousel">
-
           <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="1300">
               <div class="row">
@@ -413,7 +412,7 @@
       <div class="col-4">
         <div class="item-box-all">
           <div class="item-box-img">
-            <a routerLink="#">
+            <a routerLink="/category/1">
               <img src="./assets/img/home/all-j3.png"/>
             </a>
           </div>
@@ -700,7 +699,7 @@
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
             </div>
             <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="5000">
+              <div class="carousel-item active" data-bs-interval="3000">
                 <img src="./assets/img/product-detail/quickview1.png">
               </div>
               <div class="carousel-item" data-bs-interval="3000">
@@ -923,6 +922,10 @@
       </div>
     </div>
   </div>
+</div>
+<!--Back to top-->
+<div class="to-top" (click)="scrollToTop()" [ngClass]="{ 'show-scrollTop': windowScrolled }">
+  <i class="fa-solid fa-circle-arrow-up fa-2xl"></i>
 </div>
 
 

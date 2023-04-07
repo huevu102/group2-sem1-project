@@ -19,7 +19,7 @@ import {CategoryComponent} from "./pages/category/category.component";
 import {SubCategoryComponent} from "./pages/sub-category/sub-category.component";
 import {ThankYouComponent} from "./pages/thank-you/thank-you.component";
 import {CategoryDraftComponent} from "./pages/category-DRAFT/category-draft.component"; //delete before deploy
-import {ProductDetailDraftComponent} from "./pages/product-detail-DRAFT/product-detail-draft.component"; //delete before deploy
+import {ProductDetailDraftComponent} from "./pages/product-detail-DRAFT/product-detail-draft.component";
 
 
 const appRoutes: Routes = [
@@ -30,7 +30,7 @@ const appRoutes: Routes = [
   {path: 'check-out', component: CheckOutComponent},
   // {path: 'contact', component: ContactComponent},
   {path: 'order-detail', component: OrderDetailComponent},
-  {path: 'product-detail/:pid', component: ProductDetailComponent},
+  {path: 'product-detail', component: ProductDetailComponent},
   {path: 'shop-all', component: ShopAllComponent},
   {path: 'category/:cid',  component: CategoryComponent},
   {path: 'sub-category/:sid',  component: SubCategoryComponent},
@@ -54,8 +54,6 @@ const appRoutes: Routes = [
     CategoryComponent,
     SubCategoryComponent,
     ThankYouComponent,
-    CategoryDraftComponent, //delete before deploy
-    ProductDetailDraftComponent, //delete before deploy
   ],
   imports: [
     BrowserModule,

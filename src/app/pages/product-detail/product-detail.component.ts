@@ -20,13 +20,21 @@ export class ProductDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.id = this.route.params.subscribe(params => {
-      this.pid = +params['pid'];
+    // this.id = this.route.params.subscribe(params => {
+    //   this.pid = +params['pid'];
+    //
+    //   const productURL = 'https://huevuapi.herokuapp.com/get-product/?pid=' + this.pid;
+    //   this.http.get<Data[]>(productURL).subscribe(data => {
+    //     this.product = data;
+    //   })
+    // })
 
-      const productURL = 'https://huevuapi.herokuapp.com/get-product/?pid=' + this.pid;
-      this.http.get<Data[]>(productURL).subscribe(data => {
-        this.product = data;
-      })
-    })
+    window.addEventListener('scroll', () => {
+      this.windowScrolled = window.pageYOffset !== 0;
+    });
+  }
+  windowScrolled = false;
+  scrollToTop(): void {
+    window.scrollTo(0, 0);
   }
 }

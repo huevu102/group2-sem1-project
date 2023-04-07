@@ -182,7 +182,6 @@ input{
 }
 
 /*NAV*/
-
 .navbar-here{
   padding-top:10px;
   padding-bottom:10px;
@@ -439,7 +438,8 @@ body{
   height: var(--nav-height);
 }
 .nav--hidden {
-  transform: translateY(-36px);
+  transform: translateY(-146px);
+  transition: 0.4s all;
 }
 .nav-link{
   font-size:14px;
@@ -448,6 +448,20 @@ body{
 .top-page-start{
   padding-right:0px !important;
   padding-left: 0px !important;
+}
+/*back to top*/
+.to-top {
+  bottom: 0;
+  cursor: pointer;
+  margin: 50px;
+  position: fixed;
+  right: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.show-scrollTop {
+  opacity: 1 !important;
+  transition: all 0.2s ease-in-out;
 }
 
 
