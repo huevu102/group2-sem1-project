@@ -1,15 +1,16 @@
 /*category-top*/
-.carousel-banner{
-  position: relative;
+.banner{
+  background-image: url("../../../assets/img/subcate-deco/1.1.png");
+  background-size: cover;
 }
 .category-top-text {
-  position: absolute;
-  bottom:140px;
-  left:10px;
-  z-index:1;
-
+  padding-top:140px;
+  padding-bottom:80px;
 }
 
+.body-main{
+  margin-top: 80px;
+}
 /*CATEGORY*/
 .sub-cate-box:hover > .sub-cate-img{
   transition: 0.5s;
@@ -80,4 +81,14 @@
 .category-bottom{
   margin-bottom:80px;
   margin-top:80px;
+}
+div.sticky{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding-bottom:60px;
+  padding-top:40px;
+}
+.breadcrumb{
+  padding-left:12.5px;
 }

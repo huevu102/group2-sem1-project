@@ -4,12 +4,11 @@
   margin: 0px;
 }
 body{
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   font-family: 'Inter', sans-serif;
   background-color: #FAF8F6;
 }
-
 ul {
   padding-inline-start: 0;
 }
@@ -25,17 +24,18 @@ a.nav-link{
   text-decoration: none;
 }
 a:hover, i:hover{
-  color:#999;
+  color: #333 !important;
   text-decoration: none;
   cursor: pointer;
 }
 .line{
-  background-color:#999;
+  background-color:#333;
   width:100%;
   height:0.5px;
 }
 
 /*SPACING*/
+
 .mbt{
   margin-bottom: 25px;
 }
@@ -76,7 +76,7 @@ h2, h3, h4, h5 {
   font-weight: 500;
 }
 .smt{
-  font-size: 14px;
+  font-size: 13px;
 }
 .decor-text{
   font-size:12px;
@@ -170,17 +170,22 @@ label{
   color:#000;
 }
 input{
-  width:0px;
+  width:21px;
   border: none;
   padding:0;
   background: none;
   font-size: 14px;
   transition: 0.5s ease;
 }
+.search-box input{
+  width:0px;
+}
 .iconsearch{
   transition: 0.4s;
 }
-
+.price-box{
+  border: 1px solid #000;
+}
 /*NAV*/
 .navbar-here{
   padding-top:10px;
@@ -200,6 +205,9 @@ nav li:nth-child(5){
 }
 nav li:nth-child(1){
   padding-left:0px;
+}
+.nav-item i.fa-solid{
+  padding-left:10px;
 }
 /*dropdown-menu-start*/
 .dropdown-content {
@@ -464,5 +472,9 @@ body{
   transition: all 0.2s ease-in-out;
 }
 
-
+@media (min-width: 1200px) {
+  .container{
+    max-width: 1200px !important;
+  }
+}
 

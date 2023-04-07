@@ -18,8 +18,8 @@ import {ShopAllComponent} from "./pages/shop-all/shop-all.component";
 import {CategoryComponent} from "./pages/category/category.component";
 import {SubCategoryComponent} from "./pages/sub-category/sub-category.component";
 import {ThankYouComponent} from "./pages/thank-you/thank-you.component";
-import {CategoryDraftComponent} from "./pages/category-DRAFT/category-draft.component"; //delete before deploy
 import {ProductDetailDraftComponent} from "./pages/product-detail-DRAFT/product-detail-draft.component";
+import {SearchComponent} from "./pages/search/search.component";
 
 
 const appRoutes: Routes = [
@@ -35,7 +35,7 @@ const appRoutes: Routes = [
   {path: 'category/:cid',  component: CategoryComponent},
   {path: 'sub-category/:sid',  component: SubCategoryComponent},
   {path: 'thank-you', component: ThankYouComponent},
-  {path: 'category-draft', component: CategoryDraftComponent}, //delete before deploy
+  {path: 'search', component: SearchComponent},
   {path: 'product-detail-draft', component: ProductDetailDraftComponent}, //delete before deploy
 ]
 
@@ -54,6 +54,7 @@ const appRoutes: Routes = [
     CategoryComponent,
     SubCategoryComponent,
     ThankYouComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

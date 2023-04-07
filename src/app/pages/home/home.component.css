@@ -4,53 +4,141 @@
   padding-top:100px;
 }
 /*Showcase*/
-.showcase-title-inner{
+/*.showcase-title-inner{*/
+/*  position: relative;*/
+/*  animation: mymove 2s;*/
+/*  animation-timing-function: linear;*/
+/*}*/
+/*@keyframes mymove {*/
+/*  from {left: -180px;}*/
+/*  to {left: 0px;}*/
+/*}*/
+/*.showcase-content{*/
+/*  position: relative;*/
+/*}*/
+/*.showcase-main-img{*/
+/*  position: absolute;*/
+/*  right:0px;*/
+/*}*/
+/*.showcase-title{*/
+/*  padding-top:70px;*/
+/*  margin-bottom:40px;*/
+/*}*/
+/*.showcase-img{*/
+/*  position:relative;*/
+/*}*/
+/*.decor-showcase-slide{*/
+/*  position: absolute;*/
+/*  left:165px;*/
+/*  top:61%;*/
+/*}*/
+/*.round-button{*/
+/*  border: 2px solid #fff;*/
+/*  border-radius: 100%;*/
+/*  padding: 12px;*/
+/*  text-align: center;*/
+/*  text-decoration: none;*/
+/*  display: inline-block;*/
+/*  font-size: 16px;*/
+/*}*/
+/*.round-button i{*/
+/*  padding:0px 3px;*/
+/*  color:#fff;*/
+/*}*/
+/*.round-button{*/
+/*  position: relative;*/
+/*  animation: mymove 2s infinite;*/
+/*  animation-timing-function: linear;*/
+
+/*}*/
+.ctg .ctg-inner .ctg-left{
+  padding-right:5px !important;
+  padding-left:0 !important;
+}
+.ctg-left-top .left-top{
+  padding-right:5px;
+}
+.ctg-left-top .center-top{
+  padding-left:5px;
+}
+.ctg-left-top{
+  padding-bottom:10px;
+}
+.ctg-left-btm .left-btm{
+  padding-right:5px;
+}
+.ctg-left-btm .center-btm{
+  padding-left:5px;
+}
+
+/*RIGHT*/
+.ctg .ctg-inner .ctg-right{
+  padding-right:0 !important;
+  padding-left:5px !important;
+}
+
+.collec-top{
+  margin-bottom:100px;
+  margin-top:120px;
+}
+.collec-top .right-top-collec{
   position: relative;
-  animation: mymove 2s;
-  animation-timing-function: linear;
 }
-@keyframes mymove {
-  from {left: -180px;}
-  to {left: 0px;}
+.collec-top .right-top-collec img{
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100px);
 }
-.showcase-content{
+.collec-btm .right-btm-collec{
+  padding-top:100px;
+}
+.collec-btm{
+  margin-bottom:100px;
+}
+.collec-img img{
   position: relative;
 }
-.showcase-main-img{
+.collec-name{
   position: absolute;
-  right:0px;
-}
-.showcase-title{
-  padding-top:70px;
-  margin-bottom:40px;
-}
-.showcase-img{
-  position:relative;
-}
-.decor-showcase-slide{
-  position: absolute;
-  left:165px;
-  top:61%;
-}
-.round-button{
-  border: 2px solid #fff;
-  border-radius: 100%;
-  padding: 12px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-.round-button i{
-  padding:0px 3px;
   color:#fff;
 }
-.round-button{
-  position: relative;
-  animation: mymove 2s infinite;
-  animation-timing-function: linear;
-
+.collec-name{
+  bottom:25px;
+  left:7%;
 }
+.collec-name-2{
+  bottom:-10%;
+  left:10%;
+}
+.collec-name-3{
+  bottom:30%;
+  left:11%;
+}
+.collec-name-4{
+  bottom:4%;
+  left:9%;
+}
+.collec-img{
+  overflow: hidden;
+}
+.collec-img img{
+  object-fit: cover;
+  transition: transform 0.5s ease-out;
+  display: block;
+}
+.collec-img:hover img{
+  transform: scale(1.1);
+}
+.right-btm{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 295px;
+}
+.right-btm img{
+  max-height: 285px;
+}
+
 /*All jewellery*/
 .item-box-content a{
   color:#fff;
@@ -62,16 +150,17 @@
 /*Best seller*/
 .best-seller{
   background-color: #fff;
-  padding-top:60px;
-  padding-bottom:60px;
+  padding-top:80px;
 }
-
+.change-bg{
+  background:#fff;
+}
 /*about*/
 .about{
   background-image: url("/assets/img/home/about.png");
   background-size: cover;
-  padding-top:100px;
-  padding-bottom:100px;
+  padding-top:120px;
+  padding-bottom:120px;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
