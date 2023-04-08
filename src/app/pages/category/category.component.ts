@@ -10,9 +10,9 @@ import {Data} from "../../interfaces/data.interface";
 })
 
 export class CategoryComponent implements OnInit {
-  private cate: any;
-  cid: number = 0;
-  category: Data[] = [];
+  // private cate: any;
+  // cid: number = 0;
+  // category: Data[] = [];
   quickviewed?: Data;
 
   constructor(
@@ -21,14 +21,14 @@ export class CategoryComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.cate = this.route.params.subscribe(params => {
-      this.cid = +params['cid'];
-
-      const cateUrl = 'https://huevuapi.herokuapp.com/get-category/?cid='+ this.cid;
-      this.http.get<Data[]>(cateUrl).subscribe(data => {
-        this.category = data;
-      })
-    })
+    // this.cate = this.route.params.subscribe(params => {
+    //   this.cid = +params['cid'];
+    //
+    //   const cateUrl = 'https://huevuapi.herokuapp.com/get-category/?cid='+ this.cid;
+    //   this.http.get<Data[]>(cateUrl).subscribe(data => {
+    //     this.category = data;
+    //   })
+    // })
   }
   quickview(item: Data){
     this.quickviewed=item;

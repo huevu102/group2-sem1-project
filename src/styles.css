@@ -495,3 +495,7 @@ body{
   height: 20px;
   text-align: center;
 }
+/*side-bar-category-page*/
+.side-bar-title{
+  font-weight: 500;
+}

@@ -11,9 +11,9 @@ import {Data} from "../../interfaces/data.interface";
 })
 
 export class ProductDetailComponent implements OnInit {
-  private id: any;
-  pid: number = 0;
-  product: Data[] = [];
+  // private id: any;
+  // pid: number = 0;
+  // product: Data[] = [];
   quickviewed?: Data;
 
   constructor(

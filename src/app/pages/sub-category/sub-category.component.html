@@ -18,7 +18,7 @@
     <div class="category-side-bar col-2">
       <div class="sticky ">
         <div class="mb-1">
-          <p class="font-weight-bolder mb-3">Collection</p>
+          <p class="side-bar-title mb-3">Collection</p>
           <div class="mb-1">
             <input type="checkbox" class="check-box" id="collection-1" name="collection-1" value="Sping Collection">
             <label for="collection-1">Spring Vibe</label><br>
@@ -37,7 +37,7 @@
           </div>
         </div>
         <div class="mt-3 mb-1">
-          <p class="font-weight-bolder">Jewellery</p>
+          <p class="side-bar-title">Jewellery</p>
           <div class="mb-1">
             <input type="checkbox" class="check-box check-cate" id="jewellery-1" name="jewellery-1" value="Natural Jewellery">
             <label for="jewellery-1">Natural</label><br>
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="mt-3 mb-1">
-          <p class="font-weight-bolder">Materials</p>
+          <p class="side-bar-title">Materials</p>
           <div class="mb-1">
             <input type="checkbox" class="check-box check-cate" id="materials-1" name="materials-1" value="Gold">
             <label for="materials-1">Gold</label><br>
@@ -67,7 +67,7 @@
           </div>
         </div>
         <div class="mt-3 mb-1">
-          <p class="font-weight-bolder">Price</p>
+          <p class="side-bar-title">Price</p>
           <div class="mb-1">
             <input type="checkbox" class="check-box check-cate" id="price-1" name="price-1" value="$500 & Under">
             <label for="price-1">$0 - $500</label><br>
@@ -496,60 +496,6 @@
                 <p class="smt item-price">$8.700,00
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--featured-product-->
-      <div class="mb-3 row">
-        <div class="col-6 mb-9">
-          <div class="featured">
-            <div class="featured-img" *ngFor="let item of subCate | slice: 0: 1">
-              <a routerLink="#">
-                <img src="./assets/img/featured/{{item.cid}}.png">
-              </a>
-            </div>
-            <div class="overlay">
-              <h5>FEATURED PRODUCTS</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col-3 mb-9" *ngFor="let item of subCate | slice: 4: 6">
-          <div class="item-card-info">
-            <div class="card-prd">
-              <div class="img">
-                <a routerLink="/product-detail/{{item.pid}}">
-                  <img src="{{item.thumb}}">
-                </a>
-              </div>
-              <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-                Quick view
-              </div>
-            </div>
-            <div class="item-inf text-center mt-2">
-              <p class="decor-text mb-1">{{item.name}}</p>
-              <p class="smt mb-0">{{ item.price | currency: 'USD'}}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row cate-product ">
-        <div class="col-3 mb-9" *ngFor="let item of subCate | slice: 6">
-          <div class="item-card-info">
-            <div class="card-prd">
-              <div class="img">
-                <a routerLink="/product-detail/{{item.pid}}">
-                  <img src="{{item.thumb}}">
-                </a>
-              </div>
-              <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-                Quick view
-              </div>
-            </div>
-            <div class="item-inf text-center mt-2">
-              <p class="decor-text mb-1">{{item.name}}</p>
-              <p class="smt item-price">{{ item.price | currency: 'USD'}}</p>
             </div>
           </div>
         </div>
