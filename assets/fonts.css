@@ -1,0 +1,12 @@
+@font-face{
+  src:url('libs/font-awesome/webfonts/merchant/OpenType-PS/Merchant-Regular.otf'),
+  url('libs/font-awesome/webfonts/merchant/OpenType-TT/Merchant-Regular.ttf'),
+  url('libs/font-awesome/webfonts/merchant/OpenType-PS/Merchant-Bold.otf'),
+  url('libs/font-awesome/webfonts/merchant/OpenType-TT/Merchant-Bold.ttf');
+  font-family:'Merchant';
+}
+@font-face {
+  src:url('libs/font-awesome/webfonts/futura/FuturaPTBook.otf'),
+  url('libs/font-awesome/webfonts/futura/FuturaPTMedium.otf');
+  font-family: 'Futura';
+}
