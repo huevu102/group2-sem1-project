@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-guide',
@@ -6,4 +7,17 @@ import {Component} from "@angular/core";
   styleUrls: ['./guide.component.css']
 })
 
-export class GuideComponent {}
+export class GuideComponent {
+
+  constructor(private http: HttpClient){}
+
+  ngOnInit(){
+    window.addEventListener('scroll', () => {
+      this.windowScrolled = window.pageYOffset !== 0;
+    });
+  }
+  windowScrolled = false;
+  scrollToTop(): void {
+    window.scrollTo(0, 0);
+  }
+}
