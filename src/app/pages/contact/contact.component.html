@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
   <!--BANNER-->
   <link rel="stylesheet" href="../home/home.component.css">
@@ -25,11 +26,34 @@
                 <label>Last name</label>
                 <input class="inpu" type="text">
               </div>
+=======
+<!--BANNER-->
+<div class="banner-img">
+  <div class="">
+    <img src="./assets/img/contact/banner.png">
+  </div>
+  <div class="banner-img-text">
+    <h3 class="text-center">Get In Touch With Us</h3>
+  </div>
+</div>
+<!--contact form here-->
+<div class="container contact-form">
+  <div class="contact-inner">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-6 contact-form">
+        <form ngNativeValidate onsubmit="alert('Thank you for your message!! We will contact you soon.')">
+          <div class="row name-user">
+            <div class="col-6 firstname ps-0">
+              <label>First name</label>
+              <input class="inpu" type="text">
+>>>>>>> origin/master
             </div>
             <div class="email-user user-input">
               <label>Email address (*)</label>
               <input class="inpu" type="email" required><br>
             </div>
+<<<<<<< HEAD
             <div class="subj-user user-input">
               <label>Subject</label>
               <input class="inpu" type="text"><br>
@@ -49,9 +73,34 @@
           <p class="decor-text mail-info">info@AGURI&PIJ2022.com for appointment</p>
         </div>
         <div class="col"></div>
+=======
+          </div>
+          <div class="email-user user-input">
+            <label>Email address (*)</label>
+            <input class="inpu" type="email" required><br>
+          </div>
+          <div class="subj-user user-input">
+            <label>Subject</label>
+            <input class="inpu" type="text"><br>
+          </div>
+          <div class="mess-user">
+            <label>Message (*)</label>
+            <textarea class="inpu" rows="4" required></textarea>
+          </div>
+          <div class="text-center">
+            <button class="d-inline-block btn btn-pri btlg" type="submit">Send it</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-4 contact-text">
+        <h6>Drop us a line</h6>
+        <p class="smt">For questions regarding our products and services you can also contact us by filling out the form below.</p>
+        <p class="decor-text mail-info">info@AGURI&PIJ2022.com for appointment</p>
+>>>>>>> origin/master
       </div>
     </div>
   </div>
+<<<<<<< HEAD
   <!--  -->
   <div class="container">
     <div>
@@ -102,7 +151,26 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
+=======
+</div>
+
+<!--Map here-->
+<div class="aguri-info container">
+  <div class="text-center">
+    <h5 class="mb-2">Come and visit us</h5>
+    <p class="smt mb-4"><i class="fas fa-map-marker-alt fa-lg"></i> 6901 Hollywood Blvd, LA, CA 90028, US</p>
   </div>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <div>
+        <agm-map [latitude]=34.102345 [longitude]=-118.340389 [zoom]=10></agm-map>
+      </div>
+    </div>
+    <div class="col-1"></div>
+>>>>>>> origin/master
+  </div>
+
 
 
 

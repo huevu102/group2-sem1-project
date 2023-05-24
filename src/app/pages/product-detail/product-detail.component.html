@@ -1,16 +1,28 @@
-<!--Product detail-->
-<div class="container">
-  <!--DETAIL-->
-  <div class="prod-detail">
-    <div class="row">
-      <div class="col-2">
-        <div class="mbt" *ngFor="let item of product">
-          <img src="{{item.url}}">
+<div class="spinner-here" *ngIf="loading; else productdetail">
+  <div class="loader"></div>
+</div>
+<quick-view [quickviewed]="quickviewed"></quick-view>
+<app-compare [compared]="compared" [product]="product"></app-compare>
+<ng-template #productdetail>
+  <div class="container">
+    <!--DETAIL-->
+    <div class="prod-detail">
+      <div class="row">
+        <div class="col-2">
+          <div class="mbt" *ngFor="let item of product" >
+            <img *ngIf="item.url; else templ" src="{{item.url}}" (click)="zoom(item)">
+            <ng-template #templ>
+              <img src="./assets/img/default.png">
+            </ng-template>
+          </div>
         </div>
-      </div>
-      <div class="col-6" *ngFor="let item of product | slice: 0: 1">
-        <img src="{{item.url}}">
-      </div>
+        <div class="col-6" *ngIf="zoomed">
+          <img src="{{zoomed.url}}">
+        </div>
+        <div class="col-6" *ngIf="!zoomed">
+          <img src="./assets/img/default.png">
+        </div>
+
       <div class="col-4" *ngFor="let item of product | slice: 0: 1">
         <!--Breadcrumb-->
         <nav aria-label="breadcrumb">
@@ -28,185 +40,171 @@
         <p class="mdt">Complimentary Shipping & Returns</p>
         <div class="line mb-3"></div>
 
-        <!--quantity-->
-        <div class=d-flex>
-          <p class="mdt me-auto">Quantity</p>
-          <span class="buttons_added ml-1">
-            <input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="">
+        <form ngNativeValidate (submit)="addToCart(item)">
+          <div class=d-flex>
+            <p class="mdt me-auto">Quantity</p>
+            <span class="buttons_added ml-1 qty-box">
+            <button class="qty-btn" (click)="downQty()">-</button>
+            <input class="mx-2 input-qty" [(ngModel)]="qty" [ngModelOptions]="{standalone: true}" [value]="qty" required>
+            <button class="qty-btn" (click)="upQty()">+</button>
           </span>
-        </div>
-        <div class="line mb-3"></div>
-        <div class=d-flex>
-          <p class="mdt me-auto mb-0 mt-1">Size</p>
-          <select class="form-select smt w-50">
-            <option selected>Select size</option>
-            <option value="1">3</option>
-            <option value="2">3 1/2</option>
-            <option value="3">4</option>
-            <option value="3">4 1/2</option>
-            <option value="3">5</option>
-            <option value="3">5 1/2</option>
-          </select>
-        </div>
-        <div class="line my-3"></div>
-        <div class="find-size">
-          <div class="d-flex" data-bs-toggle="offcanvas" data-bs-target="#findsize">
-            <p class="mdt me-auto mb-2">※ Find your size</p>
-            <i class="fa-solid fa-chevron-right"></i>
           </div>
-          <!--OFFCANVAS FIND SIZE-->
-          <div class="offcanvas offcanvas-end" id="findsize">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title mt-3">Find Your Ring Size</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <div class="line mb-3"></div>
+          <div class=d-flex>
+            <p class="mdt me-auto mb-0 mt-1">Size</p>
+            <select class="form-select smt w-50" required>
+              <option value="">Select size</option>
+              <option value="1">3</option>
+              <option value="2">3 1/2</option>
+              <option value="3">4</option>
+              <option value="4">4 1/2</option>
+              <option value="5">5</option>
+              <option value="6">5 1/2</option>
+              <option value="7">-</option>
+            </select>
+          </div>
+          <div class="line my-3"></div>
+          <div class="find-size">
+            <div class="d-flex" data-bs-toggle="offcanvas" data-bs-target="#findsize">
+              <p class="mdt me-auto mb-2">※ Find your size</p>
+              <i class="fa-solid fa-chevron-right"></i>
             </div>
-            <div class="offcanvas-body">
-              <table class="ring-size">
-                <thead class="size-title pb-3">
-                <tr>
-                  <th>AGURI (US) size</th>
-                  <th class="mx12">Circumference (mm)</th>
-                  <th class="select-trans">
-                    <select class="form-select smt">
-                      <option selected>UK</option>
-                      <option value="1">Japan</option>
-                      <option value="2">Italy</option>
-                      <option value="3">Germany</option>
-                    </select>
-                  </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="ring-size text-center">
-                  <td>
-                    <button class="btn btn-sec btnsm w-100" type="button">3</button>
-                  </td>
-                  <td>14.1 / 44.2</td>
-                  <td>F</td>
-                </tr>
-                <tr class="ring-cir text-center mx12">
-                  <td>
-                    <button class="btn btn-sec btnsm w-100" type="button">3 1/2</button>
-                  </td>
-                  <td>14.5 / 45.5</td>
-                  <td>G 1/2</td>
-                </tr>
-                <tr class="trans-size text-center">
-                  <td>
-                    <button class="btn btn-sec btnsm w-100" type="button">4</button>
-                  </td>
-                  <td>14.9 / 46.8</td>
-                  <td>H 1/2</td>
-                </tr>
-                <tr class="text-center ">
-                  <td>
-                    <button class="btn btn-sec btnsm w-100" type="button">4 1/2</button>
-                  </td>
-                  <td>15.3 / 48.0</td>
-                  <td>I 1/2</td>
-                </tr>
-                <tr class="text-center ">
-                  <td>
-                    <button class="btn btn-sec btnsm w-100" type="button">5</button>
-                  </td>
-                  <td>15.7 / 49.3</td>
-                  <td>J 1/2</td>
-                </tr>
-                <tr class="text-center ">
-                  <td>
-                    <button class="btn btn-sec btnsm w-100" type="button">5 1/2</button>
-                  </td>
-                  <td>15.7 / 49.3</td>
-                  <td>J 1/2</td>
-                </tr>
-                </tbody>
-              </table>
-              <h6 class="text-center mt-4">How To Measure</h6>
-              <div class="row mt-3">
-                <div class="col-4 px-0"></div>
-                <div class="col-4 px-0">
-                  <img src="./assets/img/product-detail/measure.png">
-                </div>
-                <div class="col-4 px-0"></div>
+            <!--OFFCANVAS FIND SIZE-->
+            <div class="offcanvas offcanvas-end" id="findsize">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title mt-3">Find Your Ring Size</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
-              <!--Collapse How To Measure-->
+              <div class="offcanvas-body">
+                <div class="ring-table row">
+                  <div class="col-6">
+                    <p class="mdt text-center mb-3">AGURI (US) size</p>
+                    <p class="text-center">3</p>
+                    <p class="text-center">3 1/2</p>
+                    <p class="text-center">4</p>
+                    <p class="text-center">4 1/2</p>
+                    <p class="text-center">5</p>
+                    <p class="text-center">5 1/2</p>
+                  </div>
+                  <div class="col-6">
+                    <p class="mdt text-center mb-3">Circumference (mm)</p>
+                    <p class="text-center">F</p>
+                    <p class="text-center">G 1/2</p>
+                    <p class="text-center">H 1/2</p>
+                    <p class="text-center">I 1/2</p>
+                    <p class="text-center">J 1/2</p>
+                    <p class="text-center">K 1/2</p>
+                  </div>
+                </div>
+
+                <h6 class="mt-4 mb-3 text-center">How To Measure</h6>
+                <div class="row">
+                  <div class="col-4"></div>
+                  <div class="col-4">
+                    <img src="./assets/img/product-detail/measure1.png">
+                  </div>
+                  <div class="col-4"></div>
+                </div>
+                <div class="mt-3">
+                  <ol class="px-0">
+                    <li class="smt">1. Grab a tape measure, length of string or strip of paper.</li>
+                    <li class="smt my-2">2. Wrap it around the finger you’ll wear your ring on—if you’re creating a ring
+                      stack, consider where on your finger the ring will sit—and mark the place where it joins.</li>
+                    <li class="smt">3. Lay your string or paper strip on a flat surface and use a ruler to measure the
+                      length up to the mark. Use the chart above to match the measurement to the closest Tiffany
+                      ring size.</li>
+                  </ol>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="bag">
-          <button class="add-bag btn btnlg btn-pri w-100" type="submit" data-bs-toggle="offcanvas" data-bs-target="#addbag">Add to bag</button>
-          <!--OFFCANVSS ADD BAG-->
-          <div class="offcanvas offcanvas-end" id="addbag">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title mt-3">Shopping Bag</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <div class="row product-add1 mb-3">
-                <div class="col-4 ps-0">
-                  <a href="#">
-                    <img src="assets/img/product-detail/add-product1.png">
-                  </a>
-                </div>
-                <div class="col-6">
-                  <p>Amel Earring</p>
-                </div>
-                <div class="col-2 pe-0">
-                  <i class="fa-solid fa-xmark"></i>
-                  <p>$5,000</p>
+
+          <div class="bag">
+            <input class="btn btnlg btn-pri w-100" data-bs-toggle="offcanvas" data-bs-target="#addtobag"
+                   role="button" type="submit" value="Add to bag">
+            <!--OFFCANVAS ADD BAG-->
+            <div class="offcanvas offcanvas-end" id="addtobag">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title mt-3">Shopping Bag</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+
+
+              <div class="container" *ngIf="cartItem.length === 0">
+                <p class="ml-3">Your bag is currently empty.</p>
+              </div>
+              <div class="container" *ngIf="cartItem.length > 0">
+                <div class="offcanvas-body" *ngIf="added">
+                  <div class="line mb-3"></div>
+                  <div class="row product-add1 mb-3">
+                    <div class="col-4 ps-0">
+                      <a routerLink="/product-detail/{{added.pid}}">
+                        <img src="{{added.thumb}}">
+                      </a>
+                    </div>
+                    <div class="col-5">
+                      <h6>{{added.name}}</h6>
+                    </div>
+                    <div class="col-3 pe-0">
+                      <button class="qty-btn" (click)="downQty()">-</button>
+                      <span class="mx-2">{{qty}}</span>
+                      <button class="qty-btn" (click)="upQty()">+</button>
+                      <p class="mt-2">{{added.price | currency: 'USD'}}</p>
+                      <i (click)="deleteItem(item)" class="fas fa-trash-alt trash"></i>
+                    </div>
+                  </div>
+
+                  <div class="line mb-3"></div>
+                  <div class="d-flex mb-3">
+                    <p class="mdt me-auto">Total</p>
+                    <p class="mdt">{{total | currency: 'USD'}}</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-6 ps-0">
+                      <button class="btn btn-sec btnlg mt-3 w-100" type="button" routerLink="/cart">View bag</button>
+                    </div>
+                    <div class="col-6 pe-0">
+                      <button class="btn btn-pri btnlg mt-3 w-100" type="button" routerLink="/check-out">Checkout</button>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="line mb-3"></div>
-              <div class="row product-add2 mb-3">
-                <div class="col-4 ps-0">
-                  <a href="#">
-                    <img src="assets/img/product-detail/add-product2.png">
-                  </a>
-                </div>
-                <div class="col-6">
-                  <p>Diamons And Gold Spark Ring</p>
-                </div>
-                <div class="col-2 pe-0">
-                  <i class="fa-solid fa-xmark"></i>
-                  <p>$6,700</p>
-                </div>
-              </div>
-              <div class="line mb-3"></div>
-              <div class="d-flex mb-3">
-                <p class="mdt me-auto">Product Total</p>
-                <p class="mdt">$11,700</p>
-              </div>
-              <button class="btn btn-pri btnlg mt-3" type="button" routerLink="/order-detail">Continue</button>
+
+
             </div>
           </div>
-        </div>
+        </form>
+
         <div class="ask-advisor">
           <button class="btn btn-sec btnlg w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#askadvisor">Ask A Client Advisor</button>
-          <!--OFFCANVSS ASK ADVISOR-->
+          <!--OFFCANVAS ASK ADVISOR-->
           <div class="offcanvas offcanvas-end" id="askadvisor">
             <div class="offcanvas-header">
               <h5 class="offcanvas-title mt-3">Aguri At Your Service</h5>
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-              <p class="pb-3">From finding the perfect Tiffany gift to jewelry styling advice, our Client Advisors are always here to help.</p>
+              <p class="pb-3">From finding the perfect Aguri gift to jewelry styling advice, our Client Advisors are always here to help.</p>
               <div class="d-flex">
-                <a class="me-auto" href="#">
+                <div class="accordion accordion-flush w-100" id="callus">
+                  <div class="accordion-item">
+                    <a class="accordion-header">
+                      <p class="mdt accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#call-body">
+                        Call us
+                      </p>
+                    </a>
+                    <div id="call-body" class="accordion-collapse collapse" data-bs-parent="#callus">
+                      <div class="accordion-body">
+                        <p class="smt">For general inquiries please call: <a href="tel:800 843 3269">800 843 3269</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="line mb-3"></div>
+              <div class="d-flex">
+                <a class="me-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#chatonline">
                   <p class="mdt">Chat Online</p>
-                </a>
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-              <div class="line mb-3"></div>
-              <div class="d-flex">
-                <a class="me-auto" href="#">
-                  <p class="mdt">Call</p>
-                </a>
-                <i class="fa-solid fa-chevron-right"></i>
-              </div>
-              <div class="line mb-3"></div>
-              <div class="d-flex">
-                <a class="me-auto" href="#">
-                  <p class="mdt">Book A Appointment</p>
                 </a>
                 <i class="fa-solid fa-chevron-right"></i>
               </div>
@@ -236,77 +234,18 @@
   <div class="simi-prod">
     <div class="row">
       <div class="col-3">
-        <h5>Similar Products</h5>
+        <h5 class="pt-5 mb-2">Similar Products</h5>
         <p class="smt">AGURI designs reinvent our iconic AGURI collection with bold profiles and powerful details.</p>
       </div>
-      <div class="col-3" *ngFor="let item of product | slice: 0: 3">
+      <div class="col-3" *ngFor="let item of similar | slice: 0: 3">
         <div class="card-prd">
           <div class="img">
             <a routerLink="/product-detail/{{item.pid}}">
               <img src="{{item.thumb}}">
             </a>
           </div>
-          <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
+          <div (click)="compare(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#compare">
             Compare
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal Compare-->
-  <div class="modal fade" id="compare">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <h5 class="modal-title" id="exampleModalLabel">Compare Products</h5>
-        <div class="row">
-          <div class="col-6 simi-left">
-            <div class="itm">
-              <a href="#">
-                <img src="./assets/img/product-detail/compare1.png">
-              </a>
-              <div class="item-inf text-center">
-                <p class="mdt my-2">Diamond Spark Ring</p>
-                <p class="mdt">$6,700</p>
-              </div>
-            </div>
-            <div class="jewel">
-              <p class="mdt">Jewellery</p>
-              <p class="smt my-2">NaturalJewelry</p>
-              <p class="smt mb-0">Round brilliant diamonds</p>
-              <p class="smt my-2">4mm width</p>
-              <p class="smt">Carat total weight .48</p>
-            </div>
-            <div class="line"></div>
-            <div class="mater">
-              <p class="mdt">Material</p>
-              <p class="smt">16k White gold</p>
-            </div>
-            <button type="button" class="btn btn-pri btnsm w-100" data-bs-dismiss="modal">Add to bag</button>
-          </div>
-          <div class="col-6 simi-right">
-            <div class="itm">
-              <a href="#">
-                <img src="./assets/img/product-detail/compare2.png">
-              </a>
-              <div class="item-inf text-center">
-                <p class="mdt my-2">Enternity Diamond Ring</p>
-                <p class="mdt">$7,000</p>
-              </div>
-            </div>
-            <div class="jewel">
-              <p class="mdt">Jewellery</p>
-              <p class="smt my-2">Natural & Lab-grown Jewelry</p>
-              <p class="smt mb-0">Pear brilliant diamonds</p>
-              <p class="smt my-2">2.5mm width x2</p>
-              <p class="smt">Carat total weight .50</p>
-            </div>
-            <div class="line"></div>
-            <div class="mater">
-              <p class="mdt">Material</p>
-              <p class="smt">18k Rose gold</p>
-            </div>
-            <button type="button" class="btn btn-pri btnsm w-100" data-bs-dismiss="modal">Add to bag</button>
           </div>
         </div>
       </div>
@@ -314,82 +253,30 @@
   </div>
 </div>
 
-<!--MAY YOU ALSO LIKE-->
+<!--More from this collection-->
 <div class="also-like">
-  <h5 class="text-center">You May Also Like</h5>
-  <div id="carouselalsolike" class="carousel slide carousel-dark carousel-also" data-bs-ride="carousel">
+  <h5 class="text-center" *ngFor="let item of collection | slice: 0:1">
+    More From {{item.collection}} Collection
+  </h5>
+  <div id="carouselalsolike" class="carousel slide carousel-dark carousel-also mb-5" data-bs-ride="carousel">
     <div class="carousel-inner container">
       <div class="carousel-item active" data-bs-interval="6000">
         <div class="row">
-          <div class="col-3">
+          <div class="col-3" *ngFor="let item of collection | slice: 0: 4">
             <div class="item-card-info">
               <div class="card-prd">
                 <div class="img">
-                  <a href="#">
-                    <img src="./assets/img/product-detail/also-like1.png">
+                  <a routerLink="/product-detail/{{item.pid}}">
+                    <img src="{{item.thumb}}">
                   </a>
                 </div>
-                <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+                <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
                   Quick view
                 </div>
               </div>
               <div class="item-inf text-center mt-3">
-                <p class="mdt mb-2">Lynn Ring</p>
-                <p>$7,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="item-card-info">
-              <div class="card-prd">
-                <div class="img">
-                  <a href="#">
-                    <img src="./assets/img/product-detail/also-like2.png">
-                  </a>
-                </div>
-                <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-                  Quick view
-                </div>
-              </div>
-              <div class="item-inf text-center mt-3">
-                <p class="mdt mb-2">Lynn Ring</p>
-                <p>$7,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="item-card-info">
-              <div class="card-prd">
-                <div class="img">
-                  <a href="#">
-                    <img src="./assets/img/product-detail/also-like3.png">
-                  </a>
-                </div>
-                <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-                  Quick view
-                </div>
-              </div>
-              <div class="item-inf text-center mt-3">
-                <p class="mdt mb-2">Lynn Ring</p>
-                <p>$7,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="item-card-info">
-              <div class="card-prd">
-                <div class="img">
-                  <a href="#">
-                    <img src="./assets/img/product-detail/also-like4.png">
-                  </a>
-                </div>
-                <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-                  Quick view
-                </div>
-              </div>
-              <div class="item-inf text-center mt-3">
-                <p class="mdt mb-2">Lynn Ring</p>
-                <p>$7,000</p>
+                <p class="mdt mb-2">{{item.name}}</p>
+                <p>{{item.price | currency: 'USD'}}</p>
               </div>
             </div>
           </div>
@@ -397,75 +284,21 @@
       </div>
       <div class="carousel-item" data-bs-interval="5000">
         <div class="row">
-          <div class="col-3">
+          <div class="col-3" *ngFor="let item of collection | slice: 4: 8">
             <div class="item-card-info">
               <div class="card-prd">
                 <div class="img">
-                  <a href="#">
-                    <img src="./assets/img/product-detail/also-like5.png">
+                  <a routerLink="/product-detail/{{item.pid}}">
+                    <img src="{{item.thumb}}">
                   </a>
                 </div>
-                <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+                <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
                   Quick view
                 </div>
               </div>
               <div class="item-inf text-center mt-3">
-                <p class="mdt mb-2">Lynn Ring</p>
-                <p>$7,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="item-card-info">
-              <div class="card-prd">
-                <div class="img">
-                  <a href="#">
-                    <img src="./assets/img/product-detail/also-like6.png">
-                  </a>
-                </div>
-                <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-                  Quick view
-                </div>
-              </div>
-              <div class="item-inf text-center mt-3">
-                <p class="mdt mb-2">Lynn Ring</p>
-                <p>$7,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="item-card-info">
-              <div class="card-prd">
-                <div class="img">
-                  <a href="#">
-                    <img src="./assets/img/product-detail/also-like7.png">
-                  </a>
-                </div>
-                <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-                  Quick view
-                </div>
-              </div>
-              <div class="item-inf text-center mt-3">
-                <p class="mdt mb-2">Lynn Ring</p>
-                <p>$7,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="item-card-info">
-              <div class="card-prd">
-                <div class="img">
-                  <a href="#">
-                    <img src="./assets/img/product-detail/also-like8.png">
-                  </a>
-                </div>
-                <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-                  Quick view
-                </div>
-              </div>
-              <div class="item-inf text-center mt-3">
-                <p class="mdt mb-2">Lynn Ring</p>
-                <p>$7,000</p>
+                <p class="mdt mb-2">{{item.name}}</p>
+                <p>{{item.price | currency: 'USD'}}</p>
               </div>
             </div>
           </div>
@@ -473,75 +306,21 @@
       </div>
       <div class="carousel-item" data-bs-interval="5000">
         <div class="row">
-          <div class="col-3">
+          <div class="col-3" *ngFor="let item of collection | slice: 8: 12">
             <div class="item-card-info">
               <div class="card-prd">
                 <div class="img">
-                  <a href="#">
-                    <img src="./assets/img/product-detail/also-like5.png">
+                  <a routerLink="/product-detail/{{item.pid}}">
+                    <img src="{{item.thumb}}">
                   </a>
                 </div>
-                <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
+                <div (click)="quickview(item)" class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
                   Quick view
                 </div>
               </div>
               <div class="item-inf text-center mt-2">
-                <p class="mdt mb-1">Lynn Ring</p>
-                <p class="smt">$7,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="item-card-info">
-              <div class="card-prd">
-                <div class="img">
-                  <a href="#">
-                    <img src="./assets/img/product-detail/also-like6.png">
-                  </a>
-                </div>
-                <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-                  Quick view
-                </div>
-              </div>
-              <div class="item-inf text-center mt-2">
-                <p class="mdt mb-1">Lynn Ring</p>
-                <p class="smt">$7,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="item-card-info">
-              <div class="card-prd">
-                <div class="img">
-                  <a href="#">
-                    <img src="./assets/img/product-detail/also-like7.png">
-                  </a>
-                </div>
-                <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-                  Quick view
-                </div>
-              </div>
-              <div class="item-inf text-center mt-2">
-                <p class="mdt mb-1">Lynn Ring</p>
-                <p class="smt">$7,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="item-card-info">
-              <div class="card-prd">
-                <div class="img">
-                  <a href="#">
-                    <img src="./assets/img/product-detail/also-like8.png">
-                  </a>
-                </div>
-                <div class="compare card-prd-bt smt" data-bs-toggle="modal" type="button" data-bs-target="#quickview">
-                  Quick view
-                </div>
-              </div>
-              <div class="item-inf text-center mt-2">
-                <p class="mdt mb-1">Lynn Ring</p>
-                <p class="smt">$7,000</p>
+                <p class="mdt mb-1">{{item.name}}</p>
+                <p class="smt">{{item.price | currency: 'USD'}}</p>
               </div>
             </div>
           </div>
@@ -559,71 +338,37 @@
   </div>
 </div>
 
-<!--Modal Quick view-->
-<div class="modal fade " id="quickview">
-  <div class="modal-dialog modal-dialog-centered quickview">
-    <div class="modal-content">
-      <div class="row">
-        <div class="col-7 ps-0">
-          <!--Carousel quick view product-->
-          <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="5000">
-                <img src="./assets/img/product-detail/quickview1.png">
-              </div>
-              <div class="carousel-item" data-bs-interval="3000">
-                <img src="./assets/img/product-detail/quickview2.png">
-              </div>
-              <div class="carousel-item" data-bs-interval="3000">
-                <img src="./assets/img/product-detail/quickview3.png">
-              </div>
-              <div class="carousel-item">
-                <img src="./assets/img/product-detail/quickview4.png">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-5 pe-0">
-          <h5>Diamond Wire Ring</h5>
-          <h5 class="my-3">$7,000</h5>
-          <div class="d-flex">
-            <p class="mdt me-auto">Quantity</p>
-            <span class="buttons_added ml-1">
-                <input aria-label="quantity" class="input-qty text-center" max="100" min="1" name="" type="number" value="">
-              </span>
-          </div>
-          <div class="line"></div>
-          <div class="quick-size my-3">
-            <select class="form-select smt">
-              <option selected>Select size</option>
-              <option value="1">3</option>
-              <option value="2">3 1/2</option>
-              <option value="3">4</option>
-              <option value="3">4 1/2</option>
-              <option value="3">5</option>
-              <option value="3">5 1/2</option>
-            </select>
-          </div>
-          <button type="button" class="btn btn-pri mb-3 w-100" data-bs-dismiss="modal">Add to bag</button>
-          <a href="">
-            <p>View more detail</p>
-          </a>
-        </div>
+
+
+<!--more abt collection-->
+<div class=" more-collection mbt-120">
+  <div class="row more-collec-inner">
+    <div class="col"></div>
+    <div class="col-4 collec-left">
+      <div class="collec-content">
+        <h5 class="mb-2">AGURI's Collection</h5>
+        <p class="smt mb-5">Inspired by a unisex bracelet from 1971 found in the House’s archive, the AGURI's Collection
+          features bold designs that play with tension, proportion and balance.</p>
+      </div>
+<!--      <div class="text-center">-->
+<!--        <a routerLink="#">Shop The Collection<i class="ms-3 fa-regular fa-arrow-right"></i></a>-->
+<!--      </div>-->
+      <div class="collec-img">
+        <img src="./assets/img/product-detail/collec1.png"/>
       </div>
     </div>
+    <div class="col"></div>
+    <div class="col-5 px-0">
+      <img src="./assets/img/product-detail/collec2.png"/>
+    </div>
+    <div class="col"></div>
   </div>
 </div>
 
 <!--REVIEW-->
-<div class="review">
-  <div class="d-flex review-start">
-    <h3>4,9</h3>
+<div class="review container">
+  <div class="d-flex review-start py-5">
+    <h3>5.0</h3>
     <div class="d-flex my-auto">
       <i class="fa-solid fa-star fa-xl"></i>
       <i class="fa-solid fa-star fa-xl"></i>
@@ -631,204 +376,103 @@
       <i class="fa-solid fa-star fa-xl"></i>
       <i class="fa-solid fa-star fa-xl"></i>
     </div>
-    <p class="mdt my-auto">16 Reviews</p>
   </div>
   <div class="row">
-    <div class="col-2">
+    <div class="col-3">
       <h5>Reviews</h5>
     </div>
-    <div class="col-8"></div>
-    <div class="col-2">
+    <div class="col-6"></div>
+    <div class="col-3">
       <button class="advisor btn btnlg btn-pri w-100" data-bs-toggle="modal" type="button" data-bs-target="#review">Write a review</button>
-      <!-- Modal -->
+      <!-- Modal review-->
       <div class="modal fade" id="review">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
-            <h5 class="modal-title mb-4">Write A Review</h5>
-            <p class="mdt">Select your rating</p>
-            <div class="d-flex mb-5">
-              <i class="fa-regular fa-star fa-lg"></i>
-              <i class="fa-regular fa-star fa-lg"></i>
-              <i class="fa-regular fa-star fa-lg"></i>
-              <i class="fa-regular fa-star fa-lg"></i>
-              <i class="fa-regular fa-star fa-lg"></i>
-            </div>
-            <label>Message (*)</label>
-            <textarea class="inpu" rows="4" required></textarea>
-            <div class="email-user">
-              <label>Email address</label>
-              <input class="inpu" type="email" required><br>
-            </div>
-            <div class="review-name">
-              <label>Your name</label>
-              <input class="inpu" type="text">
-            </div>
-            <button type="button" class="btn btn-pri" data-bs-dismiss="modal">Send</button>
+            <form ngNativeValidate onsubmit="alert('Thanks for the review!')">
+              <h5 class="modal-title mb-4">Write A Review</h5>
+              <p class="mdt">Select your rating</p>
+              <div class="d-flex mb-5">
+                <i class="fa-regular fa-star fa-lg"></i>
+                <i class="fa-regular fa-star fa-lg"></i>
+                <i class="fa-regular fa-star fa-lg"></i>
+                <i class="fa-regular fa-star fa-lg"></i>
+                <i class="fa-regular fa-star fa-lg"></i>
+              </div>
+              <label>Message (*)</label>
+              <textarea class="inpu" rows="4" required></textarea>
+              <div class="email-user">
+                <label>Email address</label>
+                <input class="inpu" type="email" required><br>
+              </div>
+              <div class="review-name">
+                <label>Your name</label>
+                <input class="inpu" type="text">
+              </div>
+              <button type="submit" class="btn btn-pri w-100">Send</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="line my-3"></div>
-  <div class="row select-review">
-    <div class="col-3">
-      <h6>16 Reviews</h6>
-    </div>
-    <div class="col-7"></div>
-    <div class="col-2">
-      <select class="form-select smt w-100">
-        <option selected>Sort by: Newest</option>
-        <option value="1">Highest Rating</option>
-        <option value="2">Lowest Rating</option>
-        <option value="3">Most Votes</option>
-        <option value="3">Least Votes</option>
-      </select>
-    </div>
-  </div>
-  <div class="review-box container">
-    <div class="d-flex review-inner">
-      <div class="review-ava">
-        <img src="./assets/img/product-detail/user1.png">
-      </div>
-      <div class="review-content w-100 ms-3">
-        <div class="d-flex">
-          <p class="me-auto mb10 user-name mdt">HueVT99</p>
-          <span class="smt">2022/12/02</span>
+  <div class="review-box">
+    <div *ngFor="let item of review">
+      <div class="d-flex review-inner">
+        <div class="review-ava">
+          <img src="./assets/img/product-detail/user1.png">
         </div>
-        <div>
-          <div class="d-flex rate-start">
-            <i class="fa-solid fa-star fa"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
+        <div class="review-content w-100 ms-3">
+          <div class="d-flex">
+            <p class="me-auto mb10 user-name mdt">{{item.cus_name}}</p>
+            <span class="smt">{{item.review_date | date:'medium'}}</span>
           </div>
-        </div>
-        <div class="d-flex">
-          <p class="user-cmt smt me-auto">Baking time will vary if you change the pan size. Every oven is different so I can’t
-            say for certain what you’ll need to adjust it to.</p>
-          <div class="like-review">
-            <i class="align-middle fa-regular fa-heart fa-lg"></i>
-            <span class="smt ms-2">19</span>
+          <div>
+            <div class="d-flex rate-start">
+              <i class="fa-solid fa-star fa"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="line mb-3"></div>
-    <div class="d-flex review-inner">
-      <div class="review-ava">
-        <img src="./assets/img/product-detail/user1.png">
-      </div>
-      <div class="review-content w-100 ms-3">
-        <div class="d-flex">
-          <p class="me-auto mb10 user-name mdt">HueVT99</p>
-          <span class="smt">2022/12/02</span>
-        </div>
-        <div>
-          <div class="d-flex rate-start">
-            <i class="fa-solid fa-star fa"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-        </div>
-        <div class="d-flex">
-          <p class="user-cmt smt me-auto">Baking time will vary if you change the pan size. Every oven is different so I can’t
-            say for certain what you’ll need to adjust it to.</p>
-          <div class="like-review">
-            <i class="align-middle fa-regular fa-heart fa-lg"></i>
-            <span class="smt ms-2">19</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="line mb-3"></div>
-    <div class="d-flex review-inner">
-      <div class="review-ava">
-        <img src="./assets/img/product-detail/user1.png">
-      </div>
-      <div class="review-content w-100 ms-3">
-        <div class="d-flex">
-          <p class="me-auto mb10 user-name mdt">HueVT99</p>
-          <span class="smt">2022/12/02</span>
-        </div>
-        <div>
-          <div class="d-flex rate-start">
-            <i class="fa-solid fa-star fa"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-        </div>
-        <div class="d-flex">
-          <p class="user-cmt smt me-auto">Baking time will vary if you change the pan size. Every oven is different so I can’t
-            say for certain what you’ll need to adjust it to.</p>
-          <div class="like-review">
-            <i class="align-middle fa-regular fa-heart fa-lg"></i>
-            <span class="smt ms-2">19</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="line mb-3"></div>
-    <div class="d-flex review-inner">
-      <div class="review-ava">
-        <img src="./assets/img/product-detail/user1.png">
-      </div>
-      <div class="review-content w-100 ms-3">
-        <div class="d-flex">
-          <p class="me-auto mb10 user-name mdt">HueVT99</p>
-          <span class="smt">2022/12/02</span>
-        </div>
-        <div>
-          <div class="d-flex rate-start">
-            <i class="fa-solid fa-star fa"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-        </div>
-        <div class="d-flex">
-          <p class="user-cmt smt me-auto">Baking time will vary if you change the pan size. Every oven is different so I can’t
-            say for certain what you’ll need to adjust it to.</p>
-          <div class="like-review">
-            <i class="align-middle fa-regular fa-heart fa-lg"></i>
-            <span class="smt ms-2">19</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="line mb-3"></div>
-    <div class="d-flex review-inner">
-      <div class="review-ava">
-        <img src="./assets/img/product-detail/user1.png">
-      </div>
-      <div class="review-content w-100 ms-3">
-        <div class="d-flex">
-          <p class="me-auto mb10 user-name mdt">HueVT99</p>
-          <span class="smt">2022/12/02</span>
-        </div>
-        <div>
-          <div class="d-flex rate-start">
-            <i class="fa-solid fa-star fa"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-        </div>
-        <div class="d-flex">
-          <p class="user-cmt smt me-auto">Baking time will vary if you change the pan size. Every oven is different so I can’t
-            say for certain what you’ll need to adjust it to.</p>
-          <div class="like-review">
-            <i class="align-middle fa-regular fa-heart fa-lg"></i>
-            <span class="smt ms-2">19</span>
+          <div class="d-flex">
+            <p class="user-cmt smt me-auto">{{item.comment}}</p>
+            <div class="like-review">
+              <i class="align-middle fa-regular fa-heart fa-lg"></i>
+              <span class="smt pr-3"> {{item.cusid}}</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+  <!--OFFCANVSS chat online-->
+  <div class="offcanvas offcanvas-end" id="chatonline">
+    <div class="offcanvas-header">
+      <i class="fa-solid fa-arrow-left" type="button" data-bs-toggle="offcanvas" data-bs-target="#askadvisor"></i>
+      <h5 class="offcanvas-title mt-3">Aguri At Your Service</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="imessage">
+        <div>
+          <p class="from-them mb-3">Welcome to Aguri.</p>
+        </div>
+        <div>
+          <p class="from-them mb-3">How can we assist you today?</p>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="doc-bottom">
+      <form ngNativeValidate>
+        <div class="dock-input">
+          <textarea id="messinput" rows="1" wrap="soft" placeholder="type your message" aria-label="type your message"></textarea>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>

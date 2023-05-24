@@ -1,20 +1,32 @@
+<<<<<<< HEAD
+=======
+/*banner*/
+>>>>>>> origin/master
 .banner-img{
   position:relative;
 }
 .banner-tittle{
   position:absolute;
   top:0;
+<<<<<<< HEAD
 
 }
+=======
+}
+/*contact*/
+>>>>>>> origin/master
 .contact-inner{
   padding-top:50px;
   padding-bottom:50px;
   margin-top:80px;
   margin-bottom:100px;
 }
+<<<<<<< HEAD
 .contact-form{
   background:#E2CDB0;
 }
+=======
+>>>>>>> origin/master
 .mess-user{
   margin-bottom:60px;
   margin-top:20px;
@@ -30,6 +42,11 @@ agm-map {
   height: 450px;
 }
 .mail-info{
+<<<<<<< HEAD
  padding-top:200px;
+=======
+  padding-top:200px;
+>>>>>>> origin/master
 }
+
 

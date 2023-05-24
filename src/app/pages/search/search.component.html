@@ -1,0 +1,40 @@
+<div class="container mb-5">
+  <div class="search-title">
+    <h5 id="search-result" class="text-center">{{searchResult.length}} related results:</h5>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="" *ngFor="let searchResult of searchResult">
+        <div class="product-result row">
+          <div class="product-img col-4 ps-0">
+            <div class="card-prd">
+              <div class="img">
+                <a routerLink="/product-detail/{{searchResult.pid}}">
+                  <img src="{{searchResult.thumb}}">
+                </a>
+              </div>
+              <div class="compare card-prd-bt smt">
+                <a routerLink="/product-detail/{{searchResult.pid}}">View detail</a>
+              </div>
+            </div>
+          </div>
+          <div class="product-info col-8 pe-0">
+            <h6 class="mb-2">{{searchResult.name}}</h6>
+            <p class="mdt mb-3">{{searchResult.price | currency: 'USD'}}</p>
+            <p class="smt">{{searchResult.description}}</p>
+          </div>
+        </div>
+        <div class="line my-3"></div>
+      </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
+
+<!--Back to top-->
+<div class="to-top" (click)="scrollToTop()" [ngClass]="{ 'show-scrollTop': windowScrolled }">
+  <i class="fa fa-arrow-circle-up fa-3x"></i>
+</div>
+
+

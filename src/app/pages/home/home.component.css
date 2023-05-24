@@ -3,7 +3,13 @@
 .new-arrivals{
   padding-top:100px;
 }
+.new-arr{
+  background: #fff;
+}
 /*Showcase*/
+.aguri-showcase{
+  margin-bottom:90px;
+}
 .showcase-title-inner{
   position: relative;
   animation: mymove 2s;
@@ -21,7 +27,7 @@
   right:0px;
 }
 .showcase-title{
-  padding-top:70px;
+  padding-top:60px;
   margin-bottom:40px;
 }
 .showcase-img{
@@ -59,11 +65,20 @@
   color:#fff;
   text-decoration: underline;
 }
-/*Best seller*/
+/*our best seller*/
 .best-seller{
   background-color: #fff;
   padding-top:60px;
   padding-bottom:60px;
+}
+/*about*/
+.about{
+  background-image: url("/assets/img/home/about.png");
+  background-size: cover;
+  padding-top:100px;
+  padding-bottom:100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 /*New Collection*/
 .new-collection-bottom{
@@ -89,6 +104,9 @@
   padding-top:80px;
   padding-bottom:80px;
 }
+
+
+
 
 
 

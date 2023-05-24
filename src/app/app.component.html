@@ -1,10 +1,15 @@
-<div class="headnav">
+<!--Header and Nav here-->
+<div [class]="'headnav '+(show?'nav--hidden':'')">
   <!--HEADER-->
   <header class="section top-page">
     <div class="header card-header border-0 container">
       <div class="row header-inner">
         <!--top-page-left-->
+<<<<<<< HEAD
         <div class="col-3 top-page-start">
+=======
+        <div class="col-4">
+>>>>>>> origin/master
           <ul class="d-flex justify-content-start">
             <li class="py-1"><a href="https://www.facebook.com/aguri-jewellery"><i class="fa-brands fa-lg fa-facebook"></i></a></li>
             <li class="py-1 px-3"><a href="https://www.instagram.com/aguri-jewellery"><i class="fa-brands fa-lg fa-instagram"></i></a></li>
@@ -12,33 +17,29 @@
           </ul>
         </div>
         <!--logo-->
-        <div class="col-6 d-flex justify-content-center">
-          <img id="logo" src="./assets/img/logo.svg" alt="aguri-logo"/>
+        <div class="col-4 d-flex justify-content-center">
+          <a routerLink="/home">
+            <img id="logo" src="./assets/img/logo.svg" alt="aguri-logo"/>
+          </a>
         </div>
         <!--top-page-right-->
+<<<<<<< HEAD
         <div class="col-3 top-page-end">
+=======
+        <div class="col-4">
+>>>>>>> origin/master
           <ul class="d-flex justify-content-end">
             <li class="py-1">
               <!--Modal Sign In Button-->
               <a class="sign-in" data-bs-toggle="modal" type="button" data-bs-target="#sign-in">Sign in</a>
             </li>
             <div>
-              <li class="px-3 py-1"><i class="fa fa-shopping-cart fa-lg" data-bs-toggle="offcanvas" data-bs-target="#addbag"></i></li>
-              <!--OFFCANVSS ADD BAG-->
-              <div class="offcanvas offcanvas-end" id="addbag">
-                <div class="offcanvas-body">
-                  <h6 class="offcanvas-title mt-3">YOUR CART IS CURRENTLY EMPTY.</h6>
-                  <p>Continue shopping  <a routerlink="#">Here</a></p>
-                  <button class="btn btn-pri btnlg mt-3" type="button" routerLink="/order-detail">View Cart</button>
-                </div>
-              </div>
+              <li class="px-3 py-1"><a routerLink="/cart"><i class="fa fa-shopping-bag fa-lg"></i></a></li>
             </div>
             <!--search-button-start-->
             <div class="search-box">
-                <input type="text" placeholder="search...">
-                <a routerLink="#" class="iconsearch">
-                  <i class="fa fa-search fa-lg"></i>
-                </a>
+              <input type="text" class="search-inp" [(ngModel)]="searchText" (keyup.enter)="search()" placeholder="search...">
+              <i class="fa fa-search fa-lg" (click)="search()"></i>
             </div>
             <!--search-button-end-->
           </ul>
@@ -113,26 +114,32 @@
       <div class="col-2">
         <ul>
           <li><p class="mdt">Explore</p></li>
+<<<<<<< HEAD
           <li>Home</li>
           <li>About Us</li>
           <li>Jewellery Guide</li>
+=======
+          <li class="mb-1"><a routerLink="/">Home</a></li>
+          <li class="mb-1"><a routerLink="/about-us">About us</a></li>
+          <li class="mb-1"><a routerLink="/guide">Jewellery guide</a></li>
+>>>>>>> origin/master
         </ul>
       </div>
       <div class="col-2">
         <ul>
           <li><p class="mdt">Jewellery</p></li>
-          <li>Rings</li>
-          <li>Earrings</li>
-          <li>Bracelets</li>
-          <li>Necklaces</li>
+          <li class="mb-2"><a routerLink="/category/1">Rings</a></li>
+          <li class="mb-2"><a routerLink="/category/2">Earrings</a></li>
+          <li class="mb-2"><a routerLink="/category/3">Bracelets</a></li>
+          <li class="mb-2"><a  routerLink="/category/4">Necklaces</a></li>
         </ul>
       </div>
       <div class="col-2">
         <ul>
           <li><p class="mdt">More</p></li>
-          <li>Size guide</li>
-          <li>Shipping & Returns</li>
-          <li>Product care & Repair</li>
+          <li class="mb-2">Size guide</li>
+          <li class="mb-2"><a routerLink="/return">Shipping & Returns</a></li>
+          <li class="mb-2">Product care & Repair</li>
         </ul>
       </div>
       <div class="col-2">
@@ -147,10 +154,10 @@
       </div>
       <div class="col-4 subscribe-form">
         <p class="mdt">Subscribe to All Things AGURI</p>
-        <form class="subscribe" onsubmit="alert('Thank you for subscription!\nWe will send you email about our updates.')">
+        <form ngNativeValidate class="subscribe" onsubmit="alert('Thank you!! Your submission has been sent.')">
           <div>
             <label class="smt">Email address</label>
-            <input class="inpu col-12 border-top-0 border-left-0 border-right-0" type="email" required>
+            <input name="standalone" class="inpu col-12 border-top-0 border-left-0 border-right-0" type="email" required>
           </div>
           <button class="btn btnsm btn-pri" type="submit">Join now</button>
         </form>
@@ -170,7 +177,7 @@
   <div class="modal-dialog modal-dialog-centered first-steps">
     <div class="modal-content first-steps-inner">
       <h5 class="modal-title mb-4 text-center">Welcome to AGURI!</h5>
-      <form>
+      <form ngNativeValidate onsubmit="alert('Welcome back!! Hope you have a pleasant shopping experience with us.')">
         <div class="mb-3">
           <label for="email">Email address</label>
           <input class="inpu" type="text" name="email" required>
@@ -197,7 +204,7 @@
     <div class="modal-content first-steps-inner">
       <h5 class="modal-title mb-4 text-center">Forgot your password?</h5>
       <!--name="myFormBottom" onsubmit="return validateFormBottom()"-->
-      <form>
+      <form ngNativeValidate onsubmit="alert('Your password was successfully changed.')">
         <label for="email">Email address</label>
         <input class="inpu" type="text" name="email" required>
         <button type="submit" class="btn btn-pri my-4 w-100">Reset Password</button>
@@ -214,11 +221,11 @@
   <div class="modal-dialog modal-dialog-centered first-steps">
     <div class="modal-content first-steps-inner">
       <h5 class="modal-title mb-4 text-center">Hello, Friend!</h5>
-      <form>
+      <form ngNativeValidate onsubmit="alert('Thank you for signing up!! Hope you have a pleasant shopping experience with us.')">
         <div class="row">
           <div class="col-6 ps-0">
             <label>First name</label>
-            <input class="inpu" type="text" required><br>
+            <input name="aaa" class="inpu" type="text" required><br>
           </div>
           <div class="col-6 pe-0">
             <label>Last name</label>
@@ -247,8 +254,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-

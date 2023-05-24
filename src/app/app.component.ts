@@ -1,30 +1,45 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Data} from "./interfaces/data.interface";
+import {HttpClient} from "@angular/common/http";
+import {host} from "../enums";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 
+
 })
 export class AppComponent {
   title = 'group2-sem1-project';
-
+  show:boolean =  false;
   /*THIS FOR SCROLL NAVBAR*/
-  constructor(){
+  constructor (private http: HttpClient, private router: Router) {
     this.function();
   }
-
+  //Hiden nav when scroll
   function(){
-    const nav = document.querySelector(".headnav");
-    let lastScrollY = window.scrollY;
-    window.addEventListener("scroll",() => {
-      if (lastScrollY < window.scrollY){
-        nav?.classList.add("nav--hidden");
+    window.onscroll = () => {
+      if (window.pageYOffset > 100){
+        this.show = true;
       }
       else{
-        nav?.classList.remove("nav--hidden");
+        this.show = false;
       }
-      lastScrollY = window.scrollY;
-    });
+    };
+  }
+
+  // search
+  searchResult: Data[] = [];
+  searchText?: '';
+
+  search() {
+    const searchUrl = host + 'search-product/?keyword=' + this.searchText;
+    this.http.get<Data[]>(searchUrl).subscribe(data => {
+      this.searchResult = data;
+      this.router.navigate(['/search']);
+      this.searchText = '';
+    })
   }
 }
